@@ -600,12 +600,16 @@ body.root-page .root-hero .motto{font-family:'Noto Serif TC',serif;font-style:it
 .nav-links{flex-wrap:nowrap}
 .nav-links a{white-space:nowrap}
 @media (min-width:961px) and (max-width:1240px){
-  .nav-in{max-width:none;padding:16px 28px}
-  .logo{font-size:14px;letter-spacing:.14em}
-  .nav-links{gap:18px;font-size:13px;letter-spacing:.06em}
+  .nav-in{max-width:none;padding:16px 24px;gap:14px}
+  .logo{font-size:13px;letter-spacing:.1em}
+  .nav-links{gap:15px;font-size:13px;letter-spacing:.04em}
 }
 @media (max-width:960px){
   .nav-in{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 16px}
   .nav-links{overflow-x:auto;width:100%;gap:18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .nav-links::-webkit-scrollbar{display:none}
+}
+@media (min-width:1241px){
+  .nav-in{max-width:1320px;padding:16px 40px;gap:20px}
+  .nav-links{gap:22px}
 }

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人原型报告书｜频率文明 Frequency Civilization</title>
+<meta name="description" content="整合语根、内在原型与内在动力三个测验结果，完整呈现一个人的运作模式。">
+<link rel="canonical" href="https://frequency-civilization.com/zh-hans/report.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="个人原型报告书｜频率文明 Frequency Civilization">
+<meta property="og:description" content="整合语根、内在原型与内在动力三个测验结果，完整呈现一个人的运作模式。">
+<meta property="og:image" content="https://frequency-civilization.com/assets/og-image.png">
+<meta property="og:url" content="https://frequency-civilization.com/zh-hans/report.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090d; --bg2:#0d0f16; --card:#12141c;
+  --gold:#c9a86a; --gold-soft:#e0c894;
+  --text:#e8e6e1; --muted:#9b9890; --line:rgba(201,168,106,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.85;letter-spacing:.06em}
+h1,h2,h3{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.12em}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:.16em;color:var(--gold-soft)}
+.nav-in a.back{font-size:14px;color:var(--text);opacity:.85}
+main{padding:120px 0 90px;min-height:100vh}
+.btn{display:inline-block;padding:12px 34px;border:1px solid var(--gold);color:var(--gold-soft);font-size:15px;letter-spacing:.15em;border-radius:2px;background:none;cursor:pointer;transition:.25s;font-family:inherit}
+.btn:hover{background:var(--gold);color:#0d0f14}
+.btn.solid{background:var(--gold);color:#12131a;font-weight:500}
+.kicker{color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:12px}
+h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:10px}
+.meta-line{color:var(--muted);font-size:14px;margin-bottom:34px}
+.name-row{display:flex;gap:14px;align-items:center;margin-bottom:36px;flex-wrap:wrap}
+.name-row input{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:4px;padding:11px 16px;font-family:inherit;font-size:15px;letter-spacing:.05em;min-width:220px}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:40px}
+.st{border:1px solid var(--line);background:var(--card);border-radius:6px;padding:18px 20px;font-size:14.5px}
+.st .ok{color:var(--gold-soft)}
+.st .missing{color:#c98a7e}
+.st a{font-size:13.5px}
+.core{border:1px solid var(--gold);background:var(--bg2);border-radius:8px;padding:30px 34px;margin-bottom:44px}
+.core .one{font-family:'Noto Serif TC',serif;font-size:clamp(18px,2.8vw,22px);color:var(--gold-soft);line-height:2}
+.sec{margin-bottom:40px}
+.sec h2{font-size:21px;margin-bottom:6px}
+.sec .sub{color:var(--gold);font-size:13px;letter-spacing:.2em;margin-bottom:16px}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:22px 26px;margin-bottom:14px}
+.card h3{font-size:16.5px;color:var(--gold-soft);margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--muted)}
+.card b{color:var(--text);font-weight:500}
+.oneliner{border-left:3px solid var(--gold);background:var(--bg2);padding:14px 22px;font-family:'Noto Serif TC',serif;font-size:16px;color:var(--gold-soft);margin-top:10px}
+.notes{border:1px dashed rgba(255,255,255,.2);border-radius:6px;padding:22px 26px}
+.notes .nline{border-bottom:1px solid rgba(255,255,255,.12);height:36px}
+.actions{display:flex;gap:16px;margin:44px 0 10px;flex-wrap:wrap}
+.note{font-size:12.5px;color:var(--muted);opacity:.75;margin-top:14px}
+.hidden{display:none}
+@media print{
+  body{background:#fff;color:#1a1a1a}
+  :root{--bg:#fff;--bg2:#f7f4ee;--card:#faf8f4;--text:#1a1a1a;--muted:#444;--gold:#8a6d3b;--gold-soft:#6b5122;--line:#ccc}
+  nav,.actions,.name-row button,.status a,.note-screen{display:none !important}
+  main{padding:20px 0}
+  .card,.core,.notes,.st{border-color:#ccc}
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+
+
+
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/report.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/report.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/report.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}}</style><!-- /i18n-head -->
+<script>(function(){var P=[["\u884c\u52a8\u8005", "\u884c\u52d5\u8005"], ["\u7597\u6108\u8005", "\u7642\u7652\u8005"], ["\u6559\u5bfc\u8005", "\u6559\u5c0e\u8005"], ["\u611f\u5e94\u8005", "\u611f\u61c9\u8005"], ["\u6d1e\u89c1\u8005", "\u6d1e\u898b\u8005"], ["\u955c\u9762\u8005", "\u93e1\u9762\u8005"], ["\u7597\u6108", "\u7642\u7652"], ["\u63a2\u7d22", "\u63a2\u7d22"], ["\u670d\u52a1", "\u670d\u52d9"], ["\u5b88\u62a4", "\u5b88\u8b77"], ["\u7a81\u7834", "\u7a81\u7834"], ["\u521b\u9020", "\u5275\u9020"], ["\u4f20\u9012", "\u50b3\u905e"], ["\u5171\u9e23", "\u5171\u9cf4"]];function s2t(v){P.forEach(function(p){v=v.split(p[0]).join(p[1]);});return v;}function t2s(v){P.forEach(function(p){v=v.split(p[1]).join(p[0]);});return v;}window.FC_CANON=function(o){return JSON.parse(s2t(JSON.stringify(o)));};window.FC_T2S=function(o){return JSON.parse(t2s(JSON.stringify(o)));};var S=Storage.prototype,g=S.getItem,st=S.setItem;S.getItem=function(k){var v=g.call(this,k);return (v&&/^fc_result_/.test(k))?t2s(v):v;};S.setItem=function(k,v){return st.call(this,k,/^fc_result_/.test(k)?s2t(String(v)):v);};})();</script>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <a class="logo" href="index.html" style="color:var(--gold-soft)">频率文明 FREQUENCY CIVILIZATION</a>
+  
+  
+  
+  <!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../report.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/report.html" hreflang="zh-Hans" lang="zh-Hans" class="on">简中</a><a href="../en/index.html" hreflang="en" lang="en">EN</a></div><!-- /i18n-switch -->
+  <a class="back" href="tests.html">← 回三大测验</a>
+</div></nav>
+
+<main><div class="wrap">
+  <div class="kicker">PERSONAL ARCHETYPE REPORT</div>
+  <h1>个人原型报告书</h1>
+  <div class="meta-line" id="dateLine"></div>
+
+  <div class="name-row">
+    <input id="pname" placeholder="姓名（列印前可填）" oninput="renderCore()">
+    <button class="btn" onclick="window.print()">列印 / 存成 PDF</button>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <div class="core" id="core"></div>
+
+  <div id="secRoot" class="sec"></div>
+  <div id="secArch" class="sec"></div>
+  <div id="secDrive" class="sec"></div>
+
+  <div class="sec">
+    <h2>一对一笔记</h2>
+    <div class="sub">SESSION NOTES</div>
+    <div class="notes">
+      <div class="nline"></div><div class="nline"></div><div class="nline"></div>
+      <div class="nline"></div><div class="nline"></div><div class="nline"></div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn solid" onclick="window.print()">列印 / 存成 PDF</button>
+    <button class="btn" onclick="location.reload()">重新读取结果</button>
+  </div>
+  <p class="note note-screen">报告资料来自你在这个浏览器完成的测验结果，只存在你自己的装置上，我们不会收到。<br>本报告为教育与自我认知工具，不具医疗或心理诊断性质。</p>
+</div></main>
+
+<script src="assets/phrases144.js?v=20261010f"></script>
+<script>
+const ROOTS = {
+ "Sa'karan":{name:"建构者",desc:"擅长把混乱整理成结构，先建立框架、流程与优先顺序，让事情可以执行。"},
+ "Elariah":{name:"情绪引导者",desc:"对他人情绪高度敏锐，能接住还没说出口的感受，让人敢说真话。"},
+ "Thaleon":{name:"洞察转化者",desc:"看穿表层说法、指出盲点，一句话能让人重新看待自己的处境。"},
+ "Auri'kai":{name:"直觉洞察者",desc:"感知先于语言，安静时常有画面与洞见浮现，擅长察觉未被说出的讯息。"},
+ "Rohen'dal":{name:"行动推动者",desc:"想法一出现就动手，用行动带动节奏，让停滞的事情重新运转。"},
+ "Zae'rah":{name:"稳定支持者",desc:"在混乱中保持稳定的存在，你在场，大家就安心。"},
+ "Valtara":{name:"集体整合者",desc:"看见每个人的位置与特质，让不同的人在同一个节奏里合作。"},
+ "Kuthari":{name:"系统记录者",desc:"整理、记录与转译，把复杂经验写成可复制、可理解的知识。"},
+ "Mei'hara":{name:"关系共振者",desc:"一对一感应力极强，能快速读懂对方真正的需求与未说出口的感受。"},
+ "Xon'teh":{name:"技术对接者",desc:"把不同工具、系统与方法接起来，找到串接点让事情流动。"},
+ "Nael'tu":{name:"领航创造者",desc:"自然描绘方向与愿景，让人看见「原来还有这条路」。"},
+ "Ori'shan":{name:"节奏带动者",desc:"用声音、节奏与行动改变现场氛围，一动全场就活起来。"}
+};
+const ARCH = {
+ "行动者":{en:"The Initiator",sub:"推进 × 突破",way:"第一个开始、打通堵塞",line:"你不是只会做事的人，你是能让任务有生命的人。"},
+ "疗愈者":{en:"The Holder",sub:"承接 × 安定",way:"安定现场、承接情绪",line:"你的温柔不是要你无声地承受，而是让别人因你而记得自己。"},
+ "教导者":{en:"The Architect",sub:"结构 × 转译",way:"建立秩序、把抽象变清楚",line:"你不是来证明你懂很多，而是来让知识变成别人走得过去的桥。"},
+ "感应者":{en:"The Channeler",sub:"接收 × 导航",way:"接收细微讯号、由内在导航",line:"你是来把还没有语言的讯号，转成大家能用的语言。"},
+ "洞见者":{en:"The Seer",sub:"穿透 × 识破",way:"看穿表象、直指核心",line:"守住你的视野，等对的人靠近。"},
+ "镜面者":{en:"The Reflector",sub:"映照 × 转化",way:"映照他人、触发觉察",line:"先照见自己，才能稳定别人。"}
+};
+const DRIVE = {
+ "疗愈":{sub:"修复 × 陪伴",motive:"让破碎回到完整、让混乱回到安定",line:"我可以陪你走一段，但我不替你走你的人生。"},
+ "探索":{sub:"未知 × 开拓",motive:"寻找可能性、打开新路",line:"我不是要一次找对路，我要建立「找路的能力」。"},
+ "服务":{sub:"支持 × 集体",motive:"让整体变得更好",line:"我服务集体，但我不把自己当成耗材。"},
+ "守护":{sub:"稳定 × 边界",motive:"守住秩序与安全",line:"我守护底线，不替所有人担责。"},
+ "突破":{sub:"进化 × 推动",motive:"打破限制、推动进化",line:"我推动改变，但我不替不愿改的人燃烧。"},
+ "创造":{sub:"开创 × 孕育",motive:"把还不存在的东西变成现实",line:"给我空间，我就会长出答案。"},
+ "传递":{sub:"桥接 × 表达",motive:"让讯息被真正理解",line:"我负责把话讲清楚，不负责逼人接受。"},
+ "共鸣":{sub:"连结 × 放大",motive:"让人与人合拍、形成更大的协作",line:"我能带动全场，但我不把自己交给全场。"}
+};
+
+function get(key){ try{ return JSON.parse(localStorage.getItem(key)); }catch(e){ return null; } }
+/* 预览模式：report.html?demo=1 用范例资料展示完整报告长相 */
+const DEMO = new URLSearchParams(location.search).has('demo');
+const R = DEMO ? {top:"Auri'kai", sec:"Mei'hara"} : get('fc_result_root');
+const A = DEMO ? {top:"感应者", sec:"镜面者", mix:false} : get('fc_result_archetype');
+const D = DEMO ? {top:"创造", sec:"传递", low:"守护"} : get('fc_result_drive');
+
+document.getElementById('dateLine').textContent = '产生日期：' + new Date().toLocaleDateString('zh-TW') + '・频率文明 12 语根系统';
+
+const status = document.getElementById('status');
+status.innerHTML = [
+  R ? `<div class="st"><span class="ok">✓ 语根测验</span>　主语根：${R.top}</div>`
+    : `<div class="st"><span class="missing">○ 语根测验未完成</span>　<a href="test.html">去测验 →</a></div>`,
+  A ? `<div class="st"><span class="ok">✓ 内在原型测验</span>　原型：${A.top}${A.mix?` × ${A.sec}`:''}</div>`
+    : `<div class="st"><span class="missing">○ 内在原型测验未完成</span>　<a href="test-archetype.html">去测验 →</a></div>`,
+  D ? `<div class="st"><span class="ok">✓ 内在动力测验</span>　主动力：${D.top}型</div>`
+    : `<div class="st"><span class="missing">○ 内在动力测验未完成</span>　<a href="test-drive.html">去测验 →</a></div>`
+].join('');
+
+function renderCore(){
+  const core = document.getElementById('core');
+  const name = document.getElementById('pname').value.trim();
+  const who = name ? `${name}` : '这个人';
+  if(R && A && D){
+    core.innerHTML = `<div class="kicker">核心定位</div>
+      <div class="one">${who}以「${R.top}・${ROOTS[R.top].name}」的方式运作，<br>
+      在人群中自然成为「${A.top}・${ARCH[A.top].en}」，<br>
+      由「${D.top}型动力」推动——${DRIVE[D.top].motive}。</div>
+      <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">一句话整合：${who}是以<b style="color:var(--gold-soft)">${ROOTS[R.top].name}的方式</b>，以<b style="color:var(--gold-soft)">${ARCH[A.top].way}的角色</b>，去完成<b style="color:var(--gold-soft)">「${DRIVE[D.top].motive}」</b>这个内在动机。</p>`;
+  } else {
+    const done = [R,A,D].filter(Boolean).length;
+    core.innerHTML = `<div class="kicker">核心定位</div>
+      <p style="color:var(--muted);font-size:15px">已完成 ${done} / 3 个测验。三个测验都完成后，这里会自动产生整合的核心定位——语根（怎么运作）× 原型（在人群中的角色）× 动力（为什么而动）。</p>`;
+  }
+}
+renderCore();
+
+function phraseCard(r){
+  if(!r || !r.phrase || !window.FC_PHRASES || !FC_PHRASES[r.top]) return '';
+  const p = FC_PHRASES[r.top].find(x=>x[0]===r.phrase);
+  return p ? `<div class="card"><h3>频率任务语</h3><p style="font-size:16px;color:var(--gold-soft)">「${p[1]}」</p><p style="margin-top:6px">${p[0]}・144 句里属于你的那一句</p></div>` : '';
+}
+if(R){
+  document.getElementById('secRoot').innerHTML = `
+    <h2>语根｜你怎么运作</h2><div class="sub">ROOT CODE・HOW YOU OPERATE</div>
+    <div class="card"><h3>主语根：${R.top}・${ROOTS[R.top].name}</h3><p>${ROOTS[R.top].desc}</p></div>
+    ${phraseCard(R)}
+    <div class="card"><h3>副语根：${R.sec}・${ROOTS[R.sec].name}</h3><p>${ROOTS[R.sec].desc}</p><p style="margin-top:8px">主语根是最自然的启动方式，副语根是第二种运作模式，两者组合构成完整的运作风格。</p></div>`;
+} else document.getElementById('secRoot').classList.add('hidden');
+
+if(A){
+  document.getElementById('secArch').innerHTML = `
+    <h2>内在原型｜你在人群中的角色</h2><div class="sub">INNER ARCHETYPE・HOW YOU SHOW UP</div>
+    <div class="card"><h3>${A.top}・${ARCH[A.top].en}（${ARCH[A.top].sub}）${A.mix?`　×　${A.sec}・${ARCH[A.sec].en}`:''}</h3>
+    <p>在人群中的自然角色：${ARCH[A.top].way}${A.mix?`；混合 ${ARCH[A.sec].way}`:''}。</p>
+    <div class="oneliner">${ARCH[A.top].line}</div></div>`;
+} else document.getElementById('secArch').classList.add('hidden');
+
+if(D){
+  document.getElementById('secDrive').innerHTML = `
+    <h2>内在动力｜你为什么而动</h2><div class="sub">INNER DRIVE・WHY YOU MOVE</div>
+    <div class="card"><h3>主动力：${D.top}型（${DRIVE[D.top].sub}）</h3><p>核心动机：${DRIVE[D.top].motive}。</p><div class="oneliner">${DRIVE[D.top].line}</div></div>
+    <div class="card"><h3>副动力：${D.sec}型</h3><p>${DRIVE[D.sec].sub}——特定情境中会被启动的辅助动力。</p></div>
+    <div class="card"><h3>耗损警示：${D.low}型</h3><p>这是分数最低的动力模式。长期被要求以此模式运作，容易疲惫或空耗——安排位置时要避开。</p></div>`;
+} else document.getElementById('secDrive').classList.add('hidden');
+</script>
+</body>
+</html>

@@ -33,7 +33,7 @@ async function generateCardCanvas({ kicker, title, subtitle, line }, skipImage) 
     const img = await new Promise((res, rej) => {
       const i = new Image();
       i.onload = () => res(i); i.onerror = rej;
-      i.src = 'assets/Tower.png';
+      i.src = '/assets/Tower.png';
     });
     const th = 300, tw = th * (img.width / img.height);
     x.shadowColor = 'rgba(232,213,168,.6)'; x.shadowBlur = 60;

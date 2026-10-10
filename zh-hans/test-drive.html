@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>内在动力测验｜频率文明 Frequency Civilization</title>
+<meta name="description" content="24 题，找出真正推动你前进的那股力量。语根回答你怎么运作，内在动力回答你为什么愿意做。">
+<link rel="canonical" href="https://frequency-civilization.com/zh-hans/test-drive.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="内在动力测验｜频率文明 Frequency Civilization">
+<meta property="og:description" content="24 题，找出真正推动你前进的那股力量。语根回答你怎么运作，内在动力回答你为什么愿意做。">
+<meta property="og:image" content="https://frequency-civilization.com/assets/og-image.png">
+<meta property="og:url" content="https://frequency-civilization.com/zh-hans/test-drive.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090d; --bg2:#0d0f16; --card:#12141c;
+  --gold:#c9a86a; --gold-soft:#e0c894;
+  --text:#e8e6e1; --muted:#9b9890; --line:rgba(201,168,106,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.85;letter-spacing:.06em}
+h1,h2,h3{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.12em}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:.16em;color:var(--gold-soft)}
+.nav-in a.back{font-size:14px;color:var(--text);opacity:.85}
+main{padding:120px 0 90px;min-height:100vh}
+.btn{display:inline-block;padding:13px 40px;border:1px solid var(--gold);color:var(--gold-soft);font-size:15.5px;letter-spacing:.18em;border-radius:2px;background:none;cursor:pointer;transition:.25s;font-family:inherit}
+.btn:hover{background:var(--gold);color:#0d0f14}
+.btn.solid{background:var(--gold);color:#12131a;font-weight:500}
+.btn.solid:hover{background:var(--gold-soft)}
+.btn.ghost{border-color:rgba(255,255,255,.2);color:var(--muted);letter-spacing:.1em;padding:11px 26px;font-size:14px}
+.center{text-align:center}
+.intro h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:24px}
+.intro p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+.intro .box{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:24px 28px;margin:30px 0;font-size:15.5px}
+.intro .box li{margin-left:1.3em;margin-bottom:6px;color:var(--muted)}
+.progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.qnum{color:var(--gold);font-size:13.5px;letter-spacing:.25em;margin-bottom:14px}
+.qtext{font-size:clamp(19px,3vw,23px);font-family:'Noto Serif TC',serif;font-weight:500;margin-bottom:30px;line-height:1.7}
+.likert{display:grid;gap:12px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid rgba(255,255,255,.07);color:var(--text);border-radius:6px;padding:15px 20px;font-size:15.5px;font-family:inherit;letter-spacing:.03em;cursor:pointer;transition:.18s}
+.opt:hover{border-color:var(--gold);background:#1b2030}
+.quiz-foot{margin-top:26px;display:flex;justify-content:space-between;align-items:center}
+.quiz-foot .hint{font-size:12.5px;color:var(--muted);opacity:.7}
+.result .kicker{color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:16px}
+.result h1{font-size:clamp(28px,5vw,42px);margin-bottom:4px}
+.result .rname{color:var(--gold-soft);font-size:18px;letter-spacing:.25em;margin-bottom:28px}
+.result .desc{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:16.5px;text-align:left}
+.result .desc strong{color:var(--text);font-weight:500}
+.detail{max-width:620px;margin:0 auto 36px;text-align:left;display:grid;gap:16px}
+.dcard{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:20px 24px}
+.dcard h3{font-size:15.5px;color:var(--gold-soft);margin-bottom:10px;letter-spacing:.12em}
+.dcard li{margin-left:1.3em;margin-bottom:6px;font-size:14.5px;color:var(--muted)}
+.dcard p{font-size:14.5px;color:var(--muted)}
+.oneliner{border-left:3px solid var(--gold);background:var(--bg2);padding:18px 24px;font-family:'Noto Serif TC',serif;font-size:17px;color:var(--gold-soft)}
+.bars{max-width:560px;margin:0 auto 40px;text-align:left}
+.bar-row{display:grid;grid-template-columns:120px 1fr 34px;gap:12px;align-items:center;margin-bottom:9px;font-size:13.5px}
+.bar-row .rl{color:var(--muted)}
+.bar-row.top .rl{color:var(--gold-soft)}
+.bar-row.low .rl{color:#b0736a}
+.bar-track{height:8px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#8a7347,var(--gold));border-radius:99px}
+.bar-row.low .bar-fill{background:#7a5049}
+.bar-row .rv{color:var(--muted);text-align:right}
+.second{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:20px 26px;max-width:620px;margin:0 auto 16px;font-size:15px;text-align:left}
+.second b{color:var(--gold-soft);font-weight:500}
+.second.warn b{color:#c98a7e}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:36px 0 20px}
+.note{font-size:12.5px;color:var(--muted);opacity:.75;margin-top:16px}
+.hidden{display:none}
+.gate{border:1px solid rgba(201,168,106,.35);border-radius:10px;padding:34px 30px;max-width:600px;margin:10px auto 40px;background:linear-gradient(165deg,rgba(201,168,106,.08),rgba(255,255,255,.02));text-align:center}
+.gate h3{font-size:19px;margin-bottom:10px;color:var(--gold-soft)}
+.gate p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.gate input[type=email],.gate input[type=text]{width:100%;max-width:360px;padding:13px 16px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text);font-size:15px;font-family:inherit;margin-bottom:12px;letter-spacing:.04em;display:block;margin-left:auto;margin-right:auto}
+.gate input:focus{outline:none;border-color:var(--gold)}
+.gate .consent{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;text-align:left;max-width:360px;margin:6px auto 16px;line-height:1.8}
+.gate .consent input{margin-top:6px}
+.gate .gate-msg{font-size:13px;color:var(--gold-soft);margin-top:10px;min-height:1.5em}
+@media(max-width:560px){.bar-row{grid-template-columns:96px 1fr 30px}}
+</style>
+<link rel="stylesheet" href="../flow.css?v=20261010f">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+
+
+
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/test-drive.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/test-drive.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/test-drive.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}}</style><!-- /i18n-head -->
+<script>(function(){var P=[["\u884c\u52a8\u8005", "\u884c\u52d5\u8005"], ["\u7597\u6108\u8005", "\u7642\u7652\u8005"], ["\u6559\u5bfc\u8005", "\u6559\u5c0e\u8005"], ["\u611f\u5e94\u8005", "\u611f\u61c9\u8005"], ["\u6d1e\u89c1\u8005", "\u6d1e\u898b\u8005"], ["\u955c\u9762\u8005", "\u93e1\u9762\u8005"], ["\u7597\u6108", "\u7642\u7652"], ["\u63a2\u7d22", "\u63a2\u7d22"], ["\u670d\u52a1", "\u670d\u52d9"], ["\u5b88\u62a4", "\u5b88\u8b77"], ["\u7a81\u7834", "\u7a81\u7834"], ["\u521b\u9020", "\u5275\u9020"], ["\u4f20\u9012", "\u50b3\u905e"], ["\u5171\u9e23", "\u5171\u9cf4"]];function s2t(v){P.forEach(function(p){v=v.split(p[0]).join(p[1]);});return v;}function t2s(v){P.forEach(function(p){v=v.split(p[1]).join(p[0]);});return v;}window.FC_CANON=function(o){return JSON.parse(s2t(JSON.stringify(o)));};window.FC_T2S=function(o){return JSON.parse(t2s(JSON.stringify(o)));};var S=Storage.prototype,g=S.getItem,st=S.setItem;S.getItem=function(k){var v=g.call(this,k);return (v&&/^fc_result_/.test(k))?t2s(v):v;};S.setItem=function(k,v){return st.call(this,k,/^fc_result_/.test(k)?s2t(String(v)):v);};})();</script>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <a class="logo" href="index.html" style="color:var(--gold-soft)">频率文明 FREQUENCY CIVILIZATION</a>
+  
+  
+  
+  <!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../test-drive.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/test-drive.html" hreflang="zh-Hans" lang="zh-Hans" class="on">简中</a><a href="../en/index.html" hreflang="en" lang="en">EN</a></div><!-- /i18n-switch -->
+  <a class="back" href="tests.html">← 回三大测验</a>
+</div></nav>
+
+<main><div class="wrap">
+
+  <div id="intro" class="intro">
+    <div id="flowBadge" style="margin-bottom:22px"></div>
+    <h1>内在动力测验</h1>
+    <p>找出真正推动你前进的那股力量。</p>
+    <p>语根回答的是：你会什么、你怎么运作。<br>内在动力回答的是：你为什么愿意做、你如何被推动。</p>
+    <div class="box">
+      <ul>
+        <li>共 24 题，约 5 分钟。</li>
+        <li>请依照「你多数时候的真实状态」作答，而非理想中的自己。</li>
+        <li>每题从「非常不符合」到「非常符合」五个程度中选一个。</li>
+        <li>结果会告诉你：主动力、副动力，以及要留意的耗损模式。</li>
+      </ul>
+    </div>
+    <div class="center"><button class="btn solid" onclick="startQuiz()">开始作答</button></div>
+    <p class="note center">本测验为教育与自我认知工具，不具医疗或心理诊断性质。</p>
+  </div>
+
+  <div id="quiz" class="hidden">
+    <div class="progress"><i id="pbar" style="width:0%"></i></div>
+    <div class="qnum" id="qnum"></div>
+    <div class="qtext" id="qtext"></div>
+    <div class="likert" id="opts"></div>
+    <div class="quiz-foot">
+      <button class="btn ghost" id="backBtn" onclick="goBack()">上一题</button>
+      <div class="hint">选「真实的你」，不是「理想的你」</div>
+    </div>
+  </div>
+
+  <div id="result" class="result center hidden">
+    <div class="kicker">YOUR PRIMARY DRIVE</div>
+    <h1 id="rcode"></h1>
+    <div class="rname" id="rname"></div>
+    <p class="desc" id="rdesc"></p>
+    <div id="chain"></div>
+    <div class="detail" id="rdetail"></div>
+    <div id="gateBox"></div>
+    <div id="deep" class="hidden">
+      <div class="bars" id="bars"></div>
+      <div class="second" id="rsecond"></div>
+    </div>
+    <div class="second warn" id="rlow"></div>
+    <div id="cardBox" style="margin:30px 0 8px"></div>
+    <div class="cta-row">
+      <button class="btn solid" onclick="makeMyCard()">产生我的角色卡</button>
+      <button class="btn" onclick="shareResult()">一键分享我的结果</button>
+            <a class="btn" href="https://lin.ee/pKlS7Yv" id="lineBtn" target="_blank" rel="noopener">加入官方 LINE 深入了解</a>
+      <button class="btn ghost" onclick="restart()">重新测验</button>
+    </div>
+    <p class="note" id="shareHint"></p>
+    <p class="note">这不是测你适合做什么，而是帮你找回：是什么在真正推动你。</p>
+    <p class="note">做完三个测验了吗？<a href="report.html">产生你的个人原型报告书 →</a></p>
+  </div>
+
+  <div id="shared" class="result center hidden">
+    <div class="kicker">SHARED RESULT</div>
+    <p class="desc" style="text-align:center;margin-bottom:10px">你的朋友的主要内在动力是</p>
+    <h1 id="scode"></h1>
+    <p class="desc" id="sdesc" style="text-align:center"></p>
+    <div class="cta-row">
+      <button class="btn solid" onclick="fromShared()">我也要测我的内在动力</button>
+      <a class="btn" href="index.html">认识频率文明</a>
+    </div>
+  </div>
+
+</div></main>
+
+<script>
+const SCALE = ["非常不符合","不太符合","普通","符合","非常符合"];
+
+const TYPES = {
+ "疗愈":{sub:"修复 × 陪伴",
+  desc:"你的推进力来自修复与安定。当人或场域因为你的陪伴而稳下来，你会自然有力。<strong>你不是靠冲刺推进，而是靠「稳住」推进。</strong>",
+  high:["你一进场，环境就开始降噪：人变得能呼吸、能说实话","擅长听懂情绪背后真正的需求，把「痛」翻译成可被照顾的语言","你带来的是可持续的安定，不是一时的激情"],
+  warn:["过度承接：把别人的情绪或问题当成自己的责任","因为心软而拖延结束关系或合作","一直在照顾别人却很少被照顾，最后变麻木或爆炸"],
+  fix:["先界线，才陪伴：先讲清楚「我能做什么、不能做什么」","以陪伴取代拯救：你提供稳定，不提供替代人生","固定回收：每次高强度陪伴后，留 15 分钟安静、走路或呼吸"],
+  roles:"陪伴型咨询、教练、客户关系与售后、团队稳定器、危机安抚与修复流程",
+  line:"我可以陪你走一段，但我不替你走你的人生。"},
+ "探索":{sub:"未知 × 开拓",
+  desc:"你被未知与可能性推动。新事物会点燃你，长期停滞会消耗你。<strong>你不是为了安全而活，你是为了可能性而活。</strong>",
+  high:["超会找路：资源、人脉、方法、路径，你总能挖出新选项","擅长从不确定中抓出可实验的下一步","你最强的不是结论，而是探索的流程"],
+  warn:["一直开新坑、一直不收敛：灵感很多但落地很少","容易对例行与维持感到烦躁，然后直接放弃","用探索逃避真正需要承诺的选择"],
+  fix:["用「实验」取代「承诺焦虑」：把新方向变成 7–14 天小实验","设定探索配额：同时间只允许一到两个探索轴","配一个稳定型的伙伴或流程，帮你收敛与落地"],
+  roles:"新产品/新市场开拓、研究、策略、跨域整合、创新专案先锋、商模验证",
+  line:"我不是要一次找对路，我要建立「找路的能力」。"},
+ "服务":{sub:"支持 × 集体",
+  desc:"你因「让整体变更好」而有力。<strong>你推进的燃料是贡献感与被需要感。</strong>",
+  high:["很会把资源配置到真正需要的地方","能把个人能力放进系统，让一群人跑得更顺","做事重视有用与可持续，不做表面"],
+  warn:["一直答应、一直扛：把自己放在最后","害怕拒绝导致过载，最后变成怨或冷","只在被需要时才觉得自己有价值"],
+  fix:["把服务变成可计价、可交换：你需要清楚的价值回馈机制","先照顾核心需求：睡眠、界线、时间是你的续航","练习有限度的善：我愿意帮，但我不燃烧"],
+  roles:"营运、专案管理、社群与客户成功、团队支援、流程设计、教育支持",
+  line:"我服务集体，但我不把自己当成耗材。"},
+ "守护":{sub:"稳定 × 边界",
+  desc:"你被秩序与安全感推动。<strong>你推进的方式是守住底盘，让事情不崩、让系统可靠。</strong>",
+  high:["能预防问题，而不是等出事才补救","擅长制度、规范、风险控管与品质把关","你是让团队放心的人：有你在就不会乱"],
+  warn:["过度控制：把安全感建立在「一切都要照我」","对不确定高度焦虑，对创新天然排斥","不敢授权，最后全部卡在你身上"],
+  fix:["先授权，再守护：谁负责、谁决策、谁承担要写清楚","让规则服务目标，而不是让目标服务规则","定期更新边界：你守护的是底线，不是所有人的情绪"],
+  roles:"法务/合规、财务、品管、资安、制度建构、风险管理",
+  line:"我守护底线，不替所有人担责。"},
+ "突破":{sub:"进化 × 推动",
+  desc:"你为进化而动。你天生会看到「哪里该改」，并且有推动力。<strong>转型与改革能启动你。</strong>",
+  high:["能在卡关处切出新路径","面对阻力更清醒：越难越能打出解法","擅长改革流程、砍掉无效、推进转型"],
+  warn:["对「慢」没耐性，容易把人当成障碍","常变成独自冲锋的那个，最后心累","为不想改变的人长期燃烧，变成愤怒与失望"],
+  fix:["先确认对方是否愿意改，再投入","突破要有补给：安排休息、同盟与资源","设计转型节奏：不是一直推，是推—稳—再推"],
+  roles:"转型顾问、改革推进者、危机处理、商模重构、组织升级、流程再造",
+  line:"我推动改变，但我不替不愿改的人燃烧。"},
+ "创造":{sub:"开创 × 孕育",
+  desc:"你因创造新局而活。把「还不存在的东西」变成现实，会让你充满动力。<strong>从 0 到 1 是你最有力的位置。</strong>",
+  high:["能把抽象想法变成具体雏形","很会开新局：新产品、新内容、新体验","你需要的是空间、素材、时间，而不是催促"],
+  warn:["被逼产出会干掉：越被追越生不出来","没有输入就硬输出，会变得空洞与厌世","长期做维持与收尾的工作会让你失去动力"],
+  fix:["固定创造时段（不被打扰）＋固定输入时段","找一个擅长执行与收敛的伙伴帮你落地","把创造拆成：灵感→雏形→迭代→上线，不要一次到位"],
+  roles:"产品创新、品牌内容、课程设计、研发、艺术创作、体验设计",
+  line:"给我空间，我就会长出答案。"},
+ "传递":{sub:"桥接 × 表达",
+  desc:"你被「让讯息被理解」驱动。你是天生的转译器——<strong>你不是爱说话，你是爱「让对方懂」。</strong>",
+  high:["很会把复杂变简单、把抽象变可操作","擅长教学、内容、演讲、桥接不同圈层","让知识变得可用，让人跨过理解的鸿沟"],
+  warn:["对不愿接收的人耗太久，开始自我怀疑","一直输出但没有回馈，最后枯竭","太想讲清楚反而讲太多，讯息失焦"],
+  fix:["选择受众：只对愿意接收的人开麦","先框架后细节：一句话结论→三个重点→例子","设计回馈回路：你需要「被理解的证据」"],
+  roles:"讲师、教练、内容创作者、销售沟通、跨部门协调、知识产品设计",
+  line:"我负责把话讲清楚，不负责逼人接受。"},
+ "共鸣":{sub:"连结 × 放大",
+  desc:"你因连结与共振而前进。<strong>你推进的方式是让人与人合拍，形成更大的协作网络。</strong>",
+  high:["能把分散的人串成网，让合作自然发生","能读到现场的情绪与需求，调出共识","你是放大器：让好的东西被看见、被传出去"],
+  warn:["承接太多集体情绪：情绪波动、疲惫、失眠","容易被群体气氛牵着跑，失去自己的中心","在关系里过度共振，忘记界线"],
+  fix:["先回到自己、再连结：每天安排安静、运动或独处的时间","设定承接量：人多的场合要安排恢复时间","练习「不共振也可以关心」：你不需要承担才能爱人"],
+  roles:"社群经营、商务拓展、活动策划、关系设计、品牌扩散、团队氛围营造",
+  line:"我能带动全场，但我不把自己交给全场。"}
+};
+
+const QUESTIONS = [
+ {t:"疗愈",q:"当身边的人情绪被安抚、状态变稳，我会感到深层的满足。"},
+ {t:"疗愈",q:"即使没有回报，只要能陪伴他人走过低谷，我就愿意付出。"},
+ {t:"疗愈",q:"我很容易感受到他人或空间中未被说出口的痛。"},
+ {t:"探索",q:"一成不变的生活会让我快速失去动力。"},
+ {t:"探索",q:"新领域、新方法、新可能，会自然吸引我靠近。"},
+ {t:"探索",q:"尝试未知，比把旧事做到完美更让我有活力。"},
+ {t:"服务",q:"只要整体能变得更好，我愿意先放下自己的需求。"},
+ {t:"服务",q:"被需要，会让我感到自己是有价值的。"},
+ {t:"服务",q:"我很自然会注意到谁需要被支援或补位。"},
+ {t:"守护",q:"当环境稳定、有秩序，我会感到安心。"},
+ {t:"守护",q:"我对界线是否被侵犯、秩序是否被破坏特别敏感。"},
+ {t:"守护",q:"面对混乱时，我会本能地想把局面稳住。"},
+ {t:"突破",q:"一看到限制或卡关，我就会想挑战它。"},
+ {t:"突破",q:"我宁愿冒风险，也不想停在原地不变。"},
+ {t:"突破",q:"推动改变，比维持现况更让我有生命力。"},
+ {t:"创造",q:"把「还不存在的东西」变成现实，会让我充满活力。"},
+ {t:"创造",q:"我常同时看到多种可能，并想把它们实际做出来。"},
+ {t:"创造",q:"当我在创造新局时，时间感会消失。"},
+ {t:"传递",q:"把重要的概念或讯息说清楚，对我来说很重要。"},
+ {t:"传递",q:"我常被放在「解释、转译、连结不同观点」的位置。"},
+ {t:"传递",q:"当我的话被真正理解时，我会感到被点亮。"},
+ {t:"共鸣",q:"我很容易感受到人群或场域中的气氛变化。"},
+ {t:"共鸣",q:"当大家处在同一个节奏时，我会特别有力量。"},
+ {t:"共鸣",q:"我喜欢创造能让人彼此靠近、产生连结的空间。"}
+];
+
+let idx = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let myTop = null;
+let qorder = QUESTIONS.map((_,i)=>i);
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function strongLine(desc){ const m = desc.match(/<strong>(.*?)<\/strong>/); return m ? m[1] : desc.replace(/<[^>]+>/g,''); }
+let inTiebreak = false, scoresG = null;
+/* 最高分同分时，让本人从同分的几句话里选一句 */
+function showTiebreak(cands, done){
+  inTiebreak = true;
+  document.getElementById('pbar').style.width = '100%';
+  document.getElementById('qnum').textContent = '同分决胜';
+  document.getElementById('qtext').textContent = '这几句话，哪一句最像你？';
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  shuffle(cands.slice()).forEach(t=>{
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = strongLine(TYPES[t].desc);
+    b.onclick = ()=>{ inTiebreak = false; done(t); };
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = 'visible';
+  window.scrollTo({top:0});
+}
+
+function startQuiz(){
+  qorder = shuffle(QUESTIONS.map((_,i)=>i));  /* 题目顺序打散，不再同一类连着出 */
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  render(); window.scrollTo({top:0});
+}
+function render(){
+  inTiebreak = false;
+  const q = QUESTIONS[qorder[idx]];
+  document.getElementById('pbar').style.width = (idx/QUESTIONS.length*100)+'%';
+  document.getElementById('qnum').textContent = `第 ${idx+1} 题 / 共 ${QUESTIONS.length} 题`;
+  document.getElementById('qtext').textContent = q.q;
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  SCALE.forEach((s,i)=>{
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.textContent = `${i+1}・${s}`;
+    b.onclick = ()=>choose(i+1);
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = idx===0 ? 'hidden':'visible';
+}
+function choose(v){
+  answers[qorder[idx]] = v;
+  if(idx < QUESTIONS.length-1){ idx++; render(); window.scrollTo({top:0}); }
+  else finish();
+}
+function goBack(){ if(inTiebreak){ inTiebreak=false; render(); return; } if(idx>0){ idx--; render(); } }
+
+function finish(){
+  scoresG = {};
+  Object.keys(TYPES).forEach(t=>scoresG[t]=0);
+  QUESTIONS.forEach((q,i)=>{ if(answers[i]!=null) scoresG[q.t] += answers[i]; });
+  const keys = Object.keys(TYPES);
+  const max = Math.max(...keys.map(t=>scoresG[t]));
+  const cands = keys.filter(t=>scoresG[t]===max);
+  if(cands.length > 1) showTiebreak(cands, finalize); else finalize(cands[0]);
+}
+function finalize(top){
+  const scores = scoresG;
+  const sorted = shuffle(Object.entries(scores)).sort((a,b)=>b[1]-a[1]);
+  sorted.unshift(sorted.splice(sorted.findIndex(x=>x[0]===top),1)[0]);
+  const [sec] = sorted[1], [low] = sorted[sorted.length-1];
+  myTop = top;
+  try{ localStorage.setItem('fc_result_drive', JSON.stringify({top, sec, low, scores, ts:Date.now()})); }catch(e){}
+  const T = TYPES[top];
+  document.getElementById('quiz').classList.add('hidden');
+  document.getElementById('rcode').textContent = top + '型动力';
+  document.getElementById('rname').textContent = T.sub;
+  document.getElementById('rdesc').innerHTML = T.desc;
+  const det = document.getElementById('rdetail');
+  det.innerHTML = `
+    <div class="dcard"><h3>你的高效状态</h3><ul>${T.high.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>失衡警讯</h3><ul>${T.warn.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>校准方法</h3><ul>${T.fix.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>适合的角色与任务</h3><p>${T.roles}</p></div>
+    <div class="oneliner">${T.line}</div>`;
+  const bars = document.getElementById('bars');
+  bars.innerHTML = '';
+  sorted.forEach(([t,v],i)=>{
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (i===0?' top':'') + (t===low?' low':'');
+    row.innerHTML = `<div class="rl">${t}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/15*100)}%"></div></div>
+      <div class="rv">${v}</div>`;
+    bars.appendChild(row);
+  });
+  document.getElementById('rsecond').innerHTML =
+    `你的副动力是 <b>${sec}型（${TYPES[sec].sub}）</b>——在特定情境中会被启动的辅助动力。主动力是你最自然、最不费力的推进方式，两者的组合决定你的行动风格。`;
+  document.getElementById('rlow').innerHTML =
+    `耗损警示：<b>${low}型</b>是你分数最低的动力。长期被要求用这种模式运作，你容易感到疲惫或空耗——这不是缺陷，是提醒你别把自己放错位置。`;
+  document.getElementById('result').classList.remove('hidden');
+  if(window.FC) FC.resultReady('drive', {answers, scores, top, second:sec});
+  renderChain();
+  window.scrollTo({top:0});
+}
+function renderChain(){ if(window.FCFlow) FCFlow.renderNext('chain','fc_result_drive'); }
+function restart(){
+  idx = 0; answers = new Array(QUESTIONS.length).fill(null);
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+
+/* 角色卡 */
+function makeMyCard(){
+  if(!myTop) return;
+  const T = TYPES[myTop];
+  showRoleCard({kicker:'INNER DRIVE', title:myTop+'型动力', subtitle:T.sub, line:T.line}, 'cardBox', '我的内在动力卡.png');
+}
+
+/* 分享 */
+const TYPE_KEYS = Object.keys(TYPES);
+function shareResult(){
+  if(!myTop) return;
+  const url = location.origin.startsWith('http')
+    ? location.origin + location.pathname + '?d=' + TYPE_KEYS.indexOf(myTop)
+    : 'https://www.frequency-civilization.com/test-drive.html?d=' + TYPE_KEYS.indexOf(myTop);
+  const text = `我的主要内在动力是「${myTop}型」（${TYPES[myTop].sub}）！\n来测测是什么在推动你：`;
+  if(navigator.share){
+    navigator.share({title:'我的内在动力测验结果', text, url}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text + '\n' + url).then(()=>{
+      document.getElementById('shareHint').textContent = '分享文字已复制，贴到任何地方都可以！';
+    });
+  }
+}
+function fromShared(){
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+(function(){
+  const p = new URLSearchParams(location.search);
+  if(p.has('d')){
+    const i = parseInt(p.get('d'),10);
+    if(i>=0 && i<TYPE_KEYS.length){
+      const t = TYPE_KEYS[i];
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('scode').textContent = t + '型动力';
+      document.getElementById('sdesc').innerHTML = TYPES[t].sub + '——' + TYPES[t].desc;
+      document.getElementById('shared').classList.remove('hidden');
+    }
+  }
+})();
+</script>
+<script src="flow.js?v=20261010f"></script>
+<script>if(window.FCFlow) FCFlow.introBadge('flowBadge','fc_result_drive');</script>
+<script src="fc.js?v=20261010f"></script><script>if(window.FC&&window.FC_T2S){var _rpc=FC.rpc;FC.rpc=function(n,a){return _rpc(n,a).then(function(d){return FC_T2S(d);});};}</script>
+<script src="card.js"></script>
+</body>
+</html>

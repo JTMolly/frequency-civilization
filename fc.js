@@ -48,6 +48,7 @@
   /* 測驗完成：匿名先收一筆（就算不留 email，數據也不會流失） */
   function trackResult(test, data){
     try{
+      if(window.FC_CANON) data = window.FC_CANON(data);  /* 其他語言版本：結果代號一律存成繁體 */
       insert('test_results', {
         session_id: sid(),
         test: test,
