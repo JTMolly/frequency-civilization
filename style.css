@@ -556,3 +556,9 @@ body.root-page .root-hero .motto{font-family:'Noto Serif TC',serif;font-style:it
 .combo-light .combo-eq .total b{color:var(--text);text-shadow:none}
 .combo-light .combo{margin-top:0}
 @media (max-width:860px){.combo-eq b{font-size:34px}.combo-eq .total b{font-size:50px}.combo-eq i{padding-bottom:22px}}
+
+/* 6,336 區塊下的「看頻率網格」連結 */
+.combo-more{margin-top:22px;font-size:14px;letter-spacing:.16em}
+.combo-more a{color:var(--night-gold-soft);border-bottom:1px solid rgba(232,213,168,.35);padding-bottom:3px;transition:.3s}
+.combo-more a:hover{border-color:var(--night-gold-soft)}
+.combo-light .combo-more a{color:var(--gold-soft);border-color:var(--line)}

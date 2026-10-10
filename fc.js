@@ -28,6 +28,19 @@
     });
   }
 
+  /* 呼叫資料庫函式（例如網格統計 grid_stats，只回傳人數統計） */
+  function rpc(name, args){
+    return fetch(SUPA_URL + '/rest/v1/rpc/' + name, {
+      method:'POST',
+      headers:{
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(args || {})
+    }).then(function(r){ if(!r.ok) throw new Error('rpc ' + r.status); return r.json(); });
+  }
+
   /* 測驗完成：匿名先收一筆（就算不留 email，數據也不會流失） */
   function trackResult(test, data){
     try{
@@ -38,6 +51,8 @@
         scores: data.scores || null,
         top_result: data.top || null,
         second_result: data.second || null,
+        version: data.version || null,
+        phrase_code: data.phrase || null,
         email: getEmail() || null,
         referrer: document.referrer || null,
         page: location.pathname,
@@ -74,7 +89,7 @@
       '<form onsubmit="return FC._unlock(this, \'' + test + '\')">' +
       '<input type="text" name="nickname" placeholder="暱稱（選填）">' +
       '<input type="email" name="email" placeholder="你的 email" required>' +
-      '<label class="consent"><input type="checkbox" required> 我同意接收測驗結果與相關內容，並已閱讀<a href="privacy.html" target="_blank">隱私權政策</a>（隨時可取消訂閱）。</label>' +
+      '<label class="consent"><input type="checkbox" required><span>我同意接收測驗結果與相關內容，並已閱讀<a href="privacy.html" target="_blank">隱私權政策</a>（隨時可取消訂閱）。</span></label>' +
       '<button class="btn solid" type="submit" style="letter-spacing:.2em">解鎖完整解讀</button>' +
       '<div class="gate-msg"></div>' +
       '</form></div>';
@@ -90,13 +105,13 @@
       const deep = document.getElementById('deep');
       const gate = document.getElementById('gateBox');
       if(deep) deep.classList.remove('hidden');
-      if(gate) gate.innerHTML = '<p class="note" style="opacity:.8">已解鎖。結果整理會寄到 ' + email + '。</p>';
+      if(gate) gate.innerHTML = '<p class="note" style="opacity:.8">已解鎖，謝謝你。</p>';
       if(deep) deep.scrollIntoView({behavior:'smooth', block:'start'});
     });
     return false;
   }
 
-  window.FC = { sid, insert, trackResult, saveEmail, getEmail, setEmail, resultReady, _unlock };
+  window.FC = { sid, insert, rpc, trackResult, saveEmail, getEmail, setEmail, resultReady, _unlock };
 })();
 
 /* footer 電子報訂閱 */
@@ -105,11 +120,15 @@ function fcNewsletter(form){
   const box = form.parentElement.querySelector('.nl-msg');
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ if(box) box.textContent = 'email 格式看起來不對。'; return false; }
   if(box) box.textContent = '送出中…';
-  FC.saveEmail(email, 'newsletter:' + location.pathname).then(function(){
-    if(box) box.textContent = '訂閱成功，歡迎加入。';
-    form.reset();
+  FC.saveEmail(email, 'newsletter:' + location.pathname).then(function(res){
+    if(res.ok || res.status === 409){ /* 409＝這個 email 已經訂閱過 */
+      if(box) box.textContent = '訂閱成功，歡迎加入。';
+      form.reset();
+    }else{
+      if(box) box.textContent = '暫時送不出去，請稍後再試一次。';
+    }
   }).catch(function(){
-    if(box) box.textContent = '訂閱成功，歡迎加入。'; /* 重複訂閱等錯誤不阻擋使用者 */
+    if(box) box.textContent = '網路好像不太穩，請稍後再試一次。';
   });
   return false;
 }

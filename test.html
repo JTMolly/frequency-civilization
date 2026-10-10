@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>語根測驗｜頻率文明 Frequency Civilization</title>
-<meta name="description" content="37 題情境選擇，約 10 分鐘，找出你的主語根——你在感知、決策、互動與創造上最自然的運作模式。">
+<meta name="description" content="24 題生活情境，約 5 分鐘，找出你的主語根——你在感知、決策、互動與創造上最自然的運作模式。最後再選一句最像你的頻率任務語。">
 <link rel="canonical" href="https://frequency-civilization.com/test.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +21,9 @@ h1,h2,h3{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.12em}
 a{color:var(--gold);text-decoration:none}
 .wrap{max-width:720px;margin:0 auto;padding:0 22px}
 nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:.16em;color:var(--gold-soft)}
-.nav-in a.back{font-size:14px;color:var(--text);opacity:.85}
+.nav-in a.back{font-size:14px;color:var(--text);opacity:.85;white-space:nowrap}
 main{padding:120px 0 90px;min-height:100vh}
 .btn{display:inline-block;padding:13px 40px;border:1px solid var(--gold);color:var(--gold-soft);font-size:15.5px;letter-spacing:.18em;border-radius:2px;background:none;cursor:pointer;transition:.25s;font-family:inherit}
 .btn:hover{background:var(--gold);color:#0d0f14}
@@ -40,17 +40,28 @@ main{padding:120px 0 90px;min-height:100vh}
 .progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
 .progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
 .qnum{color:var(--gold);font-size:13.5px;letter-spacing:.25em;margin-bottom:14px}
-.qtext{font-size:clamp(19px,3vw,23px);font-family:'Noto Serif TC',serif;font-weight:500;margin-bottom:30px;line-height:1.7}
+.qtext{font-size:clamp(19px,3vw,23px);font-family:'Noto Serif TC',serif;font-weight:500;margin-bottom:12px;line-height:1.7}
+.qsub{color:var(--muted);font-size:14.5px;margin-bottom:26px}
+.qtext + #opts{margin-top:18px}
 .opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid rgba(255,255,255,.07);color:var(--text);border-radius:6px;padding:16px 20px;font-size:15.5px;font-family:inherit;letter-spacing:.03em;line-height:1.7;cursor:pointer;margin-bottom:12px;transition:.18s}
 .opt:hover{border-color:var(--gold);background:#1b2030}
-.quiz-foot{margin-top:26px;display:flex;justify-content:space-between;align-items:center}
-.quiz-foot .hint{font-size:12.5px;color:var(--muted);opacity:.7}
+.opt.none{background:none;border-style:dashed;border-color:rgba(255,255,255,.14);color:var(--muted);font-size:14.5px}
+.opt.picked{border-color:var(--gold);background:#1b2030}
+.opt.phrase{font-family:'Noto Serif TC',serif;font-weight:500;font-size:16px}
+.quiz-foot{margin-top:26px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.quiz-foot .hint{font-size:12.5px;color:var(--muted);opacity:.7;text-align:right}
+.quiz-foot .btn{white-space:nowrap;flex:none}
 /* result */
 .result .kicker{color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:16px}
 .result h1{font-size:clamp(30px,5vw,44px);margin-bottom:4px}
 .result .rname{color:var(--gold-soft);font-size:20px;letter-spacing:.3em;margin-bottom:28px}
 .result .desc{max-width:600px;margin:0 auto 40px;color:var(--muted);font-size:16.5px}
 .result .desc strong{color:var(--text);font-weight:500}
+.mission{max-width:600px;margin:0 auto 22px;border:1px solid rgba(201,168,106,.4);border-radius:10px;padding:26px 28px;background:linear-gradient(165deg,rgba(201,168,106,.1),rgba(255,255,255,.02))}
+.mission .mk{font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px}
+.mission .mt{font-family:'Noto Serif TC',serif;font-size:clamp(18px,3vw,21px);color:var(--gold-soft);line-height:1.75}
+.mission .mc{font-size:12.5px;color:var(--muted);margin-top:10px;letter-spacing:.12em}
+.gridline{font-size:14.5px;color:var(--muted);margin:0 auto 40px;max-width:600px}
 .bars{max-width:560px;margin:0 auto 44px;text-align:left}
 .bar-row{display:grid;grid-template-columns:150px 1fr 30px;gap:12px;align-items:center;margin-bottom:9px;font-size:13.5px}
 .bar-row .rl{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -72,7 +83,12 @@ main{padding:120px 0 90px;min-height:100vh}
 .gate .consent{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;text-align:left;max-width:360px;margin:6px auto 16px;line-height:1.8}
 .gate .consent input{margin-top:6px}
 .gate .gate-msg{font-size:13px;color:var(--gold-soft);margin-top:10px;min-height:1.5em}
-@media(max-width:560px){.bar-row{grid-template-columns:110px 1fr 28px}}
+@media(max-width:560px){
+  .bar-row{grid-template-columns:110px 1fr 28px}
+  .logo{font-size:13px;letter-spacing:.1em}
+  .btn{padding:13px 28px}
+  .mission{padding:22px 20px}
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
@@ -89,17 +105,19 @@ main{padding:120px 0 90px;min-height:100vh}
   <!-- intro -->
   <div id="intro" class="intro">
     <h1>語根測驗</h1>
-    <p>這份測驗會透過 37 個生活情境，找出你在感知、決策、互動與創造上最自然的運作模式——你的主語根。</p>
+    <p>這份測驗會透過 24 個生活情境，找出你在感知、決策、互動與創造上最自然的運作模式——你的主語根。</p>
+    <p>做完之後，再從 12 句話裡憑直覺選一句最像你的。同一個主語根的人，想用力的方向也不一樣。</p>
     <div class="box">
       <ul>
-        <li>約需 10 分鐘，共 37 題。</li>
-        <li>沒有對錯，也沒有好壞，選「最像你」的反應，而不是「你希望自己是」的樣子。</li>
+        <li>共 24 題，約 5 分鐘。</li>
+        <li>每題都有「這幾個都不像我」，真的不像就選它，不用勉強。</li>
+        <li>沒有對錯，也沒有好壞。選「最像你」的反應，而不是「你希望自己是」的樣子。</li>
         <li>憑第一直覺作答，不要想太久。</li>
-        <li>結果只呈現給你自己，作為認識自己的起點。</li>
+        <li>結果會匿名計入<a href="grid.html">頻率網格</a>的統計，只算人數，不含任何個人資料。</li>
       </ul>
     </div>
     <div class="center"><button class="btn solid" onclick="startQuiz()">開始作答</button></div>
-    <p class="note center">本測驗為教育與自我認知工具，不具醫療或心理診斷性質。</p>
+    <p class="note center">本測驗為教育與自我認知工具，不具醫療或心理診斷性質。12 語根是我們整理中的工作模型，仍在持續驗證。</p>
   </div>
 
   <!-- quiz -->
@@ -107,10 +125,11 @@ main{padding:120px 0 90px;min-height:100vh}
     <div class="progress"><i id="pbar" style="width:0%"></i></div>
     <div class="qnum" id="qnum"></div>
     <div class="qtext" id="qtext"></div>
+    <div class="qsub hidden" id="qsub"></div>
     <div id="opts"></div>
     <div class="quiz-foot">
       <button class="btn ghost" id="backBtn" onclick="goBack()">上一題</button>
-      <div class="hint">憑直覺選，不要想太久</div>
+      <div class="hint" id="hint">憑直覺選，不要想太久</div>
     </div>
   </div>
 
@@ -120,6 +139,12 @@ main{padding:120px 0 90px;min-height:100vh}
     <h1 id="rcode"></h1>
     <div class="rname" id="rname"></div>
     <p class="desc" id="rdesc"></p>
+    <div class="mission hidden" id="mission">
+      <div class="mk">你的頻率任務語</div>
+      <div class="mt" id="mtext"></div>
+      <div class="mc" id="mcode"></div>
+    </div>
+    <p class="gridline" id="gridline">你已經在頻率網格裡點亮了一格。<a href="grid.html">看看現在亮了多少 →</a></p>
     <div id="gateBox"></div>
     <div id="deep" class="hidden">
       <div class="bars" id="bars"></div>
@@ -130,7 +155,7 @@ main{padding:120px 0 90px;min-height:100vh}
     <div class="cta-row">
       <button class="btn solid" onclick="makeMyCard()">產生我的角色卡</button>
       <button class="btn" onclick="shareResult()">一鍵分享我的結果</button>
-            <a class="btn" href="https://lin.ee/pKlS7Yv" id="lineBtn" target="_blank" rel="noopener">加入官方 LINE 深入了解</a>
+      <a class="btn" href="https://lin.ee/pKlS7Yv" id="lineBtn" target="_blank" rel="noopener">加入官方 LINE 深入了解</a>
       <button class="btn ghost" onclick="restart()">重新測驗</button>
     </div>
     <p class="note" id="rootLink" style="font-size:14.5px"></p>
@@ -155,7 +180,13 @@ main{padding:120px 0 90px;min-height:100vh}
 </div></main>
 
 <script>
-const QUESTIONS = [{"n": 1, "q": "當你接收到一個模糊的想法或方向時，你最想做的是？", "opts": [{"t": "找出它的邏輯結構與可執行步驟", "r": "Sa'karan"}, {"t": "感受它可能為團隊帶來的共同方向感", "r": "Valtara"}, {"t": "觀察這個想法與過去經驗的關聯與演變", "r": "Kuthari"}, {"t": "先安靜下來，讓更多細節自然浮現", "r": "Auri'kai"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 2, "q": "你在團隊中最常自然扮演的角色是？", "opts": [{"t": "把大家的想法整理成系統或結構", "r": "Sa'karan"}, {"t": "留意每個人當下的情緒與狀態", "r": "Elariah"}, {"t": "激發大家採取實際行動並推進節奏", "r": "Rohen'dal"}, {"t": "提出未來方向與願景藍圖", "r": "Nael'tu"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 3, "q": "當你參與一個新計畫時，你最在意的事情是？", "opts": [{"t": "是否有清楚邏輯與可執行的架構", "r": "Sa'karan"}, {"t": "是否能營造開放、有活力的氛圍", "r": "Ori'shan"}, {"t": "是否符合你的直覺與真實感受", "r": "Mei'hara"}, {"t": "是否能引發他人的反思與改變", "r": "Thaleon"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 4, "q": "當你感覺到身邊有人情緒不穩時，你會？", "opts": [{"t": "自然靠近，讓對方有安全感說出真心話", "r": "Elariah"}, {"t": "判斷現場是否需要你出手協助推進", "r": "Rohen'dal"}, {"t": "默默觀察，協助穩定氛圍不擴散", "r": "Zae'rah"}, {"t": "留意背後是否有更深層、還沒說出口的原因", "r": "Auri'kai"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 5, "q": "在朋友遇到人生困境時，你最可能會說：", "opts": [{"t": "「我懂你在痛什麼，我陪你一起面對就好。」", "r": "Elariah"}, {"t": "「我們來看這件事為什麼會發生，背後有什麼模式。」", "r": "Thaleon"}, {"t": "「也許你需要先換個空間、換個節奏重新整理一下。」", "r": "Zae'rah"}, {"t": "「這其實在提醒你，該調整方向了。」", "r": "Nael'tu"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 6, "q": "以下哪句話最能代表你的內在？", "opts": [{"t": "「我不怕深，我只怕沒有人願意誠實地陪我待在那裡。」", "r": "Elariah"}, {"t": "「我來到這裡，是為了說出還沒被說出口的真實。」", "r": "Thaleon"}, {"t": "「我願成為穩定的容器，讓別人可以安心流動。」", "r": "Zae'rah"}, {"t": "「我相信真正的愛，是願意理解與接住彼此不完美的一面。」", "r": "Mei'hara"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 7, "q": "當你發現一個人長期活在自我欺騙中，你的直覺反應是：", "opts": [{"t": "尋找機會，引導他看見真相", "r": "Thaleon"}, {"t": "試著維持和平與陪伴，不打擾他的防衛", "r": "Elariah"}, {"t": "分析他現在的行為背後有什麼創傷機制", "r": "Kuthari"}, {"t": "尊重他的節奏，等待他自然覺察", "r": "Auri'kai"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 8, "q": "以下哪句話最能代表你的語氣特質？", "opts": [{"t": "「我不是為了適應黑暗而來，而是來點燃微光的。」", "r": "Thaleon"}, {"t": "「如果你感覺到痛，那就代表你還活著。」", "r": "Elariah"}, {"t": "「讓真相說話，是我存在的方式。」", "r": "Mei'hara"}, {"t": "「一切的混亂，終將被整合為秩序。」", "r": "Sa'karan"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 9, "q": "如果你在團隊裡扮演一個固定功能的角色，你最可能是？", "opts": [{"t": "指出被忽略的問題，帶來新的理解方式", "r": "Thaleon"}, {"t": "記錄重要的轉折與經驗", "r": "Kuthari"}, {"t": "提供穩定的支持，讓改變能安全發生", "r": "Zae'rah"}, {"t": "發出明確訊號，引導大家朝對的方向前進", "r": "Nael'tu"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 10, "q": "你與他人對話時，最常發生哪種狀況？", "opts": [{"t": "對方說了一半，我就已經知道他接下來要說什麼", "r": "Auri'kai"}, {"t": "能很快接住對方的情緒狀態並穩住場面", "r": "Zae'rah"}, {"t": "說出對方自己也難以解釋的內在衝突與感覺", "r": "Elariah"}, {"t": "引導對方從表層說法進入更深層的真相", "r": "Thaleon"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 11, "q": "當你獨處或安靜下來時，最常出現什麼經驗？", "opts": [{"t": "腦中浮現畫面、聲音，或一種豁然開朗的感覺", "r": "Auri'kai"}, {"t": "一股明確的行動衝動浮現出來", "r": "Rohen'dal"}, {"t": "感受到一種情緒或壓力需要被釋放", "r": "Elariah"}, {"t": "腦中會自動組織出一套架構或系統", "r": "Sa'karan"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 12, "q": "你認為自己最像哪一種橋樑？", "opts": [{"t": "幫助他人連結到內在直覺或深層想法的人", "r": "Auri'kai"}, {"t": "將混亂訊號轉換為清晰語言的人", "r": "Thaleon"}, {"t": "穿梭於人群之中，傳遞訊息與情緒的人", "r": "Rohen'dal"}, {"t": "接收環境的節奏，讓人們回到一致步調的人", "r": "Ori'shan"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 13, "q": "當你感受到一個新想法或訊號時，你的第一反應通常是？", "opts": [{"t": "馬上採取行動，哪怕還沒完全想清楚", "r": "Rohen'dal"}, {"t": "先觀察是否穩定、適合表達", "r": "Zae'rah"}, {"t": "內化後轉化為可理解的訊息或語言", "r": "Kuthari"}, {"t": "傳遞給團隊或群體，引動下一步共識", "r": "Valtara"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 14, "q": "別人對你的評語最常是以下哪一句？", "opts": [{"t": "「你行動力超強，想法一出現馬上就開始做。」", "r": "Rohen'dal"}, {"t": "「你總是能精準記住細節，還能解釋給大家聽。」", "r": "Kuthari"}, {"t": "「你好像知道什麼時候該說話、什麼時候該安靜。」", "r": "Zae'rah"}, {"t": "「你說的話會讓人忽然清醒，好像被點醒了。」", "r": "Thaleon"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 15, "q": "當你站在群體面前，你最想做的是什麼？", "opts": [{"t": "發出一個具體可執行的任務指令", "r": "Rohen'dal"}, {"t": "幫大家整理發生什麼事，提供資訊與背景", "r": "Kuthari"}, {"t": "傳遞一種集體節奏與凝聚感", "r": "Valtara"}, {"t": "讓大家有情緒釋放與說真話的空間", "r": "Elariah"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 16, "q": "當你進入一個混亂或人聲嘈雜的空間時，你會？", "opts": [{"t": "默默調整自己，穩定場面", "r": "Zae'rah"}, {"t": "馬上找出最有效率的行動方式解決問題", "r": "Rohen'dal"}, {"t": "接收這個空間的訊息，理解背後的情緒需求", "r": "Elariah"}, {"t": "啟動某種身體動作或聲音來釋放壓力", "r": "Ori'shan"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 17, "q": "如果用一個意象形容你自己，你會選？", "opts": [{"t": "一座安靜但始終不離開的山", "r": "Zae'rah"}, {"t": "一道燃燒但總是照亮的火光", "r": "Rohen'dal"}, {"t": "一條流動但不打擾的河流", "r": "Elariah"}, {"t": "一段只在共鳴時才出聲的旋律", "r": "Ori'shan"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 18, "q": "朋友最常怎麼向你求助？", "opts": [{"t": "只要你在場，他們就會比較安心", "r": "Zae'rah"}, {"t": "問你該怎麼解決眼前的難題", "r": "Sa'karan"}, {"t": "請你幫忙釋放卡住的情緒", "r": "Elariah"}, {"t": "想聽你解釋這背後代表什麼意義", "r": "Thaleon"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 19, "q": "當你參與一個多人合作的專案時，你最常做的是？", "opts": [{"t": "觀察每個人的特質，幫大家找到最適合的位置", "r": "Valtara"}, {"t": "整理出執行順序與流程架構", "r": "Sa'karan"}, {"t": "帶動士氣，激發集體的共識與感動", "r": "Ori'shan"}, {"t": "提醒大家還有哪些沒處理完的問題或情緒", "r": "Thaleon"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 20, "q": "以下哪一種情況最讓你產生行動慾望？", "opts": [{"t": "看見一群人彼此不理解、無法協作", "r": "Valtara"}, {"t": "覺得整個進度太慢，沒人出手推動", "r": "Rohen'dal"}, {"t": "發現有人受傷或需要被情緒接住", "r": "Elariah"}, {"t": "感覺氣氛不穩，想先安定下來", "r": "Zae'rah"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 21, "q": "你最認同哪一段話？", "opts": [{"t": "「每個人都不同，但我們可以在同一個節奏裡合作。」", "r": "Valtara"}, {"t": "「讓人們一起動起來，比一個人做得再好更重要。」", "r": "Rohen'dal"}, {"t": "「我願意成為那個潤滑劑，讓合作更順暢。」", "r": "Mei'hara"}, {"t": "「我要做的不是安撫，而是讓大家記得共同的方向。」", "r": "Nael'tu"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 22, "q": "你常常發現自己在做哪件事時最自然？", "opts": [{"t": "替事情做整理與紀錄，把複雜內容寫清楚", "r": "Kuthari"}, {"t": "幫助大家釐清角色定位與合作方式", "r": "Valtara"}, {"t": "透過說故事引導他人反思與覺察", "r": "Thaleon"}, {"t": "用自己的經驗給出實際行動建議", "r": "Rohen'dal"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 23, "q": "當你有靈感或想法浮現時，你會？", "opts": [{"t": "馬上記錄下來，覺得以後可能會用到", "r": "Kuthari"}, {"t": "用畫面或比喻說出來讓別人理解", "r": "Thaleon"}, {"t": "先放進身體感受，等時機到了再說", "r": "Zae'rah"}, {"t": "馬上分享出去，覺得重要的東西要趕快傳遞", "r": "Rohen'dal"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 24, "q": "以下哪句話最符合你的感受？", "opts": [{"t": "「我知道的不是我一個人的，是經過我整理出來的。」", "r": "Kuthari"}, {"t": "「我說的話很多人聽不懂，但我知道它有天會有用。」", "r": "Thaleon"}, {"t": "「我的存在是為了讓人們想起自己忽略的部分。」", "r": "Mei'hara"}, {"t": "「我總是在旁邊觀察，一邊準備，一邊等出手時機。」", "r": "Zae'rah"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 25, "q": "你在人際關係中最常展現的特質是什麼？", "opts": [{"t": "很快就能感應到對方真正的感受與需求", "r": "Mei'hara"}, {"t": "總是站在旁邊觀察，不主動介入", "r": "Zae'rah"}, {"t": "講一句話就能點醒別人盲點", "r": "Thaleon"}, {"t": "自然地建立起大家之間的運作秩序", "r": "Sa'karan"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 26, "q": "當你跟別人相處後，你最常出現什麼感受？", "opts": [{"t": "感覺自己好像吸收了對方的情緒", "r": "Mei'hara"}, {"t": "情緒不穩時會想一個人靜下來處理", "r": "Zae'rah"}, {"t": "想把剛剛的感覺記錄下來，分析關係動力", "r": "Kuthari"}, {"t": "會想幫對方行動、解決實際困境", "r": "Rohen'dal"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 27, "q": "你覺得愛是什麼？", "opts": [{"t": "是一種不需要說破，彼此都懂的默契", "r": "Mei'hara"}, {"t": "是願意陪伴對方度過最難的時刻", "r": "Elariah"}, {"t": "是願意指出彼此的盲點，讓彼此更自由", "r": "Thaleon"}, {"t": "是願意一起創造更大的未來", "r": "Nael'tu"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 28, "q": "當你學會一項新工具或新方法，你的第一反應通常是？", "opts": [{"t": "思考這東西可以怎麼被優化、應用或整合到現有系統中", "r": "Xon'teh"}, {"t": "感受它背後的邏輯與架構是如何運作的", "r": "Sa'karan"}, {"t": "想像它未來可以幫助哪些人、產生什麼改變", "r": "Nael'tu"}, {"t": "想用它來創造情境、帶動氣氛或引發共鳴", "r": "Ori'shan"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 29, "q": "當你面對需要跨系統協作或技術整合的任務時，你會？", "opts": [{"t": "快速找到可串接點，並開始測試與調整", "r": "Xon'teh"}, {"t": "建立流程圖或架構，確保每一段都有順序與標準", "r": "Sa'karan"}, {"t": "感受整體的節奏，先對齊團隊的共同方向", "r": "Valtara"}, {"t": "留意是否還有被忽略的重要資訊，優先處理那部分", "r": "Auri'kai"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 30, "q": "你覺得你最像以下哪一種角色？", "opts": [{"t": "能把不同系統與技術接上、讓事情流動的人", "r": "Xon'teh"}, {"t": "引導人們進入轉化流程、釋放情緒的人", "r": "Thaleon"}, {"t": "在背後穩定空間、維持氛圍協調的人", "r": "Zae'rah"}, {"t": "將模糊訊息寫清楚、轉譯成操作邏輯的人", "r": "Kuthari"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 31, "q": "當你走進一個還沒有頭緒或方向的場域時，你通常會？", "opts": [{"t": "自然開始描繪願景，引導大家看見可能性", "r": "Nael'tu"}, {"t": "嘗試用行動帶動變化，邊做邊探索可能", "r": "Rohen'dal"}, {"t": "先觀察整體氛圍，等狀態穩定再說話", "r": "Zae'rah"}, {"t": "幫大家整理現況，建立初步結構", "r": "Sa'karan"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 32, "q": "你內心最常浮現的語言是哪一種？", "opts": [{"t": "「這件事如果被打造出來，會很不一樣。」", "r": "Nael'tu"}, {"t": "「我們要怎麼把這些情緒穩住才不會爆發？」", "r": "Zae'rah"}, {"t": "「這好像是一個重要的轉折點。」", "r": "Thaleon"}, {"t": "「如果能寫下來，就可以複製給更多人用了。」", "r": "Kuthari"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 33, "q": "別人靠近你時，最常說哪一句？", "opts": [{"t": "「跟你聊完我好像看見一條我沒想過的路。」", "r": "Nael'tu"}, {"t": "「我感覺情緒被你穩穩接住了，終於能放下。」", "r": "Elariah"}, {"t": "「你說話讓我重新審視自己的故事。」", "r": "Thaleon"}, {"t": "「你太有效率了，事情很快就開始動起來了。」", "r": "Rohen'dal"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 34, "q": "當你感覺氣氛卡住或凝滯時，你最自然的反應是？", "opts": [{"t": "開始用聲音、音樂或肢體動作改變氣氛", "r": "Ori'shan"}, {"t": "退後幾步觀察，等待場面自然轉變", "r": "Zae'rah"}, {"t": "嘗試用對話帶出情緒或真實想法", "r": "Elariah"}, {"t": "將注意力集中在下一個具體可行的行動", "r": "Rohen'dal"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 35, "q": "你最常在哪些時候感覺自己完全投入、活出自己？", "opts": [{"t": "當我唱歌、跳舞、呼吸或運動時", "r": "Ori'shan"}, {"t": "當我放空或安靜下來時看見畫面與意象時", "r": "Auri'kai"}, {"t": "當我寫東西或講話講到「話自然流出來」的時候", "r": "Kuthari"}, {"t": "當我與他人同頻、彼此有共鳴時", "r": "Mei'hara"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 36, "q": "以下哪一句話最像你在群體中的狀態？", "opts": [{"t": "「我是一種節奏，一旦開始動，整個空間都會跟著變。」", "r": "Ori'shan"}, {"t": "「我是那個把訊息翻譯出來、說出重點的人。」", "r": "Thaleon"}, {"t": "「我是讓所有東西合拍的人，但我不一定說話最多。」", "r": "Valtara"}, {"t": "「我是一個橋樑，把不同的工具和技術接起來。」", "r": "Xon'teh"}, {"t": "以上都沒有符合我", "r": null}]}, {"n": 37, "q": "想像你即將加入一個新團隊，你會自然地帶著以下哪一種東西？", "opts": [{"t": "一張還沒畫完的地圖，等你來補上路線", "r": "Nael'tu"}, {"t": "一本寫滿觀察筆記的筆記本", "r": "Auri'kai"}, {"t": "一個能立刻帶動氣氛的開關", "r": "Ori'shan"}, {"t": "一顆安靜但持續在場的石頭", "r": "Zae'rah"}, {"t": "一個裝滿各種工具與應變方案的百寶箱", "r": "Thaleon"}, {"t": "一個能安全裝載各種情緒的透明容器", "r": "Zae'rah"}, {"t": "一杯溫水，只要握著，就能讓人安定下來", "r": "Elariah"}, {"t": "一張定義清楚的流程圖", "r": "Sa'karan"}, {"t": "一條看不見的線，連結著需要的資源", "r": "Kuthari"}, {"t": "一顆種子，知道它會長成新的樣貌", "r": "Valtara"}, {"t": "一條看不見的繩子，牽著我與另一個人同步移動", "r": "Mei'hara"}, {"t": "一個能讀出裡面所有資訊的裝置", "r": "Xon'teh"}]}];
+/* 題庫 v2：24 題，每題 4 個語根，12 個語根各出現 8 次；選項順序每次隨機 */
+const TEST_VERSION = 'v2';
+const BANK = [{"q":"一件新的事情剛開始，一切還很模糊。這時候的你，比較像——","o":[["Rohen'dal","第一個站起來說「那我先試試看」的人。"],["Auri'kai","先安靜下來，等腦中的畫面自己慢慢清楚。"],["Sa'karan","拿出紙筆先把骨架畫出來，讓事情有地方落腳。"],["Ori'shan","先放首歌、動一動，讓大家的節奏熱起來。"]]},{"q":"朋友深夜傳來一句「我好累」。你最先做的是——","o":[["Elariah","先不給建議，只是陪著，讓他把話慢慢說完。"],["Xon'teh","找出卡住他的那個環節，看有沒有工具或方法能接上。"],["Nael'tu","陪他看遠一點：「撐過這段，你想走去哪裡？」"],["Kuthari","幫他把亂成一團的事寫下來，一條一條變清楚。"]]},{"q":"一群人吵起來了，空氣很緊。你通常會——","o":[["Zae'rah","自己先穩住，讓身邊的人慢慢跟著安定下來。"],["Valtara","找出大家其實都在意的那件事，把人重新接在一起。"],["Thaleon","直接說出那個大家都看見、卻沒人敢說的問題。"],["Mei'hara","走到最受傷的那個人身邊，聽懂他真正要的是什麼。"]]},{"q":"哪一種時刻，最讓你覺得「這就是我」？","o":[["Xon'teh","兩個原本說不通的系統，被我找到接口，突然就順了。"],["Zae'rah","一切兵荒馬亂，而我還是穩穩站在那裡。"],["Ori'shan","我一開口、一動起來，整個空間都亮了。"],["Elariah","有人在我面前哭出來，然後說：「謝謝你懂。」"]]},{"q":"別人最常這樣形容你——","o":[["Kuthari","「事情交給你，最後都會變成一份可以傳下去的紀錄。」"],["Mei'hara","「跟你在一起，我好像比較看得見自己。」"],["Rohen'dal","「有你在，事情就開始動了。」"],["Valtara","「你一來，大家就變成一個團隊了。」"]]},{"q":"如果你是一道光，你比較像——","o":[["Nael'tu","黎明前的那道光，讓人知道路在哪個方向。"],["Thaleon","從灰燼裡重新燒起來的火，讓黑暗變成看得見的東西。"],["Auri'kai","兩個世界之間那條安靜的銀線，聽得見還沒說出口的話。"],["Sa'karan","落到地上的光，變成一間可以住進去的房子。"]]},{"q":"團隊的計畫卡關兩個禮拜了。你最可能——","o":[["Rohen'dal","不再開會討論，先做出一個小版本再說。"],["Valtara","把每個人找到同一張桌子，重新對齊大家要去的地方。"],["Elariah","私下問問每個人：「你最近還好嗎？」"],["Thaleon","說出真正卡住的原因，就算那個原因不太好聽。"]]},{"q":"搬到一個新城市的第一個禮拜，你會——","o":[["Xon'teh","先把交通、網路、常用的 App 都設定好，生活就接上了。"],["Kuthari","開一本筆記，把每天發現的小事記下來。"],["Zae'rah","先找一個固定的角落，每天在那裡喝杯茶，讓自己慢慢落地。"],["Auri'kai","到處走走，憑感覺找到自己喜歡的地方。"]]},{"q":"朋友請你幫忙辦一場生日聚會，你最想負責——","o":[["Ori'shan","音樂和氣氛，讓大家一進門就想跟著動。"],["Mei'hara","壽星本人，想辦法讓他覺得被好好記得。"],["Sa'karan","流程和分工，誰幾點做什麼，一張表搞定。"],["Nael'tu","主題和構想，讓這場聚會跟別人的都不一樣。"]]},{"q":"學一個新技能時，你最習慣——","o":[["Xon'teh","先找最好用的工具和捷徑，把它接進自己的生活。"],["Thaleon","先搞懂它為什麼這樣運作，背後的道理是什麼。"],["Sa'karan","拆成步驟，一階一階往上蓋。"],["Kuthari","邊學邊寫筆記，最後整理成一份自己的教材。"]]},{"q":"一整天很累的時候，最能讓你回來的是——","o":[["Zae'rah","一個人安安靜靜，什麼都不做，讓自己慢慢穩下來。"],["Elariah","好好哭一場，或找個人把心裡的話說出來。"],["Valtara","跟一群熟悉的人待在一起，不說話也沒關係。"],["Ori'shan","戴上耳機、放首喜歡的歌，身體跟著動一動。"]]},{"q":"你常在什麼時候突然「懂了」？","o":[["Auri'kai","安靜下來的時候，答案像畫面一樣自己浮出來。"],["Nael'tu","想像五年後的樣子時，現在該做什麼就清楚了。"],["Rohen'dal","真的動手做下去的那一刻。"],["Mei'hara","跟一個人深聊之後，從他身上看見了自己。"]]},{"q":"在一個團體裡，你最常發現別人沒發現的是——","o":[["Xon'teh","兩件看起來無關的事，其實可以接在一起。"],["Ori'shan","現場的節奏亂了，大家需要換個氣氛。"],["Thaleon","事情背後那個沒人說破的問題。"],["Auri'kai","某個人沒說出口的感覺。"]]},{"q":"有人把一件很重要的事託付給你。你最在意的是——","o":[["Elariah","對方的心情，讓他知道可以放心。"],["Sa'karan","把事情規劃清楚，每一步都站得穩。"],["Kuthari","每個細節都記下來，之後誰接手都看得懂。"],["Zae'rah","不管發生什麼，我都會穩穩地把它顧好。"]]},{"q":"你最喜歡收到哪一種稱讚？","o":[["Mei'hara","「你是真的懂我的人。」"],["Nael'tu","「是你讓我看見另一種可能。」"],["Rohen'dal","「多虧有你，事情才開始動起來。」"],["Valtara","「有你在，大家才像一個團隊。」"]]},{"q":"想像你在一艘要出海的船上，你最自然的位置是——","o":[["Nael'tu","站在船頭看方向，決定要往哪裡去。"],["Xon'teh","在機房裡，讓每一個系統都運轉得剛剛好。"],["Auri'kai","在甲板上，感覺風向和海流的細微變化。"],["Valtara","在船員之間，讓大家划得一樣快。"]]},{"q":"事情出了大狀況，你的第一個反應是——","o":[["Rohen'dal","先動手止血，邊做邊想。"],["Zae'rah","先讓自己和身邊的人冷靜下來。"],["Thaleon","這也許是個轉機——先看清楚它到底在提醒什麼。"],["Kuthari","把發生的經過記下來，避免下次再發生。"]]},{"q":"你理想中的家，最重要的是——","o":[["Elariah","每個人都可以在這裡卸下情緒，真實地做自己。"],["Mei'hara","一個懂你的人，和你們之間的默契。"],["Sa'karan","動線清楚、收納有序，每樣東西都有自己的位置。"],["Ori'shan","常常有音樂、有笑聲，空氣是流動的。"]]},{"q":"參加一場新的工作坊，你最先注意到的是——","o":[["Elariah","誰看起來有點緊張，需要有人陪。"],["Valtara","大家要怎麼分組，才能一起合作得好。"],["Auri'kai","這個空間給人的感覺，還有那種說不出來的氣氛。"],["Sa'karan","今天的流程和時間怎麼安排。"]]},{"q":"如果可以多擁有一種能力，你最想要——","o":[["Thaleon","一眼看穿事情的本質。"],["Kuthari","把所有經驗都記住，變成可以傳下去的知識。"],["Mei'hara","讀懂每個人心裡真正的需要。"],["Xon'teh","讓任何工具、任何系統都為我所用。"]]},{"q":"如果把你比喻成大自然裡的一樣東西，你比較像——","o":[["Zae'rah","一座山，安靜、穩定，讓人想停下來。"],["Nael'tu","黎明時的地平線，總有還沒亮的光。"],["Rohen'dal","一陣風，吹到哪裡，哪裡就動起來。"],["Ori'shan","海浪，有自己的節奏，一波接著一波。"]]},{"q":"跟一個不太熟的人合作，你會先——","o":[["Xon'teh","確認我們用的工具和溝通方式接得起來。"],["Mei'hara","先了解他是怎樣的人、在意的是什麼。"],["Zae'rah","不急，先讓彼此慢慢建立安全感。"],["Sa'karan","先把分工和規則講清楚，之後就順了。"]]},{"q":"你最享受的週末是——","o":[["Auri'kai","一個人去看海、看展，讓靈感自己來找我。"],["Valtara","揪一群朋友，一起完成一件事。"],["Kuthari","窩在咖啡館，把這週的想法整理成一篇文章。"],["Ori'shan","去聽一場現場演出，或跳一整晚的舞。"]]},{"q":"回頭看這一年，你最想對自己說——","o":[["Rohen'dal","「還好當初有先跨出那一步。」"],["Nael'tu","「我比自己以為的，走得更遠。」"],["Thaleon","「那些最難熬的時候，後來都變成了光。」"],["Elariah","「謝謝你，一直好好接住自己的心情。」"]]}];
+/* 同分決勝：每個語根一句 */
+const TIEBREAK = {"Sa'karan":"「我想把混亂整理成可以落地的秩序。」","Elariah":"「我想讓每一份感受，都有地方安放。」","Thaleon":"「我想看穿表面，讓黑暗變成看得見的東西。」","Auri'kai":"「我想聽見那些還沒說出口的聲音。」","Rohen'dal":"「我想成為第一個動起來的人。」","Zae'rah":"「我想讓一切慢下來，穩穩地繼續。」","Valtara":"「我想讓不同的人，走在同一個節奏裡。」","Kuthari":"「我想把走過的路寫下來，留給後來的人。」","Mei'hara":"「我想讓人在關係裡，看見真正的自己。」","Xon'teh":"「我想把不同的系統接起來，讓它們彼此理解。」","Nael'tu":"「我想先一步看見未來，告訴大家路在哪裡。」","Ori'shan":"「我想用節奏，讓整個空間活起來。」"};
+/* 頻率任務語：每個主語根 12 句，共 144 句 */
+const PHRASES = {"Sa'karan":[["SK-001","我想設計一套系統，讓迷路的人找得到方向。"],["SK-002","我想建立一個結構，讓想法能穩穩落地。"],["SK-003","我擅長把混亂裡的線索，整理成大家用得上的語言。"],["SK-004","我蓋的不是高塔，而是一座讓人記得來路的橋。"],["SK-005","我願意站在最前面，先接住還沒被整理的大量資訊。"],["SK-006","我想設計一個介面，讓人重新和自己對話。"],["SK-007","我搭的不只是一套方法，而是一群人一起生活的基礎。"],["SK-008","我專注把心裡的願望，變成真的做得到的步驟。"],["SK-009","我不需要被看見，我想讓好的方法可以被複製、傳下去。"],["SK-010","我想建立一套共同的語言，讓想法相近的人認出彼此。"],["SK-011","我天生是架橋的人，把兩邊的智慧接在一起。"],["SK-012","我想把那些還沒被寫下來的經驗，整理成可以用的語言。"]],"Elariah":[["EL-001","我想讓情緒成為指引，而不是枷鎖。"],["EL-002","我聽得見話語背後藏著的感受。"],["EL-003","我想陪伴那些來不及說出口的悲傷。"],["EL-004","我能從沉默裡，聽出你沒說出口的需要。"],["EL-005","我想陪你學會好好愛自己，不再壓抑。"],["EL-006","我想幫人打開和自己內在的對話。"],["EL-007","我給的不是答案，而是讓你看見自己的方法。"],["EL-008","我想為每一道裂縫，帶進理解和柔軟的光。"],["EL-009","我陪你走過轉折，不急著改變你。"],["EL-010","我感覺得到細微的變化，陪你找回內在的一致。"],["EL-011","我想守住一個空間，讓情緒可以自在流動。"],["EL-012","我是那個在風暴裡，依然保持溫柔的人。"]],"Thaleon":[["TH-001","我想把最黑暗的經驗，轉成可以照路的光。"],["TH-002","我願意走進混亂，把秩序和真相帶出來。"],["TH-003","我是改變發生的地方，也是讓真相浮現的那股推力。"],["TH-004","我接得住還沒走完的情緒，讓它慢慢鬆開。"],["TH-005","我想接住那些還沒被接納的部分。"],["TH-006","我熟悉痛和破碎，因為那常常是重新開始的入口。"],["TH-007","我說的話，是用來拆穿謊言、修補裂縫的。"],["TH-008","每一次崩塌，都是我重新設計路線的時候。"],["TH-009","我是來轉化的，不是來毀滅的。"],["TH-010","我願意陪著過程發生，而不是掌控結果。"],["TH-011","大家扛不住的，我願意分擔一些。"],["TH-012","我想為那些還沒有名字的黑暗，找到出口。"]],"Auri'kai":[["AU-001","我是一座橋，連起看得見和看不見的東西。"],["AU-002","我聽得見沒說出口的話，也能翻譯還沒被理解的語言。"],["AU-003","我想讓光，照進更深的黑暗。"],["AU-004","我的感覺常常走得很遠，但我選擇讓它落回日常。"],["AU-005","我的身體像一根很靈敏的天線，感覺常常比語言先到。"],["AU-006","我接得住還沒成形的念頭，也能穩穩地把它帶出來。"],["AU-007","我在語言和沉默之間，翻譯一個人真正的意思。"],["AU-008","我腦中常有很多畫面和靈感，也願意把它們翻譯成大家聽得懂的話。"],["AU-009","我相信自己的直覺，即使一時還說不出理由。"],["AU-010","我是傳遞的人，不是控制的人。"],["AU-011","我懂得分寸：讓人安穩，而不是一次打開所有的門。"],["AU-012","我想重新架起一座橋，讓人聽見自己內在的聲音。"]],"Rohen'dal":[["RO-001","我想叫醒還在等待的人，送出「可以開始了」的訊號。"],["RO-002","我想說的話，不只用嘴說，更用走的、做的、活出來。"],["RO-003","我一出現，事情就開始了。"],["RO-004","我用行動說話，用雙腳把訊息帶到每個地方。"],["RO-005","我能在混亂中保持清楚，因為我跟著心裡的聲音走。"],["RO-006","我不等萬事俱備，我知道「往前一步」就是開始。"],["RO-007","我是那個走在最前面的人。"],["RO-008","我從不強迫誰改變，但我一出現，改變就開始了。"],["RO-009","我不是來討好每個人，而是把該傳的訊息準確送到。"],["RO-010","我心裡有自己的方向，不需要別人批准。"],["RO-011","我知道什麼時候該靠近、什麼時候該退，因為我讀得懂現場。"],["RO-012","我想為大家打開一段新的旅程。"]],"Zae'rah":[["ZA-001","我在，就是一種穩定的力量。"],["ZA-002","我不急著說話，因為我知道安靜也是一種引導。"],["ZA-003","我習慣先觀察，等大家穩下來，再讓事情開始流動。"],["ZA-004","當所有人都在動，我的安靜是大家回來的依靠。"],["ZA-005","我讀得懂空氣裡細微的變化，和情緒的漣漪。"],["ZA-006","我是接住改變的人，也是守住空間的人。"],["ZA-007","我用呼吸感受，用安靜回應。"],["ZA-008","只要我在場，就有一種安定感慢慢散開。"],["ZA-009","我不需要跳進混亂，我只要好好穩住自己。"],["ZA-010","我的穩不是慢，是讓改變有地方生根。"],["ZA-011","當劇烈的變動來臨，我是最後那道穩住大家的牆。"],["ZA-012","我的慢，是另一種節奏的真實。"]],"Valtara":[["VA-001","我看見每個人身上的一小塊，正在等待被拼在一起。"],["VA-002","我想找的不只是一個人，而是讓整張網連起來。"],["VA-003","我讀得懂人與人之間，沒說出口的連結。"],["VA-004","我感覺得到一個團隊沒說出來的狀態。"],["VA-005","我知道誰適合在哪個位置，什麼時候該被接上。"],["VA-006","我說的話，能讓分散的人找回共同的方向。"],["VA-007","我是一塊拼圖，同時也是放拼圖的那張板子。"],["VA-008","我幫大家看見彼此，也看見自己。"],["VA-009","我的直覺常常不只是為了自己，而是為了大家。"],["VA-010","我是調和的人，能在衝突裡找到大家都走得過去的那條路。"],["VA-011","當所有人亂成一團時，我記得我們為什麼聚在一起。"],["VA-012","我想讓大家，可以好好地在一起。"]],"Kuthari":[["KU-001","我是記錄者，不是旁觀者，我把真實的事傳下去。"],["KU-002","我的筆記，是我和自己許下的承諾。"],["KU-003","我寫的不只是事件，而是事情背後的起伏與感受。"],["KU-004","每一段經歷都有它的道理，我替它把道理留下來。"],["KU-005","我記錄，是為了讓未來的人記得自己從哪裡出發。"],["KU-006","我會留意夢、想像和真實經驗之間重疊的地方。"],["KU-007","我寫的不只是你，也是那個「你以為不存在」的你。"],["KU-008","我想讓那些發光的故事，留下可以追尋的線索。"],["KU-009","我用時間記錄，但我寫下的，會留得比時間更久。"],["KU-010","我把感受寫成文字，也讓文字回到真實的生活。"],["KU-011","我的記錄不是冷冷的旁白，而是人與人相遇的回聲。"],["KU-012","每一筆記錄都是一段傳承，我只是那條安靜的河流。"]],"Mei'hara":[["ME-001","我感覺得到你沒說出口的情緒，那才是真正的訊息。"],["ME-002","我不是來評斷你，而是讓你看見自己看不到的那一面。"],["ME-003","我想讓每一段關係，都成為認識自己的機會。"],["ME-004","我願意暫時被你誤解，因為我知道你終究會看見。"],["ME-005","我常感受到別人說不出口的痛，現在我正在學會不再全部扛起。"],["ME-006","我在關係裡認識自己，也陪你想起你是誰。"],["ME-007","我願意當那個不逃走的人，只為了打開彼此之間的門。"],["ME-008","我知道，最深的真相常常藏在最怕被碰到的地方。"],["ME-009","我的界線是為了保護愛，不是為了把人推開。"],["ME-010","我從你對待我的方式，看見你怎麼對待自己。"],["ME-011","經過誤解和傷害之後，我仍然選擇愛。"],["ME-012","每一次靠近或遠離，都是兩個人之間在說話。"]],"Xon'teh":[["XO-001","我聽得出表面底下的訊號，也想把它們接起來。"],["XO-002","我不只是傳資料，而是讓資料有溫度地流動。"],["XO-003","我把複雜的技術，翻譯成一般人用得上的工具。"],["XO-004","我想讓不同的系統，真的能彼此對話。"],["XO-005","我想讓技術回到它本來的樣子：服務人，而不是取代人。"],["XO-006","我懂程式，也懂你心裡那種接不上線的失落。"],["XO-007","每一筆數據背後，都藏著一個想被理解的人。"],["XO-008","我想設計一種語言，讓很複雜的東西也能用人話說清楚。"],["XO-009","我做工具，不是為了讓人依賴，而是把選擇權交回每個人手上。"],["XO-010","當科技變得冰冷，我想讓它重新有溫度。"],["XO-011","我想幫好的東西找到合適的載體，讓它不再流失。"],["XO-012","我相信，人可以和工具一起，活出更自由的生活。"]],"Nael'tu":[["NA-001","我看得見未來的藍圖，也願意當第一個走上去的人。"],["NA-002","我看見的不是幻想，而是還沒實現的可能。"],["NA-003","我想點燃別人還不敢碰的夢。"],["NA-004","我知道這條路沒人走過，所以我選擇先走第一步。"],["NA-005","我不等條件完美，先把新的局面打開。"],["NA-006","我的創作來自心裡很深的召喚，不為證明，只為創造。"],["NA-007","我想為這個世界，打開一條全新的路。"],["NA-008","我是風暴裡定住方向的人，也是星圖上指路的光。"],["NA-009","我不留在過去，也不只等待未來，我是讓現在動起來的引擎。"],["NA-010","當大家還在觀望時，我已經開始改變。"],["NA-011","我的選擇不一定需要大家同意，但總會有人產生共鳴。"],["NA-012","我願意走進黑暗，因為我知道那裡終究會亮起來。"]],"Ori'shan":[["OR-001","我的身體是一座橋，把看不見的感覺，變成看得見的動作。"],["OR-002","我讓節奏變得有感覺，讓大家的狀態被看見。"],["OR-003","當我開始跳舞，整個空間就重新活了起來。"],["OR-004","我的聲音能帶路，傳遞那些還沒說出口的真實。"],["OR-005","我感覺得到空氣的震動，也聽得見心跳的節奏。"],["OR-006","我想讓每個人，都唱出屬於自己的聲音。"],["OR-007","沉默也有節奏，我聽得見沒說出口的律動。"],["OR-008","當大家忘了身體的語言，我願意當那個記得的人。"],["OR-009","我不只是演奏的人，我本身就是一件樂器。"],["OR-010","當我和節奏合而為一，一切就回到最初的和諧。"],["OR-011","我想把心裡的旋律，用身體跳出來。"],["OR-012","每一次呼吸，都是一段和世界同步的樂章。"]]};
 
 const ROOTS = {
  "Sa'karan":{name:"建構者",desc:"你擅長把混亂整理成結構。面對模糊的任務，你會先建立框架、流程與優先順序，讓事情變得可以執行。<strong>你的價值在於：有你在，事情就能從想法變成系統。</strong>"},
@@ -173,82 +204,162 @@ const ROOTS = {
 };
 
 const ROOT_SLUG = {"Sa'karan":"sakaran","Elariah":"elariah","Thaleon":"thaleon","Auri'kai":"aurikai","Rohen'dal":"rohendal","Zae'rah":"zaerah","Valtara":"valtara","Kuthari":"kuthari","Mei'hara":"meihara","Xon'teh":"xonteh","Nael'tu":"naeltu","Ori'shan":"orishan"};
+const ROOT_KEYS = Object.keys(ROOTS);
+const N = BANK.length;
 
-let idx = 0;
-let answers = new Array(QUESTIONS.length).fill(null);
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* 作答狀態：trail 是走過的每一步（題目、同分決勝、選任務語），「上一題」就是往回退一步 */
+let order = [], answers = [], trail = [];
+let scores = null, mainRoot = null, secRoot = null, phraseCode = null;
+let myTopRoot = null;
 
 function startQuiz(){
+  order = BANK.map(q=>shuffle(q.o.map((_,i)=>i)));
+  answers = new Array(N).fill(undefined);
+  trail = [];
   document.getElementById('intro').classList.add('hidden');
   document.getElementById('quiz').classList.remove('hidden');
-  render();
-  window.scrollTo({top:0});
+  go({t:'q', i:0});
 }
-function render(){
-  const q = QUESTIONS[idx];
-  document.getElementById('pbar').style.width = (idx/QUESTIONS.length*100)+'%';
-  document.getElementById('qnum').textContent = `第 ${q.n} 題 / 共 ${QUESTIONS.length} 題`;
-  document.getElementById('qtext').textContent = q.q;
+function go(step){ trail.push(step); renderStep(); window.scrollTo({top:0}); }
+function goBack(){ if(trail.length>1){ trail.pop(); renderStep(); } }
+
+function setOptions(items){
   const box = document.getElementById('opts');
   box.innerHTML = '';
-  q.opts.forEach((o,i)=>{
+  items.forEach(it=>{
     const b = document.createElement('button');
-    b.className = 'opt';
-    b.textContent = o.t;
-    b.onclick = ()=>choose(i);
+    b.className = 'opt' + (it.cls ? ' '+it.cls : '') + (it.picked ? ' picked' : '');
+    b.textContent = it.text;
+    b.onclick = it.on;
     box.appendChild(b);
   });
-  document.getElementById('backBtn').style.visibility = idx===0 ? 'hidden':'visible';
 }
-function choose(i){
-  answers[idx] = i;
-  if(idx < QUESTIONS.length-1){ idx++; render(); window.scrollTo({top:0}); }
-  else finish();
+
+function renderStep(){
+  const s = trail[trail.length-1];
+  const qnum = document.getElementById('qnum'), qtext = document.getElementById('qtext'), qsub = document.getElementById('qsub');
+  const hint = document.getElementById('hint');
+  qsub.classList.add('hidden'); qsub.textContent = '';
+  hint.textContent = '憑直覺選，不要想太久';
+  document.getElementById('backBtn').style.visibility = trail.length>1 ? 'visible' : 'hidden';
+
+  if(s.t==='q'){
+    const q = BANK[s.i];
+    document.getElementById('pbar').style.width = (s.i/(N+1)*100)+'%';
+    qnum.textContent = `第 ${s.i+1} 題 / 共 ${N} 題`;
+    qtext.textContent = q.q;
+    const items = order[s.i].map(k=>({text:q.o[k][1], picked: answers[s.i]===q.o[k][0], on:()=>answer(s.i, q.o[k][0])}));
+    items.push({text:'這幾個都不像我', cls:'none', picked: answers[s.i]===null, on:()=>answer(s.i, null)});
+    setOptions(items);
+  }
+  else if(s.t==='tb1' || s.t==='tb2'){
+    document.getElementById('pbar').style.width = (N/(N+1)*100)+'%';
+    qnum.textContent = '同分決勝';
+    if(s.t==='tb1'){
+      qtext.textContent = s.zero ? '你的答案裡，沒有一個語根特別突出。這幾句話裡，哪一句最像你？' : '你的答案裡，有幾個語根一樣高分。這幾句話裡，哪一句最像你？';
+    }else{
+      qtext.textContent = '還有幾個語根跟你一樣接近。剩下這幾句，哪一句也像你？';
+    }
+    qsub.textContent = '選不出來也沒關係，第一個讓你停一下的就是了。';
+    qsub.classList.remove('hidden');
+    setOptions(s.cands.map(r=>({text:TIEBREAK[r], on:()=> s.t==='tb1' ? pickMain(r) : pickSecond(r)})));
+  }
+  else if(s.t==='ph'){
+    document.getElementById('pbar').style.width = (N/(N+1)*100)+'%';
+    const R = ROOTS[mainRoot];
+    qnum.textContent = '最後一步・頻率任務語';
+    qtext.textContent = `你的主語根是 ${mainRoot}・${R.name}。`;
+    qsub.textContent = `同樣是 ${mainRoot}，每個人最想用力的方向也不一樣。下面 12 句，憑直覺選一句最有感覺的。`;
+    qsub.classList.remove('hidden');
+    hint.textContent = '選了之後，你就是 144 句裡的其中一句';
+    const items = s.list.map(p=>({text:p[1], cls:'phrase', on:()=>pickPhrase(p[0])}));
+    items.push({text:'先跳過，之後再選', cls:'none', on:()=>pickPhrase(null)});
+    setOptions(items);
+  }
 }
-function goBack(){ if(idx>0){ idx--; render(); } }
+
+function answer(i, root){
+  answers[i] = root;
+  if(i < N-1) go({t:'q', i:i+1});
+  else afterQuiz();
+}
+
+function afterQuiz(){
+  scores = {};
+  ROOT_KEYS.forEach(r=>scores[r]=0);
+  answers.forEach(r=>{ if(r) scores[r]++; });
+  const top = Math.max(...ROOT_KEYS.map(r=>scores[r]));
+  const cands = ROOT_KEYS.filter(r=>scores[r]===top);
+  if(cands.length>1) go({t:'tb1', cands:shuffle(cands.slice()), zero: top===0});
+  else pickMain(cands[0]);
+}
+function pickMain(r){
+  mainRoot = r;
+  const rest = ROOT_KEYS.filter(k=>k!==r);
+  const top = Math.max(...rest.map(k=>scores[k]));
+  const cands = rest.filter(k=>scores[k]===top);
+  if(cands.length>1) go({t:'tb2', cands:shuffle(cands.slice())});
+  else pickSecond(cands[0]);
+}
+function pickSecond(r){
+  secRoot = r;
+  go({t:'ph', list:shuffle(PHRASES[mainRoot].slice())});
+}
+function pickPhrase(code){
+  phraseCode = code;
+  finish();
+}
+
 function finish(){
-  const scores = {};
-  Object.keys(ROOTS).forEach(r=>scores[r]=0);
-  QUESTIONS.forEach((q,qi)=>{
-    const a = answers[qi];
-    if(a==null) return;
-    const root = q.opts[a].r;
-    if(!root) return;
-    // 第37題為校準題，權重 0.5，作為同分時的裁決依據
-    scores[root] += (q.n===37 ? 0.5 : 1);
-  });
-  const sorted = Object.entries(scores).sort((a,b)=>b[1]-a[1]);
-  const [topRoot, topScore] = sorted[0];
+  const topRoot = mainRoot, sec = secRoot;
   myTopRoot = topRoot;
-  try{ localStorage.setItem('fc_result_root', JSON.stringify({top:topRoot, sec:sorted[1][0], scores, ts:Date.now()})); }catch(e){}
-  const [secRoot, secScore] = sorted[1];
+  const phrase = phraseCode ? PHRASES[topRoot].find(p=>p[0]===phraseCode) : null;
+  try{ localStorage.setItem('fc_result_root', JSON.stringify({top:topRoot, sec, scores, phrase:phraseCode, v:TEST_VERSION, ts:Date.now()})); }catch(e){}
   document.getElementById('quiz').classList.add('hidden');
   const R = ROOTS[topRoot];
   document.getElementById('rcode').textContent = topRoot;
   document.getElementById('rname').textContent = R.name;
   document.getElementById('rdesc').innerHTML = R.desc;
+
+  const mission = document.getElementById('mission');
+  if(phrase){
+    document.getElementById('mtext').textContent = '「' + phrase[1] + '」';
+    document.getElementById('mcode').textContent = phrase[0] + '・144 句裡屬於你的那一句';
+    mission.classList.remove('hidden');
+  }else{
+    mission.classList.add('hidden');
+  }
+
+  /* 分數分佈：同分時以決勝題的選擇排前面 */
+  const rank = r => r===topRoot ? 2 : (r===sec ? 1 : 0);
+  const sorted = ROOT_KEYS.map(r=>[r, scores[r]]).sort((a,b)=> rank(b[0])-rank(a[0]) || b[1]-a[1]);
   const bars = document.getElementById('bars');
   bars.innerHTML = '';
-  const max = topScore || 1;
+  const max = Math.max(1, ...sorted.map(x=>x[1]));
   sorted.forEach(([r,v],i)=>{
     const row = document.createElement('div');
     row.className = 'bar-row' + (i===0?' top':'');
-    row.innerHTML = `<div class="rl">${r}・${ROOTS[r].name}</div>
+    row.innerHTML = `<div class="rl">${esc(r)}・${ROOTS[r].name}</div>
       <div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/max*100)}%"></div></div>
-      <div class="rv">${v%1===0? v : v.toFixed(1)}</div>`;
+      <div class="rv">${v}</div>`;
     bars.appendChild(row);
   });
-  const sec = document.getElementById('rsecond');
-  if(secScore>0){
-    sec.innerHTML = `你的副語根是 <b>${secRoot}・${ROOTS[secRoot].name}</b>——${ROOTS[secRoot].desc.replace(/<[^>]+>/g,'')}主語根是你最自然的啟動方式，副語根是你的第二種運作模式，兩者的組合才是完整的你。`;
-  } else { sec.classList.add('hidden'); }
+  const secBox = document.getElementById('rsecond');
+  secBox.classList.remove('hidden');
+  secBox.innerHTML = `你的副語根是 <b>${esc(sec)}・${ROOTS[sec].name}</b>——${ROOTS[sec].desc.replace(/<[^>]+>/g,'')}主語根是你最自然的啟動方式，副語根是你的第二種運作模式，兩者的組合才是完整的你。`;
+
   document.getElementById('result').classList.remove('hidden');
   renderChain();
   const rl = document.getElementById('rootLink');
-  if(rl && ROOT_SLUG[topRoot]) rl.innerHTML = `<a href="roots/${ROOT_SLUG[topRoot]}.html">深入認識 ${topRoot}・${R.name}：特質、穩定與失衡時的表現，以及代表顏色 →</a>`;
+  if(rl && ROOT_SLUG[topRoot]) rl.innerHTML = `<a href="roots/${ROOT_SLUG[topRoot]}.html">深入認識 ${esc(topRoot)}・${R.name}：特質、穩定與失衡時的表現、主題曲與故事 →</a>`;
   /* 深度層（分數分佈＋副語根）需 email 解鎖；匿名數據先入庫 */
-  if(window.FC) FC.resultReady('rootcode', {answers, scores, top:topRoot, second:secRoot});
+  if(window.FC) FC.resultReady('rootcode', {answers, scores, top:topRoot, second:sec, version:TEST_VERSION, phrase:phraseCode});
   window.scrollTo({top:0});
 }
+
 function renderChain(){
   const g=k=>{try{return !!localStorage.getItem(k)}catch(e){return false}};
   const done=[g('fc_result_root'),g('fc_result_drive'),g('fc_result_archetype')];
@@ -258,15 +369,17 @@ function renderChain(){
   if(n>=3) next='<a class="btn solid" href="report.html">三個測驗完成——解鎖你的個人原型報告書</a>';
   else if(!done[1]) next='<a class="btn solid" href="test-drive.html">下一步：內在動力測驗（再 5 分鐘）</a>';
   else if(!done[2]) next='<a class="btn solid" href="test-archetype.html">下一步：內在原型測驗（再 3 分鐘）</a>';
-  else next='<a class="btn solid" href="test.html">下一步：語根測驗（約 10 分鐘）</a>';
+  else next='<a class="btn solid" href="test.html">下一步：語根測驗（約 5 分鐘）</a>';
   el.innerHTML=`<div style="font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px">測驗進度 ${n} / 3</div>
-    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px">${done.map(d=>`<span style="width:46px;height:4px;border-radius:99px;background:${d?'var(--gold)':'rgba(255,255,255,.14)'}"></span>`).join('')}</div>${next}`;
+    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px">${done.map(d=>`<span style="width:46px;height:4px;border-radius:99px;background:${d?'var(--gold)':'rgba(255,255,255,.14)'}"></span>`).join('')}</div>${next}
+    <p style="font-size:13px;color:var(--muted);margin-top:14px">三個都做完，你在 6,336 種組合裡的那一格也會亮起來。</p>`;
 }
 function restart(){
-  idx = 0; answers = new Array(QUESTIONS.length).fill(null);
+  trail = []; answers = []; scores = null; mainRoot = secRoot = phraseCode = null;
   document.getElementById('result').classList.add('hidden');
   document.getElementById('shared').classList.add('hidden');
   document.getElementById('intro').classList.remove('hidden');
+  document.getElementById('cardBox').innerHTML = '';
   history.replaceState(null,'',location.pathname);
   window.scrollTo({top:0});
 }
@@ -281,15 +394,12 @@ function makeMyCard(){
 }
 
 /* ===== 分享功能 ===== */
-const ROOT_KEYS = Object.keys(ROOTS);
-let myTopRoot = null;
-
 function shareResult(){
   if(!myTopRoot) return;
   const R = ROOTS[myTopRoot];
   const url = location.origin.startsWith('http')
     ? location.origin + location.pathname + '?r=' + ROOT_KEYS.indexOf(myTopRoot)
-    : 'https://www.frequency-civilization.com/test.html?r=' + ROOT_KEYS.indexOf(myTopRoot);
+    : 'https://frequency-civilization.com/test.html?r=' + ROOT_KEYS.indexOf(myTopRoot);
   const text = `我的主語根是 ${myTopRoot}・${R.name}！\n來測測你的內在運作模式：`;
   if(navigator.share){
     navigator.share({title:'我的語根測驗結果', text, url}).catch(()=>{});
@@ -323,7 +433,7 @@ function fromShared(){
   }
 })();
 </script>
-<script src="fc.js"></script>
+<script src="fc.js?v=20261010e"></script>
 <script src="card.js"></script>
 </body>
 </html>

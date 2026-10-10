@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>頻率網格｜頻率文明 Frequency Civilization</title>
+<meta name="description" content="每一個做完測驗的人，都會在網格裡點亮一格。看見 132 種主副語根、144 句頻率任務語、6,336 種完整組合，現在亮了多少。">
+<link rel="canonical" href="https://frequency-civilization.com/grid.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261010e">
+<style>
+.grid-band{padding:90px 0 100px}
+.g-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 auto 46px;max-width:920px}
+.g-stat{border:1px solid var(--night-line);border-radius:6px;padding:20px 16px;text-align:center;background:linear-gradient(180deg,rgba(201,168,106,.07),rgba(201,168,106,.01))}
+.g-stat .n{font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(26px,3.6vw,38px);color:var(--night-gold-soft);line-height:1.2;letter-spacing:.02em}
+.g-stat .n small{font-size:.48em;color:var(--night-muted);letter-spacing:.06em}
+.g-stat .l{font-size:12px;letter-spacing:.18em;color:var(--night-muted);margin-top:6px;line-height:1.7}
+.g-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.g-tab{font-family:inherit;font-size:13.5px;letter-spacing:.16em;padding:10px 20px;border-radius:99px;border:1px solid var(--night-line);background:none;color:var(--night-muted);cursor:pointer;transition:.3s}
+.g-tab b{font-family:'Noto Serif TC',serif;font-weight:500;color:var(--night-gold-soft);margin-right:6px;letter-spacing:.04em}
+.g-tab.on{border-color:var(--night-gold);color:#f4ecdc;background:rgba(201,168,106,.12)}
+.g-lead{max-width:640px;margin:0 auto 26px;text-align:center;color:var(--night-muted);font-size:14.5px;line-height:2}
+.g-board{max-width:760px;margin:0 auto}
+.g-mx{display:grid;gap:4px;align-items:center}
+.g-mx.m132{grid-template-columns:40px repeat(12,1fr)}
+.g-mx.m144{grid-template-columns:40px repeat(12,1fr) 40px}
+.g-h{font-size:11px;letter-spacing:.04em;color:var(--night-muted);text-align:center;line-height:1.2;white-space:nowrap}
+.g-h.row{display:flex;align-items:center;gap:5px;justify-content:flex-start;cursor:default}
+.g-h.row i{width:7px;height:7px;border-radius:99px;background:var(--c);flex:none;box-shadow:0 0 6px var(--c)}
+.g-h.cnt{font-size:11px;color:var(--night-gold-soft);text-align:right}
+.g-c{aspect-ratio:1;border-radius:3px;background:rgba(255,255,255,.035);border:1px solid rgba(232,213,168,.08);cursor:pointer;padding:0;transition:background 1.2s ease, box-shadow 1.2s ease, transform .2s}
+.g-c:hover{transform:scale(1.15);border-color:rgba(232,213,168,.4)}
+.g-c.lit{background:rgba(255,214,150,var(--a));border-color:rgba(255,226,170,calc(var(--a) + .1));box-shadow:0 0 calc(4px + var(--a) * 16px) rgba(255,196,110,calc(var(--a) * .85))}
+.g-c.void{background:none;border:none;cursor:default;position:relative}
+.g-c.void::after{content:'';position:absolute;left:50%;top:50%;width:3px;height:3px;margin:-1.5px;border-radius:99px;background:rgba(255,255,255,.12)}
+.g-c.void:hover{transform:none}
+.g-c.self{outline:2px solid #fff;outline-offset:1px}
+.g-c.sel{outline:2px solid var(--night-gold-soft);outline-offset:1px}
+#g6336{display:block;width:100%;cursor:pointer;touch-action:manipulation}
+.g-info{min-height:66px;margin:24px auto 0;max-width:640px;text-align:center;font-size:14.5px;color:var(--night-text);line-height:1.9}
+.g-info .ph{font-family:'Noto Serif TC',serif;color:var(--night-gold-soft);font-size:16px}
+.g-info .sub{font-size:12.5px;color:var(--night-muted)}
+.g-legend{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 12px;white-space:nowrap;margin:22px auto 0;font-size:12px;color:var(--night-muted);letter-spacing:.1em}
+.g-legend .bar{width:160px;height:8px;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,214,150,.35),rgba(255,214,150,1));box-shadow:0 0 12px rgba(255,196,110,.35)}
+.g-legend .me{display:inline-block;width:12px;height:12px;border-radius:2px;outline:2px solid #fff;outline-offset:1px;margin-right:4px;vertical-align:-2px}
+.g-opts{display:flex;justify-content:center;margin-top:26px}
+.g-opts label{font-size:13px;color:var(--night-muted);display:flex;gap:8px;align-items:flex-start;max-width:600px;line-height:1.8;cursor:pointer}
+.g-opts input{margin-top:6px;accent-color:#c9a86a}
+.g-status{text-align:center;font-size:12px;color:var(--night-muted);opacity:.8;margin-top:14px;letter-spacing:.08em}
+.g-key{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 14px;max-width:760px;margin:30px auto 0;font-size:12.5px;color:var(--night-muted)}
+.g-key a{color:var(--night-muted);display:flex;gap:7px;align-items:center}
+.g-key a:hover{color:var(--night-gold-soft)}
+.g-key b{font-weight:500;color:var(--night-gold-soft);width:22px;font-size:11.5px}
+.g-key i{width:7px;height:7px;border-radius:99px;background:var(--c);box-shadow:0 0 6px var(--c);flex:none}
+.g-read{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px}
+.g-read .item{background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:28px 26px;box-shadow:var(--shadow)}
+.g-read .num{font-family:'Noto Serif TC',serif;font-size:30px;font-weight:300;color:var(--gold-soft);line-height:1.2}
+.g-read h3{font-size:16.5px;color:var(--gold-soft);font-weight:500;margin:6px 0 10px;letter-spacing:.12em}
+.g-read p{font-size:14.5px;color:var(--muted);line-height:2}
+.g-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+@media(max-width:760px){
+  .g-stats{grid-template-columns:repeat(2,1fr)}
+  .g-key{grid-template-columns:1fr;gap:4px;max-width:320px}
+  .g-legend .bar{width:110px}
+  .g-read{grid-template-columns:1fr}
+  .g-mx{gap:3px}
+  .g-mx.m132{grid-template-columns:30px repeat(12,1fr)}
+  .g-mx.m144{grid-template-columns:30px repeat(12,1fr) 30px}
+  .g-h{font-size:9.5px}
+  .g-h.row i{display:none}
+  .g-tab{padding:9px 14px;font-size:12.5px;letter-spacing:.08em}
+  .grid-band{padding:64px 0 76px}
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+</head>
+<body class="v3">
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html">頻率文明 FREQUENCY CIVILIZATION</a>
+    <div class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="about.html">關於我們</a>
+      <a href="roots.html">語根系統</a>
+      <a href="tests.html" class="on">三大測驗</a>
+      <a href="blog.html">Blog</a>
+      <a href="resources.html">免費資源</a>
+      <a href="join.html">加入我們</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="sec-kicker">FREQUENCY GRID</div>
+    <h1>頻率網格</h1>
+    <p class="lead">每一個做完測驗的人，都會在網格裡點亮一格。同一格的人越多，那一格就越亮。<br>這張網格讓我們一起看見：現在走到哪裡了，還有哪些位置在等人。</p>
+  </div>
+</header>
+
+<section class="h-night dark-band grid-band">
+  <div class="night-glow" aria-hidden="true"></div>
+  <div class="wrap">
+
+    <div class="g-stats">
+      <div class="g-stat"><div class="n" id="sPeople">—</div><div class="l" id="sPeopleL">完成語根測驗的人</div></div>
+      <div class="g-stat"><div class="n"><span id="s132">—</span><small> / 132</small></div><div class="l">主語根 × 副語根</div></div>
+      <div class="g-stat"><div class="n"><span id="s144">—</span><small> / 144</small></div><div class="l">頻率任務語</div></div>
+      <div class="g-stat"><div class="n"><span id="s6336">—</span><small> / 6,336</small></div><div class="l">完整組合</div></div>
+    </div>
+
+    <div class="g-tabs" role="tablist">
+      <button class="g-tab on" data-l="132" role="tab"><b>132</b>主語根 × 副語根</button>
+      <button class="g-tab" data-l="144" role="tab"><b>144</b>頻率任務語</button>
+      <button class="g-tab" data-l="6336" role="tab"><b>6,336</b>完整組合</button>
+    </div>
+
+    <p class="g-lead" id="gLead"></p>
+    <div class="g-board" id="gBoard"></div>
+    <div class="g-info" id="gInfo"></div>
+
+    <div class="g-legend">
+      <span>1 人</span><span class="bar" aria-hidden="true"></span><span id="gMax">越多人越亮</span>
+      <span id="gMeKey" style="display:none;margin-left:10px"><span class="me" aria-hidden="true"></span>你的位置</span>
+    </div>
+
+    <div class="g-opts" id="gOpts">
+      <label><input type="checkbox" id="gHist" checked> <span id="gHistL">加入舊測驗平台的歷史結果</span></label>
+    </div>
+    <p class="g-status" id="gStatus">讀取中…</p>
+
+    <div class="g-key" id="gKey"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center">
+      <div class="sec-kicker">HOW TO READ</div>
+      <h2>怎麼讀這張網格</h2>
+    </div>
+    <div class="g-read">
+      <div class="item">
+        <div class="num">132</div>
+        <h3>主語根 × 副語根</h3>
+        <p>橫列是主語根，直欄是副語根。主語根和副語根不會是同一個，所以是 12 × 11 = 132 種。做完語根測驗，就會點亮其中一格。</p>
+      </div>
+      <div class="item">
+        <div class="num">144</div>
+        <h3>頻率任務語</h3>
+        <p>每個主語根有 12 句頻率任務語，12 × 12 = 144 句。同樣的主語根，最想用力的方向也不一樣。一個語根的 12 句都有人選過，這個語根的體系才算完整。</p>
+      </div>
+      <div class="item">
+        <div class="num">6,336</div>
+        <h3>完整組合</h3>
+        <p>主語根 12 × 副語根 11 × 內在原型 6 × 內在動力 8 = 6,336 種。在同一個瀏覽器把三個測驗都做完，你的完整組合就會亮起來。</p>
+      </div>
+    </div>
+    <p class="center" style="font-size:13px;color:var(--muted);margin-top:30px;line-height:2">網格只統計人數，不顯示任何個人資料。<br>12 語根是我們整理中的工作模型，仍在持續驗證；所有測驗皆為教育與自我認知工具，不具醫療或心理診斷性質。</p>
+    <div class="g-cta">
+      <a class="btn solid" href="test.html">做語根測驗，點亮你的那一格</a>
+      <a class="btn" href="tests.html">看三大測驗</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">頻率文明 FREQUENCY CIVILIZATION</div>
+        <p>一套幫助人看清自己運作模式的自我認知系統。合作與聯繫：<a href="mailto:frequency.civilization@gmail.com">frequency.civilization@gmail.com</a></p>
+      </div>
+      <div>
+        <div class="sec-kicker" style="margin-bottom:12px">FOLLOW</div>
+        <div class="socials">
+          <a href="https://lin.ee/pKlS7Yv" target="_blank" rel="noopener" class="soc" style="--brand:#06C755" aria-label="LINE"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span>LINE</span></a>
+          <a href="https://www.instagram.com/freq_civilization" target="_blank" rel="noopener" class="soc" style="--brand:#E4405F" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span>Instagram</span></a>
+          <a href="https://www.threads.com/@freq_civilization" target="_blank" rel="noopener" class="soc" style="--brand:#000000" aria-label="Threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg><span>Threads</span></a>
+          <a href="https://youtube.com/@frequency0097" target="_blank" rel="noopener" class="soc" style="--brand:#FF0000" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span>YouTube</span></a>
+          <a href="https://www.facebook.com/share/14ca7uDx4bB/" target="_blank" rel="noopener" class="soc" style="--brand:#0866FF" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span>Facebook</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      本網站所有內容為教育與自我認知工具，不涉及醫療、心理治療或診斷服務。<br>
+      © 2026 頻率文明 Frequency Civilization. All rights reserved.・<a href="privacy.html">隱私權政策</a>
+    </div>
+  </div>
+</footer>
+
+<script src="fc.js?v=20261010e"></script>
+<script>
+const PHRASES = {"Sa'karan":[["SK-001","我想設計一套系統，讓迷路的人找得到方向。"],["SK-002","我想建立一個結構，讓想法能穩穩落地。"],["SK-003","我擅長把混亂裡的線索，整理成大家用得上的語言。"],["SK-004","我蓋的不是高塔，而是一座讓人記得來路的橋。"],["SK-005","我願意站在最前面，先接住還沒被整理的大量資訊。"],["SK-006","我想設計一個介面，讓人重新和自己對話。"],["SK-007","我搭的不只是一套方法，而是一群人一起生活的基礎。"],["SK-008","我專注把心裡的願望，變成真的做得到的步驟。"],["SK-009","我不需要被看見，我想讓好的方法可以被複製、傳下去。"],["SK-010","我想建立一套共同的語言，讓想法相近的人認出彼此。"],["SK-011","我天生是架橋的人，把兩邊的智慧接在一起。"],["SK-012","我想把那些還沒被寫下來的經驗，整理成可以用的語言。"]],"Elariah":[["EL-001","我想讓情緒成為指引，而不是枷鎖。"],["EL-002","我聽得見話語背後藏著的感受。"],["EL-003","我想陪伴那些來不及說出口的悲傷。"],["EL-004","我能從沉默裡，聽出你沒說出口的需要。"],["EL-005","我想陪你學會好好愛自己，不再壓抑。"],["EL-006","我想幫人打開和自己內在的對話。"],["EL-007","我給的不是答案，而是讓你看見自己的方法。"],["EL-008","我想為每一道裂縫，帶進理解和柔軟的光。"],["EL-009","我陪你走過轉折，不急著改變你。"],["EL-010","我感覺得到細微的變化，陪你找回內在的一致。"],["EL-011","我想守住一個空間，讓情緒可以自在流動。"],["EL-012","我是那個在風暴裡，依然保持溫柔的人。"]],"Thaleon":[["TH-001","我想把最黑暗的經驗，轉成可以照路的光。"],["TH-002","我願意走進混亂，把秩序和真相帶出來。"],["TH-003","我是改變發生的地方，也是讓真相浮現的那股推力。"],["TH-004","我接得住還沒走完的情緒，讓它慢慢鬆開。"],["TH-005","我想接住那些還沒被接納的部分。"],["TH-006","我熟悉痛和破碎，因為那常常是重新開始的入口。"],["TH-007","我說的話，是用來拆穿謊言、修補裂縫的。"],["TH-008","每一次崩塌，都是我重新設計路線的時候。"],["TH-009","我是來轉化的，不是來毀滅的。"],["TH-010","我願意陪著過程發生，而不是掌控結果。"],["TH-011","大家扛不住的，我願意分擔一些。"],["TH-012","我想為那些還沒有名字的黑暗，找到出口。"]],"Auri'kai":[["AU-001","我是一座橋，連起看得見和看不見的東西。"],["AU-002","我聽得見沒說出口的話，也能翻譯還沒被理解的語言。"],["AU-003","我想讓光，照進更深的黑暗。"],["AU-004","我的感覺常常走得很遠，但我選擇讓它落回日常。"],["AU-005","我的身體像一根很靈敏的天線，感覺常常比語言先到。"],["AU-006","我接得住還沒成形的念頭，也能穩穩地把它帶出來。"],["AU-007","我在語言和沉默之間，翻譯一個人真正的意思。"],["AU-008","我腦中常有很多畫面和靈感，也願意把它們翻譯成大家聽得懂的話。"],["AU-009","我相信自己的直覺，即使一時還說不出理由。"],["AU-010","我是傳遞的人，不是控制的人。"],["AU-011","我懂得分寸：讓人安穩，而不是一次打開所有的門。"],["AU-012","我想重新架起一座橋，讓人聽見自己內在的聲音。"]],"Rohen'dal":[["RO-001","我想叫醒還在等待的人，送出「可以開始了」的訊號。"],["RO-002","我想說的話，不只用嘴說，更用走的、做的、活出來。"],["RO-003","我一出現，事情就開始了。"],["RO-004","我用行動說話，用雙腳把訊息帶到每個地方。"],["RO-005","我能在混亂中保持清楚，因為我跟著心裡的聲音走。"],["RO-006","我不等萬事俱備，我知道「往前一步」就是開始。"],["RO-007","我是那個走在最前面的人。"],["RO-008","我從不強迫誰改變，但我一出現，改變就開始了。"],["RO-009","我不是來討好每個人，而是把該傳的訊息準確送到。"],["RO-010","我心裡有自己的方向，不需要別人批准。"],["RO-011","我知道什麼時候該靠近、什麼時候該退，因為我讀得懂現場。"],["RO-012","我想為大家打開一段新的旅程。"]],"Zae'rah":[["ZA-001","我在，就是一種穩定的力量。"],["ZA-002","我不急著說話，因為我知道安靜也是一種引導。"],["ZA-003","我習慣先觀察，等大家穩下來，再讓事情開始流動。"],["ZA-004","當所有人都在動，我的安靜是大家回來的依靠。"],["ZA-005","我讀得懂空氣裡細微的變化，和情緒的漣漪。"],["ZA-006","我是接住改變的人，也是守住空間的人。"],["ZA-007","我用呼吸感受，用安靜回應。"],["ZA-008","只要我在場，就有一種安定感慢慢散開。"],["ZA-009","我不需要跳進混亂，我只要好好穩住自己。"],["ZA-010","我的穩不是慢，是讓改變有地方生根。"],["ZA-011","當劇烈的變動來臨，我是最後那道穩住大家的牆。"],["ZA-012","我的慢，是另一種節奏的真實。"]],"Valtara":[["VA-001","我看見每個人身上的一小塊，正在等待被拼在一起。"],["VA-002","我想找的不只是一個人，而是讓整張網連起來。"],["VA-003","我讀得懂人與人之間，沒說出口的連結。"],["VA-004","我感覺得到一個團隊沒說出來的狀態。"],["VA-005","我知道誰適合在哪個位置，什麼時候該被接上。"],["VA-006","我說的話，能讓分散的人找回共同的方向。"],["VA-007","我是一塊拼圖，同時也是放拼圖的那張板子。"],["VA-008","我幫大家看見彼此，也看見自己。"],["VA-009","我的直覺常常不只是為了自己，而是為了大家。"],["VA-010","我是調和的人，能在衝突裡找到大家都走得過去的那條路。"],["VA-011","當所有人亂成一團時，我記得我們為什麼聚在一起。"],["VA-012","我想讓大家，可以好好地在一起。"]],"Kuthari":[["KU-001","我是記錄者，不是旁觀者，我把真實的事傳下去。"],["KU-002","我的筆記，是我和自己許下的承諾。"],["KU-003","我寫的不只是事件，而是事情背後的起伏與感受。"],["KU-004","每一段經歷都有它的道理，我替它把道理留下來。"],["KU-005","我記錄，是為了讓未來的人記得自己從哪裡出發。"],["KU-006","我會留意夢、想像和真實經驗之間重疊的地方。"],["KU-007","我寫的不只是你，也是那個「你以為不存在」的你。"],["KU-008","我想讓那些發光的故事，留下可以追尋的線索。"],["KU-009","我用時間記錄，但我寫下的，會留得比時間更久。"],["KU-010","我把感受寫成文字，也讓文字回到真實的生活。"],["KU-011","我的記錄不是冷冷的旁白，而是人與人相遇的回聲。"],["KU-012","每一筆記錄都是一段傳承，我只是那條安靜的河流。"]],"Mei'hara":[["ME-001","我感覺得到你沒說出口的情緒，那才是真正的訊息。"],["ME-002","我不是來評斷你，而是讓你看見自己看不到的那一面。"],["ME-003","我想讓每一段關係，都成為認識自己的機會。"],["ME-004","我願意暫時被你誤解，因為我知道你終究會看見。"],["ME-005","我常感受到別人說不出口的痛，現在我正在學會不再全部扛起。"],["ME-006","我在關係裡認識自己，也陪你想起你是誰。"],["ME-007","我願意當那個不逃走的人，只為了打開彼此之間的門。"],["ME-008","我知道，最深的真相常常藏在最怕被碰到的地方。"],["ME-009","我的界線是為了保護愛，不是為了把人推開。"],["ME-010","我從你對待我的方式，看見你怎麼對待自己。"],["ME-011","經過誤解和傷害之後，我仍然選擇愛。"],["ME-012","每一次靠近或遠離，都是兩個人之間在說話。"]],"Xon'teh":[["XO-001","我聽得出表面底下的訊號，也想把它們接起來。"],["XO-002","我不只是傳資料，而是讓資料有溫度地流動。"],["XO-003","我把複雜的技術，翻譯成一般人用得上的工具。"],["XO-004","我想讓不同的系統，真的能彼此對話。"],["XO-005","我想讓技術回到它本來的樣子：服務人，而不是取代人。"],["XO-006","我懂程式，也懂你心裡那種接不上線的失落。"],["XO-007","每一筆數據背後，都藏著一個想被理解的人。"],["XO-008","我想設計一種語言，讓很複雜的東西也能用人話說清楚。"],["XO-009","我做工具，不是為了讓人依賴，而是把選擇權交回每個人手上。"],["XO-010","當科技變得冰冷，我想讓它重新有溫度。"],["XO-011","我想幫好的東西找到合適的載體，讓它不再流失。"],["XO-012","我相信，人可以和工具一起，活出更自由的生活。"]],"Nael'tu":[["NA-001","我看得見未來的藍圖，也願意當第一個走上去的人。"],["NA-002","我看見的不是幻想，而是還沒實現的可能。"],["NA-003","我想點燃別人還不敢碰的夢。"],["NA-004","我知道這條路沒人走過，所以我選擇先走第一步。"],["NA-005","我不等條件完美，先把新的局面打開。"],["NA-006","我的創作來自心裡很深的召喚，不為證明，只為創造。"],["NA-007","我想為這個世界，打開一條全新的路。"],["NA-008","我是風暴裡定住方向的人，也是星圖上指路的光。"],["NA-009","我不留在過去，也不只等待未來，我是讓現在動起來的引擎。"],["NA-010","當大家還在觀望時，我已經開始改變。"],["NA-011","我的選擇不一定需要大家同意，但總會有人產生共鳴。"],["NA-012","我願意走進黑暗，因為我知道那裡終究會亮起來。"]],"Ori'shan":[["OR-001","我的身體是一座橋，把看不見的感覺，變成看得見的動作。"],["OR-002","我讓節奏變得有感覺，讓大家的狀態被看見。"],["OR-003","當我開始跳舞，整個空間就重新活了起來。"],["OR-004","我的聲音能帶路，傳遞那些還沒說出口的真實。"],["OR-005","我感覺得到空氣的震動，也聽得見心跳的節奏。"],["OR-006","我想讓每個人，都唱出屬於自己的聲音。"],["OR-007","沉默也有節奏，我聽得見沒說出口的律動。"],["OR-008","當大家忘了身體的語言，我願意當那個記得的人。"],["OR-009","我不只是演奏的人，我本身就是一件樂器。"],["OR-010","當我和節奏合而為一，一切就回到最初的和諧。"],["OR-011","我想把心裡的旋律，用身體跳出來。"],["OR-012","每一次呼吸，都是一段和世界同步的樂章。"]]};
+const ROOT_LIST = [
+  ["Sa'karan","SK","建構者","#b8892b","sakaran"],["Elariah","EL","情緒引導者","#e8806f","elariah"],
+  ["Thaleon","TH","洞察轉化者","#5b3fa0","thaleon"],["Auri'kai","AU","直覺洞察者","#5aa9c9","aurikai"],
+  ["Rohen'dal","RO","行動推動者","#e2562b","rohendal"],["Zae'rah","ZA","穩定支持者","#3fa98f","zaerah"],
+  ["Valtara","VA","集體整合者","#2a46b8","valtara"],["Kuthari","KU","系統記錄者","#c5ccd8","kuthari"],
+  ["Mei'hara","ME","關係共振者","#c98a7a","meihara"],["Xon'teh","XO","技術對接者","#1f5fbf","xonteh"],
+  ["Nael'tu","NA","領航創造者","#e6e1d3","naeltu"],["Ori'shan","OR","節奏帶動者","#b5357f","orishan"]
+];
+const ARCH = ['行動者','療癒者','教導者','感應者','洞見者','鏡面者'];
+const DRIVE = ['療癒','探索','服務','守護','突破','創造','傳遞','共鳴'];
+const RK = ROOT_LIST.map(r=>r[0]);
+const RI = Object.fromEntries(RK.map((r,i)=>[r,i]));
+const fmt = n => n.toLocaleString('en-US');
+function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+let live = null, hist = null, layer = '132', selected = null;
+const me = (function(){
+  const g = k => { try{ return JSON.parse(localStorage.getItem(k) || 'null'); }catch(e){ return null; } };
+  const r = g('fc_result_root'), a = g('fc_result_archetype'), d = g('fc_result_drive');
+  if(!r || r.v !== 'v2') return {};
+  return {main:r.top, second:r.sec, phrase:r.phrase || null, arch:a && a.top, drive:d && d.top};
+})();
+
+/* ---- 統計 ---- */
+function stats(){
+  const useHist = document.getElementById('gHist').checked && hist;
+  const pairs = new Map(), phr = new Map(), combos = new Map();
+  const add = (m, k, n) => m.set(k, (m.get(k) || 0) + n);
+  if(live){
+    (live.pairs || []).forEach(p=>{ if(p.main in RI && p.second in RI) add(pairs, p.main+'|'+p.second, p.n); });
+    (live.phrases || []).forEach(p=> add(phr, p.code, p.n));
+    (live.combos || []).forEach(c=>{ if(c.main in RI && c.second in RI) add(combos, [c.main,c.second,c.archetype,c.drive].join('|'), c.n); });
+  }
+  if(useHist) hist.pairs.forEach(([m,s,n])=> add(pairs, m+'|'+s, n));
+  const people = (live ? live.people : 0) + (useHist ? hist.people : 0);
+  return {pairs, phr, combos, people, livePeople: live ? live.people : 0, histPeople: useHist ? hist.people : 0};
+}
+let S = null;
+
+function alpha(n, max){ return n ? (0.22 + 0.78 * Math.log(1+n) / Math.log(1+Math.max(max,1))) : 0; }
+
+function renderStats(){
+  document.getElementById('sPeople').textContent = fmt(S.people);
+  document.getElementById('sPeopleL').textContent = S.histPeople ? `完成語根測驗的人（新版 ${fmt(S.livePeople)}＋歷史 ${fmt(S.histPeople)}）` : '完成語根測驗的人';
+  document.getElementById('s132').textContent = fmt([...S.pairs.values()].filter(Boolean).length);
+  document.getElementById('s144').textContent = fmt([...S.phr.values()].filter(Boolean).length);
+  document.getElementById('s6336').textContent = fmt([...S.combos.values()].filter(Boolean).length);
+}
+
+/* ---- 132：主語根 × 副語根 ---- */
+function render132(){
+  const max = Math.max(0, ...S.pairs.values());
+  let h = '<div class="g-mx m132"><span></span>' + ROOT_LIST.map(r=>`<span class="g-h" title="${esc(r[0])}">${r[1]}</span>`).join('');
+  ROOT_LIST.forEach(([m,code,,c])=>{
+    h += `<span class="g-h row" style="--c:${c}" title="${esc(m)}"><i></i>${code}</span>`;
+    RK.forEach(s=>{
+      if(s===m){ h += '<span class="g-c void" aria-hidden="true"></span>'; return; }
+      const n = S.pairs.get(m+'|'+s) || 0, a = alpha(n, max);
+      const self = me.main===m && me.second===s, key = m+'|'+s;
+      h += `<button class="g-c${n?' lit':''}${self?' self':''}${selected===key?' sel':''}" style="--a:${a.toFixed(3)}" data-k="${esc(key)}" aria-label="${esc(m)} × ${esc(s)}：${n} 人"></button>`;
+    });
+  });
+  h += '</div>';
+  document.getElementById('gBoard').innerHTML = h;
+  document.getElementById('gMax').textContent = max ? `最多 ${fmt(max)} 人` : '越多人越亮';
+  document.getElementById('gLead').textContent = '橫列是主語根，直欄是副語根。點任一格，看看那裡有幾個人。';
+  document.getElementById('gOpts').style.display = hist ? '' : 'none';
+}
+function info132(key){
+  const [m,s] = key.split('|'), n = S.pairs.get(key) || 0;
+  const R = ROOT_LIST[RI[m]], R2 = ROOT_LIST[RI[s]];
+  return `<div>主語根 <b>${esc(m)}・${R[2]}</b> × 副語根 <b>${esc(s)}・${R2[2]}</b></div>
+    <div class="sub">${n ? `目前有 ${fmt(n)} 人在這一格` : '這一格還在等第一個人'}${me.main===m && me.second===s ? '・這是你的位置' : ''}</div>`;
+}
+
+/* ---- 144：頻率任務語 ---- */
+function render144(){
+  const max = Math.max(0, ...S.phr.values());
+  let h = '<div class="g-mx m144"><span></span>' + Array.from({length:12},(_,i)=>`<span class="g-h">${i+1}</span>`).join('') + '<span class="g-h cnt">集滿</span>';
+  ROOT_LIST.forEach(([m,code,,c])=>{
+    h += `<span class="g-h row" style="--c:${c}" title="${esc(m)}"><i></i>${code}</span>`;
+    let lit = 0;
+    PHRASES[m].forEach(([pc])=>{
+      const n = S.phr.get(pc) || 0, a = alpha(n, max);
+      if(n) lit++;
+      h += `<button class="g-c${n?' lit':''}${me.phrase===pc?' self':''}${selected===pc?' sel':''}" style="--a:${a.toFixed(3)}" data-k="${pc}" aria-label="${pc}：${n} 人"></button>`;
+    });
+    h += `<span class="g-h cnt">${lit}/12</span>`;
+  });
+  h += '</div>';
+  document.getElementById('gBoard').innerHTML = h;
+  document.getElementById('gMax').textContent = max ? `最多 ${fmt(max)} 人` : '越多人越亮';
+  document.getElementById('gLead').textContent = '每一列是一個主語根的 12 句頻率任務語。一列 12 格都亮起來，這個語根的體系就完整了。點任一格，看看是哪一句。';
+  document.getElementById('gOpts').style.display = 'none';
+}
+function info144(pc){
+  const m = RK.find(r=>pc.startsWith(ROOT_LIST[RI[r]][1]));
+  const p = PHRASES[m].find(x=>x[0]===pc), n = S.phr.get(pc) || 0;
+  return `<div class="ph">「${esc(p[1])}」</div>
+    <div class="sub">${pc}・${esc(m)}・${ROOT_LIST[RI[m]][2]}｜${n ? `目前有 ${fmt(n)} 人選了這一句` : '這一句還在等第一個人'}${me.phrase===pc ? '・這是你選的那一句' : ''}</div>`;
+}
+
+/* ---- 6,336：完整組合（畫在 canvas 上） ---- */
+let geo = null;
+function render6336(){
+  const board = document.getElementById('gBoard');
+  board.innerHTML = '<canvas id="g6336" aria-label="6,336 種完整組合的網格"></canvas>';
+  document.getElementById('gLead').textContent = '每一列是一個主語根，列裡的每一小塊是一種副語根；小塊裡的 6 行是內在原型、8 欄是內在動力。三個測驗都做完，這裡才會亮。';
+  document.getElementById('gOpts').style.display = 'none';
+  draw6336();
+}
+function draw6336(){
+  const cv = document.getElementById('g6336'); if(!cv) return;
+  const W = cv.parentElement.clientWidth, narrow = W < 520;
+  const head = narrow ? 24 : 36, gap = narrow ? 2 : 4;
+  const cell = Math.max(2, Math.floor((W - head - 10*gap) / 88 * 100) / 100);
+  const bw = cell*8, bh = cell*6, rowGap = narrow ? 4 : 6;
+  const H = 12*bh + 11*rowGap;
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
+  cv.style.height = H + 'px';
+  const x = cv.getContext('2d');
+  x.setTransform(dpr,0,0,dpr,0,0);
+  x.clearRect(0,0,W,H);
+  const max = Math.max(0, ...S.combos.values());
+  geo = {head, gap, cell, bw, bh, rowGap};
+  x.font = `${narrow?9:11}px "Noto Sans TC", sans-serif`;
+  x.textBaseline = 'middle';
+  ROOT_LIST.forEach(([m,code,,c], ri)=>{
+    const y0 = ri*(bh+rowGap);
+    x.fillStyle = c; x.beginPath(); x.arc(4, y0+bh/2, narrow?2.5:3.5, 0, Math.PI*2); x.fill();
+    x.fillStyle = 'rgba(236,234,228,.7)'; x.fillText(code, narrow?9:12, y0+bh/2);
+    RK.filter(s=>s!==m).forEach((s, si)=>{
+      const x0 = head + si*(bw+gap);
+      x.fillStyle = 'rgba(255,255,255,.035)';
+      x.fillRect(x0, y0, bw, bh);
+      ARCH.forEach((a, ai)=> DRIVE.forEach((d, di)=>{
+        const n = S.combos.get([m,s,a,d].join('|')) || 0;
+        const cx = x0 + di*cell, cy = y0 + ai*cell;
+        if(n){
+          const al = alpha(n, max);
+          x.shadowColor = `rgba(255,196,110,${al})`; x.shadowBlur = 4 + al*10;
+          x.fillStyle = `rgba(255,214,150,${al})`;
+          x.fillRect(cx+0.5, cy+0.5, cell-1, cell-1);
+          x.shadowBlur = 0;
+        }
+        if(me.main===m && me.second===s && me.arch===a && me.drive===d){
+          x.strokeStyle = '#fff'; x.lineWidth = 1.5; x.strokeRect(cx-1, cy-1, cell+2, cell+2);
+        }
+      }));
+    });
+  });
+  if(selected6336){
+    const p = pos6336(selected6336);
+    if(p){ x.strokeStyle = '#e8d5a8'; x.lineWidth = 1.5; x.strokeRect(p.x-1.5, p.y-1.5, cell+3, cell+3); }
+  }
+  document.getElementById('gMax').textContent = max ? `最多 ${fmt(max)} 人` : '越多人越亮';
+}
+let selected6336 = null;
+function pos6336(k){
+  const [m,s,a,d] = k.split('|'), ri = RI[m], si = RK.filter(r=>r!==m).indexOf(s);
+  if(ri==null || si<0) return null;
+  return {x: geo.head + si*(geo.bw+geo.gap) + DRIVE.indexOf(d)*geo.cell, y: ri*(geo.bh+geo.rowGap) + ARCH.indexOf(a)*geo.cell};
+}
+function hit6336(ev){
+  const cv = ev.currentTarget, r = cv.getBoundingClientRect();
+  const px = ev.clientX - r.left, py = ev.clientY - r.top;
+  const ri = Math.floor(py / (geo.bh + geo.rowGap)); if(ri<0 || ri>11) return null;
+  const yIn = py - ri*(geo.bh+geo.rowGap); if(yIn > geo.bh) return null;
+  const si = Math.floor((px - geo.head) / (geo.bw + geo.gap)); if(si<0 || si>10) return null;
+  const xIn = px - geo.head - si*(geo.bw+geo.gap); if(xIn > geo.bw) return null;
+  const m = RK[ri], s = RK.filter(k=>k!==m)[si];
+  return [m, s, ARCH[Math.min(5, Math.floor(yIn/geo.cell))], DRIVE[Math.min(7, Math.floor(xIn/geo.cell))]].join('|');
+}
+function info6336(k){
+  const [m,s,a,d] = k.split('|'), n = S.combos.get(k) || 0;
+  const mine = me.main===m && me.second===s && me.arch===a && me.drive===d;
+  return `<div><b>${esc(m)}</b> × <b>${esc(s)}</b> × <b>${a}</b> × <b>${d}型動力</b></div>
+    <div class="sub">${n ? `目前有 ${fmt(n)} 人是這個組合` : '這個組合還在等第一個人'}${mine ? '・這是你的組合' : ''}</div>`;
+}
+
+/* ---- 畫面 ---- */
+function defaultInfo(){
+  if(layer==='132' && me.main) return info132(me.main+'|'+me.second);
+  if(layer==='144' && me.phrase) return info144(me.phrase);
+  if(layer==='6336' && me.arch && me.drive) return info6336([me.main,me.second,me.arch,me.drive].join('|'));
+  if(layer==='6336' && me.main) return '<div class="sub">你已經做完語根測驗。再做<a href="test-archetype.html">內在原型</a>和<a href="test-drive.html">內在動力</a>測驗，你的完整組合就會亮起來。</div>';
+  return '<div class="sub">點任一格，看看那裡有幾個人。</div>';
+}
+function render(){
+  if(!S) return;
+  renderStats();
+  if(layer==='132') render132(); else if(layer==='144') render144(); else render6336();
+  const inf = document.getElementById('gInfo');
+  if(layer==='132' && selected && selected.includes('|')) inf.innerHTML = info132(selected);
+  else if(layer==='144' && selected && !selected.includes('|')) inf.innerHTML = info144(selected);
+  else if(layer==='6336' && selected6336) inf.innerHTML = info6336(selected6336);
+  else inf.innerHTML = defaultInfo();
+  const hasMe = (layer==='132' && me.main) || (layer==='144' && me.phrase) || (layer==='6336' && me.arch && me.drive);
+  document.getElementById('gMeKey').style.display = hasMe ? '' : 'none';
+}
+
+document.getElementById('gBoard').addEventListener('click', ev=>{
+  if(ev.target.id==='g6336'){ selected6336 = hit6336(ev); draw6336(); document.getElementById('gInfo').innerHTML = selected6336 ? info6336(selected6336) : defaultInfo(); return; }
+  const b = ev.target.closest('.g-c'); if(!b || !b.dataset.k) return;
+  selected = b.dataset.k; render();
+});
+document.querySelectorAll('.g-tab').forEach(t=>t.addEventListener('click', ()=>{
+  document.querySelectorAll('.g-tab').forEach(x=>x.classList.toggle('on', x===t));
+  layer = t.dataset.l; selected = null; selected6336 = null; render();
+}));
+document.getElementById('gHist').addEventListener('change', ()=>{ S = stats(); render(); });
+let rt; window.addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(()=>{ if(layer==='6336') draw6336(); }, 150); });
+
+document.getElementById('gKey').innerHTML = ROOT_LIST.map(([m,code,zh,c,slug])=>`<a href="roots/${slug}.html" style="--c:${c}"><i></i><b>${code}</b>${esc(m)}・${zh}</a>`).join('');
+
+async function load(first){
+  const [l, h] = await Promise.all([
+    (window.FC ? FC.rpc('grid_stats') : Promise.reject()).catch(()=>null),
+    first ? fetch('assets/grid-history.json').then(r=>r.json()).catch(()=>null) : Promise.resolve(hist)
+  ]);
+  if(l) live = l;
+  hist = h;
+  if(hist) document.getElementById('gHistL').textContent = `加入舊測驗平台的歷史結果（${hist.from.replace('-','/')}–${hist.to.replace('-','/')}，${fmt(hist.people)} 人，只有主語根和副語根）。舊版題目比較偏向某幾個語根，所以 ZA、TH 兩列會特別亮；2026 年 10 月起的新版測驗，每個語根被選到的機會一樣多。`;
+  S = stats();
+  render();
+  const t = new Date();
+  document.getElementById('gStatus').textContent = l ? `即時更新・${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}` : (live ? '即時資料暫時讀不到，先顯示上一次的結果' : '即時資料暫時讀不到，先顯示歷史結果');
+}
+load(true);
+setInterval(()=>{ if(!document.hidden) load(false); }, 60000);
+</script>
+<script src="main.js?v=20261010d"></script>
+</body>
+</html>

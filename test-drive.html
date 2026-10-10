@@ -325,7 +325,7 @@ function renderChain(){
   let next;
   if(n>=3) next='<a class="btn solid" href="report.html">三個測驗完成——解鎖你的個人原型報告書</a>';
   else if(!done[2]) next='<a class="btn solid" href="test-archetype.html">下一步：內在原型測驗（再 3 分鐘）</a>';
-  else if(!done[0]) next='<a class="btn solid" href="test.html">下一步：語根測驗（約 10 分鐘）</a>';
+  else if(!done[0]) next='<a class="btn solid" href="test.html">下一步：語根測驗（約 5 分鐘）</a>';
   else next='<a class="btn solid" href="report.html">產生你的個人原型報告書</a>';
   el.innerHTML=`<div style="font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px">測驗進度 ${n} / 3</div>
     <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px">${done.map(d=>`<span style="width:46px;height:4px;border-radius:99px;background:${d?'var(--gold)':'rgba(255,255,255,.14)'}"></span>`).join('')}</div>${next}`;

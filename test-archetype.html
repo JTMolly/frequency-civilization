@@ -295,7 +295,7 @@ function renderChain(){
   const el=document.getElementById('chain'); if(!el) return;
   let next;
   if(n>=3) next='<a class="btn solid" href="report.html">三個測驗完成——解鎖你的個人原型報告書</a>';
-  else if(!done[0]) next='<a class="btn solid" href="test.html">下一步：語根測驗（約 10 分鐘）</a>';
+  else if(!done[0]) next='<a class="btn solid" href="test.html">下一步：語根測驗（約 5 分鐘）</a>';
   else if(!done[1]) next='<a class="btn solid" href="test-drive.html">下一步：內在動力測驗（再 5 分鐘）</a>';
   else next='<a class="btn solid" href="report.html">產生你的個人原型報告書</a>';
   el.innerHTML=`<div style="font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px">測驗進度 ${n} / 3</div>
