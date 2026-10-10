@@ -232,7 +232,7 @@ footer{border-top:1px solid var(--card-border);padding:70px 0 44px;background:va
 .legal a{color:var(--muted);text-decoration:underline}
 @media (max-width:760px){.nav-links{gap:12px;font-size:12px}.logo{font-size:12.5px;letter-spacing:.16em}.glow-top{width:520px}}
 
-/* hero 滿版影片（Esalen 式，2026-10-10） */
+/* hero 滿版影片版（目前未使用） */
 header.hero-band.film{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;background:#1a1712;color:#fff}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,16,10,.18) 0%,rgba(20,16,10,0) 30%,rgba(20,16,10,.2) 58%,rgba(20,16,10,.74) 100%)}
@@ -307,7 +307,7 @@ header.hero-band.tower-hero{position:relative;min-height:100vh;display:flex;alig
 @media (min-width:761px){.tower-hero .sky .glow{left:72%;top:46%}}
 
 /* =====================================================================
-   首頁 V3（2026-10-10）：參考 SAND／IONS 的編輯式版面
+   首頁 V3（2026-10-10）：編輯式版面
    只作用在 body.home，其他頁面不受影響
    ===================================================================== */
 body.home section{padding:120px 0}
