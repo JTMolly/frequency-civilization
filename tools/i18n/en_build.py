@@ -12,7 +12,8 @@ EN_DIR = os.path.join(HERE, 'en')
 ROOTS = 'sakaran elariah thaleon aurikai rohendal zaerah valtara kuthari meihara xonteh naeltu orishan'.split()
 EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.html', 'grid.html',
             'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html', 'notes.html'] + \
-           [f'roots/{r}.html' for r in ROOTS] + [f'notes/n{i:02d}.html' for i in range(1, 11)]
+           [f'roots/{r}.html' for r in ROOTS] + \
+           sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html'))
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js']
 CJK = re.compile(r'[㐀-鿿　-〿！-～]')
 ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',

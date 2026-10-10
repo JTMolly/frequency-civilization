@@ -79,8 +79,8 @@ def switch_html(lang, p):
 
 
 def inject(s, lang, p):
-    s = re.sub(r'<!-- i18n-head -->.*?<!-- /i18n-head -->', '', s, flags=re.S)
-    s = re.sub(r'<!-- i18n-switch -->.*?<!-- /i18n-switch -->', '', s, flags=re.S)
+    s = re.sub(r'<!-- i18n-head -->.*?<!-- /i18n-head -->\n?', '', s, flags=re.S)
+    s = re.sub(r'\n?[ \t]*<!-- i18n-switch -->.*?<!-- /i18n-switch -->', '', s, flags=re.S)
     s = s.replace('</head>', head_block(lang, p) + '\n</head>', 1)
     nav = re.search(r'<nav>.*?</nav>', s, re.S)
     if nav:
