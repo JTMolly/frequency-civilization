@@ -82,6 +82,7 @@ main{padding:120px 0 90px;min-height:100vh}
 .gate .gate-msg{font-size:13px;color:var(--gold-soft);margin-top:10px;min-height:1.5em}
 @media(max-width:560px){.bar-row{grid-template-columns:110px 1fr 26px}}
 </style>
+<link rel="stylesheet" href="flow.css?v=20261010f">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
 </head>
@@ -95,6 +96,7 @@ main{padding:120px 0 90px;min-height:100vh}
 <main><div class="wrap">
 
   <div id="intro" class="intro">
+    <div id="flowBadge" style="margin-bottom:22px"></div>
     <h1>內在原型測驗</h1>
     <p>十個問題，看見你在人群中自然成為的角色——不用努力扮演、天生就會走進去的那個位置。</p>
     <p>語根描述你「怎麼運作」，內在原型描述你「在人群中自然成為的角色」。</p>
@@ -125,6 +127,7 @@ main{padding:120px 0 90px;min-height:100vh}
     <h1 id="rcode"></h1>
     <div class="rname" id="rname"></div>
     <p class="desc" id="rdesc"></p>
+    <div id="chain"></div>
     <div class="detail" id="rdetail"></div>
     <div id="gateBox"></div>
     <div id="deep" class="hidden">
@@ -132,7 +135,6 @@ main{padding:120px 0 90px;min-height:100vh}
       <div class="second" id="rsecond"></div>
     </div>
     <div id="cardBox" style="margin:30px 0 8px"></div>
-    <div id="chain" style="margin:36px 0 8px"></div>
     <div class="cta-row">
       <button class="btn solid" onclick="makeMyCard()">產生我的角色卡</button>
       <button class="btn" onclick="shareResult()">一鍵分享我的結果</button>
@@ -226,8 +228,31 @@ const QUESTIONS = [
 let idx = 0;
 let answers = new Array(QUESTIONS.length).fill(null);
 let myTop = null;
+let order = [];
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function strongLine(desc){ const m = desc.match(/<strong>(.*?)<\/strong>/); return m ? m[1] : desc.replace(/<[^>]+>/g,''); }
+let inTiebreak = false, scoresG = null;
+/* 最高分同分時，讓本人從同分的幾句話裡選一句 */
+function showTiebreak(cands, done){
+  inTiebreak = true;
+  document.getElementById('pbar').style.width = '100%';
+  document.getElementById('qnum').textContent = '同分決勝';
+  document.getElementById('qtext').textContent = '這幾句話，哪一句最像你？';
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  shuffle(cands.slice()).forEach(t=>{
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = strongLine(TYPES[t].desc);
+    b.onclick = ()=>{ inTiebreak = false; done(t); };
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = 'visible';
+  window.scrollTo({top:0});
+}
 
 function startQuiz(){
+  order = QUESTIONS.map(q=>shuffle(q.o.map((_,i)=>i)));  /* 選項順序每次隨機，上一題時保持不變 */
   document.getElementById('intro').classList.add('hidden');
   document.getElementById('quiz').classList.remove('hidden');
   render(); window.scrollTo({top:0});
@@ -239,9 +264,9 @@ function render(){
   document.getElementById('qtext').textContent = q.q;
   const box = document.getElementById('opts');
   box.innerHTML = '';
-  q.o.forEach((t,i)=>{
+  order[idx].forEach(i=>{
     const b = document.createElement('button');
-    b.className = 'opt'; b.textContent = t;
+    b.className = 'opt'; b.textContent = q.o[i];
     b.onclick = ()=>choose(i);
     box.appendChild(b);
   });
@@ -252,16 +277,22 @@ function choose(i){
   if(idx < QUESTIONS.length-1){ idx++; render(); window.scrollTo({top:0}); }
   else finish();
 }
-function goBack(){ if(idx>0){ idx--; render(); } }
+function goBack(){ if(inTiebreak){ inTiebreak=false; render(); return; } if(idx>0){ idx--; render(); } }
 
 function finish(){
-  const scores = {};
-  T.forEach(t=>scores[t]=0);
-  answers.forEach(a=>{ if(a!=null) scores[T[a]]++; });
-  const sorted = Object.entries(scores).sort((a,b)=>b[1]-a[1]);
-  const [top, topScore] = sorted[0];
+  scoresG = {};
+  T.forEach(t=>scoresG[t]=0);
+  answers.forEach(a=>{ if(a!=null) scoresG[T[a]]++; });
+  const max = Math.max(...T.map(t=>scoresG[t]));
+  const cands = T.filter(t=>scoresG[t]===max);
+  if(cands.length > 1) showTiebreak(cands, finalize); else finalize(cands[0]);
+}
+function finalize(top){
+  const scores = scoresG;
+  const sorted = shuffle(Object.entries(scores)).sort((a,b)=>b[1]-a[1]);
+  sorted.unshift(sorted.splice(sorted.findIndex(x=>x[0]===top),1)[0]);
   const [sec, secScore] = sorted[1];
-  const isMix = topScore === secScore;
+  const isMix = false;
   myTop = top;
   try{ localStorage.setItem('fc_result_archetype', JSON.stringify({top, sec, mix:isMix, scores, ts:Date.now()})); }catch(e){}
   const A = TYPES[top];
@@ -295,19 +326,7 @@ function finish(){
   renderChain();
   window.scrollTo({top:0});
 }
-function renderChain(){
-  const g=k=>{try{return !!localStorage.getItem(k)}catch(e){return false}};
-  const done=[g('fc_result_root'),g('fc_result_drive'),g('fc_result_archetype')];
-  const n=done.filter(Boolean).length;
-  const el=document.getElementById('chain'); if(!el) return;
-  let next;
-  if(n>=3) next='<a class="btn solid" href="report.html">三個測驗完成——解鎖你的個人原型報告書</a>';
-  else if(!done[0]) next='<a class="btn solid" href="test.html">下一步：語根測驗（約 5 分鐘）</a>';
-  else if(!done[1]) next='<a class="btn solid" href="test-drive.html">下一步：內在動力測驗（再 5 分鐘）</a>';
-  else next='<a class="btn solid" href="report.html">產生你的個人原型報告書</a>';
-  el.innerHTML=`<div style="font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px">測驗進度 ${n} / 3</div>
-    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px">${done.map(d=>`<span style="width:46px;height:4px;border-radius:99px;background:${d?'var(--gold)':'rgba(255,255,255,.14)'}"></span>`).join('')}</div>${next}`;
-}
+function renderChain(){ if(window.FCFlow) FCFlow.renderNext('chain','fc_result_archetype'); }
 function restart(){
   idx = 0; answers = new Array(QUESTIONS.length).fill(null);
   document.getElementById('result').classList.add('hidden');
@@ -357,7 +376,9 @@ function fromShared(){
   }
 })();
 </script>
-<script src="fc.js"></script>
+<script src="flow.js?v=20261010f"></script>
+<script>if(window.FCFlow) FCFlow.introBadge('flowBadge','fc_result_archetype');</script>
+<script src="fc.js?v=20261010f"></script>
 <script src="card.js"></script>
 </body>
 </html>

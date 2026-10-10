@@ -89,7 +89,7 @@
     gate.innerHTML =
       '<div class="gate">' +
       '<h3>解鎖你的完整解讀</h3>' +
-      '<p>基本結果免費。留下 email，立即解鎖完整分數分佈與副語根深度解讀。</p>' +
+      '<p>基本結果免費。留下 email，立即解鎖完整分數分佈與' + ({rootcode:'副語根', archetype:'第二原型', drive:'副動力'}[test] || '第二結果') + '的解讀。</p>' +
       '<form onsubmit="return FC._unlock(this, \'' + test + '\')">' +
       '<input type="text" name="nickname" placeholder="暱稱（選填）">' +
       '<input type="email" name="email" placeholder="你的 email" required>' +

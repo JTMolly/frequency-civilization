@@ -112,6 +112,7 @@ h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:10px}
   <p class="note note-screen">報告資料來自你在這個瀏覽器完成的測驗結果，只存在你自己的裝置上，我們不會收到。<br>本報告為教育與自我認知工具，不具醫療或心理診斷性質。</p>
 </div></main>
 
+<script src="assets/phrases144.js?v=20261010f"></script>
 <script>
 const ROOTS = {
  "Sa'karan":{name:"建構者",desc:"擅長把混亂整理成結構，先建立框架、流程與優先順序，讓事情可以執行。"},
@@ -183,10 +184,16 @@ function renderCore(){
 }
 renderCore();
 
+function phraseCard(r){
+  if(!r || !r.phrase || !window.FC_PHRASES || !FC_PHRASES[r.top]) return '';
+  const p = FC_PHRASES[r.top].find(x=>x[0]===r.phrase);
+  return p ? `<div class="card"><h3>頻率任務語</h3><p style="font-size:16px;color:var(--gold-soft)">「${p[1]}」</p><p style="margin-top:6px">${p[0]}・144 句裡屬於你的那一句</p></div>` : '';
+}
 if(R){
   document.getElementById('secRoot').innerHTML = `
     <h2>語根｜你怎麼運作</h2><div class="sub">ROOT CODE・HOW YOU OPERATE</div>
     <div class="card"><h3>主語根：${R.top}・${ROOTS[R.top].name}</h3><p>${ROOTS[R.top].desc}</p></div>
+    ${phraseCard(R)}
     <div class="card"><h3>副語根：${R.sec}・${ROOTS[R.sec].name}</h3><p>${ROOTS[R.sec].desc}</p><p style="margin-top:8px">主語根是最自然的啟動方式，副語根是第二種運作模式，兩者組合構成完整的運作風格。</p></div>`;
 } else document.getElementById('secRoot').classList.add('hidden');
 

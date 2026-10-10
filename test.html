@@ -97,6 +97,7 @@ main{padding:120px 0 90px;min-height:100vh}
   .mission{padding:22px 20px}
 }
 </style>
+<link rel="stylesheet" href="flow.css?v=20261010f">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
 </head>
@@ -111,6 +112,7 @@ main{padding:120px 0 90px;min-height:100vh}
 
   <!-- intro -->
   <div id="intro" class="intro">
+    <div id="flowBadge" style="margin-bottom:22px"></div>
     <h1>語根測驗</h1>
     <p>這份測驗會透過 24 個生活情境，找出你在感知、決策、互動與創造上最自然的運作模式——你的主語根。</p>
     <p>做完之後，再從 12 句話裡憑直覺選一句最像你的。同一個主語根的人，想用力的方向也不一樣。</p>
@@ -152,13 +154,13 @@ main{padding:120px 0 90px;min-height:100vh}
       <div class="mc" id="mcode"></div>
     </div>
     <p class="gridline" id="gridline">你已經在頻率網格裡點亮了一格。<a href="grid.html">看看現在亮了多少 →</a></p>
+    <div id="chain"></div>
     <div id="gateBox"></div>
     <div id="deep" class="hidden">
       <div class="bars" id="bars"></div>
       <div class="second" id="rsecond"></div>
     </div>
     <div id="cardBox" style="margin:30px 0 8px"></div>
-    <div id="chain" style="margin:36px 0 8px"></div>
     <div class="cta-row">
       <button class="btn solid" onclick="makeMyCard()">產生我的角色卡</button>
       <button class="btn" onclick="shareResult()">一鍵分享我的結果</button>
@@ -367,20 +369,7 @@ function finish(){
   window.scrollTo({top:0});
 }
 
-function renderChain(){
-  const g=k=>{try{return !!localStorage.getItem(k)}catch(e){return false}};
-  const done=[g('fc_result_root'),g('fc_result_drive'),g('fc_result_archetype')];
-  const n=done.filter(Boolean).length;
-  const el=document.getElementById('chain'); if(!el) return;
-  let next;
-  if(n>=3) next='<a class="btn solid" href="report.html">三個測驗完成——解鎖你的個人原型報告書</a>';
-  else if(!done[1]) next='<a class="btn solid" href="test-drive.html">下一步：內在動力測驗（再 5 分鐘）</a>';
-  else if(!done[2]) next='<a class="btn solid" href="test-archetype.html">下一步：內在原型測驗（再 3 分鐘）</a>';
-  else next='<a class="btn solid" href="test.html">下一步：語根測驗（約 5 分鐘）</a>';
-  el.innerHTML=`<div style="font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px">測驗進度 ${n} / 3</div>
-    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px">${done.map(d=>`<span style="width:46px;height:4px;border-radius:99px;background:${d?'var(--gold)':'rgba(255,255,255,.14)'}"></span>`).join('')}</div>${next}
-    <p style="font-size:13px;color:var(--muted);margin-top:14px">三個都做完，你在 6,336 種組合裡的那一格也會亮起來。</p>`;
-}
+function renderChain(){ if(window.FCFlow) FCFlow.renderNext('chain','fc_result_root'); }
 function restart(){
   trail = []; answers = []; scores = null; mainRoot = secRoot = phraseCode = null;
   document.getElementById('result').classList.add('hidden');
@@ -440,7 +429,9 @@ function fromShared(){
   }
 })();
 </script>
-<script src="fc.js?v=20261010e"></script>
+<script src="flow.js?v=20261010f"></script>
+<script>if(window.FCFlow) FCFlow.introBadge('flowBadge','fc_result_root');</script>
+<script src="fc.js?v=20261010f"></script>
 <script src="card.js"></script>
 </body>
 </html>
