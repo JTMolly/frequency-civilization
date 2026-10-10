@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>內在動力測驗｜頻率文明 Frequency Civilization</title>
+<meta name="description" content="24 題，找出真正推動你前進的那股力量。語根回答你怎麼運作，內在動力回答你為什麼願意做。">
+<link rel="canonical" href="https://frequency-civilization.com/test-drive.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090d; --bg2:#0d0f16; --card:#12141c;
+  --gold:#c9a86a; --gold-soft:#e0c894;
+  --text:#e8e6e1; --muted:#9b9890; --line:rgba(201,168,106,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.85;letter-spacing:.06em}
+h1,h2,h3{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.12em}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:.16em;color:var(--gold-soft)}
+.nav-in a.back{font-size:14px;color:var(--text);opacity:.85}
+main{padding:120px 0 90px;min-height:100vh}
+.btn{display:inline-block;padding:13px 40px;border:1px solid var(--gold);color:var(--gold-soft);font-size:15.5px;letter-spacing:.18em;border-radius:2px;background:none;cursor:pointer;transition:.25s;font-family:inherit}
+.btn:hover{background:var(--gold);color:#0d0f14}
+.btn.solid{background:var(--gold);color:#12131a;font-weight:500}
+.btn.solid:hover{background:var(--gold-soft)}
+.btn.ghost{border-color:rgba(255,255,255,.2);color:var(--muted);letter-spacing:.1em;padding:11px 26px;font-size:14px}
+.center{text-align:center}
+.intro h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:24px}
+.intro p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+.intro .box{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:24px 28px;margin:30px 0;font-size:15.5px}
+.intro .box li{margin-left:1.3em;margin-bottom:6px;color:var(--muted)}
+.progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.qnum{color:var(--gold);font-size:13.5px;letter-spacing:.25em;margin-bottom:14px}
+.qtext{font-size:clamp(19px,3vw,23px);font-family:'Noto Serif TC',serif;font-weight:500;margin-bottom:30px;line-height:1.7}
+.likert{display:grid;gap:12px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid rgba(255,255,255,.07);color:var(--text);border-radius:6px;padding:15px 20px;font-size:15.5px;font-family:inherit;letter-spacing:.03em;cursor:pointer;transition:.18s}
+.opt:hover{border-color:var(--gold);background:#1b2030}
+.quiz-foot{margin-top:26px;display:flex;justify-content:space-between;align-items:center}
+.quiz-foot .hint{font-size:12.5px;color:var(--muted);opacity:.7}
+.result .kicker{color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:16px}
+.result h1{font-size:clamp(28px,5vw,42px);margin-bottom:4px}
+.result .rname{color:var(--gold-soft);font-size:18px;letter-spacing:.25em;margin-bottom:28px}
+.result .desc{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:16.5px;text-align:left}
+.result .desc strong{color:var(--text);font-weight:500}
+.detail{max-width:620px;margin:0 auto 36px;text-align:left;display:grid;gap:16px}
+.dcard{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:20px 24px}
+.dcard h3{font-size:15.5px;color:var(--gold-soft);margin-bottom:10px;letter-spacing:.12em}
+.dcard li{margin-left:1.3em;margin-bottom:6px;font-size:14.5px;color:var(--muted)}
+.dcard p{font-size:14.5px;color:var(--muted)}
+.oneliner{border-left:3px solid var(--gold);background:var(--bg2);padding:18px 24px;font-family:'Noto Serif TC',serif;font-size:17px;color:var(--gold-soft)}
+.bars{max-width:560px;margin:0 auto 40px;text-align:left}
+.bar-row{display:grid;grid-template-columns:120px 1fr 34px;gap:12px;align-items:center;margin-bottom:9px;font-size:13.5px}
+.bar-row .rl{color:var(--muted)}
+.bar-row.top .rl{color:var(--gold-soft)}
+.bar-row.low .rl{color:#b0736a}
+.bar-track{height:8px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#8a7347,var(--gold));border-radius:99px}
+.bar-row.low .bar-fill{background:#7a5049}
+.bar-row .rv{color:var(--muted);text-align:right}
+.second{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:20px 26px;max-width:620px;margin:0 auto 16px;font-size:15px;text-align:left}
+.second b{color:var(--gold-soft);font-weight:500}
+.second.warn b{color:#c98a7e}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:36px 0 20px}
+.note{font-size:12.5px;color:var(--muted);opacity:.75;margin-top:16px}
+.hidden{display:none}
+.gate{border:1px solid rgba(201,168,106,.35);border-radius:10px;padding:34px 30px;max-width:600px;margin:10px auto 40px;background:linear-gradient(165deg,rgba(201,168,106,.08),rgba(255,255,255,.02));text-align:center}
+.gate h3{font-size:19px;margin-bottom:10px;color:var(--gold-soft)}
+.gate p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.gate input[type=email],.gate input[type=text]{width:100%;max-width:360px;padding:13px 16px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text);font-size:15px;font-family:inherit;margin-bottom:12px;letter-spacing:.04em;display:block;margin-left:auto;margin-right:auto}
+.gate input:focus{outline:none;border-color:var(--gold)}
+.gate .consent{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;text-align:left;max-width:360px;margin:6px auto 16px;line-height:1.8}
+.gate .consent input{margin-top:6px}
+.gate .gate-msg{font-size:13px;color:var(--gold-soft);margin-top:10px;min-height:1.5em}
+@media(max-width:560px){.bar-row{grid-template-columns:96px 1fr 30px}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <a class="logo" href="index.html" style="color:var(--gold-soft)">頻率文明 FREQUENCY CIVILIZATION</a>
+  <a class="back" href="tests.html">← 回三大測驗</a>
+</div></nav>
+
+<main><div class="wrap">
+
+  <div id="intro" class="intro">
+    <h1>內在動力測驗</h1>
+    <p>找出真正推動你前進的那股力量。</p>
+    <p>語根回答的是：你會什麼、你怎麼運作。<br>內在動力回答的是：你為什麼願意做、你如何被推動。</p>
+    <div class="box">
+      <ul>
+        <li>共 24 題，約 5 分鐘。</li>
+        <li>請依照「你多數時候的真實狀態」作答，而非理想中的自己。</li>
+        <li>每題從「非常不符合」到「非常符合」五個程度中選一個。</li>
+        <li>結果會告訴你：主動力、副動力，以及要留意的耗損模式。</li>
+      </ul>
+    </div>
+    <div class="center"><button class="btn solid" onclick="startQuiz()">開始作答</button></div>
+    <p class="note center">本測驗為教育與自我認知工具，不具醫療或心理診斷性質。</p>
+  </div>
+
+  <div id="quiz" class="hidden">
+    <div class="progress"><i id="pbar" style="width:0%"></i></div>
+    <div class="qnum" id="qnum"></div>
+    <div class="qtext" id="qtext"></div>
+    <div class="likert" id="opts"></div>
+    <div class="quiz-foot">
+      <button class="btn ghost" id="backBtn" onclick="goBack()">上一題</button>
+      <div class="hint">選「真實的你」，不是「理想的你」</div>
+    </div>
+  </div>
+
+  <div id="result" class="result center hidden">
+    <div class="kicker">YOUR PRIMARY DRIVE</div>
+    <h1 id="rcode"></h1>
+    <div class="rname" id="rname"></div>
+    <p class="desc" id="rdesc"></p>
+    <div class="detail" id="rdetail"></div>
+    <div id="gateBox"></div>
+    <div id="deep" class="hidden">
+      <div class="bars" id="bars"></div>
+      <div class="second" id="rsecond"></div>
+    </div>
+    <div class="second warn" id="rlow"></div>
+    <div id="cardBox" style="margin:30px 0 8px"></div>
+    <div id="chain" style="margin:36px 0 8px"></div>
+    <div class="cta-row">
+      <button class="btn solid" onclick="makeMyCard()">產生我的角色卡</button>
+      <button class="btn" onclick="shareResult()">一鍵分享我的結果</button>
+            <a class="btn" href="https://lin.ee/pKlS7Yv" id="lineBtn" target="_blank" rel="noopener">加入官方 LINE 深入了解</a>
+      <button class="btn ghost" onclick="restart()">重新測驗</button>
+    </div>
+    <p class="note" id="shareHint"></p>
+    <p class="note">這不是測你適合做什麼，而是幫你找回：是什麼在真正推動你。</p>
+    <p class="note">做完三個測驗了嗎？<a href="report.html">產生你的個人原型報告書 →</a></p>
+  </div>
+
+  <div id="shared" class="result center hidden">
+    <div class="kicker">SHARED RESULT</div>
+    <p class="desc" style="text-align:center;margin-bottom:10px">你的朋友的主要內在動力是</p>
+    <h1 id="scode"></h1>
+    <p class="desc" id="sdesc" style="text-align:center"></p>
+    <div class="cta-row">
+      <button class="btn solid" onclick="fromShared()">我也要測我的內在動力</button>
+      <a class="btn" href="index.html">認識頻率文明</a>
+    </div>
+  </div>
+
+</div></main>
+
+<script>
+const SCALE = ["非常不符合","不太符合","普通","符合","非常符合"];
+
+const TYPES = {
+ "療癒":{sub:"修復 × 陪伴",
+  desc:"你的推進力來自修復與安定。當人或場域因為你的陪伴而穩下來，你會自然有力。<strong>你不是靠衝刺推進，而是靠「穩住」推進。</strong>",
+  high:["你一進場，環境就開始降噪：人變得能呼吸、能說實話","擅長聽懂情緒背後真正的需求，把「痛」翻譯成可被照顧的語言","你帶來的是可持續的安定，不是一時的激情"],
+  warn:["過度承接：把別人的情緒或問題當成自己的責任","因為心軟而拖延結束關係或合作","一直在照顧別人卻很少被照顧，最後變麻木或爆炸"],
+  fix:["先界線，才陪伴：先講清楚「我能做什麼、不能做什麼」","以陪伴取代拯救：你提供穩定，不提供替代人生","固定回收：每次高強度陪伴後，留 15 分鐘安靜、走路或呼吸"],
+  roles:"陪伴型諮詢、教練、客戶關係與售後、團隊穩定器、危機安撫與修復流程",
+  line:"我可以陪你走一段，但我不替你走你的人生。"},
+ "探索":{sub:"未知 × 開拓",
+  desc:"你被未知與可能性推動。新事物會點燃你，長期停滯會消耗你。<strong>你不是為了安全而活，你是為了可能性而活。</strong>",
+  high:["超會找路：資源、人脈、方法、路徑，你總能挖出新選項","擅長從不確定中抓出可實驗的下一步","你最強的不是結論，而是探索的流程"],
+  warn:["一直開新坑、一直不收斂：靈感很多但落地很少","容易對例行與維持感到煩躁，然後直接放棄","用探索逃避真正需要承諾的選擇"],
+  fix:["用「實驗」取代「承諾焦慮」：把新方向變成 7–14 天小實驗","設定探索配額：同時間只允許一到兩個探索軸","配一個穩定型的夥伴或流程，幫你收斂與落地"],
+  roles:"新產品/新市場開拓、研究、策略、跨域整合、創新專案先鋒、商模驗證",
+  line:"我不是要一次找對路，我要建立「找路的能力」。"},
+ "服務":{sub:"支持 × 集體",
+  desc:"你因「讓整體變更好」而有力。<strong>你推進的燃料是貢獻感與被需要感。</strong>",
+  high:["很會把資源配置到真正需要的地方","能把個人能力放進系統，讓一群人跑得更順","做事重視有用與可持續，不做表面"],
+  warn:["一直答應、一直扛：把自己放在最後","害怕拒絕導致過載，最後變成怨或冷","只在被需要時才覺得自己有價值"],
+  fix:["把服務變成可計價、可交換：你需要清楚的價值回饋機制","先照顧核心需求：睡眠、界線、時間是你的續航","練習有限度的善：我願意幫，但我不燃燒"],
+  roles:"營運、專案管理、社群與客戶成功、團隊支援、流程設計、教育支持",
+  line:"我服務集體，但我不把自己當成耗材。"},
+ "守護":{sub:"穩定 × 邊界",
+  desc:"你被秩序與安全感推動。<strong>你推進的方式是守住底盤，讓事情不崩、讓系統可靠。</strong>",
+  high:["能預防問題，而不是等出事才補救","擅長制度、規範、風險控管與品質把關","你是讓團隊放心的人：有你在就不會亂"],
+  warn:["過度控制：把安全感建立在「一切都要照我」","對不確定高度焦慮，對創新天然排斥","不敢授權，最後全部卡在你身上"],
+  fix:["先授權，再守護：誰負責、誰決策、誰承擔要寫清楚","讓規則服務目標，而不是讓目標服務規則","定期更新邊界：你守護的是底線，不是所有人的情緒"],
+  roles:"法務/合規、財務、品管、資安、制度建構、風險管理",
+  line:"我守護底線，不替所有人擔責。"},
+ "突破":{sub:"進化 × 推動",
+  desc:"你為進化而動。你天生會看到「哪裡該改」，並且有推動力。<strong>轉型與改革能啟動你。</strong>",
+  high:["能在卡關處切出新路徑","面對阻力更清醒：越難越能打出解法","擅長改革流程、砍掉無效、推進轉型"],
+  warn:["對「慢」沒耐性，容易把人當成障礙","常變成獨自衝鋒的那個，最後心累","為不想改變的人長期燃燒，變成憤怒與失望"],
+  fix:["先確認對方是否願意改，再投入","突破要有補給：安排休息、同盟與資源","設計轉型節奏：不是一直推，是推—穩—再推"],
+  roles:"轉型顧問、改革推進者、危機處理、商模重構、組織升級、流程再造",
+  line:"我推動改變，但我不替不願改的人燃燒。"},
+ "創造":{sub:"開創 × 孕育",
+  desc:"你因創造新局而活。把「還不存在的東西」變成現實，會讓你充滿動力。<strong>從 0 到 1 是你最有力的位置。</strong>",
+  high:["能把抽象想法變成具體雛形","很會開新局：新產品、新內容、新體驗","你需要的是空間、素材、時間，而不是催促"],
+  warn:["被逼產出會乾掉：越被追越生不出來","沒有輸入就硬輸出，會變得空洞與厭世","長期做維持與收尾的工作會讓你失去動力"],
+  fix:["固定創造時段（不被打擾）＋固定輸入時段","找一個擅長執行與收斂的夥伴幫你落地","把創造拆成：靈感→雛形→迭代→上線，不要一次到位"],
+  roles:"產品創新、品牌內容、課程設計、研發、藝術創作、體驗設計",
+  line:"給我空間，我就會長出答案。"},
+ "傳遞":{sub:"橋接 × 表達",
+  desc:"你被「讓訊息被理解」驅動。你是天生的轉譯器——<strong>你不是愛說話，你是愛「讓對方懂」。</strong>",
+  high:["很會把複雜變簡單、把抽象變可操作","擅長教學、內容、演講、橋接不同圈層","讓知識變得可用，讓人跨過理解的鴻溝"],
+  warn:["對不願接收的人耗太久，開始自我懷疑","一直輸出但沒有回饋，最後枯竭","太想講清楚反而講太多，訊息失焦"],
+  fix:["選擇受眾：只對願意接收的人開麥","先框架後細節：一句話結論→三個重點→例子","設計回饋迴路：你需要「被理解的證據」"],
+  roles:"講師、教練、內容創作者、銷售溝通、跨部門協調、知識產品設計",
+  line:"我負責把話講清楚，不負責逼人接受。"},
+ "共鳴":{sub:"連結 × 放大",
+  desc:"你因連結與共振而前進。<strong>你推進的方式是讓人與人合拍，形成更大的協作網絡。</strong>",
+  high:["能把分散的人串成網，讓合作自然發生","能讀到現場的情緒與需求，調出共識","你是放大器：讓好的東西被看見、被傳出去"],
+  warn:["承接太多集體情緒：情緒波動、疲憊、失眠","容易被群體氣氛牽著跑，失去自己的中心","在關係裡過度共振，忘記界線"],
+  fix:["先回到自己、再連結：每天安排安靜、運動或獨處的時間","設定承接量：人多的場合要安排恢復時間","練習「不共振也可以關心」：你不需要承擔才能愛人"],
+  roles:"社群經營、商務拓展、活動策劃、關係設計、品牌擴散、團隊氛圍營造",
+  line:"我能帶動全場，但我不把自己交給全場。"}
+};
+
+const QUESTIONS = [
+ {t:"療癒",q:"當身邊的人情緒被安撫、狀態變穩，我會感到深層的滿足。"},
+ {t:"療癒",q:"即使沒有回報，只要能陪伴他人走過低谷，我就願意付出。"},
+ {t:"療癒",q:"我很容易感受到他人或空間中未被說出口的痛。"},
+ {t:"探索",q:"一成不變的生活會讓我快速失去動力。"},
+ {t:"探索",q:"新領域、新方法、新可能，會自然吸引我靠近。"},
+ {t:"探索",q:"嘗試未知，比把舊事做到完美更讓我有能量。"},
+ {t:"服務",q:"只要整體能變得更好，我願意先放下自己的需求。"},
+ {t:"服務",q:"被需要，會讓我感到自己是有價值的。"},
+ {t:"服務",q:"我很自然會注意到誰需要被支援或補位。"},
+ {t:"守護",q:"當環境穩定、有秩序，我會感到安心。"},
+ {t:"守護",q:"我對界線是否被侵犯、秩序是否被破壞特別敏感。"},
+ {t:"守護",q:"面對混亂時，我會本能地想把局面穩住。"},
+ {t:"突破",q:"一看到限制或卡關，我就會想挑戰它。"},
+ {t:"突破",q:"我寧願冒風險，也不想停在原地不變。"},
+ {t:"突破",q:"推動改變，比維持現況更讓我有生命力。"},
+ {t:"創造",q:"把「還不存在的東西」變成現實，會讓我充滿能量。"},
+ {t:"創造",q:"我常同時看到多種可能，並想把它們實際做出來。"},
+ {t:"創造",q:"當我在創造新局時，時間感會消失。"},
+ {t:"傳遞",q:"把重要的概念或訊息說清楚，對我來說很重要。"},
+ {t:"傳遞",q:"我常被放在「解釋、轉譯、連結不同觀點」的位置。"},
+ {t:"傳遞",q:"當我的話被真正理解時，我會感到被點亮。"},
+ {t:"共鳴",q:"我很容易感受到人群或場域中的氣氛變化。"},
+ {t:"共鳴",q:"當大家處在同一個節奏時，我會特別有力量。"},
+ {t:"共鳴",q:"我喜歡創造能讓人彼此靠近、產生連結的空間。"}
+];
+
+let idx = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let myTop = null;
+
+function startQuiz(){
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  render(); window.scrollTo({top:0});
+}
+function render(){
+  const q = QUESTIONS[idx];
+  document.getElementById('pbar').style.width = (idx/QUESTIONS.length*100)+'%';
+  document.getElementById('qnum').textContent = `第 ${idx+1} 題 / 共 ${QUESTIONS.length} 題`;
+  document.getElementById('qtext').textContent = q.q;
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  SCALE.forEach((s,i)=>{
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.textContent = `${i+1}・${s}`;
+    b.onclick = ()=>choose(i+1);
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = idx===0 ? 'hidden':'visible';
+}
+function choose(v){
+  answers[idx] = v;
+  if(idx < QUESTIONS.length-1){ idx++; render(); window.scrollTo({top:0}); }
+  else finish();
+}
+function goBack(){ if(idx>0){ idx--; render(); } }
+
+function finish(){
+  const scores = {};
+  Object.keys(TYPES).forEach(t=>scores[t]=0);
+  QUESTIONS.forEach((q,i)=>{ if(answers[i]!=null) scores[q.t] += answers[i]; });
+  const sorted = Object.entries(scores).sort((a,b)=>b[1]-a[1]);
+  const [top] = sorted[0], [sec] = sorted[1], [low] = sorted[sorted.length-1];
+  myTop = top;
+  try{ localStorage.setItem('fc_result_drive', JSON.stringify({top, sec, low, scores, ts:Date.now()})); }catch(e){}
+  const T = TYPES[top];
+  document.getElementById('quiz').classList.add('hidden');
+  document.getElementById('rcode').textContent = top + '型動力';
+  document.getElementById('rname').textContent = T.sub;
+  document.getElementById('rdesc').innerHTML = T.desc;
+  const det = document.getElementById('rdetail');
+  det.innerHTML = `
+    <div class="dcard"><h3>你的高效狀態</h3><ul>${T.high.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>失衡警訊</h3><ul>${T.warn.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>校準方法</h3><ul>${T.fix.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>適合的角色與任務</h3><p>${T.roles}</p></div>
+    <div class="oneliner">${T.line}</div>`;
+  const bars = document.getElementById('bars');
+  bars.innerHTML = '';
+  sorted.forEach(([t,v],i)=>{
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (i===0?' top':'') + (t===low?' low':'');
+    row.innerHTML = `<div class="rl">${t}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/15*100)}%"></div></div>
+      <div class="rv">${v}</div>`;
+    bars.appendChild(row);
+  });
+  document.getElementById('rsecond').innerHTML =
+    `你的副動力是 <b>${sec}型（${TYPES[sec].sub}）</b>——在特定情境中會被啟動的輔助動力。主動力是你最自然、最不費力的推進方式，兩者的組合決定你的行動風格。`;
+  document.getElementById('rlow').innerHTML =
+    `耗損警示：<b>${low}型</b>是你分數最低的動力。長期被要求用這種模式運作，你容易感到疲憊或空耗——這不是缺陷，是提醒你別把自己放錯位置。`;
+  document.getElementById('result').classList.remove('hidden');
+  if(window.FC) FC.resultReady('drive', {answers, scores, top, second:sec});
+  renderChain();
+  window.scrollTo({top:0});
+}
+function renderChain(){
+  const g=k=>{try{return !!localStorage.getItem(k)}catch(e){return false}};
+  const done=[g('fc_result_root'),g('fc_result_drive'),g('fc_result_archetype')];
+  const n=done.filter(Boolean).length;
+  const el=document.getElementById('chain'); if(!el) return;
+  let next;
+  if(n>=3) next='<a class="btn solid" href="report.html">三個測驗完成——解鎖你的個人原型報告書</a>';
+  else if(!done[2]) next='<a class="btn solid" href="test-archetype.html">下一步：內在原型測驗（再 3 分鐘）</a>';
+  else if(!done[0]) next='<a class="btn solid" href="test.html">下一步：語根測驗（約 10 分鐘）</a>';
+  else next='<a class="btn solid" href="report.html">產生你的個人原型報告書</a>';
+  el.innerHTML=`<div style="font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px">測驗進度 ${n} / 3</div>
+    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px">${done.map(d=>`<span style="width:46px;height:4px;border-radius:99px;background:${d?'var(--gold)':'rgba(255,255,255,.14)'}"></span>`).join('')}</div>${next}`;
+}
+function restart(){
+  idx = 0; answers = new Array(QUESTIONS.length).fill(null);
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+
+/* 角色卡 */
+function makeMyCard(){
+  if(!myTop) return;
+  const T = TYPES[myTop];
+  showRoleCard({kicker:'INNER DRIVE', title:myTop+'型動力', subtitle:T.sub, line:T.line}, 'cardBox', '我的內在動力卡.png');
+}
+
+/* 分享 */
+const TYPE_KEYS = Object.keys(TYPES);
+function shareResult(){
+  if(!myTop) return;
+  const url = location.origin.startsWith('http')
+    ? location.origin + location.pathname + '?d=' + TYPE_KEYS.indexOf(myTop)
+    : 'https://www.frequency-civilization.com/test-drive.html?d=' + TYPE_KEYS.indexOf(myTop);
+  const text = `我的主要內在動力是「${myTop}型」（${TYPES[myTop].sub}）！\n來測測是什麼在推動你：`;
+  if(navigator.share){
+    navigator.share({title:'我的內在動力測驗結果', text, url}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text + '\n' + url).then(()=>{
+      document.getElementById('shareHint').textContent = '分享文字已複製，貼到任何地方都可以！';
+    });
+  }
+}
+function fromShared(){
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+(function(){
+  const p = new URLSearchParams(location.search);
+  if(p.has('d')){
+    const i = parseInt(p.get('d'),10);
+    if(i>=0 && i<TYPE_KEYS.length){
+      const t = TYPE_KEYS[i];
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('scode').textContent = t + '型動力';
+      document.getElementById('sdesc').innerHTML = TYPES[t].sub + '——' + TYPES[t].desc;
+      document.getElementById('shared').classList.remove('hidden');
+    }
+  }
+})();
+</script>
+<script src="fc.js"></script>
+<script src="card.js"></script>
+</body>
+</html>

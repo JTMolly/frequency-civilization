@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>內在原型測驗｜頻率文明 Frequency Civilization</title>
+<meta name="description" content="10 題，看見你在人群中自然成為的角色——六種內在原型，你是哪一種？">
+<link rel="canonical" href="https://frequency-civilization.com/test-archetype.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090d; --bg2:#0d0f16; --card:#12141c;
+  --gold:#c9a86a; --gold-soft:#e0c894;
+  --text:#e8e6e1; --muted:#9b9890; --line:rgba(201,168,106,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.85;letter-spacing:.06em}
+h1,h2,h3{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.12em}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:.16em;color:var(--gold-soft)}
+.nav-in a.back{font-size:14px;color:var(--text);opacity:.85}
+main{padding:120px 0 90px;min-height:100vh}
+.btn{display:inline-block;padding:13px 40px;border:1px solid var(--gold);color:var(--gold-soft);font-size:15.5px;letter-spacing:.18em;border-radius:2px;background:none;cursor:pointer;transition:.25s;font-family:inherit}
+.btn:hover{background:var(--gold);color:#0d0f14}
+.btn.solid{background:var(--gold);color:#12131a;font-weight:500}
+.btn.solid:hover{background:var(--gold-soft)}
+.btn.ghost{border-color:rgba(255,255,255,.2);color:var(--muted);letter-spacing:.1em;padding:11px 26px;font-size:14px}
+.center{text-align:center}
+.intro h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:24px}
+.intro p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+.intro .box{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:24px 28px;margin:30px 0;font-size:15.5px}
+.intro .box li{margin-left:1.3em;margin-bottom:6px;color:var(--muted)}
+.progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.qnum{color:var(--gold);font-size:13.5px;letter-spacing:.25em;margin-bottom:14px}
+.qtext{font-size:clamp(19px,3vw,23px);font-family:'Noto Serif TC',serif;font-weight:500;margin-bottom:30px;line-height:1.7}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid rgba(255,255,255,.07);color:var(--text);border-radius:6px;padding:15px 20px;font-size:15.5px;font-family:inherit;letter-spacing:.03em;line-height:1.7;cursor:pointer;margin-bottom:12px;transition:.18s}
+.opt:hover{border-color:var(--gold);background:#1b2030}
+.quiz-foot{margin-top:26px;display:flex;justify-content:space-between;align-items:center}
+.quiz-foot .hint{font-size:12.5px;color:var(--muted);opacity:.7}
+.result .kicker{color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:16px}
+.result h1{font-size:clamp(28px,5vw,42px);margin-bottom:4px}
+.result .rname{color:var(--gold-soft);font-size:18px;letter-spacing:.2em;margin-bottom:28px}
+.result .desc{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:16.5px;text-align:left}
+.result .desc strong{color:var(--text);font-weight:500}
+.detail{max-width:620px;margin:0 auto 36px;text-align:left;display:grid;gap:16px}
+.dcard{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:20px 24px}
+.dcard h3{font-size:15.5px;color:var(--gold-soft);margin-bottom:10px;letter-spacing:.12em}
+.dcard li{margin-left:1.3em;margin-bottom:6px;font-size:14.5px;color:var(--muted)}
+.oneliner{border-left:3px solid var(--gold);background:var(--bg2);padding:18px 24px;font-family:'Noto Serif TC',serif;font-size:17px;color:var(--gold-soft)}
+.bars{max-width:560px;margin:0 auto 40px;text-align:left}
+.bar-row{display:grid;grid-template-columns:150px 1fr 30px;gap:12px;align-items:center;margin-bottom:9px;font-size:13.5px}
+.bar-row .rl{color:var(--muted)}
+.bar-row.top .rl{color:var(--gold-soft)}
+.bar-track{height:8px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#8a7347,var(--gold));border-radius:99px}
+.bar-row .rv{color:var(--muted);text-align:right}
+.second{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:20px 26px;max-width:620px;margin:0 auto 16px;font-size:15px;text-align:left}
+.second b{color:var(--gold-soft);font-weight:500}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:36px 0 20px}
+.note{font-size:12.5px;color:var(--muted);opacity:.75;margin-top:16px}
+.hidden{display:none}
+.gate{border:1px solid rgba(201,168,106,.35);border-radius:10px;padding:34px 30px;max-width:600px;margin:10px auto 40px;background:linear-gradient(165deg,rgba(201,168,106,.08),rgba(255,255,255,.02));text-align:center}
+.gate h3{font-size:19px;margin-bottom:10px;color:var(--gold-soft)}
+.gate p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.gate input[type=email],.gate input[type=text]{width:100%;max-width:360px;padding:13px 16px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text);font-size:15px;font-family:inherit;margin-bottom:12px;letter-spacing:.04em;display:block;margin-left:auto;margin-right:auto}
+.gate input:focus{outline:none;border-color:var(--gold)}
+.gate .consent{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;text-align:left;max-width:360px;margin:6px auto 16px;line-height:1.8}
+.gate .consent input{margin-top:6px}
+.gate .gate-msg{font-size:13px;color:var(--gold-soft);margin-top:10px;min-height:1.5em}
+@media(max-width:560px){.bar-row{grid-template-columns:110px 1fr 26px}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <a class="logo" href="index.html" style="color:var(--gold-soft)">頻率文明 FREQUENCY CIVILIZATION</a>
+  <a class="back" href="tests.html">← 回三大測驗</a>
+</div></nav>
+
+<main><div class="wrap">
+
+  <div id="intro" class="intro">
+    <h1>內在原型測驗</h1>
+    <p>十個問題，看見你在人群中自然成為的角色——不用努力扮演、天生就會走進去的那個位置。</p>
+    <p>語根描述你「怎麼運作」，內在原型描述你「在人群中自然成為的角色」。</p>
+    <div class="box">
+      <ul>
+        <li>共 10 題，每題六個選項，約 3 分鐘。</li>
+        <li>選「最像你當下反應」的那一個，不是你希望自己成為的樣子。</li>
+        <li>若兩種原型同分，代表你是混合型——結果會一併呈現。</li>
+      </ul>
+    </div>
+    <div class="center"><button class="btn solid" onclick="startQuiz()">開始作答</button></div>
+    <p class="note center">本測驗為教育與自我認知工具，不具醫療或心理診斷性質。</p>
+  </div>
+
+  <div id="quiz" class="hidden">
+    <div class="progress"><i id="pbar" style="width:0%"></i></div>
+    <div class="qnum" id="qnum"></div>
+    <div class="qtext" id="qtext"></div>
+    <div id="opts"></div>
+    <div class="quiz-foot">
+      <button class="btn ghost" id="backBtn" onclick="goBack()">上一題</button>
+      <div class="hint">選最像你的直覺反應</div>
+    </div>
+  </div>
+
+  <div id="result" class="result center hidden">
+    <div class="kicker">YOUR INNER ARCHETYPE</div>
+    <h1 id="rcode"></h1>
+    <div class="rname" id="rname"></div>
+    <p class="desc" id="rdesc"></p>
+    <div class="detail" id="rdetail"></div>
+    <div id="gateBox"></div>
+    <div id="deep" class="hidden">
+      <div class="bars" id="bars"></div>
+      <div class="second" id="rsecond"></div>
+    </div>
+    <div id="cardBox" style="margin:30px 0 8px"></div>
+    <div id="chain" style="margin:36px 0 8px"></div>
+    <div class="cta-row">
+      <button class="btn solid" onclick="makeMyCard()">產生我的角色卡</button>
+      <button class="btn" onclick="shareResult()">一鍵分享我的結果</button>
+            <a class="btn" href="https://lin.ee/pKlS7Yv" id="lineBtn" target="_blank" rel="noopener">加入官方 LINE 深入了解</a>
+      <button class="btn ghost" onclick="restart()">重新測驗</button>
+    </div>
+    <p class="note" id="shareHint"></p>
+    <p class="note">做完三個測驗了嗎？<a href="report.html">產生你的個人原型報告書 →</a></p>
+  </div>
+
+  <div id="shared" class="result center hidden">
+    <div class="kicker">SHARED RESULT</div>
+    <p class="desc" style="text-align:center;margin-bottom:10px">你的朋友的內在原型是</p>
+    <h1 id="scode"></h1>
+    <p class="desc" id="sdesc" style="text-align:center"></p>
+    <div class="cta-row">
+      <button class="btn solid" onclick="fromShared()">我也要測我的內在原型</button>
+      <a class="btn" href="index.html">認識頻率文明</a>
+    </div>
+  </div>
+
+</div></main>
+
+<script>
+const TYPES = {
+ "行動者":{en:"The Initiator",sub:"推進 × 突破",
+  desc:"你是讓事情開始動的人——總是第一個開始、最先衝出去。你的存在本身就有「打通堵塞」的力量，讓事情從想法變成現實。<strong>你是那種「做下去就對了」的人。</strong>",
+  high:["快速推進：點子不只想，還能馬上做","感染力強，你的行動會帶動他人","對阻力容忍度高，能穿過混亂的局面"],
+  warn:["容易衝過頭，還沒看清局勢就動","不小心會帶走別人還沒準備好的節奏","習慣獨行，卻常希望有人真的懂你"],
+  line:"你不是只會做事的人，你是能讓任務有生命的人。慢一點，不會被落下——你就是節奏本身。"},
+ "療癒者":{en:"The Holder",sub:"承接 × 安定",
+  desc:"你天生能安定現場的氛圍，像一座溫暖的泉源。你擅長照顧他人的情緒，也能察覺最微小的氣氛轉變。<strong>你是那種「我不說話，別人也會靠近」的人。</strong>",
+  high:["極高的情緒感知力與陪伴力","他人與你相處會自動放鬆","對正在受苦的人特別有承接力"],
+  warn:["容易過度共感，把別人的事變成自己的","拿不準該「同理」還是「劃界線」","有時會犧牲自己，換來片刻和諧"],
+  line:"你的溫柔不是要你無聲地承受，而是讓別人因你而記得自己。"},
+ "教導者":{en:"The Architect",sub:"結構 × 轉譯",
+  desc:"你喜歡建立秩序，把混亂整理清楚，把抽象概念變成有邏輯的語言。你是架構的創造者，也是他人理解世界的橋梁。<strong>你是那種「我可以幫你說清楚這件事」的人。</strong>",
+  high:["系統思考強，擅長拆解與重組","很會教學與說明","常自動成為群體中的大腦或筆記者"],
+  warn:["過度理性時會卡住直覺","遇到混亂會急著控制","放不下「一定要說清楚、交代完」的責任感"],
+  line:"你不是來證明你懂很多，而是來讓知識變成別人走得過去的橋。"},
+ "感應者":{en:"The Channeler",sub:"接收 × 導航",
+  desc:"你對還沒被說出口的訊息極度敏銳——常能察覺他人沒說的話、感受到現場氛圍的細微變化。你的行動由內在訊號帶動。<strong>你是那種「感覺不對，我就不動」的人。</strong>",
+  high:["對細微變化非常敏銳","靈感與直覺來得快、也準","常無意間說出他人的內心話，帶來共鳴"],
+  warn:["容易受群體情緒影響，起伏劇烈","缺乏穩定練習時，會懷疑自己的判斷","容易與身體和現實節奏脫節"],
+  line:"你不是來逃避現實的，而是來把還沒有語言的訊號，轉成大家能用的語言。"},
+ "洞見者":{en:"The Seer",sub:"穿透 × 識破",
+  desc:"你總能看穿表象、直指核心。你不是靠一步步分析，而是「直接知道」。你看見的，往往是別人還沒意識到的問題與死角。<strong>你是那種「不說破，但早就看見」的人。</strong>",
+  high:["洞察力強，直覺判斷極準","擅長引導他人看見內在真實","安安靜靜地，就能成為別人的轉捩點"],
+  warn:["容易陷入孤獨感與無人理解的疏離","看見太多卻無處說，會往內累積成壓力","與集體節奏脫節時，不知如何適當表達"],
+  line:"你不需要喚醒所有人。守住你的視野，等對的人靠近。"},
+ "鏡面者":{en:"The Reflector",sub:"映照 × 轉化",
+  desc:"你是一面「看不見自己，卻能讓他人看見自己」的鏡子。別人靠近你，常會不自覺看見自己還沒整理好的部分。<strong>你是那種「別人常對你莫名投射強烈情緒」的人。</strong>",
+  high:["和各種人都合得來、容易親近","能映照他人的問題，讓對方自然覺察","天生讓人卸下防備、進入真實狀態"],
+  warn:["常被誤解：明明沒說什麼，卻被激烈回應","不容易建立穩定的自我形象","容易累——你需要時間消化別人的投射"],
+  line:"你不是空的，而是那面能讓世界看見自己的湖面。先照見自己，才能穩定別人。"}
+};
+
+const T = ["行動者","療癒者","教導者","感應者","洞見者","鏡面者"];
+const QUESTIONS = [
+ {q:"當你被邀請進入一個新團隊，你最直覺的反應是？",o:[
+  "馬上想知道要做什麼","先觀察氣氛，有人不舒服我會注意到","問流程、角色、結構是否清晰",
+  "感受一下現場氛圍，直覺對不對再決定","馬上看出團隊裡誰有影響力、哪裡會出問題","我進去之後，大家通常會自動向我傾訴或投射"]},
+ {q:"別人最常對你說的一句話是？",o:[
+  "「你真的很有行動力。」","「跟你在一起很舒服。」","「你講得好清楚，幫我理出來了。」",
+  "「你也太敏銳了吧，你怎麼知道？」","「你怎麼這麼準、一針見血。」","「為什麼我一跟你講話，情緒就全出來了。」"]},
+ {q:"你創作或完成一件事的方式最像？",o:[
+  "邊做邊調整，在行動中思考","有情緒或感受才做得動，沒有就卡住","一定要先理清結構、脈絡再開始",
+  "不知道從哪來的靈感，但感覺來了就做","先看清這件事背後的意義，再決定要不要做","跟某個人互動之後，靈感就自動出來了"]},
+ {q:"如果你在團隊裡，你最常做的事是？",o:[
+  "直接跳下去執行和推進","注意誰情緒不對、是否需要休息","提出流程建議與優化做法",
+  "提醒大家：這裡的氣氛怪怪的","冷冷一句話，點出大家都沒看見的問題","默默站著，結果大家都來跟你傾訴或發洩"]},
+ {q:"當你遇到卡關時，你通常會：",o:[
+  "強行突破，找辦法繞過去","先感受一下，自己是不是內在受傷了","分析出關卡的結構是哪裡不合理",
+  "靜下來，讓答案自己浮現","一眼看到真正的問題，但懶得解釋給人聽","有人靠近之後，我就會突然懂了"]},
+ {q:"你覺得自己最大的優勢是：",o:[
+  "做事不拖延，行動超快","懂人，給人安全感","梳理複雜問題的能力",
+  "靈感強，感知敏銳","洞察力驚人，說得出真相","很會陪伴別人，看見他的內在"]},
+ {q:"你在社交場合的默默角色通常是：",o:[
+  "開始安排動線、分配資源","負責讓大家都開心與放鬆","幫大家排時間、主持流程",
+  "突然說一句話，讓大家靜下來","在角落安靜觀察，不說話但記住每個細節","雖然沒說什麼，卻吸引所有人靠近"]},
+ {q:"若用一句話形容你自己，你會說：",o:[
+  "我是推進器","我是情緒溫泉","我是資料處理器",
+  "我是訊號接收站","我是揭開真相的人","我是一面會變身的鏡子"]},
+ {q:"當別人情緒爆炸或混亂時，你最常：",o:[
+  "提出可執行的解法","抱住他，先讓他哭完","幫他分析問題",
+  "感受他背後真正亂掉的是什麼","直接說破真正的原因","發現他其實是在對我投射而已"]},
+ {q:"如果選一種「你在群體中的任務感」，你最可能是：",o:[
+  "任務推動者","守護者","結構建構者","訊息傳遞者","真相偵測者","轉化之鏡"]}
+];
+
+let idx = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let myTop = null;
+
+function startQuiz(){
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  render(); window.scrollTo({top:0});
+}
+function render(){
+  const q = QUESTIONS[idx];
+  document.getElementById('pbar').style.width = (idx/QUESTIONS.length*100)+'%';
+  document.getElementById('qnum').textContent = `第 ${idx+1} 題 / 共 ${QUESTIONS.length} 題`;
+  document.getElementById('qtext').textContent = q.q;
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  q.o.forEach((t,i)=>{
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = t;
+    b.onclick = ()=>choose(i);
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = idx===0 ? 'hidden':'visible';
+}
+function choose(i){
+  answers[idx] = i;
+  if(idx < QUESTIONS.length-1){ idx++; render(); window.scrollTo({top:0}); }
+  else finish();
+}
+function goBack(){ if(idx>0){ idx--; render(); } }
+
+function finish(){
+  const scores = {};
+  T.forEach(t=>scores[t]=0);
+  answers.forEach(a=>{ if(a!=null) scores[T[a]]++; });
+  const sorted = Object.entries(scores).sort((a,b)=>b[1]-a[1]);
+  const [top, topScore] = sorted[0];
+  const [sec, secScore] = sorted[1];
+  const isMix = topScore === secScore;
+  myTop = top;
+  try{ localStorage.setItem('fc_result_archetype', JSON.stringify({top, sec, mix:isMix, scores, ts:Date.now()})); }catch(e){}
+  const A = TYPES[top];
+  document.getElementById('quiz').classList.add('hidden');
+  document.getElementById('rcode').textContent = isMix ? `${top} × ${sec}` : top;
+  document.getElementById('rname').textContent = isMix ? '雙原型混合' : `${A.en}・${A.sub}`;
+  document.getElementById('rdesc').innerHTML = isMix
+    ? `你的「${top}」與「${sec}」同分——你是混合型，兩種角色會依情境切換。以下先呈現「${top}」的完整解讀，「${sec}」的特質也同樣屬於你。`
+    : A.desc;
+  const det = document.getElementById('rdetail');
+  det.innerHTML = (isMix ? `<p class="desc">${A.desc}</p>` : '') + `
+    <div class="dcard"><h3>你的優勢</h3><ul>${A.high.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>要留意的挑戰</h3><ul>${A.warn.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="oneliner">${A.line}</div>`;
+  const bars = document.getElementById('bars');
+  bars.innerHTML = '';
+  sorted.forEach(([t,v],i)=>{
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (i===0||(isMix&&i===1)?' top':'');
+    row.innerHTML = `<div class="rl">${t}・${TYPES[t].en}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/10*100)}%"></div></div>
+      <div class="rv">${v}</div>`;
+    bars.appendChild(row);
+  });
+  const s2 = document.getElementById('rsecond');
+  if(!isMix && secScore>0){
+    s2.innerHTML = `你的第二原型是 <b>${sec}・${TYPES[sec].en}</b>——${TYPES[sec].sub}。主原型是你最自然的角色，第二原型會在特定情境中補位。`;
+  } else { s2.classList.add('hidden'); }
+  document.getElementById('result').classList.remove('hidden');
+  if(window.FC) FC.resultReady('archetype', {answers, scores, top, second:sec});
+  renderChain();
+  window.scrollTo({top:0});
+}
+function renderChain(){
+  const g=k=>{try{return !!localStorage.getItem(k)}catch(e){return false}};
+  const done=[g('fc_result_root'),g('fc_result_drive'),g('fc_result_archetype')];
+  const n=done.filter(Boolean).length;
+  const el=document.getElementById('chain'); if(!el) return;
+  let next;
+  if(n>=3) next='<a class="btn solid" href="report.html">三個測驗完成——解鎖你的個人原型報告書</a>';
+  else if(!done[0]) next='<a class="btn solid" href="test.html">下一步：語根測驗（約 10 分鐘）</a>';
+  else if(!done[1]) next='<a class="btn solid" href="test-drive.html">下一步：內在動力測驗（再 5 分鐘）</a>';
+  else next='<a class="btn solid" href="report.html">產生你的個人原型報告書</a>';
+  el.innerHTML=`<div style="font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px">測驗進度 ${n} / 3</div>
+    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px">${done.map(d=>`<span style="width:46px;height:4px;border-radius:99px;background:${d?'var(--gold)':'rgba(255,255,255,.14)'}"></span>`).join('')}</div>${next}`;
+}
+function restart(){
+  idx = 0; answers = new Array(QUESTIONS.length).fill(null);
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+
+function makeMyCard(){
+  if(!myTop) return;
+  const A = TYPES[myTop];
+  showRoleCard({kicker:'INNER ARCHETYPE', title:myTop, subtitle:A.en+'・'+A.sub, line:A.line}, 'cardBox', '我的內在原型卡.png');
+}
+
+function shareResult(){
+  if(!myTop) return;
+  const url = location.origin.startsWith('http')
+    ? location.origin + location.pathname + '?a=' + T.indexOf(myTop)
+    : 'https://www.frequency-civilization.com/test-archetype.html?a=' + T.indexOf(myTop);
+  const text = `我的內在原型是「${myTop} ${TYPES[myTop].en}」！\n六種原型，你是哪一種？`;
+  if(navigator.share){
+    navigator.share({title:'我的內在原型測驗結果', text, url}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text + '\n' + url).then(()=>{
+      document.getElementById('shareHint').textContent = '分享文字已複製，貼到任何地方都可以！';
+    });
+  }
+}
+function fromShared(){
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+(function(){
+  const p = new URLSearchParams(location.search);
+  if(p.has('a')){
+    const i = parseInt(p.get('a'),10);
+    if(i>=0 && i<T.length){
+      const t = T[i];
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('scode').textContent = t;
+      document.getElementById('sdesc').innerHTML = `${TYPES[t].en}・${TYPES[t].sub}——` + TYPES[t].desc;
+      document.getElementById('shared').classList.remove('hidden');
+    }
+  }
+})();
+</script>
+<script src="fc.js"></script>
+<script src="card.js"></script>
+</body>
+</html>
