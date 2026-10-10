@@ -270,3 +270,38 @@ header.hero-band.film{position:relative;min-height:100vh;display:flex;align-item
 }
 /* 影片上的英文小標加一點陰影，亮天空上才看得清楚 */
 .hero-band.film .kicker{text-shadow:0 1px 12px rgba(0,0,0,.45)}
+
+/* hero：滿版金色光塔（2026-10-10 第二版；光塔＝舊站原設計，只放大） */
+header.hero-band.tower-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;color:#fff;
+  background:linear-gradient(180deg,#14121a 0%,#1d1a1c 38%,#3a2e22 72%,#8a6a3e 92%,#e9cf98 100%)}
+.tower-hero .sky{position:absolute;inset:0;z-index:0;pointer-events:none}
+.tower-hero .sky .glow{position:absolute;left:50%;top:42%;width:1100px;height:1100px;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,214,140,.30) 0%,rgba(255,200,120,.12) 30%,rgba(255,200,120,0) 62%);animation:breathe 7s ease-in-out infinite}
+.tower-hero .sky .stars{position:absolute;inset:0;opacity:.55;
+  background-image:radial-gradient(1.2px 1.2px at 12% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 28% 32%,#f7e7c0 50%,transparent 51%),
+  radial-gradient(1.4px 1.4px at 71% 14%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 84% 36%,#f7e7c0 50%,transparent 51%),
+  radial-gradient(1px 1px at 58% 8%,#fff 50%,transparent 51%),radial-gradient(1.2px 1.2px at 40% 22%,#fff 50%,transparent 51%),
+  radial-gradient(1px 1px at 92% 22%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 6% 40%,#f7e7c0 50%,transparent 51%);
+  animation:breathe 9s ease-in-out infinite}
+.tower-stage{position:absolute;left:50%;top:44%;width:240px;height:240px;transform:translate(-50%,-50%) scale(1.9);z-index:1}
+.tower-stage .tower{position:absolute;left:0;top:0;margin:0}
+.tower-hero .hero{text-align:left;padding:0 24px 90px;position:relative;z-index:2}
+.tower-hero .kicker{color:#f3e2b8;letter-spacing:.42em}
+.tower-hero h1{background:none;-webkit-background-clip:initial;background-clip:initial;color:#fff;text-shadow:0 2px 28px rgba(0,0,0,.45);font-size:clamp(30px,4.6vw,52px);line-height:1.55;margin-bottom:18px}
+.tower-hero p.lead{color:rgba(255,255,255,.9);margin:0 0 34px;max-width:560px;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.tower-hero .btn{border-color:rgba(255,255,255,.75);color:#fff}
+.tower-hero .btn:hover{background:#fff;color:var(--text);border-color:#fff}
+@media (max-width:760px){
+  header.hero-band.tower-hero{min-height:92vh}
+  .tower-stage{top:36%;transform:translate(-50%,-50%) scale(1.35)}
+  .tower-hero .hero{padding:0 16px 56px}
+  .tower-hero .btn{padding:12px 26px;letter-spacing:.16em}
+}
+/* 電腦版：光塔放右邊、字在左邊，不互相壓住 */
+@media (min-width:761px){
+  .tower-stage{left:72%;top:46%;transform:translate(-50%,-50%) scale(2.1)}
+  .tower-hero .hero{max-width:1040px}
+  .tower-hero .hero > *{max-width:560px}
+  .tower-hero h1{font-size:clamp(30px,3.8vw,46px)}
+}
+@media (min-width:761px){.tower-hero .sky .glow{left:72%;top:46%}}
