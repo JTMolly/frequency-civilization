@@ -480,3 +480,57 @@ body.root-page .trait-list li::before{background:var(--c)}
   .page-hero{padding:140px 0 64px}
   .states{grid-template-columns:1fr}
 }
+
+/* =====================================================================
+   主題曲與小故事、國歌（2026-10-10）
+   ===================================================================== */
+.yt-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#14121a;box-shadow:0 18px 50px rgba(40,30,20,.18)}
+.yt-frame iframe,.yt-lite{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-lite{padding:0;cursor:pointer;background:#14121a}
+.yt-lite img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease,filter .4s}
+.yt-lite:hover img{transform:scale(1.03);filter:brightness(1.06)}
+.yt-lite .play{position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;
+  background:rgba(255,255,255,.88);box-shadow:0 8px 30px rgba(0,0,0,.25);transition:.3s}
+.yt-lite .play::after{content:"";position:absolute;left:30px;top:24px;border-left:20px solid #3b2f22;border-top:13px solid transparent;border-bottom:13px solid transparent}
+.yt-lite:hover .play{transform:scale(1.08);background:#fff}
+
+/* 語根頁英文標語 */
+body.root-page .root-hero .motto{font-family:'Noto Serif TC',serif;font-style:italic;font-size:15px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:-12px 0 22px}
+
+/* 主題曲與小故事 */
+.song-story{background:linear-gradient(170deg,var(--g1) 0%,#fffdf9 55%,color-mix(in srgb,var(--g2) 35%,#fffdf9) 100%)}
+.song-grid{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center;margin-top:44px}
+.song-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-top:16px;font-size:14px;letter-spacing:.06em;color:var(--text)}
+.song-meta .no{font-family:'Noto Serif TC',serif;color:var(--gold);font-size:13px;letter-spacing:.2em}
+.song-meta a{margin-left:auto;font-size:13px;letter-spacing:.14em}
+.phrase .motto-big{font-family:'Noto Serif TC',serif;font-weight:300;font-style:italic;font-size:clamp(26px,3vw,38px);letter-spacing:.08em;color:var(--text);line-height:1.4;margin-bottom:24px}
+.phrase .ph{font-family:'Noto Serif TC',serif;font-size:17px;letter-spacing:.06em;color:var(--gold-soft);margin-bottom:10px}
+.phrase .ph-zh{color:var(--muted);font-size:15px;line-height:2}
+.story{max-width:640px;margin:84px auto 0;text-align:center}
+.story h3{font-family:'Noto Serif TC',serif;font-weight:400;font-size:clamp(22px,2.4vw,28px);letter-spacing:.14em;color:var(--text);margin-bottom:40px}
+.story-body p{font-family:'Noto Serif TC',serif;font-weight:300;font-size:17px;line-height:2.15;letter-spacing:.08em;color:#3f3830;margin-bottom:28px}
+.story-body strong{font-weight:500;color:var(--text)}
+.story details summary{list-style:none;cursor:pointer;display:inline-block;margin:6px auto 30px;padding:11px 30px;border:1px solid var(--gold-dim);border-radius:2px;color:var(--gold-soft);font-size:14px;letter-spacing:.24em;background:rgba(255,255,255,.6)}
+.story details summary::-webkit-details-marker{display:none}
+.story details[open] summary{display:none}
+.story-note{margin-top:30px;font-size:12px;color:var(--muted);letter-spacing:.06em;opacity:.85}
+.work-rule{margin-top:40px}
+
+/* 12 語根之歌（總覽頁） */
+.anthem-one{background:linear-gradient(180deg,#fbf3e1 0%,var(--bg) 100%)}
+.anthem-video{max-width:820px;margin:0 auto}
+.anthem-one .small-note a{letter-spacing:.14em}
+
+/* 首頁：頻率文明之歌 */
+.anthem-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px}
+.anthem .year{margin-top:22px;font-size:12px;letter-spacing:.36em;color:var(--night-gold)}
+.anthem h3{font-weight:400;font-size:19px;letter-spacing:.12em;color:#f4ecdc;margin:8px 0 10px;line-height:1.7}
+.anthem a{font-size:13px;letter-spacing:.16em;color:var(--night-gold-soft)}
+
+@media (max-width:860px){
+  .song-grid,.anthem-grid{grid-template-columns:1fr;gap:34px}
+  .story{margin-top:60px}
+  .story-body p{font-size:16px}
+  .yt-lite .play{width:60px;height:60px;margin:-30px 0 0 -30px}
+  .yt-lite .play::after{left:24px;top:19px;border-left-width:16px;border-top-width:11px;border-bottom-width:11px}
+}
