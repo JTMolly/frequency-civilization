@@ -11,7 +11,8 @@ HERE = os.path.dirname(__file__)
 EN_DIR = os.path.join(HERE, 'en')
 ROOTS = 'sakaran elariah thaleon aurikai rohendal zaerah valtara kuthari meihara xonteh naeltu orishan'.split()
 EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.html', 'grid.html',
-            'test.html', 'test-archetype.html', 'test-drive.html', 'report.html'] + [f'roots/{r}.html' for r in ROOTS]
+            'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html', 'notes.html'] + \
+           [f'roots/{r}.html' for r in ROOTS] + [f'notes/n{i:02d}.html' for i in range(1, 11)]
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js']
 CJK = re.compile(r'[㐀-鿿　-〿！-～]')
 ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',
@@ -24,6 +25,7 @@ EN_NAV = '''<div class="nav-links">
       <a href="{up}about.html">About</a>
       <a href="{up}roots.html">Root Codes</a>
       <a href="{up}tests.html">Tests</a>
+      <a href="{up}notes.html">Frequency Notes</a>
       <a href="{up}grid.html">Frequency Grid</a>
     </div>'''
 
@@ -40,7 +42,7 @@ def table_for(page):
         if f.endswith('.json'):
             t.update(load(f))
     t.update(load('common.json'))
-    key = page.replace('roots/', 'root_').replace('.html', '')
+    key = page.replace('roots/', 'root_').replace('/', '_').replace('.html', '')
     t.update(load('roots_common.json') if page.startswith('roots/') else {})
     t.update(load(key + '.json'))
     return t
@@ -87,7 +89,7 @@ def translate_html(src, page, table, jsmap):
 
 
 def has_translation(page):
-    key = page.replace('roots/', 'root_').replace('.html', '')
+    key = page.replace('roots/', 'root_').replace('/', '_').replace('.html', '')
     return os.path.exists(os.path.join(EN_DIR, key + '.json')) or bool(js_table(page))
 
 
@@ -117,7 +119,7 @@ def build(inject, url_of):
     for page in EN_PAGES:
         if not os.path.exists(page):
             continue
-        key = page.replace('roots/', 'root_').replace('.html', '')
+        key = page.replace('roots/', 'root_').replace('/', '_').replace('.html', '')
         if not has_translation(page):
             continue  # 這一頁還沒有翻譯檔，先不產生
         src = open(page).read()
@@ -128,6 +130,7 @@ def build(inject, url_of):
         out = translate_html(src, page, table_for(page), js_table(page))
         out = out.replace('<html lang="zh-Hant">', '<html lang="en">', 1)
         out = fix_paths(out, page)
+        out = out.replace('assets/notes/n', 'assets/notes/en/n')  # 頻率筆記用英文封面
         out = re.sub(r'(<link rel="canonical" href=")[^"]*', lambda m: m.group(1) + url_of('en', page), out)
         out = re.sub(r'(<meta property="og:url" content=")[^"]*', lambda m: m.group(1) + url_of('en', page), out)
         dest = os.path.join('en', page)
