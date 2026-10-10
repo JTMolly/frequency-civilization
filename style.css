@@ -427,3 +427,56 @@ body.home footer .newsletter{display:none}
   .statement{font-size:24px!important;letter-spacing:.06em!important}
   .flow{font-size:18px!important;letter-spacing:.14em}
 }
+
+/* =====================================================================
+   內頁 V3：跟首頁同一套編輯式版面（body.v3）
+   ===================================================================== */
+body.v3 section{padding:110px 0}
+body.v3 section + section{border-top:none}
+body.v3 .sec-kicker{display:flex;align-items:center;gap:14px;font-size:11.5px;letter-spacing:.42em;color:var(--gold)}
+body.v3 .sec-kicker::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+body.v3 .center .sec-kicker{justify-content:center}
+body.v3 h2{font-weight:400;font-size:clamp(26px,3vw,38px);letter-spacing:.12em;color:var(--text);line-height:1.6}
+body.v3 .h-night h2{color:#f4ecdc}
+body.v3 .h-night .sec-kicker{color:var(--night-gold)}
+body.v3 .h-night .sec-kicker::before{background:var(--night-gold)}
+
+/* 內頁頁首 */
+.page-hero{padding:170px 0 90px;background:radial-gradient(ellipse 70% 80% at 50% 0%,#fbefd6 0%,rgba(251,239,214,0) 70%),var(--bg)}
+.page-hero h1{font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(34px,5vw,58px);letter-spacing:.14em;line-height:1.4;color:var(--text);margin:8px 0 26px}
+.page-hero .lead{max-width:680px;font-size:17px;line-height:2.1;color:var(--muted)}
+
+/* 夜空 CTA 帶 */
+.cta-night{text-align:center}
+.cta-night .sec-lead{color:var(--night-muted)!important}
+.cta-night .btn{border-color:rgba(232,213,168,.6);color:var(--night-gold-soft)}
+.cta-night .btn:hover{background:var(--night-gold-soft);color:#0f1015}
+.cta-night .btn.solid{background:linear-gradient(135deg,#d8bc82,#b8955a);color:#14121a;border:none}
+.night-card .btn.night-btn{align-self:flex-start;background:linear-gradient(135deg,#d8bc82,#b8955a);color:#14121a;border:none;padding:12px 30px;letter-spacing:.24em}
+.after-tests{padding-top:90px!important}
+
+/* 語根個別頁 */
+body.root-page .root-hero{padding:150px 0 80px;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--c) 16%,transparent) 0%,transparent 55%),var(--bg)}
+body.root-page .root-hero .code{font-weight:300;letter-spacing:.08em;color:var(--text)}
+body.root-page .root-hero .cname{color:var(--muted);letter-spacing:.42em;font-size:15px}
+.ring.big{display:block;position:relative;width:120px;height:120px;border-radius:50%;margin:26px auto 26px;border:1px solid var(--c);
+  background:radial-gradient(circle,color-mix(in srgb,var(--c) 26%,transparent) 0%,transparent 64%);animation:breathe 7s ease-in-out infinite}
+.ring.big::before{content:"";position:absolute;inset:16px;border-radius:50%;border:1px solid color-mix(in srgb,var(--c) 55%,transparent)}
+.ring.big i{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--c);box-shadow:0 0 22px var(--c)}
+body.root-page .trait-list li::before{background:var(--c)}
+.states{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px;max-width:900px}
+.state{padding:30px 30px 26px;border-top:2px solid var(--c);background:var(--card);box-shadow:var(--shadow)}
+.state.lo{border-top-color:color-mix(in srgb,var(--c) 45%,#8a8a8a)}
+.state .lab{font-size:12px;letter-spacing:.36em;color:var(--gold);margin-bottom:12px}
+.state p{font-size:15.5px;color:#453f35;line-height:2}
+.state-key{max-width:900px;margin-top:34px;font-family:'Noto Serif TC',serif;font-size:19px;letter-spacing:.08em;color:var(--text);line-height:1.9}
+.state-key span{display:block;font-family:'Noto Sans TC',sans-serif;font-size:12px;letter-spacing:.36em;color:var(--gold);margin-bottom:8px}
+.layers.practice{margin-top:40px}
+
+@media (max-width:860px){
+  body.v3 section{padding:80px 0}
+  body.v3 h2{font-size:23px;letter-spacing:.05em}
+  body.v3 .btn{letter-spacing:.1em;padding:13px 22px}
+  .page-hero{padding:140px 0 64px}
+  .states{grid-template-columns:1fr}
+}
