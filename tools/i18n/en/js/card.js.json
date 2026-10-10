@@ -1,0 +1,20 @@
+{
+ "'頻率文明 FREQUENCY CIVILIZATION'": "'FREQUENCY CIVILIZATION'",
+ "'<p style=\"color:#9b9890;font-size:14px\">正在生成你的角色卡…</p>'": "'<p style=\"color:#9b9890;font-size:14px\">Making your role card…</p>'",
+ "'下載角色卡'": "'Download role card'",
+ "'分享角色卡'": "'Share role card'",
+ "'我的角色卡'": "'My role card'",
+ "/* 角色卡產生器：canvas 畫出可下載/分享的卡片圖（1080×1350） */": "/* note */",
+ "// 背景": "// note",
+ "// 頂部金色光暈": "// note",
+ "// 金框": "// note",
+ "// 光塔": "// note",
+ "/* 沒圖也照樣出卡 */": "/* note */",
+ "// 主標": "// note",
+ "// 副標": "// note",
+ "// 分隔線": "// note",
+ "// 一句話（自動換行）": "// note",
+ "// 頁尾": "// note",
+ "/* 在結果頁顯示卡片＋下載/分享按鈕 */": "/* note */",
+ "// file:// 本機預覽時圖片會讓 canvas 受污染，改出無光塔版": "// note"
+}

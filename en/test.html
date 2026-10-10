@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Root Code Test | Frequency Civilization</title>
+<meta content="24 everyday situations, about 5 minutes, to find your Primary Root: the way you most naturally perceive, decide, relate and create. Then pick the Mission Line that sounds most like you." name="description"/>
+<link href="https://frequency-civilization.com/test.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/>
+<link href="/assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="Root Code Test | Frequency Civilization" property="og:title"/>
+<meta content="24 everyday situations, about 5 minutes, to find your Primary Root: the way you most naturally perceive, decide, relate and create. Then pick the Mission Line that sounds most like you." property="og:description"/>
+<meta content="https://frequency-civilization.com/assets/og-image.png" property="og:image"/>
+<meta content="https://frequency-civilization.com/test.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#08090d; --bg2:#0d0f16; --card:#12141c;
+  --gold:#c9a86a; --gold-soft:#e0c894;
+  --text:#e8e6e1; --muted:#9b9890; --line:rgba(201,168,106,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.85;letter-spacing:.06em}
+h1,h2,h3{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.12em}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:.16em;color:var(--gold-soft)}
+.nav-in a.back{font-size:14px;color:var(--text);opacity:.85;white-space:nowrap}
+main{padding:120px 0 90px;min-height:100vh}
+.btn{display:inline-block;padding:13px 40px;border:1px solid var(--gold);color:var(--gold-soft);font-size:15.5px;letter-spacing:.18em;border-radius:2px;background:none;cursor:pointer;transition:.25s;font-family:inherit}
+.btn:hover{background:var(--gold);color:#0d0f14}
+.btn.solid{background:var(--gold);color:#12131a;font-weight:500}
+.btn.solid:hover{background:var(--gold-soft)}
+.btn.ghost{border-color:rgba(255,255,255,.2);color:var(--muted);letter-spacing:.1em;padding:11px 26px;font-size:14px}
+.center{text-align:center}
+/* intro */
+.intro h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:24px}
+.intro p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+.intro .box{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:24px 28px;margin:30px 0;font-size:15.5px}
+.intro .box li{margin-left:1.3em;margin-bottom:6px;color:var(--muted)}
+/* quiz */
+.progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.qnum{color:var(--gold);font-size:13.5px;letter-spacing:.25em;margin-bottom:14px}
+.qtext{font-size:clamp(19px,3vw,23px);font-family:'Noto Serif TC',serif;font-weight:500;margin-bottom:12px;line-height:1.7}
+.qsub{color:var(--muted);font-size:14.5px;margin-bottom:26px}
+.qtext + #opts{margin-top:18px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid rgba(255,255,255,.07);color:var(--text);border-radius:6px;padding:16px 20px;font-size:15.5px;font-family:inherit;letter-spacing:.03em;line-height:1.7;cursor:pointer;margin-bottom:12px;transition:.18s}
+.opt:hover{border-color:var(--gold);background:#1b2030}
+.opt.none{background:none;border-style:dashed;border-color:rgba(255,255,255,.14);color:var(--muted);font-size:14.5px}
+.opt.picked{border-color:var(--gold);background:#1b2030}
+.opt.phrase{font-family:'Noto Serif TC',serif;font-weight:500;font-size:16px}
+.quiz-foot{margin-top:26px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.quiz-foot .hint{font-size:12.5px;color:var(--muted);opacity:.7;text-align:right}
+.quiz-foot .btn{white-space:nowrap;flex:none}
+/* result */
+.result .kicker{color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:16px}
+.result h1{font-size:clamp(30px,5vw,44px);margin-bottom:4px}
+.result .rname{color:var(--gold-soft);font-size:20px;letter-spacing:.3em;margin-bottom:28px}
+.result .desc{max-width:600px;margin:0 auto 40px;color:var(--muted);font-size:16.5px}
+.result .desc strong{color:var(--text);font-weight:500}
+.mission{max-width:600px;margin:0 auto 22px;border:1px solid rgba(201,168,106,.4);border-radius:10px;padding:26px 28px;background:linear-gradient(165deg,rgba(201,168,106,.1),rgba(255,255,255,.02))}
+.mission .mk{font-size:12.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px}
+.mission .mt{font-family:'Noto Serif TC',serif;font-size:clamp(18px,3vw,21px);color:var(--gold-soft);line-height:1.75}
+.mission .mc{font-size:12.5px;color:var(--muted);margin-top:10px;letter-spacing:.12em}
+.gridline{font-size:14.5px;color:var(--muted);margin:0 auto 40px;max-width:600px}
+.bars{max-width:560px;margin:0 auto 44px;text-align:left}
+.bar-row{display:grid;grid-template-columns:150px 1fr 30px;gap:12px;align-items:center;margin-bottom:9px;font-size:13.5px}
+.bar-row .rl{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-row.top .rl{color:var(--gold-soft)}
+.bar-track{height:8px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#8a7347,var(--gold));border-radius:99px}
+.bar-row .rv{color:var(--muted);text-align:right}
+.second{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:20px 26px;max-width:600px;margin:0 auto 44px;font-size:15.5px;text-align:left}
+.second b{color:var(--gold-soft);font-weight:500}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.note{font-size:12.5px;color:var(--muted);opacity:.75;margin-top:30px}
+.hidden{display:none}
+/* email 解鎖門（深色版） */
+.gate{border:1px solid rgba(201,168,106,.35);border-radius:10px;padding:34px 30px;max-width:600px;margin:10px auto 40px;background:linear-gradient(165deg,rgba(201,168,106,.08),rgba(255,255,255,.02));text-align:center}
+.gate h3{font-size:19px;margin-bottom:10px;color:var(--gold-soft)}
+.gate p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.gate input[type=email],.gate input[type=text]{width:100%;max-width:360px;padding:13px 16px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text);font-size:15px;font-family:inherit;margin-bottom:12px;letter-spacing:.04em;display:block;margin-left:auto;margin-right:auto}
+.gate input:focus{outline:none;border-color:var(--gold)}
+.gate .consent{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;text-align:left;max-width:360px;margin:6px auto 16px;line-height:1.8}
+.gate .consent input{margin-top:6px}
+.gate .gate-msg{font-size:13px;color:var(--gold-soft);margin-top:10px;min-height:1.5em}
+@media(max-width:560px){
+  .bar-row{grid-template-columns:110px 1fr 28px}
+  .logo{font-size:13px;letter-spacing:.1em}
+  .btn{padding:13px 28px}
+  .mission{padding:22px 20px}
+}
+</style>
+<link href="../flow.css?v=20261010f" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/test.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/test.html"><link rel="alternate" hreflang="en" href="https://frequency-civilization.com/en/test.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/test.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}</style><style>html[lang=en] body{letter-spacing:.01em}html[lang=en] h1,html[lang=en] h2,html[lang=en] h3,html[lang=en] .qtext,html[lang=en] .lead{letter-spacing:.01em}html[lang=en] .btn{letter-spacing:.06em}html[lang=en] .nav-links,html[lang=en] .logo{letter-spacing:.05em}</style><!-- /i18n-head -->
+</head>
+<body>
+<nav><div class="nav-in">
+<a class="logo" href="index.html" style="color:var(--gold-soft)">FREQUENCY CIVILIZATION</a>
+<!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../test.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/test.html" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="../en/test.html" hreflang="en" lang="en" class="on">EN</a></div><!-- /i18n-switch -->
+  <a class="back" href="tests.html">← Back to the tests</a>
+</div></nav>
+<main><div class="wrap">
+<!-- intro -->
+<div class="intro" id="intro">
+<div id="flowBadge" style="margin-bottom:22px"></div>
+<h1>Root Code Test</h1>
+<p>Through 24 everyday situations, this test finds the way you most naturally operate when you perceive, decide, relate and create: your Primary Root.</p>
+<p>Afterwards, you pick, by gut feeling, the one of 12 lines that sounds most like you. People with the same Primary Root still put their energy in different directions.</p>
+<div class="box">
+<ul>
+<li>24 questions, about 5 minutes.</li>
+<li>Every question has a "none of these sound like me" option. If none fit, choose it; don't force it.</li>
+<li>There are no right or wrong answers, nothing good or bad. Choose the reaction that is most like you, not the one you wish were you.</li>
+<li>Go with your first instinct; don't think too long.</li>
+<li>Results are counted anonymously in the <a href="grid.html">Frequency Grid</a>. Only the number of people is counted, never any personal data.</li>
+</ul>
+</div>
+<div class="center"><button class="btn solid" onclick="startQuiz()">Begin</button></div>
+<p class="note center">This test is an educational and self-knowledge tool, not a medical or psychological diagnosis. The 12 Root Codes are a working model that is still being validated. This English version is translated from the Chinese test.</p>
+</div>
+<!-- quiz -->
+<div class="hidden" id="quiz">
+<div class="progress"><i id="pbar" style="width:0%"></i></div>
+<div class="qnum" id="qnum"></div>
+<div class="qtext" id="qtext"></div>
+<div class="qsub hidden" id="qsub"></div>
+<div id="opts"></div>
+<div class="quiz-foot">
+<button class="btn ghost" id="backBtn" onclick="goBack()">Back</button>
+<div class="hint" id="hint">Go with your gut. Don't overthink it.</div>
+</div>
+</div>
+<!-- result -->
+<div class="result center hidden" id="result">
+<div class="kicker">YOUR PRIMARY ROOT CODE</div>
+<h1 id="rcode"></h1>
+<div class="rname" id="rname"></div>
+<p class="desc" id="rdesc"></p>
+<div class="mission hidden" id="mission">
+<div class="mk">Your Mission Line</div>
+<div class="mt" id="mtext"></div>
+<div class="mc" id="mcode"></div>
+</div>
+<p class="gridline" id="gridline">You've lit up one cell in the Frequency Grid. <a href="grid.html">See how much is lit now →</a></p>
+<div id="chain"></div>
+<div id="gateBox"></div>
+<div class="hidden" id="deep">
+<div class="bars" id="bars"></div>
+<div class="second" id="rsecond"></div>
+</div>
+<div id="cardBox" style="margin:30px 0 8px"></div>
+<div class="cta-row">
+<button class="btn solid" onclick="makeMyCard()">Make my role card</button>
+<button class="btn" onclick="shareResult()">Share my result</button>
+<a class="btn" href="https://lin.ee/pKlS7Yv" id="lineBtn" rel="noopener" target="_blank">Talk with us on LINE</a>
+<button class="btn ghost" onclick="restart()">Retake the test</button>
+</div>
+<p class="note" id="rootLink" style="font-size:14.5px"></p>
+<p class="note" id="shareHint"></p>
+<p class="note">Want to understand your combination and how to use it? Join our official LINE and talk with us.</p>
+<p class="note">Finished all three tests? <a href="report.html">Generate your personal profile report →</a></p>
+</div>
+<!-- shared landing：別人點分享連結進來看到的 -->
+<div class="result center hidden" id="shared">
+<div class="kicker">SHARED RESULT</div>
+<p class="desc" style="margin-bottom:10px">Your friend's Primary Root is</p>
+<h1 id="scode"></h1>
+<div class="rname" id="sname"></div>
+<p class="desc" id="sdesc"></p>
+<div class="cta-row">
+<button class="btn solid" onclick="fromShared()">Find my Root Code too</button>
+<a class="btn" href="index.html">About Frequency Civilization</a>
+</div>
+</div>
+</div></main>
+<script>
+/* question bank v2: 24 questions, 4 Root Codes each, every Root Code appears 8 times; option order is shuffled */
+const TEST_VERSION = 'v2';
+const BANK = [{"q":"Something new is just starting and everything is still fuzzy. At this point you're most like:","o":[["Rohen'dal","The first one to stand up and say, \"I'll try it first.\""],["Auri'kai","The one who goes quiet and waits for the picture in their head to get clearer."],["Sa'karan","The one who grabs paper and sketches the skeleton, so the work has somewhere to land."],["Ori'shan","The one who puts on a song and gets moving, warming up everyone's rhythm."]]},{"q":"A friend texts you late at night: \"I'm so tired.\" The first thing you do is:","o":[["Elariah","Hold off on advice and just stay with them while they talk it through."],["Xon'teh","Find the link where they're stuck and see if a tool or method can fix it."],["Nael'tu","Help them look further ahead: \"Once you get through this, where do you want to go?\""],["Kuthari","Help them write down the tangle, one clear item at a time."]]},{"q":"A group starts arguing and the air is tight. You usually:","o":[["Zae'rah","Steady yourself first, so the people around you slowly settle too."],["Valtara","Find the thing everyone actually cares about and reconnect people around it."],["Thaleon","Say out loud the problem everyone sees but no one dares to mention."],["Mei'hara","Go to the person who's most hurt and understand what they really need."]]},{"q":"Which moment makes you feel most like yourself?","o":[["Xon'teh","I find the connection point between two systems that couldn't talk, and suddenly everything flows."],["Zae'rah","Everything is in chaos, and I'm still standing steady."],["Ori'shan","I speak or start moving, and the whole room lights up."],["Elariah","Someone cries in front of me and says, \"Thank you for understanding.\""]]},{"q":"People most often describe you as:","o":[["Kuthari","\"Give it to you, and it ends up as a record others can use.\""],["Mei'hara","\"With you, I feel like I can see myself better.\""],["Rohen'dal","\"When you're around, things start moving.\""],["Valtara","\"When you show up, we become a team.\""]]},{"q":"If you were a light, you'd be most like:","o":[["Nael'tu","The light before dawn that shows which way the road goes."],["Thaleon","A fire relit from the ashes, making the dark visible."],["Auri'kai","A quiet silver thread between two worlds that hears what hasn't been said."],["Sa'karan","Light that comes down to earth and becomes a house you can live in."]]},{"q":"The team's plan has been stuck for two weeks. You're most likely to:","o":[["Rohen'dal","Stop meeting about it and build a small version first."],["Valtara","Get everyone to the same table and realign on where we're going."],["Elariah","Quietly ask each person, \"How have you been lately?\""],["Thaleon","Name the real reason it's stuck, even if it's not nice to hear."]]},{"q":"In your first week in a new city, you:","o":[["Xon'teh","Set up transport, internet and your usual apps, and life is connected."],["Kuthari","Start a notebook and write down the little things you discover each day."],["Zae'rah","Find a regular corner and have tea there every day, slowly settling in."],["Auri'kai","Wander around and find the places you like by feel."]]},{"q":"A friend asks you to help with a birthday party. You most want to handle:","o":[["Ori'shan","The music and the vibe, so everyone wants to move the moment they walk in."],["Mei'hara","The birthday person, making sure they feel truly remembered."],["Sa'karan","The schedule and who does what, all on one sheet."],["Nael'tu","The theme and the concept, so this party is unlike anyone else's."]]},{"q":"When you learn a new skill, you usually:","o":[["Xon'teh","Find the best tools and shortcuts and plug them into your life."],["Thaleon","Figure out why it works the way it does, and the reasoning behind it."],["Sa'karan","Break it into steps and build up one level at a time."],["Kuthari","Take notes as you go and turn them into your own course material."]]},{"q":"After an exhausting day, what brings you back best is:","o":[["Zae'rah","Being alone and quiet, doing nothing, letting yourself settle."],["Elariah","A good cry, or telling someone what's on your heart."],["Valtara","Being with a group of familiar people, even without talking."],["Ori'shan","Putting on headphones and a favorite song and letting your body move."]]},{"q":"When do you most often suddenly \"get it\"?","o":[["Auri'kai","When I get quiet and the answer floats up like a picture."],["Nael'tu","When I imagine five years from now, and what to do today becomes clear."],["Rohen'dal","The moment I actually start doing it."],["Mei'hara","After a deep talk with someone, when I see myself in them."]]},{"q":"In a group, what you most often notice that others don't is:","o":[["Xon'teh","Two things that look unrelated could actually connect."],["Ori'shan","The rhythm of the room is off and people need a change of mood."],["Thaleon","The problem behind the situation that no one has named."],["Auri'kai","Something someone is feeling but hasn't said."]]},{"q":"Someone trusts you with something very important. What you care about most is:","o":[["Elariah","How they feel, so they know they can relax."],["Sa'karan","Planning it clearly, so every step is solid."],["Kuthari","Writing every detail down, so whoever takes over can follow it."],["Zae'rah","Whatever happens, I'll take care of it steadily."]]},{"q":"Which compliment do you love most?","o":[["Mei'hara","\"You really get me.\""],["Nael'tu","\"You showed me another possibility.\""],["Rohen'dal","\"Thanks to you, things finally got moving.\""],["Valtara","\"With you here, we're actually a team.\""]]},{"q":"Imagine you're on a ship about to set sail. Your most natural place is:","o":[["Nael'tu","At the bow, watching the course and deciding where to go."],["Xon'teh","In the engine room, keeping every system running just right."],["Auri'kai","On deck, feeling the subtle changes in wind and current."],["Valtara","Among the crew, keeping everyone rowing at the same pace."]]},{"q":"Something big goes wrong. Your first reaction is:","o":[["Rohen'dal","Stop the bleeding first and think as I go."],["Zae'rah","Calm myself and the people around me first."],["Thaleon","This might be a turning point. First, see clearly what it's telling us."],["Kuthari","Write down what happened so it doesn't happen again."]]},{"q":"In your ideal home, the most important thing is:","o":[["Elariah","Everyone can put down their feelings here and be their real selves."],["Mei'hara","Someone who understands you, and the unspoken understanding between you."],["Sa'karan","Clear paths and tidy storage, with a place for everything."],["Ori'shan","Music and laughter often, and air that moves."]]},{"q":"At a new workshop, the first thing you notice is:","o":[["Elariah","Who looks a bit nervous and could use some company."],["Valtara","How to split into groups so people work well together."],["Auri'kai","How the space feels, that atmosphere you can't quite name."],["Sa'karan","How today's schedule and timing are arranged."]]},{"q":"If you could have one more ability, you'd most want:","o":[["Thaleon","To see the essence of things at a glance."],["Kuthari","To remember every experience and turn it into knowledge others can inherit."],["Mei'hara","To understand what each person truly needs inside."],["Xon'teh","To make any tool, any system work for me."]]},{"q":"If you were something in nature, you'd be most like:","o":[["Zae'rah","A mountain: quiet, steady, a place people want to pause."],["Nael'tu","The horizon at dawn, always holding light that hasn't risen yet."],["Rohen'dal","A gust of wind: wherever it blows, things start to move."],["Ori'shan","Ocean waves, with their own rhythm, one after another."]]},{"q":"Working with someone you don't know well, you first:","o":[["Xon'teh","Make sure our tools and ways of communicating connect."],["Mei'hara","Get to know what kind of person they are and what they care about."],["Zae'rah","Take it slow and build trust between us first."],["Sa'karan","Make the roles and rules clear, and then it all runs smoothly."]]},{"q":"Your favorite kind of weekend is:","o":[["Auri'kai","Going alone to the sea or a gallery and letting inspiration find me."],["Valtara","Rounding up friends to get something done together."],["Kuthari","Settling into a café and turning this week's thoughts into an essay."],["Ori'shan","Going to a live show, or dancing all night."]]},{"q":"Looking back on this year, what you most want to tell yourself is:","o":[["Rohen'dal","\"I'm glad I took that first step.\""],["Nael'tu","\"I've come further than I thought.\""],["Thaleon","\"The hardest times later turned into light.\""],["Elariah","\"Thank you for taking such good care of your own feelings.\""]]}];
+/* tie-breaker: one line per Root Code */
+const TIEBREAK = {"Sa'karan":"I want to turn chaos into order that can actually land.","Elariah":"I want every feeling to have a place to rest.","Thaleon":"I want to see past the surface and make the dark visible.","Auri'kai":"I want to hear the voices that haven't spoken yet.","Rohen'dal":"I want to be the first one to move.","Zae'rah":"I want to slow everything down so it can keep going steadily.","Valtara":"I want different people to walk to the same rhythm.","Kuthari":"I want to write down the road I've walked for the people who come after.","Mei'hara":"I want people to see their real selves in relationships.","Xon'teh":"I want to connect different systems so they understand each other.","Nael'tu":"I want to see the future first and tell everyone where the road is.","Ori'shan":"I want rhythm to bring the whole room to life."};
+/* Mission Lines: 12 per Primary Root, 144 in total */
+const PHRASES = {"Sa'karan":[["SK-001","I want to design a system that helps lost people find their way."],["SK-002","I want to build a structure that lets ideas land steadily."],["SK-003","I'm good at turning the clues in a mess into language everyone can use."],["SK-004","I'm not building a tall tower; I'm building a bridge that helps people remember where they came from."],["SK-005","I'm willing to stand at the front and catch the flood of information no one has sorted yet."],["SK-006","I want to design an interface that helps people talk with themselves again."],["SK-007","I'm not just building a method; I'm laying the ground a community can live on."],["SK-008","I focus on turning the wishes in my heart into steps that can really be done."],["SK-009","I don't need to be seen. I want good methods to be copied and passed on."],["SK-010","I want to build a shared language that lets like-minded people recognize each other."],["SK-011","I'm a natural bridge-builder, joining the wisdom on both sides."],["SK-012","I want to turn experience no one has written down yet into language people can use."]],"Elariah":[["EL-001","I want emotions to be a guide, not a cage."],["EL-002","I can hear the feelings hidden behind the words."],["EL-003","I want to keep company with the sadness that never got said."],["EL-004","I can hear, in silence, the need you didn't say."],["EL-005","I want to help you learn to love yourself well and stop holding back."],["EL-006","I want to help people open a conversation with their inner selves."],["EL-007","I don't give answers; I give you a way to see yourself."],["EL-008","I want to bring understanding and soft light into every crack."],["EL-009","I walk with you through turning points, without rushing to change you."],["EL-010","I can sense small shifts and help you find your way back to being whole inside."],["EL-011","I want to hold a space where feelings can move freely."],["EL-012","I'm the one who stays gentle in the middle of a storm."]],"Thaleon":[["TH-001","I want to turn the darkest experiences into light that shows the way."],["TH-002","I'm willing to walk into chaos and bring order and truth out of it."],["TH-003","I'm where change happens, and the push that lets the truth come up."],["TH-004","I can hold feelings that haven't finished moving, and let them slowly loosen."],["TH-005","I want to hold the parts that haven't been accepted yet."],["TH-006","I know pain and brokenness well, because they're often the doorway to starting again."],["TH-007","My words are for exposing lies and mending cracks."],["TH-008","Every collapse is when I redesign the route."],["TH-009","I'm here to transform, not to destroy."],["TH-010","I'm willing to stay with the process instead of controlling the result."],["TH-011","What others can't carry, I'm willing to share some of."],["TH-012","I want to find a way out for the darkness that doesn't have a name yet."]],"Auri'kai":[["AU-001","I'm a bridge between what can be seen and what can't."],["AU-002","I can hear what isn't said, and translate a language no one has understood yet."],["AU-003","I want light to reach into deeper darkness."],["AU-004","My feelings often travel far, but I choose to bring them back to everyday life."],["AU-005","My body is like a sensitive antenna; feelings often arrive before words."],["AU-006","I can catch thoughts before they take shape and bring them out steadily."],["AU-007","Between words and silence, I translate what a person really means."],["AU-008","My head is often full of images and ideas, and I'm willing to translate them into words others understand."],["AU-009","I trust my intuition, even when I can't explain why yet."],["AU-010","I'm a carrier, not a controller."],["AU-011","I know the right measure: help people feel steady instead of opening every door at once."],["AU-012","I want to rebuild a bridge so people can hear their own inner voice."]],"Rohen'dal":[["RO-001","I want to wake the people who are still waiting and send the signal that it's time to start."],["RO-002","I don't just say what I mean; I walk it, do it and live it."],["RO-003","When I show up, things start."],["RO-004","I speak through action and carry the message everywhere on my own two feet."],["RO-005","I stay clear in chaos, because I follow the voice inside me."],["RO-006","I don't wait until everything is ready; I know one step forward is the start."],["RO-007","I'm the one who walks out in front."],["RO-008","I never force anyone to change, but when I show up, change begins."],["RO-009","I'm not here to please everyone; I'm here to deliver the message accurately."],["RO-010","I have my own direction inside and don't need anyone's approval."],["RO-011","I know when to come close and when to step back, because I can read the room."],["RO-012","I want to open a new journey for everyone."]],"Zae'rah":[["ZA-001","Just being here is a steady kind of strength."],["ZA-002","I'm in no hurry to speak, because I know quiet can guide too."],["ZA-003","I watch first, wait for everyone to settle, and then let things start to flow."],["ZA-004","When everyone is moving, my quiet is what they come back to."],["ZA-005","I can read small shifts in the air and the ripples of emotion."],["ZA-006","I'm the one who catches change and the one who keeps the space."],["ZA-007","I feel with my breath and answer with quiet."],["ZA-008","When I'm in the room, a sense of calm slowly spreads."],["ZA-009","I don't need to jump into the chaos; I only need to stay steady myself."],["ZA-010","My steadiness isn't slowness; it gives change a place to take root."],["ZA-011","When big upheaval comes, I'm the last wall that keeps everyone steady."],["ZA-012","My slowness is the truth of a different rhythm."]],"Valtara":[["VA-001","I see a small piece in each person, waiting to be fitted together."],["VA-002","I'm not looking for just one person; I want to connect the whole web."],["VA-003","I can read the unspoken connections between people."],["VA-004","I can feel what a team isn't saying."],["VA-005","I know who fits where, and when they should be brought in."],["VA-006","What I say helps scattered people find a shared direction again."],["VA-007","I'm one piece of the puzzle, and also the board the puzzle sits on."],["VA-008","I help people see each other, and see themselves."],["VA-009","My intuition is often not just for me but for everyone."],["VA-010","I'm a harmonizer who can find, in conflict, the path everyone can walk."],["VA-011","When everything falls apart, I remember why we came together."],["VA-012","I want everyone to be able to be together, well."]],"Kuthari":[["KU-001","I'm a recorder, not a bystander; I pass on what really happened."],["KU-002","My notes are a promise I make to myself."],["KU-003","I don't just write down events; I write the ups and downs and feelings behind them."],["KU-004","Every experience has its reason, and I keep that reason for it."],["KU-005","I record so that people in the future remember where they started."],["KU-006","I pay attention to where dreams, imagination and real experience overlap."],["KU-007","I'm not only writing about you, but about the you that you thought didn't exist."],["KU-008","I want the stories that shine to leave clues others can follow."],["KU-009","I record with time, but what I write will last longer than time."],["KU-010","I turn feelings into words, and let words return to real life."],["KU-011","My records aren't cold narration; they're the echo of people meeting people."],["KU-012","Every record is something handed down; I'm just the quiet river."]],"Mei'hara":[["ME-001","I can feel the emotion you didn't say, and that's the real message."],["ME-002","I'm not here to judge you, but to help you see the side of yourself you can't see."],["ME-003","I want every relationship to be a chance to know yourself."],["ME-004","I'm willing to be misunderstood for a while, because I know you'll see in the end."],["ME-005","I often feel pain others can't put into words, and I'm learning not to carry all of it."],["ME-006","I come to know myself in relationships, and help you remember who you are."],["ME-007","I'm willing to be the one who doesn't run, just to open the door between us."],["ME-008","I know the deepest truth is often hidden where we're most afraid to be touched."],["ME-009","My boundaries are there to protect love, not to push people away."],["ME-010","From how you treat me, I see how you treat yourself."],["ME-011","After misunderstanding and hurt, I still choose love."],["ME-012","Every move closer or further away is two people talking."]],"Xon'teh":[["XO-001","I can hear the signals beneath the surface, and I want to connect them."],["XO-002","I don't just pass data along; I let it flow with warmth."],["XO-003","I translate complex technology into tools ordinary people can use."],["XO-004","I want different systems to truly talk to each other."],["XO-005","I want technology to go back to what it was meant for: serving people, not replacing them."],["XO-006","I understand code, and I understand that lonely feeling of not being able to connect."],["XO-007","Behind every piece of data is a person who wants to be understood."],["XO-008","I want to design a language that makes even very complex things clear in plain words."],["XO-009","I make tools not so people depend on them, but to hand the choice back to each person."],["XO-010","When technology turns cold, I want to make it warm again."],["XO-011","I want to help good things find the right vessel, so they're no longer lost."],["XO-012","I believe people and tools together can live a freer life."]],"Nael'tu":[["NA-001","I can see the blueprint of the future, and I'm willing to be the first to walk onto it."],["NA-002","What I see isn't fantasy; it's what's possible but hasn't happened yet."],["NA-003","I want to light up the dreams others don't dare to touch."],["NA-004","I know no one has walked this road, so I choose to take the first step."],["NA-005","I don't wait for perfect conditions; I open up the new situation first."],["NA-006","My creating comes from a deep call inside, not to prove anything, only to create."],["NA-007","I want to open a brand-new road for this world."],["NA-008","I'm the one who holds the course in a storm, and the light on the star map that shows the way."],["NA-009","I don't stay in the past or just wait for the future; I'm the engine that moves the present."],["NA-010","While everyone is still watching, I've already started changing."],["NA-011","My choices don't always need everyone's agreement, but someone always resonates."],["NA-012","I'm willing to walk into the dark, because I know it will light up in the end."]],"Ori'shan":[["OR-001","My body is a bridge, turning feelings no one can see into movements everyone can."],["OR-002","I make rhythm something you can feel, so everyone's state can be seen."],["OR-003","When I start to dance, the whole space comes alive again."],["OR-004","My voice can lead the way, carrying truths no one has said yet."],["OR-005","I can feel the air vibrating and hear the rhythm of a heartbeat."],["OR-006","I want everyone to be able to sing in their own voice."],["OR-007","Silence has rhythm too; I can hear the pulse no one speaks."],["OR-008","When everyone forgets the language of the body, I'm willing to be the one who remembers."],["OR-009","I'm not only the one who plays; I am an instrument myself."],["OR-010","When I become one with the rhythm, everything returns to its first harmony."],["OR-011","I want to dance the melody in my heart."],["OR-012","Every breath is a movement in sync with the world."]]};
+
+const ROOTS = {
+ "Sa'karan":{name:"The Architect",desc:"You turn chaos into structure. Faced with a vague task, you first build the framework, the process and the priorities, so the work becomes doable.<strong>Your value: with you around, ideas become systems.</strong>"},
+ "Elariah":{name:"The Empath",desc:"You are highly attuned to other people's emotions and can hold feelings that haven't been spoken yet, so people dare to tell you the truth.<strong>Your value: with you around, feelings have a place to land.</strong>"},
+ "Thaleon":{name:"The Transformer",desc:"You see past surface explanations and name blind spots; one sentence from you can change how someone sees their situation.<strong>Your value: with you around, stuck thinking has a chance to loosen.</strong>"},
+ "Auri'kai":{name:"The Intuitive",desc:"Your perception comes before words. When you go quiet, images and insights surface, and you notice what hasn't been said yet.<strong>Your value: you often see the point before others do.</strong>"},
+ "Rohen'dal":{name:"The Mover",desc:"You want to act the moment an idea appears. You set the pace through action and get stalled things moving again.<strong>Your value: with you around, things start moving.</strong>"},
+ "Zae'rah":{name:"The Stabilizer",desc:"You are a steady presence in chaos. You may not talk the most, but when you are there, people feel safe.<strong>Your value: you are the container that lets change happen safely.</strong>"},
+ "Valtara":{name:"The Integrator",desc:"You see where each person fits and help different people work smoothly to the same rhythm.<strong>Your value: with you around, a group becomes a team.</strong>"},
+ "Kuthari":{name:"The Recorder",desc:"You organize, record and translate, turning complex experience into knowledge others can understand and reuse.<strong>Your value: through you, scattered experience becomes a system others can inherit.</strong>"},
+ "Mei'hara":{name:"The Mirror",desc:"You are deeply perceptive one-to-one and quickly read what someone really needs and hasn't said.<strong>Your value: you make people feel truly understood.</strong>"},
+ "Xon'teh":{name:"The Connector",desc:"You connect different tools, systems and methods, find the joining point fast, and get things flowing.<strong>Your value: you are the bridge that lets systems work together.</strong>"},
+ "Nael'tu":{name:"The Navigator",desc:"You naturally sketch direction and vision, so people see a path they hadn't noticed and want to follow it.<strong>Your value: with you around, the team doesn't get lost.</strong>"},
+ "Ori'shan":{name:"The Rhythm Keeper",desc:"You change the feel of a room through voice, rhythm and movement. When you move, the whole space comes alive.<strong>Your value: you can bring a stalled room back into rhythm.</strong>"}
+};
+
+const ROOT_SLUG = {"Sa'karan":"sakaran","Elariah":"elariah","Thaleon":"thaleon","Auri'kai":"aurikai","Rohen'dal":"rohendal","Zae'rah":"zaerah","Valtara":"valtara","Kuthari":"kuthari","Mei'hara":"meihara","Xon'teh":"xonteh","Nael'tu":"naeltu","Ori'shan":"orishan"};
+const ROOT_KEYS = Object.keys(ROOTS);
+const N = BANK.length;
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* answer state: trail holds every step taken; Back goes one step back */
+let order = [], answers = [], trail = [];
+let scores = null, mainRoot = null, secRoot = null, phraseCode = null;
+let myTopRoot = null;
+
+function startQuiz(){
+  order = BANK.map(q=>shuffle(q.o.map((_,i)=>i)));
+  answers = new Array(N).fill(undefined);
+  trail = [];
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  go({t:'q', i:0});
+}
+function go(step){ trail.push(step); renderStep(); window.scrollTo({top:0}); }
+function goBack(){ if(trail.length>1){ trail.pop(); renderStep(); } }
+
+function setOptions(items){
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  items.forEach(it=>{
+    const b = document.createElement('button');
+    b.className = 'opt' + (it.cls ? ' '+it.cls : '') + (it.picked ? ' picked' : '');
+    b.textContent = it.text;
+    b.onclick = it.on;
+    box.appendChild(b);
+  });
+}
+
+function renderStep(){
+  const s = trail[trail.length-1];
+  const qnum = document.getElementById('qnum'), qtext = document.getElementById('qtext'), qsub = document.getElementById('qsub');
+  const hint = document.getElementById('hint');
+  qsub.classList.add('hidden'); qsub.textContent = '';
+  hint.textContent = 'Go with your gut. Don\'t overthink it.';
+  document.getElementById('backBtn').style.visibility = trail.length>1 ? 'visible' : 'hidden';
+
+  if(s.t==='q'){
+    const q = BANK[s.i];
+    document.getElementById('pbar').style.width = (s.i/(N+1)*100)+'%';
+    qnum.textContent = `Question ${s.i+1} of ${N}`;
+    qtext.textContent = q.q;
+    const items = order[s.i].map(k=>({text:q.o[k][1], picked: answers[s.i]===q.o[k][0], on:()=>answer(s.i, q.o[k][0])}));
+    items.push({text:'None of these sound like me', cls:'none', picked: answers[s.i]===null, on:()=>answer(s.i, null)});
+    setOptions(items);
+  }
+  else if(s.t==='tb1' || s.t==='tb2'){
+    document.getElementById('pbar').style.width = (N/(N+1)*100)+'%';
+    qnum.textContent = 'Tie-breaker';
+    if(s.t==='tb1'){
+      qtext.textContent = s.zero ? 'No single Root Code stood out in your answers. Which of these sounds most like you?' : 'A few Root Codes tied in your answers. Which of these sounds most like you?';
+    }else{
+      qtext.textContent = 'A few more are just as close. Which of these also sounds like you?';
+    }
+    qsub.textContent = 'If you can\'t decide, pick the first one that makes you pause.';
+    qsub.classList.remove('hidden');
+    setOptions(s.cands.map(r=>({text:TIEBREAK[r], on:()=> s.t==='tb1' ? pickMain(r) : pickSecond(r)})));
+  }
+  else if(s.t==='ph'){
+    document.getElementById('pbar').style.width = (N/(N+1)*100)+'%';
+    const R = ROOTS[mainRoot];
+    qnum.textContent = 'Last step · Mission Line';
+    qtext.textContent = `Your Primary Root is ${mainRoot} · ${R.name}.`;
+    qsub.textContent = `People who share ${mainRoot} still put their energy in different directions. Of the 12 lines below, pick the one that speaks to you most.`;
+    qsub.classList.remove('hidden');
+    hint.textContent = 'Once you choose, you become one of 144 Mission Lines';
+    const items = s.list.map(p=>({text:p[1], cls:'phrase', on:()=>pickPhrase(p[0])}));
+    items.push({text:'Skip for now', cls:'none', on:()=>pickPhrase(null)});
+    setOptions(items);
+  }
+}
+
+function answer(i, root){
+  answers[i] = root;
+  if(i < N-1) go({t:'q', i:i+1});
+  else afterQuiz();
+}
+
+function afterQuiz(){
+  scores = {};
+  ROOT_KEYS.forEach(r=>scores[r]=0);
+  answers.forEach(r=>{ if(r) scores[r]++; });
+  const top = Math.max(...ROOT_KEYS.map(r=>scores[r]));
+  const cands = ROOT_KEYS.filter(r=>scores[r]===top);
+  if(cands.length>1) go({t:'tb1', cands:shuffle(cands.slice()), zero: top===0});
+  else pickMain(cands[0]);
+}
+function pickMain(r){
+  mainRoot = r;
+  const rest = ROOT_KEYS.filter(k=>k!==r);
+  const top = Math.max(...rest.map(k=>scores[k]));
+  const cands = rest.filter(k=>scores[k]===top);
+  if(cands.length>1) go({t:'tb2', cands:shuffle(cands.slice())});
+  else pickSecond(cands[0]);
+}
+function pickSecond(r){
+  secRoot = r;
+  go({t:'ph', list:shuffle(PHRASES[mainRoot].slice())});
+}
+function pickPhrase(code){
+  phraseCode = code;
+  finish();
+}
+
+function finish(){
+  const topRoot = mainRoot, sec = secRoot;
+  myTopRoot = topRoot;
+  const phrase = phraseCode ? PHRASES[topRoot].find(p=>p[0]===phraseCode) : null;
+  try{ localStorage.setItem('fc_result_root', JSON.stringify({top:topRoot, sec, scores, phrase:phraseCode, v:TEST_VERSION, ts:Date.now()})); }catch(e){}
+  document.getElementById('quiz').classList.add('hidden');
+  const R = ROOTS[topRoot];
+  document.getElementById('rcode').textContent = topRoot;
+  document.getElementById('rname').textContent = R.name;
+  document.getElementById('rdesc').innerHTML = R.desc;
+
+  const mission = document.getElementById('mission');
+  if(phrase){
+    document.getElementById('mtext').textContent = '“' + phrase[1] + '”';
+    document.getElementById('mcode').textContent = phrase[0] + ' · your line among the 144';
+    mission.classList.remove('hidden');
+  }else{
+    mission.classList.add('hidden');
+  }
+
+  /* score distribution: on a tie, the tie-breaker choice comes first */
+  const rank = r => r===topRoot ? 2 : (r===sec ? 1 : 0);
+  const sorted = ROOT_KEYS.map(r=>[r, scores[r]]).sort((a,b)=> rank(b[0])-rank(a[0]) || b[1]-a[1]);
+  const bars = document.getElementById('bars');
+  bars.innerHTML = '';
+  const max = Math.max(1, ...sorted.map(x=>x[1]));
+  sorted.forEach(([r,v],i)=>{
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (i===0?' top':'');
+    row.innerHTML = `<div class="rl">${esc(r)}・${ROOTS[r].name}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/max*100)}%"></div></div>
+      <div class="rv">${v}</div>`;
+    bars.appendChild(row);
+  });
+  const secBox = document.getElementById('rsecond');
+  secBox.classList.remove('hidden');
+  secBox.innerHTML = `Your Secondary Root is <b>${esc(sec)} · ${ROOTS[sec].name}</b>. ${ROOTS[sec].desc.replace(/<[^>]+>/g,' ')} Your Primary Root is how you most naturally start; your Secondary Root is your second way of operating. Together they make the whole you.`;
+
+  document.getElementById('result').classList.remove('hidden');
+  renderChain();
+  const rl = document.getElementById('rootLink');
+  if(rl && ROOT_SLUG[topRoot]) rl.innerHTML = `<a href="../roots/${ROOT_SLUG[topRoot]}.html">Get to know ${esc(topRoot)} · ${R.name}: traits, steady and off-balance states, theme song and story →</a>`;
+  /* the deeper layer needs an email to unlock; anonymous data is saved first */
+  if(window.FC) FC.resultReady('rootcode', {answers, scores, top:topRoot, second:sec, version:TEST_VERSION, phrase:phraseCode});
+  window.scrollTo({top:0});
+}
+
+function renderChain(){ if(window.FCFlow) FCFlow.renderNext('chain','fc_result_root'); }
+function restart(){
+  trail = []; answers = []; scores = null; mainRoot = secRoot = phraseCode = null;
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  document.getElementById('cardBox').innerHTML = '';
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+
+/* ===== role card ===== */
+function makeMyCard(){
+  if(!myTopRoot) return;
+  const R = ROOTS[myTopRoot];
+  const m = R.desc.match(/<strong>(.*?)<\/strong>/);
+  const line = m ? m[1].replace('Your value: ','') : '';
+  showRoleCard({kicker:'ROOT CODE', title:myTopRoot, subtitle:R.name, line}, 'cardBox', 'my-root-code-card.png');
+}
+
+/* ===== sharing ===== */
+function shareResult(){
+  if(!myTopRoot) return;
+  const R = ROOTS[myTopRoot];
+  const url = location.origin.startsWith('http')
+    ? location.origin + location.pathname + '?r=' + ROOT_KEYS.indexOf(myTopRoot)
+    : 'https://frequency-civilization.com/test.html?r=' + ROOT_KEYS.indexOf(myTopRoot);
+  const text = `My Primary Root is ${myTopRoot} · ${R.name}!\nFind out how you operate:`;
+  if(navigator.share){
+    navigator.share({title:'My Root Code result', text, url}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text + '\n' + url).then(()=>{
+      document.getElementById('shareHint').textContent = 'Copied! Paste it anywhere.';
+    });
+  }
+}
+
+function fromShared(){
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+
+/* show a friend's result when opening a shared link */
+(function(){
+  const p = new URLSearchParams(location.search);
+  if(p.has('r')){
+    const i = parseInt(p.get('r'),10);
+    if(i>=0 && i<ROOT_KEYS.length){
+      const root = ROOT_KEYS[i], R = ROOTS[root];
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('scode').textContent = root;
+      document.getElementById('sname').textContent = R.name;
+      document.getElementById('sdesc').innerHTML = R.desc;
+      document.getElementById('shared').classList.remove('hidden');
+    }
+  }
+})();
+</script>
+<script src="flow.js?v=20261010f"></script>
+<script>if(window.FCFlow) FCFlow.introBadge('flowBadge','fc_result_root');</script>
+<script src="fc.js?v=20261010f"></script>
+<script src="card.js"></script>
+</body>
+</html>

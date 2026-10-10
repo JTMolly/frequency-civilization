@@ -48,7 +48,9 @@ SWITCH_CSS = ('<style>.lang-switch{display:flex;gap:2px;align-items:center;font-
               '.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}'
               '.lang-switch a.on{opacity:1;border:1px solid currentColor}'
               'nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}'
-              '@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}}'
+              '@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}'
+              'nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}'
+              '@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}'
               '</style>')
 
 
@@ -58,7 +60,9 @@ def head_block(lang, p):
         alts.append(('en', url_of('en', p)))
     alts.append(('x-default', url_of('zh-Hant', p)))
     links = ''.join(f'<link rel="alternate" hreflang="{h}" href="{u}">' for h, u in alts)
-    return f'<!-- i18n-head -->{links}{SWITCH_CSS}<!-- /i18n-head -->'
+    en_css = ('<style>html[lang=en] body{letter-spacing:.01em}html[lang=en] h1,html[lang=en] h2,html[lang=en] h3,html[lang=en] .qtext,html[lang=en] .lead{letter-spacing:.01em}'
+              'html[lang=en] .btn{letter-spacing:.06em}html[lang=en] .nav-links,html[lang=en] .logo{letter-spacing:.05em}</style>') if lang == 'en' else ''
+    return f'<!-- i18n-head -->{links}{SWITCH_CSS}{en_css}<!-- /i18n-head -->'
 
 
 def switch_html(lang, p):
@@ -133,6 +137,10 @@ def to_hans(s, p):
 
 def main():
     allp = pages()
+    # 英文先產生，繁中與簡中的 hreflang 才知道哪些頁有英文版
+    sys.path.insert(0, os.path.dirname(__file__))
+    import en_build
+    en_build.build(inject, url_of)
     for p in allp:
         src = open(p).read()
         new = inject(src, 'zh-Hant', p)
@@ -146,13 +154,6 @@ def main():
         out = os.path.join('zh-hans', js)
         os.makedirs(os.path.dirname(out) or '.', exist_ok=True)
         open(out, 'w').write(CC.convert(open(js).read()))
-    # 英文
-    sys.path.insert(0, os.path.dirname(__file__))
-    try:
-        import en_build
-        en_build.build(inject, url_of)
-    except ImportError:
-        pass
     sitemap(allp)
     print(f'zh-Hant pages: {len(allp)}, zh-hans written: {len(allp)}')
 

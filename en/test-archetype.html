@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inner Archetype Test | Frequency Civilization</title>
+<meta content="10 questions to see the role you naturally take in a group. Six Inner Archetypes: which one are you?" name="description"/>
+<link href="https://frequency-civilization.com/test-archetype.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/>
+<link href="/assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="Inner Archetype Test | Frequency Civilization" property="og:title"/>
+<meta content="10 questions to see the role you naturally take in a group. Six Inner Archetypes: which one are you?" property="og:description"/>
+<meta content="https://frequency-civilization.com/assets/og-image.png" property="og:image"/>
+<meta content="https://frequency-civilization.com/test-archetype.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#08090d; --bg2:#0d0f16; --card:#12141c;
+  --gold:#c9a86a; --gold-soft:#e0c894;
+  --text:#e8e6e1; --muted:#9b9890; --line:rgba(201,168,106,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.85;letter-spacing:.06em}
+h1,h2,h3{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.12em}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:.16em;color:var(--gold-soft)}
+.nav-in a.back{font-size:14px;color:var(--text);opacity:.85}
+main{padding:120px 0 90px;min-height:100vh}
+.btn{display:inline-block;padding:13px 40px;border:1px solid var(--gold);color:var(--gold-soft);font-size:15.5px;letter-spacing:.18em;border-radius:2px;background:none;cursor:pointer;transition:.25s;font-family:inherit}
+.btn:hover{background:var(--gold);color:#0d0f14}
+.btn.solid{background:var(--gold);color:#12131a;font-weight:500}
+.btn.solid:hover{background:var(--gold-soft)}
+.btn.ghost{border-color:rgba(255,255,255,.2);color:var(--muted);letter-spacing:.1em;padding:11px 26px;font-size:14px}
+.center{text-align:center}
+.intro h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:24px}
+.intro p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+.intro .box{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:24px 28px;margin:30px 0;font-size:15.5px}
+.intro .box li{margin-left:1.3em;margin-bottom:6px;color:var(--muted)}
+.progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.qnum{color:var(--gold);font-size:13.5px;letter-spacing:.25em;margin-bottom:14px}
+.qtext{font-size:clamp(19px,3vw,23px);font-family:'Noto Serif TC',serif;font-weight:500;margin-bottom:30px;line-height:1.7}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid rgba(255,255,255,.07);color:var(--text);border-radius:6px;padding:15px 20px;font-size:15.5px;font-family:inherit;letter-spacing:.03em;line-height:1.7;cursor:pointer;margin-bottom:12px;transition:.18s}
+.opt:hover{border-color:var(--gold);background:#1b2030}
+.quiz-foot{margin-top:26px;display:flex;justify-content:space-between;align-items:center}
+.quiz-foot .hint{font-size:12.5px;color:var(--muted);opacity:.7}
+.result .kicker{color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:16px}
+.result h1{font-size:clamp(28px,5vw,42px);margin-bottom:4px}
+.result .rname{color:var(--gold-soft);font-size:18px;letter-spacing:.2em;margin-bottom:28px}
+.result .desc{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:16.5px;text-align:left}
+.result .desc strong{color:var(--text);font-weight:500}
+.detail{max-width:620px;margin:0 auto 36px;text-align:left;display:grid;gap:16px}
+.dcard{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:20px 24px}
+.dcard h3{font-size:15.5px;color:var(--gold-soft);margin-bottom:10px;letter-spacing:.12em}
+.dcard li{margin-left:1.3em;margin-bottom:6px;font-size:14.5px;color:var(--muted)}
+.oneliner{border-left:3px solid var(--gold);background:var(--bg2);padding:18px 24px;font-family:'Noto Serif TC',serif;font-size:17px;color:var(--gold-soft)}
+.bars{max-width:560px;margin:0 auto 40px;text-align:left}
+.bar-row{display:grid;grid-template-columns:150px 1fr 30px;gap:12px;align-items:center;margin-bottom:9px;font-size:13.5px}
+.bar-row .rl{color:var(--muted)}
+.bar-row.top .rl{color:var(--gold-soft)}
+.bar-track{height:8px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#8a7347,var(--gold));border-radius:99px}
+.bar-row .rv{color:var(--muted);text-align:right}
+.second{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:20px 26px;max-width:620px;margin:0 auto 16px;font-size:15px;text-align:left}
+.second b{color:var(--gold-soft);font-weight:500}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:36px 0 20px}
+.note{font-size:12.5px;color:var(--muted);opacity:.75;margin-top:16px}
+.hidden{display:none}
+.gate{border:1px solid rgba(201,168,106,.35);border-radius:10px;padding:34px 30px;max-width:600px;margin:10px auto 40px;background:linear-gradient(165deg,rgba(201,168,106,.08),rgba(255,255,255,.02));text-align:center}
+.gate h3{font-size:19px;margin-bottom:10px;color:var(--gold-soft)}
+.gate p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.gate input[type=email],.gate input[type=text]{width:100%;max-width:360px;padding:13px 16px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text);font-size:15px;font-family:inherit;margin-bottom:12px;letter-spacing:.04em;display:block;margin-left:auto;margin-right:auto}
+.gate input:focus{outline:none;border-color:var(--gold)}
+.gate .consent{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;text-align:left;max-width:360px;margin:6px auto 16px;line-height:1.8}
+.gate .consent input{margin-top:6px}
+.gate .gate-msg{font-size:13px;color:var(--gold-soft);margin-top:10px;min-height:1.5em}
+@media(max-width:560px){.bar-row{grid-template-columns:110px 1fr 26px}}
+</style>
+<link href="../flow.css?v=20261010f" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/test-archetype.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/test-archetype.html"><link rel="alternate" hreflang="en" href="https://frequency-civilization.com/en/test-archetype.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/test-archetype.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}</style><style>html[lang=en] body{letter-spacing:.01em}html[lang=en] h1,html[lang=en] h2,html[lang=en] h3,html[lang=en] .qtext,html[lang=en] .lead{letter-spacing:.01em}html[lang=en] .btn{letter-spacing:.06em}html[lang=en] .nav-links,html[lang=en] .logo{letter-spacing:.05em}</style><!-- /i18n-head -->
+</head>
+<body>
+<nav><div class="nav-in">
+<a class="logo" href="index.html" style="color:var(--gold-soft)">FREQUENCY CIVILIZATION</a>
+<!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../test-archetype.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/test-archetype.html" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="../en/test-archetype.html" hreflang="en" lang="en" class="on">EN</a></div><!-- /i18n-switch -->
+  <a class="back" href="tests.html">← Back to the tests</a>
+</div></nav>
+<main><div class="wrap">
+<div class="intro" id="intro">
+<div id="flowBadge" style="margin-bottom:22px"></div>
+<h1>Inner Archetype Test</h1>
+<p>Ten questions to see the role you naturally take in a group: the place you walk into without having to try.</p>
+<p>Your Root Code describes how you operate; your Inner Archetype describes the role you naturally take in a group.</p>
+<div class="box">
+<ul>
+<li>10 questions, six options each, about 3 minutes.</li>
+<li>Choose the option most like your reaction in the moment, not the person you wish you were.</li>
+<li>If two archetypes tie for the top score, one extra question lets you choose.</li>
+</ul>
+</div>
+<div class="center"><button class="btn solid" onclick="startQuiz()">Begin</button></div>
+<p class="note center">This test is an educational and self-knowledge tool, not a medical or psychological diagnosis. This English version is translated from the Chinese test.</p>
+</div>
+<div class="hidden" id="quiz">
+<div class="progress"><i id="pbar" style="width:0%"></i></div>
+<div class="qnum" id="qnum"></div>
+<div class="qtext" id="qtext"></div>
+<div id="opts"></div>
+<div class="quiz-foot">
+<button class="btn ghost" id="backBtn" onclick="goBack()">Back</button>
+<div class="hint">Choose your most instinctive reaction</div>
+</div>
+</div>
+<div class="result center hidden" id="result">
+<div class="kicker">YOUR INNER ARCHETYPE</div>
+<h1 id="rcode"></h1>
+<div class="rname" id="rname"></div>
+<p class="desc" id="rdesc"></p>
+<div id="chain"></div>
+<div class="detail" id="rdetail"></div>
+<div id="gateBox"></div>
+<div class="hidden" id="deep">
+<div class="bars" id="bars"></div>
+<div class="second" id="rsecond"></div>
+</div>
+<div id="cardBox" style="margin:30px 0 8px"></div>
+<div class="cta-row">
+<button class="btn solid" onclick="makeMyCard()">Make my role card</button>
+<button class="btn" onclick="shareResult()">Share my result</button>
+<a class="btn" href="https://lin.ee/pKlS7Yv" id="lineBtn" rel="noopener" target="_blank">Talk with us on LINE</a>
+<button class="btn ghost" onclick="restart()">Retake the test</button>
+</div>
+<p class="note" id="shareHint"></p>
+<p class="note">Finished all three tests? <a href="report.html">Generate your personal profile report →</a></p>
+</div>
+<div class="result center hidden" id="shared">
+<div class="kicker">SHARED RESULT</div>
+<p class="desc" style="text-align:center;margin-bottom:10px">Your friend's Inner Archetype is</p>
+<h1 id="scode"></h1>
+<p class="desc" id="sdesc" style="text-align:center"></p>
+<div class="cta-row">
+<button class="btn solid" onclick="fromShared()">Find my Inner Archetype too</button>
+<a class="btn" href="index.html">About Frequency Civilization</a>
+</div>
+</div>
+</div></main>
+<script>
+const TYPES = {
+ "行動者":{en:"The Initiator",sub:"Drive × Breakthrough",
+  desc:"You get things moving: always the first to start, the first out the door. Your presence alone clears blockages and turns ideas into reality.<strong>You are the kind of person who says, \"Let's just do it.\"</strong>",
+  high:["Fast momentum: you don't just think of ideas, you act on them right away","Contagious energy: your action pulls others along","High tolerance for resistance; you can push through chaos"],
+  warn:["You can overshoot and move before you see the whole picture","You may carry off people who aren't ready for your pace","You tend to go it alone, yet often wish someone truly understood you"],
+  line:"You are not just someone who gets things done; you bring tasks to life. Slow down a little. You won't be left behind; you are the rhythm."},
+ "療癒者":{en:"The Holder",sub:"Holding × Settling",
+  desc:"You naturally settle the mood of a room, like a warm spring. You take care of other people's feelings and notice the smallest shifts in atmosphere.<strong>You are the kind of person people come close to even when you say nothing.</strong>",
+  high:["Strong emotional perception and a gift for keeping people company","People relax around you without trying","Especially able to hold people who are struggling"],
+  warn:["You can over-empathize and make other people's problems your own","You're not always sure whether to empathize or to draw a line","Sometimes you sacrifice yourself for a moment of peace"],
+  line:"Your gentleness isn't a duty to suffer in silence. It helps others remember themselves through you."},
+ "教導者":{en:"The Teacher",sub:"Structure × Translation",
+  desc:"You love creating order, sorting out chaos and turning abstract ideas into logical language. You build frameworks and are a bridge that helps others understand the world.<strong>You are the kind of person who says, \"Let me help you make this clear.\"</strong>",
+  high:["Strong systems thinking; good at breaking things down and rebuilding them","A natural at teaching and explaining","Often becomes the group's brain or note-taker"],
+  warn:["When you get too rational, your intuition gets stuck","Chaos makes you rush to take control","You can't let go of the duty to explain everything fully"],
+  line:"You aren't here to prove how much you know, but to turn knowledge into a bridge others can cross."},
+ "感應者":{en:"The Sensor",sub:"Receiving × Navigating",
+  desc:"You are highly sensitive to what hasn't been said: you pick up on unspoken words and subtle shifts in a room. Your actions are guided by inner signals.<strong>You are the kind of person who won't move if something feels off.</strong>",
+  high:["Very sensitive to subtle changes","Inspiration and intuition come fast and are often right","You often voice what others feel inside, and it resonates"],
+  warn:["Group moods easily sweep you up and down","Without steady practice, you start doubting your own judgment","You can lose touch with your body and the rhythm of everyday life"],
+  line:"You aren't here to escape reality, but to turn signals that have no words yet into language everyone can use."},
+ "洞見者":{en:"The Seer",sub:"Seeing through × Naming",
+  desc:"You see past appearances to the core. You don't get there by step-by-step analysis; you just know. What you see is often a problem or blind spot others haven't noticed yet.<strong>You are the kind of person who already sees it, even if you don't say it.</strong>",
+  high:["Strong insight; very accurate intuitive judgment","Good at helping others see what is true inside them","Quietly, you can become someone's turning point"],
+  warn:["You can slip into loneliness and the feeling that no one understands","Seeing too much with nowhere to say it builds up pressure inside","Out of step with the group, you're not sure how to express yourself"],
+  line:"You don't need to wake everyone up. Hold on to your view, and let the right people come to you."},
+ "鏡面者":{en:"The Reflector",sub:"Reflecting × Transforming",
+  desc:"You are a mirror that can't see itself but lets others see themselves. Near you, people often notice parts of themselves they haven't sorted out yet.<strong>You are the kind of person others often project strong feelings onto, for no clear reason.</strong>",
+  high:["You get along with all kinds of people and are easy to approach","You reflect other people's issues so they notice them naturally","People drop their guard and become real around you"],
+  warn:["You're often misunderstood: you barely said anything, yet get a strong reaction","It's hard for you to build a steady self-image","You tire easily; you need time to process what others project onto you"],
+  line:"You aren't empty. You are the lake the world sees itself in. See yourself first, and then you can steady others."}
+};
+
+const T = ["行動者","療癒者","教導者","感應者","洞見者","鏡面者"];
+const QUESTIONS = [
+ {q:"You're invited to join a new team. Your first instinct is to:",o:[
+  "Find out right away what needs doing","Watch the mood first; I notice if someone is uncomfortable","Ask whether the process, roles and structure are clear",
+  "Feel out the atmosphere and decide based on whether it feels right","Spot immediately who has influence and where problems will come up","Once I'm in, people tend to start confiding in me or projecting onto me"]},
+ {q:"What do people say to you most often?",o:[
+  "\"You really get things done.\"","\"It feels so comfortable being with you.\"","\"You explain things so clearly, you helped me sort it out.\"",
+  "\"You're so perceptive. How did you know?\"","\"How are you always so spot on?\"","\"Why do all my feelings come out when I talk to you?\""]},
+ {q:"The way you create or finish something is most like:",o:[
+  "Adjust as I go and think while doing","I can only get moving when I feel something; otherwise I'm stuck","I need to sort out the structure and context before I start",
+  "Inspiration comes from who knows where, and when it does, I go","I need to see the meaning behind it before I decide to do it","After interacting with someone, ideas just come"]},
+ {q:"On a team, what you do most often is:",o:[
+  "Jump in and push things forward","Notice who's not doing well emotionally or needs a break","Suggest process improvements",
+  "Point out that the mood here feels off","Say one cool sentence that names the problem no one saw","Stand there quietly, and everyone ends up confiding in or venting to you"]},
+ {q:"When you hit a wall, you usually:",o:[
+  "Force through it or find a way around","Check first whether I'm hurting inside","Analyze where the structure of the obstacle doesn't make sense",
+  "Go quiet and let the answer surface","See the real problem at a glance, but can't be bothered to explain it","Suddenly understand after someone comes close"]},
+ {q:"Your greatest strength is:",o:[
+  "I don't procrastinate; I act fast","I understand people and make them feel safe","I can untangle complex problems",
+  "Strong inspiration and sharp perception","Striking insight; I can say what's true","I'm good at being with people and seeing who they are inside"]},
+ {q:"Your quiet role at social gatherings is usually:",o:[
+  "Arranging the flow and sharing out resources","Making sure everyone is happy and relaxed","Keeping time and running the program",
+  "Saying one sentence that makes everyone go quiet","Watching quietly from a corner, saying nothing but remembering every detail","Not saying much, yet drawing everyone in"]},
+ {q:"If you described yourself in one line, you'd say:",o:[
+  "I'm the engine","I'm a warm spring for feelings","I'm a data processor",
+  "I'm a signal receiver","I'm the one who uncovers the truth","I'm a mirror that changes shape"]},
+ {q:"When someone's emotions explode or everything is a mess, you most often:",o:[
+  "Offer a practical solution","Hold them and let them cry it out first","Help them analyze the problem",
+  "Sense what has really come apart underneath","Name the real reason straight out","Realize they're actually just projecting onto me"]},
+ {q:"If you chose one sense of purpose in a group, you'd most likely be:",o:[
+  "The one who drives the task","The guardian","The structure builder","The messenger","The truth detector","The mirror of change"]}
+];
+
+let idx = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let myTop = null;
+let order = [];
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function strongLine(desc){ const m = desc.match(/<strong>(.*?)<\/strong>/); return m ? m[1] : desc.replace(/<[^>]+>/g,''); }
+let inTiebreak = false, scoresG = null;
+/* on a top-score tie, let the person pick one of the tied lines */
+function showTiebreak(cands, done){
+  inTiebreak = true;
+  document.getElementById('pbar').style.width = '100%';
+  document.getElementById('qnum').textContent = 'Tie-breaker';
+  document.getElementById('qtext').textContent = 'Which of these sounds most like you?';
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  shuffle(cands.slice()).forEach(t=>{
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = strongLine(TYPES[t].desc);
+    b.onclick = ()=>{ inTiebreak = false; done(t); };
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = 'visible';
+  window.scrollTo({top:0});
+}
+
+function startQuiz(){
+  order = QUESTIONS.map(q=>shuffle(q.o.map((_,i)=>i)));  /* option order is shuffled once; Back keeps it */
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  render(); window.scrollTo({top:0});
+}
+function render(){
+  const q = QUESTIONS[idx];
+  document.getElementById('pbar').style.width = (idx/QUESTIONS.length*100)+'%';
+  document.getElementById('qnum').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('qtext').textContent = q.q;
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  order[idx].forEach(i=>{
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = q.o[i];
+    b.onclick = ()=>choose(i);
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = idx===0 ? 'hidden':'visible';
+}
+function choose(i){
+  answers[idx] = i;
+  if(idx < QUESTIONS.length-1){ idx++; render(); window.scrollTo({top:0}); }
+  else finish();
+}
+function goBack(){ if(inTiebreak){ inTiebreak=false; render(); return; } if(idx>0){ idx--; render(); } }
+
+function finish(){
+  scoresG = {};
+  T.forEach(t=>scoresG[t]=0);
+  answers.forEach(a=>{ if(a!=null) scoresG[T[a]]++; });
+  const max = Math.max(...T.map(t=>scoresG[t]));
+  const cands = T.filter(t=>scoresG[t]===max);
+  if(cands.length > 1) showTiebreak(cands, finalize); else finalize(cands[0]);
+}
+function finalize(top){
+  const scores = scoresG;
+  const sorted = shuffle(Object.entries(scores)).sort((a,b)=>b[1]-a[1]);
+  sorted.unshift(sorted.splice(sorted.findIndex(x=>x[0]===top),1)[0]);
+  const [sec, secScore] = sorted[1];
+  const isMix = false;
+  myTop = top;
+  try{ localStorage.setItem('fc_result_archetype', JSON.stringify({top, sec, mix:isMix, scores, ts:Date.now()})); }catch(e){}
+  const A = TYPES[top];
+  document.getElementById('quiz').classList.add('hidden');
+  document.getElementById('rcode').textContent = TYPES[top].en;
+  document.getElementById('rname').textContent = A.sub;
+  document.getElementById('rdesc').innerHTML = isMix
+    ? `${TYPES[top].en} and ${TYPES[sec].en} tied: you switch between both roles depending on the situation.`
+    : A.desc;
+  const det = document.getElementById('rdetail');
+  det.innerHTML = (isMix ? `<p class="desc">${A.desc}</p>` : '') + `
+    <div class="dcard"><h3>Your strengths</h3><ul>${A.high.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>Challenges to watch</h3><ul>${A.warn.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="oneliner">${A.line}</div>`;
+  const bars = document.getElementById('bars');
+  bars.innerHTML = '';
+  sorted.forEach(([t,v],i)=>{
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (i===0||(isMix&&i===1)?' top':'');
+    row.innerHTML = `<div class="rl">${TYPES[t].en}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/10*100)}%"></div></div>
+      <div class="rv">${v}</div>`;
+    bars.appendChild(row);
+  });
+  const s2 = document.getElementById('rsecond');
+  if(!isMix && secScore>0){
+    s2.innerHTML = `Your second archetype is <b>${TYPES[sec].en}</b> (${TYPES[sec].sub}). Your main archetype is your most natural role; your second steps in for particular situations.`;
+  } else { s2.classList.add('hidden'); }
+  document.getElementById('result').classList.remove('hidden');
+  if(window.FC) FC.resultReady('archetype', {answers, scores, top, second:sec});
+  renderChain();
+  window.scrollTo({top:0});
+}
+function renderChain(){ if(window.FCFlow) FCFlow.renderNext('chain','fc_result_archetype'); }
+function restart(){
+  idx = 0; answers = new Array(QUESTIONS.length).fill(null);
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+
+function makeMyCard(){
+  if(!myTop) return;
+  const A = TYPES[myTop];
+  showRoleCard({kicker:'INNER ARCHETYPE', title:A.en, subtitle:A.sub, line:A.line}, 'cardBox', 'my-inner-archetype-card.png');
+}
+
+function shareResult(){
+  if(!myTop) return;
+  const url = location.origin.startsWith('http')
+    ? location.origin + location.pathname + '?a=' + T.indexOf(myTop)
+    : 'https://www.frequency-civilization.com/test-archetype.html?a=' + T.indexOf(myTop);
+  const text = `My Inner Archetype is ${TYPES[myTop].en}!\nSix archetypes. Which one are you?`;
+  if(navigator.share){
+    navigator.share({title:'My Inner Archetype result', text, url}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text + '\n' + url).then(()=>{
+      document.getElementById('shareHint').textContent = 'Copied! Paste it anywhere.';
+    });
+  }
+}
+function fromShared(){
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+(function(){
+  const p = new URLSearchParams(location.search);
+  if(p.has('a')){
+    const i = parseInt(p.get('a'),10);
+    if(i>=0 && i<T.length){
+      const t = T[i];
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('scode').textContent = TYPES[t].en;
+      document.getElementById('sdesc').innerHTML = `${TYPES[t].sub}: ` + TYPES[t].desc;
+      document.getElementById('shared').classList.remove('hidden');
+    }
+  }
+})();
+</script>
+<script src="flow.js?v=20261010f"></script>
+<script>if(window.FCFlow) FCFlow.introBadge('flowBadge','fc_result_archetype');</script>
+<script src="fc.js?v=20261010f"></script>
+<script src="card.js"></script>
+</body>
+</html>

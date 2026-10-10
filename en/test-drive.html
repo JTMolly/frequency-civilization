@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inner Drive Test | Frequency Civilization</title>
+<meta content="24 questions to find the force that really moves you. Your Root Code answers how you operate; your Inner Drive answers why you're willing to act." name="description"/>
+<link href="https://frequency-civilization.com/test-drive.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/>
+<link href="/assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="Inner Drive Test | Frequency Civilization" property="og:title"/>
+<meta content="24 questions to find the force that really moves you. Your Root Code answers how you operate; your Inner Drive answers why you're willing to act." property="og:description"/>
+<meta content="https://frequency-civilization.com/assets/og-image.png" property="og:image"/>
+<meta content="https://frequency-civilization.com/test-drive.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#08090d; --bg2:#0d0f16; --card:#12141c;
+  --gold:#c9a86a; --gold-soft:#e0c894;
+  --text:#e8e6e1; --muted:#9b9890; --line:rgba(201,168,106,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.85;letter-spacing:.06em}
+h1,h2,h3{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.12em}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:.16em;color:var(--gold-soft)}
+.nav-in a.back{font-size:14px;color:var(--text);opacity:.85}
+main{padding:120px 0 90px;min-height:100vh}
+.btn{display:inline-block;padding:13px 40px;border:1px solid var(--gold);color:var(--gold-soft);font-size:15.5px;letter-spacing:.18em;border-radius:2px;background:none;cursor:pointer;transition:.25s;font-family:inherit}
+.btn:hover{background:var(--gold);color:#0d0f14}
+.btn.solid{background:var(--gold);color:#12131a;font-weight:500}
+.btn.solid:hover{background:var(--gold-soft)}
+.btn.ghost{border-color:rgba(255,255,255,.2);color:var(--muted);letter-spacing:.1em;padding:11px 26px;font-size:14px}
+.center{text-align:center}
+.intro h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:24px}
+.intro p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+.intro .box{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:24px 28px;margin:30px 0;font-size:15.5px}
+.intro .box li{margin-left:1.3em;margin-bottom:6px;color:var(--muted)}
+.progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.qnum{color:var(--gold);font-size:13.5px;letter-spacing:.25em;margin-bottom:14px}
+.qtext{font-size:clamp(19px,3vw,23px);font-family:'Noto Serif TC',serif;font-weight:500;margin-bottom:30px;line-height:1.7}
+.likert{display:grid;gap:12px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid rgba(255,255,255,.07);color:var(--text);border-radius:6px;padding:15px 20px;font-size:15.5px;font-family:inherit;letter-spacing:.03em;cursor:pointer;transition:.18s}
+.opt:hover{border-color:var(--gold);background:#1b2030}
+.quiz-foot{margin-top:26px;display:flex;justify-content:space-between;align-items:center}
+.quiz-foot .hint{font-size:12.5px;color:var(--muted);opacity:.7}
+.result .kicker{color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:16px}
+.result h1{font-size:clamp(28px,5vw,42px);margin-bottom:4px}
+.result .rname{color:var(--gold-soft);font-size:18px;letter-spacing:.25em;margin-bottom:28px}
+.result .desc{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:16.5px;text-align:left}
+.result .desc strong{color:var(--text);font-weight:500}
+.detail{max-width:620px;margin:0 auto 36px;text-align:left;display:grid;gap:16px}
+.dcard{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:20px 24px}
+.dcard h3{font-size:15.5px;color:var(--gold-soft);margin-bottom:10px;letter-spacing:.12em}
+.dcard li{margin-left:1.3em;margin-bottom:6px;font-size:14.5px;color:var(--muted)}
+.dcard p{font-size:14.5px;color:var(--muted)}
+.oneliner{border-left:3px solid var(--gold);background:var(--bg2);padding:18px 24px;font-family:'Noto Serif TC',serif;font-size:17px;color:var(--gold-soft)}
+.bars{max-width:560px;margin:0 auto 40px;text-align:left}
+.bar-row{display:grid;grid-template-columns:120px 1fr 34px;gap:12px;align-items:center;margin-bottom:9px;font-size:13.5px}
+.bar-row .rl{color:var(--muted)}
+.bar-row.top .rl{color:var(--gold-soft)}
+.bar-row.low .rl{color:#b0736a}
+.bar-track{height:8px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#8a7347,var(--gold));border-radius:99px}
+.bar-row.low .bar-fill{background:#7a5049}
+.bar-row .rv{color:var(--muted);text-align:right}
+.second{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:20px 26px;max-width:620px;margin:0 auto 16px;font-size:15px;text-align:left}
+.second b{color:var(--gold-soft);font-weight:500}
+.second.warn b{color:#c98a7e}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:36px 0 20px}
+.note{font-size:12.5px;color:var(--muted);opacity:.75;margin-top:16px}
+.hidden{display:none}
+.gate{border:1px solid rgba(201,168,106,.35);border-radius:10px;padding:34px 30px;max-width:600px;margin:10px auto 40px;background:linear-gradient(165deg,rgba(201,168,106,.08),rgba(255,255,255,.02));text-align:center}
+.gate h3{font-size:19px;margin-bottom:10px;color:var(--gold-soft)}
+.gate p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.gate input[type=email],.gate input[type=text]{width:100%;max-width:360px;padding:13px 16px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text);font-size:15px;font-family:inherit;margin-bottom:12px;letter-spacing:.04em;display:block;margin-left:auto;margin-right:auto}
+.gate input:focus{outline:none;border-color:var(--gold)}
+.gate .consent{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;text-align:left;max-width:360px;margin:6px auto 16px;line-height:1.8}
+.gate .consent input{margin-top:6px}
+.gate .gate-msg{font-size:13px;color:var(--gold-soft);margin-top:10px;min-height:1.5em}
+@media(max-width:560px){.bar-row{grid-template-columns:96px 1fr 30px}}
+</style>
+<link href="../flow.css?v=20261010f" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/test-drive.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/test-drive.html"><link rel="alternate" hreflang="en" href="https://frequency-civilization.com/en/test-drive.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/test-drive.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}</style><style>html[lang=en] body{letter-spacing:.01em}html[lang=en] h1,html[lang=en] h2,html[lang=en] h3,html[lang=en] .qtext,html[lang=en] .lead{letter-spacing:.01em}html[lang=en] .btn{letter-spacing:.06em}html[lang=en] .nav-links,html[lang=en] .logo{letter-spacing:.05em}</style><!-- /i18n-head -->
+</head>
+<body>
+<nav><div class="nav-in">
+<a class="logo" href="index.html" style="color:var(--gold-soft)">FREQUENCY CIVILIZATION</a>
+<!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../test-drive.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/test-drive.html" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="../en/test-drive.html" hreflang="en" lang="en" class="on">EN</a></div><!-- /i18n-switch -->
+  <a class="back" href="tests.html">← Back to the tests</a>
+</div></nav>
+<main><div class="wrap">
+<div class="intro" id="intro">
+<div id="flowBadge" style="margin-bottom:22px"></div>
+<h1>Inner Drive Test</h1>
+<p>Find the force that really moves you forward.</p>
+<p>Your Root Code answers what you're good at and how you operate.<br/>Your Inner Drive answers why you're willing to act and what moves you.</p>
+<div class="box">
+<ul>
+<li>24 questions, about 5 minutes.</li>
+<li>Answer according to how you really are most of the time, not your ideal self.</li>
+<li>For each statement, choose one of five levels from "not like me at all" to "very much like me".</li>
+<li>Your result shows your main drive, your second drive, and the pattern that drains you.</li>
+</ul>
+</div>
+<div class="center"><button class="btn solid" onclick="startQuiz()">Begin</button></div>
+<p class="note center">This test is an educational and self-knowledge tool, not a medical or psychological diagnosis. This English version is translated from the Chinese test.</p>
+</div>
+<div class="hidden" id="quiz">
+<div class="progress"><i id="pbar" style="width:0%"></i></div>
+<div class="qnum" id="qnum"></div>
+<div class="qtext" id="qtext"></div>
+<div class="likert" id="opts"></div>
+<div class="quiz-foot">
+<button class="btn ghost" id="backBtn" onclick="goBack()">Back</button>
+<div class="hint">Choose the real you, not the ideal you</div>
+</div>
+</div>
+<div class="result center hidden" id="result">
+<div class="kicker">YOUR PRIMARY DRIVE</div>
+<h1 id="rcode"></h1>
+<div class="rname" id="rname"></div>
+<p class="desc" id="rdesc"></p>
+<div id="chain"></div>
+<div class="detail" id="rdetail"></div>
+<div id="gateBox"></div>
+<div class="hidden" id="deep">
+<div class="bars" id="bars"></div>
+<div class="second" id="rsecond"></div>
+</div>
+<div class="second warn" id="rlow"></div>
+<div id="cardBox" style="margin:30px 0 8px"></div>
+<div class="cta-row">
+<button class="btn solid" onclick="makeMyCard()">Make my role card</button>
+<button class="btn" onclick="shareResult()">Share my result</button>
+<a class="btn" href="https://lin.ee/pKlS7Yv" id="lineBtn" rel="noopener" target="_blank">Talk with us on LINE</a>
+<button class="btn ghost" onclick="restart()">Retake the test</button>
+</div>
+<p class="note" id="shareHint"></p>
+<p class="note">This isn't about what job suits you. It's about finding what really moves you.</p>
+<p class="note">Finished all three tests? <a href="report.html">Generate your personal profile report →</a></p>
+</div>
+<div class="result center hidden" id="shared">
+<div class="kicker">SHARED RESULT</div>
+<p class="desc" style="text-align:center;margin-bottom:10px">Your friend's main Inner Drive is</p>
+<h1 id="scode"></h1>
+<p class="desc" id="sdesc" style="text-align:center"></p>
+<div class="cta-row">
+<button class="btn solid" onclick="fromShared()">Find my Inner Drive too</button>
+<a class="btn" href="index.html">About Frequency Civilization</a>
+</div>
+</div>
+</div></main>
+<script>
+const SCALE = ["Not like me at all","Not really like me","Neutral","Like me","Very much like me"];
+
+const DRIVE_EN = {"療癒": "Restoring", "探索": "Exploring", "服務": "Serving", "守護": "Guarding", "突破": "Breakthrough", "創造": "Creating", "傳遞": "Conveying", "共鳴": "Resonating"};  /* display names; data keys stay in Chinese */
+const TYPES = {
+ "療癒":{sub:"Mending × Accompanying",
+  desc:"Your drive comes from mending and settling things. When people or places steady because you were there, you feel strong.<strong>You don't push forward by sprinting; you push forward by holding steady.</strong>",
+  high:["When you walk in, the noise drops: people can breathe and tell the truth","You understand the real need behind an emotion and turn pain into something that can be cared for","You bring steadiness that lasts, not a passing burst of excitement"],
+  warn:["Over-holding: treating other people's emotions or problems as your responsibility","Delaying the end of a relationship or partnership because you're soft-hearted","Always caring for others but rarely cared for, until you go numb or explode"],
+  fix:["Boundaries first, then company: say clearly what you can and can't do","Accompany instead of rescue: you offer steadiness, not a replacement life","Recover on schedule: after intense support, take 15 minutes of quiet, walking or breathing"],
+  roles:"Supportive consulting, coaching, client relations and aftercare, team stabilizer, crisis calming and recovery processes",
+  line:"I can walk part of the way with you, but I won't walk your life for you."},
+ "探索":{sub:"Unknown × Pioneering",
+  desc:"You are moved by the unknown and by possibility. New things light you up; long stretches of sameness drain you.<strong>You don't live for safety; you live for possibility.</strong>",
+  high:["Great at finding ways: resources, contacts, methods, paths. You always dig up new options","Good at pulling a testable next step out of uncertainty","Your strength isn't conclusions; it's the process of exploring"],
+  warn:["Always opening new threads and never closing them: lots of ideas, little landing","Routine and maintenance easily frustrate you, and you just give up","Using exploration to avoid choices that need real commitment"],
+  fix:["Replace commitment anxiety with experiments: turn a new direction into a 7–14 day trial","Set an exploration quota: only one or two directions at a time","Pair up with a steady partner or process to help you narrow down and land"],
+  roles:"New products and markets, research, strategy, cross-field integration, leading innovation projects, business model testing",
+  line:"I'm not trying to find the right road in one go. I'm building the ability to find roads."},
+ "服務":{sub:"Support × Collective",
+  desc:"You draw strength from making the whole better.<strong>Your fuel is the sense of contributing and of being needed.</strong>",
+  high:["Good at getting resources to where they're really needed","You can plug your abilities into a system so a group runs more smoothly","You care about being useful and sustainable, not about appearances"],
+  warn:["Always saying yes, always carrying: putting yourself last","Fear of saying no leads to overload, and then resentment or coldness","Feeling valuable only when you're needed"],
+  fix:["Make service something that can be priced and exchanged: you need a clear way your value comes back","Take care of the basics first: sleep, boundaries and time are what keep you going","Practice kindness with limits: I'm willing to help, but I won't burn out"],
+  roles:"Operations, project management, community and customer success, team support, process design, education support",
+  line:"I serve the whole, but I don't treat myself as a consumable."},
+ "守護":{sub:"Stability × Boundaries",
+  desc:"You are moved by order and safety.<strong>You move forward by holding the foundation, so things don't collapse and systems stay reliable.</strong>",
+  high:["You prevent problems instead of patching them after the fact","Good at policies, standards, risk control and quality checks","You are the one the team can rely on; with you there, things don't fall apart"],
+  warn:["Over-control: making your sense of safety depend on everything going your way","High anxiety about uncertainty and a natural resistance to new things","Not delegating, until everything is stuck with you"],
+  fix:["Delegate first, then guard: write down clearly who is responsible, who decides and who carries it","Let rules serve the goal, not the goal serve the rules","Update your boundaries regularly: you guard the baseline, not everyone's feelings"],
+  roles:"Legal and compliance, finance, quality control, information security, building policies, risk management",
+  line:"I guard the baseline. I don't carry everyone's responsibility."},
+ "突破":{sub:"Evolution × Push",
+  desc:"You move for the sake of evolution. You naturally see what needs to change, and you have the drive to push it.<strong>Transformation and reform switch you on.</strong>",
+  high:["You can cut a new path where things are stuck","Resistance makes you clearer: the harder it gets, the better your solutions","Good at reforming processes, cutting what doesn't work and driving change"],
+  warn:["No patience for slowness; you can start seeing people as obstacles","You often end up charging ahead alone, and get worn out","Burning yourself out for people who don't want to change, until it turns into anger and disappointment"],
+  fix:["Check whether the other person is willing to change before you invest","Breakthroughs need supplies: plan rest, allies and resources","Design a rhythm for change: not constant pushing, but push, steady, push again"],
+  roles:"Transformation consulting, leading reform, crisis handling, rebuilding business models, upgrading organizations, re-engineering processes",
+  line:"I push for change, but I won't burn for people who don't want to change."},
+ "創造":{sub:"Starting × Nurturing",
+  desc:"You come alive by creating something new. Turning something that doesn't exist yet into reality fills you with energy.<strong>Going from zero to one is your most powerful position.</strong>",
+  high:["You can turn abstract ideas into concrete prototypes","Great at starting new things: new products, new content, new experiences","What you need is space, material and time, not pressure"],
+  warn:["Forced output dries you up: the more you're chased, the less you can make","Output without input leaves you hollow and jaded","Long stretches of maintenance and wrap-up work drain your motivation"],
+  fix:["Set fixed creating time (no interruptions) and fixed input time","Find a partner who is good at executing and narrowing down to help you land things","Break creating into steps: idea, prototype, iterate, launch. Don't try to get it perfect at once"],
+  roles:"Product innovation, brand content, course design, R&D, art, experience design",
+  line:"Give me space, and the answer will grow."},
+ "傳遞":{sub:"Bridging × Expressing",
+  desc:"You are driven by making messages understood. You are a natural translator.<strong>You don't just love to talk; you love helping people get it.</strong>",
+  high:["Great at making the complex simple and the abstract usable","Good at teaching, content, public speaking and bridging different circles","You make knowledge usable and help people cross gaps in understanding"],
+  warn:["Spending too long on people who don't want to listen, and starting to doubt yourself","Constant output with no feedback, until you run dry","Wanting so much to be clear that you say too much and lose the point"],
+  fix:["Choose your audience: only speak to those willing to listen","Framework first, details after: one-line conclusion, three key points, examples","Build feedback loops: you need evidence that you were understood"],
+  roles:"Lecturer, coach, content creator, sales communication, cross-team coordination, knowledge product design",
+  line:"I'm responsible for saying it clearly, not for making people accept it."},
+ "共鳴":{sub:"Connection × Amplification",
+  desc:"You move forward through connection and resonance.<strong>You move things by getting people in sync and forming a bigger network of collaboration.</strong>",
+  high:["You weave scattered people into a network so collaboration happens naturally","You read the mood and needs in a room and bring people to agreement","You are an amplifier: you help good things get seen and spread"],
+  warn:["Holding too much of the group's emotion: mood swings, exhaustion, poor sleep","Easily swept along by the group's mood, losing your own center","Over-resonating in relationships and forgetting boundaries"],
+  fix:["Come back to yourself before connecting: schedule quiet, exercise or time alone every day","Set a limit on how much you hold: after crowded events, plan time to recover","Practice caring without resonating: you don't have to carry it to love someone"],
+  roles:"Community building, business development, event planning, relationship design, brand reach, team culture",
+  line:"I can lift the whole room, but I don't hand myself over to it."}
+};
+
+const QUESTIONS = [
+ {t:"療癒",q:"When the people around me calm down and steady, I feel a deep satisfaction."},
+ {t:"療癒",q:"Even without anything in return, I'm willing to give if I can keep someone company through a low point."},
+ {t:"療癒",q:"I easily sense the unspoken pain in people or places."},
+ {t:"探索",q:"A life that never changes quickly drains my motivation."},
+ {t:"探索",q:"New fields, new methods and new possibilities naturally draw me in."},
+ {t:"探索",q:"Trying the unknown energizes me more than perfecting the old."},
+ {t:"服務",q:"If the whole can get better, I'm willing to set my own needs aside first."},
+ {t:"服務",q:"Being needed makes me feel I have value."},
+ {t:"服務",q:"I naturally notice who needs support or someone to step in."},
+ {t:"守護",q:"When my surroundings are stable and orderly, I feel at ease."},
+ {t:"守護",q:"I'm especially sensitive to boundaries being crossed or order being broken."},
+ {t:"守護",q:"When things are chaotic, my instinct is to steady the situation."},
+ {t:"突破",q:"When I see a limit or a block, I want to challenge it."},
+ {t:"突破",q:"I'd rather take a risk than stay where I am."},
+ {t:"突破",q:"Pushing for change makes me feel more alive than keeping things as they are."},
+ {t:"創造",q:"Turning something that doesn't exist yet into reality fills me with energy."},
+ {t:"創造",q:"I often see several possibilities at once and want to actually make them."},
+ {t:"創造",q:"When I'm creating something new, I lose track of time."},
+ {t:"傳遞",q:"Making an important idea or message clear matters a lot to me."},
+ {t:"傳遞",q:"I'm often the one who explains, translates and connects different views."},
+ {t:"傳遞",q:"When my words are truly understood, I light up."},
+ {t:"共鳴",q:"I easily sense changes in the mood of a group or a room."},
+ {t:"共鳴",q:"When everyone is on the same rhythm, I feel especially strong."},
+ {t:"共鳴",q:"I like creating spaces where people come closer and connect."}
+];
+
+let idx = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let myTop = null;
+let qorder = QUESTIONS.map((_,i)=>i);
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function strongLine(desc){ const m = desc.match(/<strong>(.*?)<\/strong>/); return m ? m[1] : desc.replace(/<[^>]+>/g,''); }
+let inTiebreak = false, scoresG = null;
+/* on a top-score tie, let the person pick one of the tied lines */
+function showTiebreak(cands, done){
+  inTiebreak = true;
+  document.getElementById('pbar').style.width = '100%';
+  document.getElementById('qnum').textContent = 'Tie-breaker';
+  document.getElementById('qtext').textContent = 'Which of these sounds most like you?';
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  shuffle(cands.slice()).forEach(t=>{
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = strongLine(TYPES[t].desc);
+    b.onclick = ()=>{ inTiebreak = false; done(t); };
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = 'visible';
+  window.scrollTo({top:0});
+}
+
+function startQuiz(){
+  qorder = shuffle(QUESTIONS.map((_,i)=>i));  /* shuffle question order so one type never comes in a row */
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  render(); window.scrollTo({top:0});
+}
+function render(){
+  inTiebreak = false;
+  const q = QUESTIONS[qorder[idx]];
+  document.getElementById('pbar').style.width = (idx/QUESTIONS.length*100)+'%';
+  document.getElementById('qnum').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('qtext').textContent = q.q;
+  const box = document.getElementById('opts');
+  box.innerHTML = '';
+  SCALE.forEach((s,i)=>{
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.textContent = `${i+1}・${s}`;
+    b.onclick = ()=>choose(i+1);
+    box.appendChild(b);
+  });
+  document.getElementById('backBtn').style.visibility = idx===0 ? 'hidden':'visible';
+}
+function choose(v){
+  answers[qorder[idx]] = v;
+  if(idx < QUESTIONS.length-1){ idx++; render(); window.scrollTo({top:0}); }
+  else finish();
+}
+function goBack(){ if(inTiebreak){ inTiebreak=false; render(); return; } if(idx>0){ idx--; render(); } }
+
+function finish(){
+  scoresG = {};
+  Object.keys(TYPES).forEach(t=>scoresG[t]=0);
+  QUESTIONS.forEach((q,i)=>{ if(answers[i]!=null) scoresG[q.t] += answers[i]; });
+  const keys = Object.keys(TYPES);
+  const max = Math.max(...keys.map(t=>scoresG[t]));
+  const cands = keys.filter(t=>scoresG[t]===max);
+  if(cands.length > 1) showTiebreak(cands, finalize); else finalize(cands[0]);
+}
+function finalize(top){
+  const scores = scoresG;
+  const sorted = shuffle(Object.entries(scores)).sort((a,b)=>b[1]-a[1]);
+  sorted.unshift(sorted.splice(sorted.findIndex(x=>x[0]===top),1)[0]);
+  const [sec] = sorted[1], [low] = sorted[sorted.length-1];
+  myTop = top;
+  try{ localStorage.setItem('fc_result_drive', JSON.stringify({top, sec, low, scores, ts:Date.now()})); }catch(e){}
+  const T = TYPES[top];
+  document.getElementById('quiz').classList.add('hidden');
+  document.getElementById('rcode').textContent = DRIVE_EN[top] + ' Drive';
+  document.getElementById('rname').textContent = T.sub;
+  document.getElementById('rdesc').innerHTML = T.desc;
+  const det = document.getElementById('rdetail');
+  det.innerHTML = `
+    <div class="dcard"><h3>At your best</h3><ul>${T.high.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>Signs you're off balance</h3><ul>${T.warn.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>How to recalibrate</h3><ul>${T.fix.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="dcard"><h3>Roles and tasks that suit you</h3><p>${T.roles}</p></div>
+    <div class="oneliner">${T.line}</div>`;
+  const bars = document.getElementById('bars');
+  bars.innerHTML = '';
+  sorted.forEach(([t,v],i)=>{
+    const row = document.createElement('div');
+    row.className = 'bar-row' + (i===0?' top':'') + (t===low?' low':'');
+    row.innerHTML = `<div class="rl">${DRIVE_EN[t]}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/15*100)}%"></div></div>
+      <div class="rv">${v}</div>`;
+    bars.appendChild(row);
+  });
+  document.getElementById('rsecond').innerHTML =
+    `Your second drive is <b>${DRIVE_EN[sec]} (${TYPES[sec].sub})</b>, a supporting drive that switches on in particular situations. Your main drive is your most natural, effortless way of moving forward; together they shape how you act.`;
+  document.getElementById('rlow').innerHTML =
+    `Drain warning: <b>${DRIVE_EN[low]}</b> is your lowest-scoring drive. If you're asked to work this way for long, you'll likely feel tired or empty. That isn't a flaw; it's a reminder not to put yourself in the wrong place.`;
+  document.getElementById('result').classList.remove('hidden');
+  if(window.FC) FC.resultReady('drive', {answers, scores, top, second:sec});
+  renderChain();
+  window.scrollTo({top:0});
+}
+function renderChain(){ if(window.FCFlow) FCFlow.renderNext('chain','fc_result_drive'); }
+function restart(){
+  idx = 0; answers = new Array(QUESTIONS.length).fill(null);
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+
+/* role card */
+function makeMyCard(){
+  if(!myTop) return;
+  const T = TYPES[myTop];
+  showRoleCard({kicker:'INNER DRIVE', title:DRIVE_EN[myTop]+' Drive', subtitle:T.sub, line:T.line}, 'cardBox', 'my-inner-drive-card.png');
+}
+
+/* sharing */
+const TYPE_KEYS = Object.keys(TYPES);
+function shareResult(){
+  if(!myTop) return;
+  const url = location.origin.startsWith('http')
+    ? location.origin + location.pathname + '?d=' + TYPE_KEYS.indexOf(myTop)
+    : 'https://www.frequency-civilization.com/test-drive.html?d=' + TYPE_KEYS.indexOf(myTop);
+  const text = `My main Inner Drive is ${DRIVE_EN[myTop]} (${TYPES[myTop].sub})!\nFind out what moves you:`;
+  if(navigator.share){
+    navigator.share({title:'My Inner Drive result', text, url}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text + '\n' + url).then(()=>{
+      document.getElementById('shareHint').textContent = 'Copied! Paste it anywhere.';
+    });
+  }
+}
+function fromShared(){
+  document.getElementById('shared').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0});
+}
+(function(){
+  const p = new URLSearchParams(location.search);
+  if(p.has('d')){
+    const i = parseInt(p.get('d'),10);
+    if(i>=0 && i<TYPE_KEYS.length){
+      const t = TYPE_KEYS[i];
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('scode').textContent = DRIVE_EN[t] + ' Drive';
+      document.getElementById('sdesc').innerHTML = TYPES[t].sub + ': ' + TYPES[t].desc;
+      document.getElementById('shared').classList.remove('hidden');
+    }
+  }
+})();
+</script>
+<script src="flow.js?v=20261010f"></script>
+<script>if(window.FCFlow) FCFlow.introBadge('flowBadge','fc_result_drive');</script>
+<script src="fc.js?v=20261010f"></script>
+<script src="card.js"></script>
+</body>
+</html>

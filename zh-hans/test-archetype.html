@@ -88,7 +88,19 @@ main{padding:120px 0 90px;min-height:100vh}
 
 
 
-<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/test-archetype.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/test-archetype.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/test-archetype.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}}</style><!-- /i18n-head -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/test-archetype.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/test-archetype.html"><link rel="alternate" hreflang="en" href="https://frequency-civilization.com/en/test-archetype.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/test-archetype.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}</style><!-- /i18n-head -->
 <script>(function(){var P=[["\u884c\u52a8\u8005", "\u884c\u52d5\u8005"], ["\u7597\u6108\u8005", "\u7642\u7652\u8005"], ["\u6559\u5bfc\u8005", "\u6559\u5c0e\u8005"], ["\u611f\u5e94\u8005", "\u611f\u61c9\u8005"], ["\u6d1e\u89c1\u8005", "\u6d1e\u898b\u8005"], ["\u955c\u9762\u8005", "\u93e1\u9762\u8005"], ["\u7597\u6108", "\u7642\u7652"], ["\u63a2\u7d22", "\u63a2\u7d22"], ["\u670d\u52a1", "\u670d\u52d9"], ["\u5b88\u62a4", "\u5b88\u8b77"], ["\u7a81\u7834", "\u7a81\u7834"], ["\u521b\u9020", "\u5275\u9020"], ["\u4f20\u9012", "\u50b3\u905e"], ["\u5171\u9e23", "\u5171\u9cf4"]];function s2t(v){P.forEach(function(p){v=v.split(p[0]).join(p[1]);});return v;}function t2s(v){P.forEach(function(p){v=v.split(p[1]).join(p[0]);});return v;}window.FC_CANON=function(o){return JSON.parse(s2t(JSON.stringify(o)));};window.FC_T2S=function(o){return JSON.parse(t2s(JSON.stringify(o)));};var S=Storage.prototype,g=S.getItem,st=S.setItem;S.getItem=function(k){var v=g.call(this,k);return (v&&/^fc_result_/.test(k))?t2s(v):v;};S.setItem=function(k,v){return st.call(this,k,/^fc_result_/.test(k)?s2t(String(v)):v);};})();</script>
 </head>
 <body>
@@ -98,7 +110,19 @@ main{padding:120px 0 90px;min-height:100vh}
   
   
   
-  <!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../test-archetype.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/test-archetype.html" hreflang="zh-Hans" lang="zh-Hans" class="on">简中</a><a href="../en/index.html" hreflang="en" lang="en">EN</a></div><!-- /i18n-switch -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../test-archetype.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/test-archetype.html" hreflang="zh-Hans" lang="zh-Hans" class="on">简中</a><a href="../en/test-archetype.html" hreflang="en" lang="en">EN</a></div><!-- /i18n-switch -->
   <a class="back" href="tests.html">← 回三大测验</a>
 </div></nav>
 
@@ -113,7 +137,7 @@ main{padding:120px 0 90px;min-height:100vh}
       <ul>
         <li>共 10 题，每题六个选项，约 3 分钟。</li>
         <li>选「最像你当下反应」的那一个，不是你希望自己成为的样子。</li>
-        <li>若两种原型同分，代表你是混合型——结果会一并呈现。</li>
+        <li>若最高分有两种原型同分，会多一题让你自己选。</li>
       </ul>
     </div>
     <div class="center"><button class="btn solid" onclick="startQuiz()">开始作答</button></div>
@@ -179,12 +203,12 @@ const TYPES = {
   high:["极高的情绪感知力与陪伴力","他人与你相处会自动放松","对正在受苦的人特别有承接力"],
   warn:["容易过度共感，把别人的事变成自己的","拿不准该「同理」还是「划界线」","有时会牺牲自己，换来片刻和谐"],
   line:"你的温柔不是要你无声地承受，而是让别人因你而记得自己。"},
- "教导者":{en:"The Architect",sub:"结构 × 转译",
+ "教导者":{en:"The Teacher",sub:"结构 × 转译",
   desc:"你喜欢建立秩序，把混乱整理清楚，把抽象概念变成有逻辑的语言。你是架构的创造者，也是他人理解世界的桥梁。<strong>你是那种「我可以帮你说清楚这件事」的人。</strong>",
   high:["系统思考强，擅长拆解与重组","很会教学与说明","常自动成为群体中的大脑或笔记者"],
   warn:["过度理性时会卡住直觉","遇到混乱会急着控制","放不下「一定要说清楚、交代完」的责任感"],
   line:"你不是来证明你懂很多，而是来让知识变成别人走得过去的桥。"},
- "感应者":{en:"The Channeler",sub:"接收 × 导航",
+ "感应者":{en:"The Sensor",sub:"接收 × 导航",
   desc:"你对还没被说出口的讯息极度敏锐——常能察觉他人没说的话、感受到现场氛围的细微变化。你的行动由内在讯号带动。<strong>你是那种「感觉不对，我就不动」的人。</strong>",
   high:["对细微变化非常敏锐","灵感与直觉来得快、也准","常无意间说出他人的内心话，带来共鸣"],
   warn:["容易受群体情绪影响，起伏剧烈","缺乏稳定练习时，会怀疑自己的判断","容易与身体和现实节奏脱节"],

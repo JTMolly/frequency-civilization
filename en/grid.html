@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Frequency Grid | Frequency Civilization</title>
+<meta content="Everyone who finishes the test lights up one cell. See how much of the 132 root pairs, 144 Mission Lines and 6,336 full combinations is lit right now." name="description"/>
+<link href="https://frequency-civilization.com/grid.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/>
+<link href="/assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="Frequency Grid | Frequency Civilization" property="og:title"/>
+<meta content="Everyone who finishes the test lights up one cell. See how much of the 132 root pairs, 144 Mission Lines and 6,336 full combinations is lit right now." property="og:description"/>
+<meta content="https://frequency-civilization.com/assets/og-image.png" property="og:image"/>
+<meta content="https://frequency-civilization.com/grid.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=20261010h" rel="stylesheet"/>
+<style>
+.grid-band{padding:90px 0 100px}
+.g-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 auto 46px;max-width:920px}
+.g-stat{border:1px solid var(--night-line);border-radius:6px;padding:20px 16px;text-align:center;background:linear-gradient(180deg,rgba(201,168,106,.07),rgba(201,168,106,.01))}
+.g-stat .n{font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(26px,3.6vw,38px);color:var(--night-gold-soft);line-height:1.2;letter-spacing:.02em}
+.g-stat .n small{font-size:.48em;color:var(--night-muted);letter-spacing:.06em}
+.g-stat .l{font-size:12px;letter-spacing:.18em;color:var(--night-muted);margin-top:6px;line-height:1.7}
+.g-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.g-tab{font-family:inherit;font-size:13.5px;letter-spacing:.16em;padding:10px 20px;border-radius:99px;border:1px solid var(--night-line);background:none;color:var(--night-muted);cursor:pointer;transition:.3s}
+.g-tab b{font-family:'Noto Serif TC',serif;font-weight:500;color:var(--night-gold-soft);margin-right:6px;letter-spacing:.04em}
+.g-tab.on{border-color:var(--night-gold);color:#f4ecdc;background:rgba(201,168,106,.12)}
+.g-lead{max-width:640px;margin:0 auto 26px;text-align:center;color:var(--night-muted);font-size:14.5px;line-height:2}
+.g-board{max-width:760px;margin:0 auto}
+.g-mx{display:grid;gap:4px;align-items:center}
+.g-mx.m132{grid-template-columns:40px repeat(12,1fr)}
+.g-mx.m144{grid-template-columns:40px repeat(12,1fr) 40px}
+.g-h{font-size:11px;letter-spacing:.04em;color:var(--night-muted);text-align:center;line-height:1.2;white-space:nowrap}
+.g-h.row{display:flex;align-items:center;gap:5px;justify-content:flex-start;cursor:default}
+.g-h.row i{width:7px;height:7px;border-radius:99px;background:var(--c);flex:none;box-shadow:0 0 6px var(--c)}
+.g-h.cnt{font-size:11px;color:var(--night-gold-soft);text-align:right}
+.g-c{aspect-ratio:1;border-radius:3px;background:rgba(255,255,255,.035);border:1px solid rgba(232,213,168,.08);cursor:pointer;padding:0;transition:background 1.2s ease, box-shadow 1.2s ease, transform .2s}
+.g-c:hover{transform:scale(1.15);border-color:rgba(232,213,168,.4)}
+.g-c.lit{background:rgba(255,214,150,var(--a));border-color:rgba(255,226,170,calc(var(--a) + .1));box-shadow:0 0 calc(4px + var(--a) * 16px) rgba(255,196,110,calc(var(--a) * .85))}
+.g-c.void{background:none;border:none;cursor:default;position:relative}
+.g-c.void::after{content:'';position:absolute;left:50%;top:50%;width:3px;height:3px;margin:-1.5px;border-radius:99px;background:rgba(255,255,255,.12)}
+.g-c.void:hover{transform:none}
+.g-c.self{outline:2px solid #fff;outline-offset:1px}
+.g-c.sel{outline:2px solid var(--night-gold-soft);outline-offset:1px}
+#g6336{display:block;width:100%;cursor:pointer;touch-action:manipulation}
+.g-info{min-height:66px;margin:24px auto 0;max-width:640px;text-align:center;font-size:14.5px;color:var(--night-text);line-height:1.9}
+.g-info .ph{font-family:'Noto Serif TC',serif;color:var(--night-gold-soft);font-size:16px}
+.g-info .sub{font-size:12.5px;color:var(--night-muted)}
+.g-legend{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 12px;white-space:nowrap;margin:22px auto 0;font-size:12px;color:var(--night-muted);letter-spacing:.1em}
+.g-legend .bar{width:160px;height:8px;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,214,150,.35),rgba(255,214,150,1));box-shadow:0 0 12px rgba(255,196,110,.35)}
+.g-legend .me{display:inline-block;width:12px;height:12px;border-radius:2px;outline:2px solid #fff;outline-offset:1px;margin-right:4px;vertical-align:-2px}
+.g-opts{display:flex;justify-content:center;margin-top:26px}
+.g-opts label{font-size:13px;color:var(--night-muted);display:flex;gap:8px;align-items:flex-start;max-width:600px;line-height:1.8;cursor:pointer}
+.g-opts input{margin-top:6px;accent-color:#c9a86a}
+.g-status{text-align:center;font-size:12px;color:var(--night-muted);opacity:.8;margin-top:14px;letter-spacing:.08em}
+.g-key{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 14px;max-width:760px;margin:30px auto 0;font-size:12.5px;color:var(--night-muted)}
+.g-key a{color:var(--night-muted);display:flex;gap:7px;align-items:center}
+.g-key a:hover{color:var(--night-gold-soft)}
+.g-key b{font-weight:500;color:var(--night-gold-soft);width:22px;font-size:11.5px}
+.g-key i{width:7px;height:7px;border-radius:99px;background:var(--c);box-shadow:0 0 6px var(--c);flex:none}
+.g-read{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px}
+.g-read .item{background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:28px 26px;box-shadow:var(--shadow)}
+.g-read .num{font-family:'Noto Serif TC',serif;font-size:30px;font-weight:300;color:var(--gold-soft);line-height:1.2}
+.g-read h3{font-size:16.5px;color:var(--gold-soft);font-weight:500;margin:6px 0 10px;letter-spacing:.12em}
+.g-read p{font-size:14.5px;color:var(--muted);line-height:2}
+.g-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+@media(max-width:760px){
+  .g-stats{grid-template-columns:repeat(2,1fr)}
+  .g-key{grid-template-columns:1fr;gap:4px;max-width:320px}
+  .g-legend .bar{width:110px}
+  .g-read{grid-template-columns:1fr}
+  .g-mx{gap:3px}
+  .g-mx.m132{grid-template-columns:30px repeat(12,1fr)}
+  .g-mx.m144{grid-template-columns:30px repeat(12,1fr) 30px}
+  .g-h{font-size:9.5px}
+  .g-h.row i{display:none}
+  .g-tab{padding:9px 14px;font-size:12.5px;letter-spacing:.08em}
+  .grid-band{padding:64px 0 76px}
+}
+</style>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/grid.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/grid.html"><link rel="alternate" hreflang="en" href="https://frequency-civilization.com/en/grid.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/grid.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}</style><style>html[lang=en] body{letter-spacing:.01em}html[lang=en] h1,html[lang=en] h2,html[lang=en] h3,html[lang=en] .qtext,html[lang=en] .lead{letter-spacing:.01em}html[lang=en] .btn{letter-spacing:.06em}html[lang=en] .nav-links,html[lang=en] .logo{letter-spacing:.05em}</style><!-- /i18n-head -->
+</head>
+<body class="v3">
+<nav>
+<div class="nav-in">
+<a class="logo" href="index.html">FREQUENCY CIVILIZATION</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="roots.html">Root Codes</a>
+<a href="tests.html">Tests</a>
+<a href="grid.html">Frequency Grid</a>
+</div>
+    <!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../grid.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/grid.html" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="../en/grid.html" hreflang="en" lang="en" class="on">EN</a></div><!-- /i18n-switch -->
+</div>
+</nav>
+<header class="page-hero">
+<div class="wrap">
+<div class="sec-kicker">FREQUENCY GRID</div>
+<h1>Frequency Grid</h1>
+<p class="lead">Everyone who finishes the test lights up one cell in the grid. The more people in a cell, the brighter it glows.<br/>Together we can see how far we've come, and which places are still waiting for someone.</p>
+</div>
+</header>
+<section class="h-night dark-band grid-band">
+<div aria-hidden="true" class="night-glow"></div>
+<div class="wrap">
+<div class="g-stats">
+<div class="g-stat"><div class="n" id="sPeople">—</div><div class="l" id="sPeopleL">People who took the Root Code Test</div></div>
+<div class="g-stat"><div class="n"><span id="s132">—</span><small> / 132</small></div><div class="l">Primary × Secondary Root</div></div>
+<div class="g-stat"><div class="n"><span id="s144">—</span><small> / 144</small></div><div class="l">Mission Lines</div></div>
+<div class="g-stat"><div class="n"><span id="s6336">—</span><small> / 6,336</small></div><div class="l">Full combinations</div></div>
+</div>
+<div class="g-tabs" role="tablist">
+<button class="g-tab on" data-l="132" role="tab"><b>132</b>Primary × Secondary Root</button>
+<button class="g-tab" data-l="144" role="tab"><b>144</b>Mission Lines</button>
+<button class="g-tab" data-l="6336" role="tab"><b>6,336</b>Full combinations</button>
+</div>
+<p class="g-lead" id="gLead"></p>
+<div class="g-board" id="gBoard"></div>
+<div class="g-info" id="gInfo"></div>
+<div class="g-legend">
+<span>1 person</span><span aria-hidden="true" class="bar"></span><span id="gMax">Brighter with more people</span>
+<span id="gMeKey" style="display:none;margin-left:10px"><span aria-hidden="true" class="me"></span>Your place</span>
+</div>
+<div class="g-opts" id="gOpts">
+<label><input checked="" id="gHist" type="checkbox"/> <span id="gHistL">Include past results from the old test platform</span></label>
+</div>
+<p class="g-status" id="gStatus">Loading…</p>
+<div class="g-key" id="gKey"></div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="center">
+<div class="sec-kicker">HOW TO READ</div>
+<h2>How to read the grid</h2>
+</div>
+<div class="g-read">
+<div class="item">
+<div class="num">132</div>
+<h3>Primary × Secondary Root</h3>
+<p>Rows are Primary Roots, columns are Secondary Roots. The two are never the same, so there are 12 × 11 = 132 combinations. Taking the Root Code Test lights up one of them.</p>
+</div>
+<div class="item">
+<div class="num">144</div>
+<h3>Mission Lines</h3>
+<p>Each Primary Root has 12 Mission Lines, so 12 × 12 = 144. People with the same Primary Root put their energy in different directions. A Root Code is complete once all 12 of its lines have been chosen.</p>
+</div>
+<div class="item">
+<div class="num">6,336</div>
+<h3>Full combinations</h3>
+<p>12 Primary Roots × 11 Secondary Roots × 6 Inner Archetypes × 8 Inner Drives = 6,336 combinations. Finish all three tests in the same browser and your full combination lights up.</p>
+</div>
+</div>
+<p class="center" style="font-size:13px;color:var(--muted);margin-top:30px;line-height:2">The grid only counts people. It never shows personal data.<br/>The 12 Root Codes are a working model that is still being validated. All tests are educational and self-knowledge tools, not medical or psychological diagnoses.</p>
+<div class="g-cta">
+<a class="btn solid" href="test.html">Take the Root Code Test and light your cell</a>
+<a class="btn" href="tests.html">See the three tests</a>
+</div>
+</div>
+</section>
+<footer id="contact">
+<div class="wrap">
+<div class="foot-grid">
+<div class="foot-brand">
+<div class="logo">FREQUENCY CIVILIZATION</div>
+<p>A self-knowledge system that helps people see how they operate. Collaboration and contact: <a href="mailto:frequency.civilization@gmail.com">frequency.civilization@gmail.com</a></p>
+</div>
+<div>
+<div class="sec-kicker" style="margin-bottom:12px">FOLLOW</div>
+<div class="socials">
+<a aria-label="LINE" class="soc" href="https://lin.ee/pKlS7Yv" rel="noopener" style="--brand:#06C755" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"></path></svg><span>LINE</span></a>
+<a aria-label="Instagram" class="soc" href="https://www.instagram.com/freq_civilization" rel="noopener" style="--brand:#E4405F" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg><span>Instagram</span></a>
+<a aria-label="Threads" class="soc" href="https://www.threads.com/@freq_civilization" rel="noopener" style="--brand:#000000" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg><span>Threads</span></a>
+<a aria-label="YouTube" class="soc" href="https://youtube.com/@frequency0097" rel="noopener" style="--brand:#FF0000" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg><span>YouTube</span></a>
+<a aria-label="Facebook" class="soc" href="https://www.facebook.com/share/14ca7uDx4bB/" rel="noopener" style="--brand:#0866FF" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"></path></svg><span>Facebook</span></a>
+</div>
+</div>
+</div>
+<div class="legal">
+      Everything on this site is an educational and self-knowledge tool. It is not medical care, psychotherapy or a diagnostic service.<br/>
+      © 2026 Frequency Civilization. All rights reserved. · <a href="privacy.html">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script src="fc.js?v=20261010e"></script>
+<script>
+const PHRASES = {"Sa'karan":[["SK-001","I want to design a system that helps lost people find their way."],["SK-002","I want to build a structure that lets ideas land steadily."],["SK-003","I'm good at turning the clues in a mess into language everyone can use."],["SK-004","I'm not building a tall tower; I'm building a bridge that helps people remember where they came from."],["SK-005","I'm willing to stand at the front and catch the flood of information no one has sorted yet."],["SK-006","I want to design an interface that helps people talk with themselves again."],["SK-007","I'm not just building a method; I'm laying the ground a community can live on."],["SK-008","I focus on turning the wishes in my heart into steps that can really be done."],["SK-009","I don't need to be seen. I want good methods to be copied and passed on."],["SK-010","I want to build a shared language that lets like-minded people recognize each other."],["SK-011","I'm a natural bridge-builder, joining the wisdom on both sides."],["SK-012","I want to turn experience no one has written down yet into language people can use."]],"Elariah":[["EL-001","I want emotions to be a guide, not a cage."],["EL-002","I can hear the feelings hidden behind the words."],["EL-003","I want to keep company with the sadness that never got said."],["EL-004","I can hear, in silence, the need you didn't say."],["EL-005","I want to help you learn to love yourself well and stop holding back."],["EL-006","I want to help people open a conversation with their inner selves."],["EL-007","I don't give answers; I give you a way to see yourself."],["EL-008","I want to bring understanding and soft light into every crack."],["EL-009","I walk with you through turning points, without rushing to change you."],["EL-010","I can sense small shifts and help you find your way back to being whole inside."],["EL-011","I want to hold a space where feelings can move freely."],["EL-012","I'm the one who stays gentle in the middle of a storm."]],"Thaleon":[["TH-001","I want to turn the darkest experiences into light that shows the way."],["TH-002","I'm willing to walk into chaos and bring order and truth out of it."],["TH-003","I'm where change happens, and the push that lets the truth come up."],["TH-004","I can hold feelings that haven't finished moving, and let them slowly loosen."],["TH-005","I want to hold the parts that haven't been accepted yet."],["TH-006","I know pain and brokenness well, because they're often the doorway to starting again."],["TH-007","My words are for exposing lies and mending cracks."],["TH-008","Every collapse is when I redesign the route."],["TH-009","I'm here to transform, not to destroy."],["TH-010","I'm willing to stay with the process instead of controlling the result."],["TH-011","What others can't carry, I'm willing to share some of."],["TH-012","I want to find a way out for the darkness that doesn't have a name yet."]],"Auri'kai":[["AU-001","I'm a bridge between what can be seen and what can't."],["AU-002","I can hear what isn't said, and translate a language no one has understood yet."],["AU-003","I want light to reach into deeper darkness."],["AU-004","My feelings often travel far, but I choose to bring them back to everyday life."],["AU-005","My body is like a sensitive antenna; feelings often arrive before words."],["AU-006","I can catch thoughts before they take shape and bring them out steadily."],["AU-007","Between words and silence, I translate what a person really means."],["AU-008","My head is often full of images and ideas, and I'm willing to translate them into words others understand."],["AU-009","I trust my intuition, even when I can't explain why yet."],["AU-010","I'm a carrier, not a controller."],["AU-011","I know the right measure: help people feel steady instead of opening every door at once."],["AU-012","I want to rebuild a bridge so people can hear their own inner voice."]],"Rohen'dal":[["RO-001","I want to wake the people who are still waiting and send the signal that it's time to start."],["RO-002","I don't just say what I mean; I walk it, do it and live it."],["RO-003","When I show up, things start."],["RO-004","I speak through action and carry the message everywhere on my own two feet."],["RO-005","I stay clear in chaos, because I follow the voice inside me."],["RO-006","I don't wait until everything is ready; I know one step forward is the start."],["RO-007","I'm the one who walks out in front."],["RO-008","I never force anyone to change, but when I show up, change begins."],["RO-009","I'm not here to please everyone; I'm here to deliver the message accurately."],["RO-010","I have my own direction inside and don't need anyone's approval."],["RO-011","I know when to come close and when to step back, because I can read the room."],["RO-012","I want to open a new journey for everyone."]],"Zae'rah":[["ZA-001","Just being here is a steady kind of strength."],["ZA-002","I'm in no hurry to speak, because I know quiet can guide too."],["ZA-003","I watch first, wait for everyone to settle, and then let things start to flow."],["ZA-004","When everyone is moving, my quiet is what they come back to."],["ZA-005","I can read small shifts in the air and the ripples of emotion."],["ZA-006","I'm the one who catches change and the one who keeps the space."],["ZA-007","I feel with my breath and answer with quiet."],["ZA-008","When I'm in the room, a sense of calm slowly spreads."],["ZA-009","I don't need to jump into the chaos; I only need to stay steady myself."],["ZA-010","My steadiness isn't slowness; it gives change a place to take root."],["ZA-011","When big upheaval comes, I'm the last wall that keeps everyone steady."],["ZA-012","My slowness is the truth of a different rhythm."]],"Valtara":[["VA-001","I see a small piece in each person, waiting to be fitted together."],["VA-002","I'm not looking for just one person; I want to connect the whole web."],["VA-003","I can read the unspoken connections between people."],["VA-004","I can feel what a team isn't saying."],["VA-005","I know who fits where, and when they should be brought in."],["VA-006","What I say helps scattered people find a shared direction again."],["VA-007","I'm one piece of the puzzle, and also the board the puzzle sits on."],["VA-008","I help people see each other, and see themselves."],["VA-009","My intuition is often not just for me but for everyone."],["VA-010","I'm a harmonizer who can find, in conflict, the path everyone can walk."],["VA-011","When everything falls apart, I remember why we came together."],["VA-012","I want everyone to be able to be together, well."]],"Kuthari":[["KU-001","I'm a recorder, not a bystander; I pass on what really happened."],["KU-002","My notes are a promise I make to myself."],["KU-003","I don't just write down events; I write the ups and downs and feelings behind them."],["KU-004","Every experience has its reason, and I keep that reason for it."],["KU-005","I record so that people in the future remember where they started."],["KU-006","I pay attention to where dreams, imagination and real experience overlap."],["KU-007","I'm not only writing about you, but about the you that you thought didn't exist."],["KU-008","I want the stories that shine to leave clues others can follow."],["KU-009","I record with time, but what I write will last longer than time."],["KU-010","I turn feelings into words, and let words return to real life."],["KU-011","My records aren't cold narration; they're the echo of people meeting people."],["KU-012","Every record is something handed down; I'm just the quiet river."]],"Mei'hara":[["ME-001","I can feel the emotion you didn't say, and that's the real message."],["ME-002","I'm not here to judge you, but to help you see the side of yourself you can't see."],["ME-003","I want every relationship to be a chance to know yourself."],["ME-004","I'm willing to be misunderstood for a while, because I know you'll see in the end."],["ME-005","I often feel pain others can't put into words, and I'm learning not to carry all of it."],["ME-006","I come to know myself in relationships, and help you remember who you are."],["ME-007","I'm willing to be the one who doesn't run, just to open the door between us."],["ME-008","I know the deepest truth is often hidden where we're most afraid to be touched."],["ME-009","My boundaries are there to protect love, not to push people away."],["ME-010","From how you treat me, I see how you treat yourself."],["ME-011","After misunderstanding and hurt, I still choose love."],["ME-012","Every move closer or further away is two people talking."]],"Xon'teh":[["XO-001","I can hear the signals beneath the surface, and I want to connect them."],["XO-002","I don't just pass data along; I let it flow with warmth."],["XO-003","I translate complex technology into tools ordinary people can use."],["XO-004","I want different systems to truly talk to each other."],["XO-005","I want technology to go back to what it was meant for: serving people, not replacing them."],["XO-006","I understand code, and I understand that lonely feeling of not being able to connect."],["XO-007","Behind every piece of data is a person who wants to be understood."],["XO-008","I want to design a language that makes even very complex things clear in plain words."],["XO-009","I make tools not so people depend on them, but to hand the choice back to each person."],["XO-010","When technology turns cold, I want to make it warm again."],["XO-011","I want to help good things find the right vessel, so they're no longer lost."],["XO-012","I believe people and tools together can live a freer life."]],"Nael'tu":[["NA-001","I can see the blueprint of the future, and I'm willing to be the first to walk onto it."],["NA-002","What I see isn't fantasy; it's what's possible but hasn't happened yet."],["NA-003","I want to light up the dreams others don't dare to touch."],["NA-004","I know no one has walked this road, so I choose to take the first step."],["NA-005","I don't wait for perfect conditions; I open up the new situation first."],["NA-006","My creating comes from a deep call inside, not to prove anything, only to create."],["NA-007","I want to open a brand-new road for this world."],["NA-008","I'm the one who holds the course in a storm, and the light on the star map that shows the way."],["NA-009","I don't stay in the past or just wait for the future; I'm the engine that moves the present."],["NA-010","While everyone is still watching, I've already started changing."],["NA-011","My choices don't always need everyone's agreement, but someone always resonates."],["NA-012","I'm willing to walk into the dark, because I know it will light up in the end."]],"Ori'shan":[["OR-001","My body is a bridge, turning feelings no one can see into movements everyone can."],["OR-002","I make rhythm something you can feel, so everyone's state can be seen."],["OR-003","When I start to dance, the whole space comes alive again."],["OR-004","My voice can lead the way, carrying truths no one has said yet."],["OR-005","I can feel the air vibrating and hear the rhythm of a heartbeat."],["OR-006","I want everyone to be able to sing in their own voice."],["OR-007","Silence has rhythm too; I can hear the pulse no one speaks."],["OR-008","When everyone forgets the language of the body, I'm willing to be the one who remembers."],["OR-009","I'm not only the one who plays; I am an instrument myself."],["OR-010","When I become one with the rhythm, everything returns to its first harmony."],["OR-011","I want to dance the melody in my heart."],["OR-012","Every breath is a movement in sync with the world."]]};
+const ROOT_LIST = [
+  ["Sa'karan","SK","The Architect","#b8892b","sakaran"],["Elariah","EL","The Empath","#e8806f","elariah"],
+  ["Thaleon","TH","The Transformer","#5b3fa0","thaleon"],["Auri'kai","AU","The Intuitive","#5aa9c9","aurikai"],
+  ["Rohen'dal","RO","The Mover","#e2562b","rohendal"],["Zae'rah","ZA","The Stabilizer","#3fa98f","zaerah"],
+  ["Valtara","VA","The Integrator","#2a46b8","valtara"],["Kuthari","KU","The Recorder","#c5ccd8","kuthari"],
+  ["Mei'hara","ME","The Mirror","#c98a7a","meihara"],["Xon'teh","XO","The Connector","#1f5fbf","xonteh"],
+  ["Nael'tu","NA","The Navigator","#e6e1d3","naeltu"],["Ori'shan","OR","The Rhythm Keeper","#b5357f","orishan"]
+];
+const ARCH_EN = {"行動者": "The Initiator", "療癒者": "The Holder", "教導者": "The Teacher", "感應者": "The Sensor", "洞見者": "The Seer", "鏡面者": "The Reflector"};  /* display names; data keys stay in Chinese */
+const DRIVE_EN = {"療癒": "Restoring", "探索": "Exploring", "服務": "Serving", "守護": "Guarding", "突破": "Breakthrough", "創造": "Creating", "傳遞": "Conveying", "共鳴": "Resonating"};
+const ARCH = ['行動者','療癒者','教導者','感應者','洞見者','鏡面者'];
+const DRIVE = ['療癒','探索','服務','守護','突破','創造','傳遞','共鳴'];
+const RK = ROOT_LIST.map(r=>r[0]);
+const RI = Object.fromEntries(RK.map((r,i)=>[r,i]));
+const fmt = n => n.toLocaleString('en-US');
+function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+let live = null, hist = null, layer = '132', selected = null;
+const me = (function(){
+  const g = k => { try{ return JSON.parse(localStorage.getItem(k) || 'null'); }catch(e){ return null; } };
+  const r = g('fc_result_root'), a = g('fc_result_archetype'), d = g('fc_result_drive');
+  if(!r || r.v !== 'v2') return {};
+  return {main:r.top, second:r.sec, phrase:r.phrase || null, arch:a && a.top, drive:d && d.top};
+})();
+
+/* ---- stats ---- */
+function stats(){
+  const useHist = document.getElementById('gHist').checked && hist;
+  const pairs = new Map(), phr = new Map(), combos = new Map();
+  const add = (m, k, n) => m.set(k, (m.get(k) || 0) + n);
+  if(live){
+    (live.pairs || []).forEach(p=>{ if(p.main in RI && p.second in RI) add(pairs, p.main+'|'+p.second, p.n); });
+    (live.phrases || []).forEach(p=> add(phr, p.code, p.n));
+    (live.combos || []).forEach(c=>{ if(c.main in RI && c.second in RI) add(combos, [c.main,c.second,c.archetype,c.drive].join('|'), c.n); });
+  }
+  if(useHist) hist.pairs.forEach(([m,s,n])=> add(pairs, m+'|'+s, n));
+  const people = (live ? live.people : 0) + (useHist ? hist.people : 0);
+  return {pairs, phr, combos, people, livePeople: live ? live.people : 0, histPeople: useHist ? hist.people : 0};
+}
+let S = null;
+
+function alpha(n, max){ return n ? (0.22 + 0.78 * Math.log(1+n) / Math.log(1+Math.max(max,1))) : 0; }
+
+function renderStats(){
+  document.getElementById('sPeople').textContent = fmt(S.people);
+  document.getElementById('sPeopleL').textContent = S.histPeople ? `People who took the Root Code Test (new: ${fmt(S.livePeople)}, past: ${fmt(S.histPeople)})` : 'People who took the Root Code Test';
+  document.getElementById('s132').textContent = fmt([...S.pairs.values()].filter(Boolean).length);
+  document.getElementById('s144').textContent = fmt([...S.phr.values()].filter(Boolean).length);
+  document.getElementById('s6336').textContent = fmt([...S.combos.values()].filter(Boolean).length);
+}
+
+/* ---- 132: primary × secondary ---- */
+function render132(){
+  const max = Math.max(0, ...S.pairs.values());
+  let h = '<div class="g-mx m132"><span></span>' + ROOT_LIST.map(r=>`<span class="g-h" title="${esc(r[0])}">${r[1]}</span>`).join('');
+  ROOT_LIST.forEach(([m,code,,c])=>{
+    h += `<span class="g-h row" style="--c:${c}" title="${esc(m)}"><i></i>${code}</span>`;
+    RK.forEach(s=>{
+      if(s===m){ h += '<span class="g-c void" aria-hidden="true"></span>'; return; }
+      const n = S.pairs.get(m+'|'+s) || 0, a = alpha(n, max);
+      const self = me.main===m && me.second===s, key = m+'|'+s;
+      h += `<button class="g-c${n?' lit':''}${self?' self':''}${selected===key?' sel':''}" style="--a:${a.toFixed(3)}" data-k="${esc(key)}" aria-label="${esc(m)} × ${esc(s)}: ${n}"></button>`;
+    });
+  });
+  h += '</div>';
+  document.getElementById('gBoard').innerHTML = h;
+  document.getElementById('gMax').textContent = max ? `up to ${fmt(max)} people` : 'Brighter with more people';
+  document.getElementById('gLead').textContent = 'Rows are Primary Roots, columns are Secondary Roots. Click any cell to see how many people are there.';
+  document.getElementById('gOpts').style.display = hist ? '' : 'none';
+}
+function info132(key){
+  const [m,s] = key.split('|'), n = S.pairs.get(key) || 0;
+  const R = ROOT_LIST[RI[m]], R2 = ROOT_LIST[RI[s]];
+  return `<div>Primary Root <b>${esc(m)} · ${R[2]}</b> × Secondary Root <b>${esc(s)} · ${R2[2]}</b></div>
+    <div class="sub">${n ? `${fmt(n)} ${n===1?'person':'people'} in this cell so far` : 'This cell is waiting for its first person'}${me.main===m && me.second===s ? ' · this is your place' : ''}</div>`;
+}
+
+/* ---- 144: Mission Lines ---- */
+function render144(){
+  const max = Math.max(0, ...S.phr.values());
+  let h = '<div class="g-mx m144"><span></span>' + Array.from({length:12},(_,i)=>`<span class="g-h">${i+1}</span>`).join('') + '<span class="g-h cnt">Done</span>';
+  ROOT_LIST.forEach(([m,code,,c])=>{
+    h += `<span class="g-h row" style="--c:${c}" title="${esc(m)}"><i></i>${code}</span>`;
+    let lit = 0;
+    PHRASES[m].forEach(([pc])=>{
+      const n = S.phr.get(pc) || 0, a = alpha(n, max);
+      if(n) lit++;
+      h += `<button class="g-c${n?' lit':''}${me.phrase===pc?' self':''}${selected===pc?' sel':''}" style="--a:${a.toFixed(3)}" data-k="${pc}" aria-label="${pc}: ${n}"></button>`;
+    });
+    h += `<span class="g-h cnt">${lit}/12</span>`;
+  });
+  h += '</div>';
+  document.getElementById('gBoard').innerHTML = h;
+  document.getElementById('gMax').textContent = max ? `up to ${fmt(max)} people` : 'Brighter with more people';
+  document.getElementById('gLead').textContent = 'Each row holds the 12 Mission Lines of one Primary Root. When all 12 cells in a row light up, that Root Code is complete. Click any cell to see the line.';
+  document.getElementById('gOpts').style.display = 'none';
+}
+function info144(pc){
+  const m = RK.find(r=>pc.startsWith(ROOT_LIST[RI[r]][1]));
+  const p = PHRASES[m].find(x=>x[0]===pc), n = S.phr.get(pc) || 0;
+  return `<div class="ph">“${esc(p[1])}”</div>
+    <div class="sub">${pc}・${esc(m)}・${ROOT_LIST[RI[m]][2]}｜${n ? `${fmt(n)} ${n===1?'person has':'people have'} chosen this line` : 'This line is waiting for its first person'}${me.phrase===pc ? ' · this is the line you chose' : ''}</div>`;
+}
+
+/* ---- 6,336: full combinations (canvas) ---- */
+let geo = null;
+function render6336(){
+  const board = document.getElementById('gBoard');
+  board.innerHTML = '<canvas id="g6336" aria-label="Grid of 6,336 full combinations"></canvas>';
+  document.getElementById('gLead').textContent = 'Each row is a Primary Root; each small block in a row is a Secondary Root. Inside a block, the 6 rows are Inner Archetypes and the 8 columns are Inner Drives. This layer lights up only after all three tests.';
+  document.getElementById('gOpts').style.display = 'none';
+  draw6336();
+}
+function draw6336(){
+  const cv = document.getElementById('g6336'); if(!cv) return;
+  const W = cv.parentElement.clientWidth, narrow = W < 520;
+  const head = narrow ? 24 : 36, gap = narrow ? 2 : 4;
+  const cell = Math.max(2, Math.floor((W - head - 10*gap) / 88 * 100) / 100);
+  const bw = cell*8, bh = cell*6, rowGap = narrow ? 4 : 6;
+  const H = 12*bh + 11*rowGap;
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
+  cv.style.height = H + 'px';
+  const x = cv.getContext('2d');
+  x.setTransform(dpr,0,0,dpr,0,0);
+  x.clearRect(0,0,W,H);
+  const max = Math.max(0, ...S.combos.values());
+  geo = {head, gap, cell, bw, bh, rowGap};
+  x.font = `${narrow?9:11}px "Noto Sans TC", sans-serif`;
+  x.textBaseline = 'middle';
+  ROOT_LIST.forEach(([m,code,,c], ri)=>{
+    const y0 = ri*(bh+rowGap);
+    x.fillStyle = c; x.beginPath(); x.arc(4, y0+bh/2, narrow?2.5:3.5, 0, Math.PI*2); x.fill();
+    x.fillStyle = 'rgba(236,234,228,.7)'; x.fillText(code, narrow?9:12, y0+bh/2);
+    RK.filter(s=>s!==m).forEach((s, si)=>{
+      const x0 = head + si*(bw+gap);
+      x.fillStyle = 'rgba(255,255,255,.035)';
+      x.fillRect(x0, y0, bw, bh);
+      ARCH.forEach((a, ai)=> DRIVE.forEach((d, di)=>{
+        const n = S.combos.get([m,s,a,d].join('|')) || 0;
+        const cx = x0 + di*cell, cy = y0 + ai*cell;
+        if(n){
+          const al = alpha(n, max);
+          x.shadowColor = `rgba(255,196,110,${al})`; x.shadowBlur = 4 + al*10;
+          x.fillStyle = `rgba(255,214,150,${al})`;
+          x.fillRect(cx+0.5, cy+0.5, cell-1, cell-1);
+          x.shadowBlur = 0;
+        }
+        if(me.main===m && me.second===s && me.arch===a && me.drive===d){
+          x.strokeStyle = '#fff'; x.lineWidth = 1.5; x.strokeRect(cx-1, cy-1, cell+2, cell+2);
+        }
+      }));
+    });
+  });
+  if(selected6336){
+    const p = pos6336(selected6336);
+    if(p){ x.strokeStyle = '#e8d5a8'; x.lineWidth = 1.5; x.strokeRect(p.x-1.5, p.y-1.5, cell+3, cell+3); }
+  }
+  document.getElementById('gMax').textContent = max ? `up to ${fmt(max)} people` : 'Brighter with more people';
+}
+let selected6336 = null;
+function pos6336(k){
+  const [m,s,a,d] = k.split('|'), ri = RI[m], si = RK.filter(r=>r!==m).indexOf(s);
+  if(ri==null || si<0) return null;
+  return {x: geo.head + si*(geo.bw+geo.gap) + DRIVE.indexOf(d)*geo.cell, y: ri*(geo.bh+geo.rowGap) + ARCH.indexOf(a)*geo.cell};
+}
+function hit6336(ev){
+  const cv = ev.currentTarget, r = cv.getBoundingClientRect();
+  const px = ev.clientX - r.left, py = ev.clientY - r.top;
+  const ri = Math.floor(py / (geo.bh + geo.rowGap)); if(ri<0 || ri>11) return null;
+  const yIn = py - ri*(geo.bh+geo.rowGap); if(yIn > geo.bh) return null;
+  const si = Math.floor((px - geo.head) / (geo.bw + geo.gap)); if(si<0 || si>10) return null;
+  const xIn = px - geo.head - si*(geo.bw+geo.gap); if(xIn > geo.bw) return null;
+  const m = RK[ri], s = RK.filter(k=>k!==m)[si];
+  return [m, s, ARCH[Math.min(5, Math.floor(yIn/geo.cell))], DRIVE[Math.min(7, Math.floor(xIn/geo.cell))]].join('|');
+}
+function info6336(k){
+  const [m,s,a,d] = k.split('|'), n = S.combos.get(k) || 0;
+  const mine = me.main===m && me.second===s && me.arch===a && me.drive===d;
+  return `<div><b>${esc(m)}</b> × <b>${esc(s)}</b> × <b>${ARCH_EN[a]}</b> × <b>${DRIVE_EN[d]} Drive</b></div>
+    <div class="sub">${n ? `${fmt(n)} ${n===1?'person has':'people have'} this combination` : 'This combination is waiting for its first person'}${mine ? ' · this is your combination' : ''}</div>`;
+}
+
+/* ---- view ---- */
+function defaultInfo(){
+  if(layer==='132' && me.main) return info132(me.main+'|'+me.second);
+  if(layer==='144' && me.phrase) return info144(me.phrase);
+  if(layer==='6336' && me.arch && me.drive) return info6336([me.main,me.second,me.arch,me.drive].join('|'));
+  if(layer==='6336' && me.main) return '<div class="sub">You have taken the Root Code Test. Take the <a href="test-archetype.html">Inner Archetype</a> and <a href="test-drive.html">Inner Drive</a> tests and your full combination will light up.</div>';
+  return '<div class="sub">Click any cell to see how many people are there.</div>';
+}
+function render(){
+  if(!S) return;
+  renderStats();
+  if(layer==='132') render132(); else if(layer==='144') render144(); else render6336();
+  const inf = document.getElementById('gInfo');
+  if(layer==='132' && selected && selected.includes('|')) inf.innerHTML = info132(selected);
+  else if(layer==='144' && selected && !selected.includes('|')) inf.innerHTML = info144(selected);
+  else if(layer==='6336' && selected6336) inf.innerHTML = info6336(selected6336);
+  else inf.innerHTML = defaultInfo();
+  const hasMe = (layer==='132' && me.main) || (layer==='144' && me.phrase) || (layer==='6336' && me.arch && me.drive);
+  document.getElementById('gMeKey').style.display = hasMe ? '' : 'none';
+}
+
+document.getElementById('gBoard').addEventListener('click', ev=>{
+  if(ev.target.id==='g6336'){ selected6336 = hit6336(ev); draw6336(); document.getElementById('gInfo').innerHTML = selected6336 ? info6336(selected6336) : defaultInfo(); return; }
+  const b = ev.target.closest('.g-c'); if(!b || !b.dataset.k) return;
+  selected = b.dataset.k; render();
+});
+document.querySelectorAll('.g-tab').forEach(t=>t.addEventListener('click', ()=>{
+  document.querySelectorAll('.g-tab').forEach(x=>x.classList.toggle('on', x===t));
+  layer = t.dataset.l; selected = null; selected6336 = null; render();
+}));
+document.getElementById('gHist').addEventListener('change', ()=>{ S = stats(); render(); });
+let rt; window.addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(()=>{ if(layer==='6336') draw6336(); }, 150); });
+
+document.getElementById('gKey').innerHTML = ROOT_LIST.map(([m,code,zh,c,slug])=>`<a href="../roots/${slug}.html" style="--c:${c}"><i></i><b>${code}</b>${esc(m)}・${zh}</a>`).join('');
+
+async function load(first){
+  const [l, h] = await Promise.all([
+    (window.FC ? FC.rpc('grid_stats') : Promise.reject()).catch(()=>null),
+    first ? fetch('/assets/grid-history.json').then(r=>r.json()).catch(()=>null) : Promise.resolve(hist)
+  ]);
+  if(l) live = l;
+  hist = h;
+  if(hist) document.getElementById('gHistL').textContent = `Include past results from the old test platform (${hist.from.replace('-','/')}–${hist.to.replace('-','/')}, ${fmt(hist.people)} people, Primary and Secondary Roots only). The old questions leaned toward a few Root Codes, so the ZA and TH rows look especially bright; in the new test (from October 2026) every Root Code has the same chance.`;
+  S = stats();
+  render();
+  const t = new Date();
+  document.getElementById('gStatus').textContent = l ? `Live · updated ${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}` : (live ? 'Live data is unavailable right now; showing the last result' : 'Live data is unavailable right now; showing past results');
+}
+load(true);
+setInterval(()=>{ if(!document.hidden) load(false); }, 60000);
+</script>
+<script src="../main.js?v=20261010d"></script>
+</body>
+</html>
