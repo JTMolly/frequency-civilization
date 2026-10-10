@@ -231,3 +231,42 @@ footer{border-top:1px solid var(--card-border);padding:70px 0 44px;background:va
 .legal{text-align:center;font-size:12px;color:var(--muted);opacity:.75;border-top:1px solid var(--card-border);padding-top:28px;line-height:2.2;letter-spacing:.06em}
 .legal a{color:var(--muted);text-decoration:underline}
 @media (max-width:760px){.nav-links{gap:12px;font-size:12px}.logo{font-size:12.5px;letter-spacing:.16em}.glow-top{width:520px}}
+
+/* hero 滿版影片（Esalen 式，2026-10-10） */
+header.hero-band.film{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;background:#1a1712;color:#fff}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,16,10,.18) 0%,rgba(20,16,10,0) 30%,rgba(20,16,10,.2) 58%,rgba(20,16,10,.74) 100%)}
+.hero-band.film .hero{text-align:left;padding:0 24px 96px;position:relative;z-index:2}
+.hero-band.film .kicker{color:#f3e2b8;letter-spacing:.42em}
+.hero-band.film h1{background:none;-webkit-background-clip:initial;background-clip:initial;color:#fff;text-shadow:0 2px 28px rgba(0,0,0,.35);font-size:clamp(30px,4.6vw,52px);line-height:1.55;margin-bottom:18px}
+.hero-band.film p.lead{color:rgba(255,255,255,.9);margin:0 0 34px;max-width:560px}
+.hero-band.film .btn{border-color:rgba(255,255,255,.75);color:#fff}
+.hero-band.film .btn:hover{background:#fff;color:var(--text);border-color:#fff}
+@media (prefers-reduced-motion:reduce){.hero-video{display:none}header.hero-band.film{background:#1a1712 url(assets/hero-light.jpg) center/cover no-repeat}}
+.def-band{padding:96px 0 88px;text-align:center;background:linear-gradient(180deg,#fffdf8,var(--bg))}
+.def-band .tower-arch{margin:0 auto 40px}
+.def-band .def{max-width:640px;margin:0 auto;padding:26px 34px;border:1px solid var(--line);border-radius:4px;background:rgba(255,255,255,.75);font-size:17px}
+.def-band .def strong{color:var(--gold-soft);font-weight:400}
+
+/* 手機選單：不再直排擋住畫面，改成第二列可左右滑 */
+@media (max-width:760px){
+  .nav-in{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 16px}
+  .nav-links{flex-wrap:nowrap;overflow-x:auto;width:100%;gap:18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{white-space:nowrap}
+  header.hero-band.film{min-height:88vh}
+  .hero-band.film .hero{padding:0 16px 64px}
+  .hero-band.film .btn{padding:12px 26px;letter-spacing:.16em}
+  .def-band{padding:64px 0}
+  .def-band .tower-arch{transform:scale(.8);margin:-40px auto 0}
+}
+/* 手機寬度修正：品牌字太寬會撐出畫面（2026-10-10） */
+@media (max-width:760px){
+  .logo{font-size:12px;letter-spacing:.1em;white-space:normal}
+  .foot-brand{max-width:100%;min-width:0}
+  .foot-brand .logo{font-size:13.5px}
+  .foot-brand p,.socials{overflow-wrap:anywhere}
+  .socials{flex-wrap:wrap}
+}
+/* 影片上的英文小標加一點陰影，亮天空上才看得清楚 */
+.hero-band.film .kicker{text-shadow:0 1px 12px rgba(0,0,0,.45)}
