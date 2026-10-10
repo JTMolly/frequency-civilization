@@ -15,7 +15,11 @@
     }catch(e){ return 'anon'; }
   }
 
+  /* 本機預覽（localhost）不寫入正式資料庫，避免測試資料混進統計 */
+  const LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+
   function insert(table, row){
+    if(LOCAL){ console.info('[本機預覽] 不寫入', table, row); return Promise.resolve(new Response(null, {status:201})); }
     return fetch(SUPA_URL + '/rest/v1/' + table, {
       method:'POST',
       headers:{
