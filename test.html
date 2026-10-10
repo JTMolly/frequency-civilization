@@ -244,7 +244,7 @@ function finish(){
   document.getElementById('result').classList.remove('hidden');
   renderChain();
   const rl = document.getElementById('rootLink');
-  if(rl && ROOT_SLUG[topRoot]) rl.innerHTML = `<a href="roots/${ROOT_SLUG[topRoot]}.html">深入認識 ${topRoot}・${R.name}：特質、高低頻狀態與代表顏色 →</a>`;
+  if(rl && ROOT_SLUG[topRoot]) rl.innerHTML = `<a href="roots/${ROOT_SLUG[topRoot]}.html">深入認識 ${topRoot}・${R.name}：特質、穩定與失衡時的表現，以及代表顏色 →</a>`;
   /* 深度層（分數分佈＋副語根）需 email 解鎖；匿名數據先入庫 */
   if(window.FC) FC.resultReady('rootcode', {answers, scores, top:topRoot, second:secRoot});
   window.scrollTo({top:0});

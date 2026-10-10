@@ -70,7 +70,7 @@
     gate.innerHTML =
       '<div class="gate">' +
       '<h3>解鎖你的完整解讀</h3>' +
-      '<p>基本結果免費。留下 email，立即解鎖完整分數分佈與副語根深度解讀，並收到一份你的結果整理。</p>' +
+      '<p>基本結果免費。留下 email，立即解鎖完整分數分佈與副語根深度解讀。</p>' +
       '<form onsubmit="return FC._unlock(this, \'' + test + '\')">' +
       '<input type="text" name="nickname" placeholder="暱稱（選填）">' +
       '<input type="email" name="email" placeholder="你的 email" required>' +

@@ -60,6 +60,41 @@ header.hero-band{min-height:92vh;display:flex;align-items:center;position:relati
 .hero .def{max-width:640px;margin:36px auto 48px;padding:26px 34px;border:1px solid var(--night-line);border-radius:4px;background:linear-gradient(180deg,rgba(201,168,106,.05),rgba(201,168,106,.01));font-size:16.5px;backdrop-filter:blur(6px)}
 .hero .def strong{color:var(--night-gold-soft);font-weight:400}
 
+/* hero 明亮版（2026-10-10）：暖白晨光底＋官方白底光塔 logo */
+header.hero-band.light{background:radial-gradient(ellipse 80% 60% at 50% 0%,#fdf0d2 0%,rgba(253,240,210,0) 70%),linear-gradient(180deg,#fffdf8,var(--bg));color:var(--text);min-height:auto}
+.hero-band.light .hero{padding:120px 0 90px}
+.hero-band.light .glow-top{background:radial-gradient(ellipse at center,rgba(232,196,110,.22),rgba(232,196,110,.06) 45%,transparent 70%)}
+/* 金色光塔（舊站原設計：24 道光線＋tower-body.svg＋核心光點；放進拱窗讓白色光線在明亮頁面上看得見） */
+.tower-arch{position:relative;width:250px;height:400px;margin:0 auto 40px;overflow:hidden;border-radius:125px 125px 20px 20px;
+  background:radial-gradient(ellipse 80% 55% at 50% 37%,#4A453A 0%,#2E2A22 55%,#1C1A16 100%);
+  box-shadow:0 0 0 1px rgba(200,160,74,.45),0 24px 60px rgba(150,110,40,.22)}
+.tower{position:absolute;left:50%;top:150px;width:240px;height:240px;margin:-120px 0 0 -120px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 20px rgba(184,149,69,.3))}
+.rays{position:absolute;inset:0}
+.ray{position:absolute;top:50%;left:50%;width:1.8px;height:110px;border-radius:.5px;transform-origin:center top;transform:translate(-50%) rotate(var(--angle));
+  background:linear-gradient(to bottom,transparent 0%,rgba(255,255,255,1) 5%,rgba(230,230,230,.9) 15%,rgba(200,200,200,.7) 30%,rgba(160,160,160,.5) 50%,rgba(120,120,120,.3) 70%,rgba(80,80,80,.15) 85%,transparent 100%);
+  animation:ray-pulse-1 5.6s ease-in-out infinite}
+.ray:nth-child(2n){background:linear-gradient(to bottom,transparent 0%,rgba(255,255,255,.95) 6%,rgba(220,220,220,.85) 18%,rgba(190,190,190,.65) 32%,rgba(150,150,150,.45) 52%,rgba(110,110,110,.25) 72%,rgba(70,70,70,.1) 87%,transparent 100%)}
+.ray:nth-child(3n+2){animation:ray-pulse-2 6.4s ease-in-out infinite}
+.ray:nth-child(3n){animation:ray-pulse-3 7.2s ease-in-out infinite}
+.ray:nth-child(4n+1){animation-delay:.8s}.ray:nth-child(4n+2){animation-delay:2.1s}.ray:nth-child(4n+3){animation-delay:3.4s}
+.tower-body{position:absolute;top:50%;left:50%;width:108px;height:360px;z-index:15;transform:translate(-50%) translateY(-15%);
+  filter:drop-shadow(rgba(255,220,150,.8) 0 0 15px) drop-shadow(rgba(255,200,120,.6) 0 0 30px) drop-shadow(rgba(220,180,100,.4) 0 0 45px)}
+.core{width:16px;height:16px;border-radius:50%;position:relative;z-index:10;
+  background:radial-gradient(circle,#FFF3D0 0%,rgba(255,200,120,.8) 15%,rgba(220,180,100,.6) 35%,rgba(180,150,80,.4) 55%,rgba(140,120,60,.2) 75%,transparent 100%);
+  box-shadow:rgb(255,220,140) 0 0 20px,rgba(255,220,140,.8) 0 0 40px,rgba(255,220,140,.6) 0 0 60px,rgba(255,220,140,.4) 0 0 80px;
+  animation:coreGlow 1.8s ease-in-out infinite alternate}
+@keyframes ray-pulse-1{0%,100%{opacity:.4;transform:translate(-50%) rotate(var(--angle)) scaleX(.8)}50%{opacity:.9;transform:translate(-50%) rotate(var(--angle)) scaleX(1.5) scaleY(1.2)}}
+@keyframes ray-pulse-2{0%,100%{opacity:.5;transform:translate(-50%) rotate(var(--angle)) scaleX(1.2) scaleY(.9)}50%{opacity:.8;transform:translate(-50%) rotate(var(--angle)) scaleX(.9) scaleY(1.3)}}
+@keyframes ray-pulse-3{0%,100%{opacity:.6;transform:translate(-50%) rotate(var(--angle)) scaleY(1.1)}50%{opacity:1;transform:translate(-50%) rotate(var(--angle)) scaleX(1.8) scaleY(.8)}}
+@keyframes coreGlow{0%{transform:scale(.9)}100%{transform:scale(1.2)}}
+@media (prefers-reduced-motion:reduce){.ray,.core{animation:none}.ray{opacity:.75}}
+.hero-band.light .kicker{color:var(--gold)}
+.hero-band.light h1{background:none;color:var(--text);-webkit-background-clip:initial;background-clip:initial}
+.hero-band.light p.lead{color:var(--muted)}
+.hero-band.light .def{border-color:var(--line);background:rgba(255,255,255,.7)}
+.hero-band.light .def strong{color:var(--gold-soft)}
+@media (max-width:760px){.hero-band.light .hero{padding:96px 0 64px}.tower-arch{transform:scale(.8);margin:-40px auto 0}}
+
 /* beacon 光塔光束 */
 .beacon{position:absolute;inset:0;z-index:1;pointer-events:none;display:flex;justify-content:center}
 .beacon svg{height:100%;width:auto;opacity:.85}
