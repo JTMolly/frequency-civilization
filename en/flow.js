@@ -33,7 +33,19 @@
         <div class="flow-btns"><a class="btn solid" href="${b}${s.url}">Continue to stage ${nx+1}</a></div>
         <p class="flow-note">You can also do it later. Come back on the same device and you'll pick up from this stage.</p>`;
     }
-    el.innerHTML = html + '</div>';
+    el.innerHTML = html + '</div>' + games(b);
+  }
+
+  /* after the Root Code Test: Daily Glow and Pair Card; a friend's pairing link can be reopened after the test */
+  function games(b){
+    if(!has('fc_result_root')) return '';
+    let pending = null;
+    try{ pending = localStorage.getItem('fc_pair_pending'); }catch(e){}
+    const back = pending && /^[A-Z]{2}-[A-Z]{2}$/.test(pending)
+      ? `<a class="btn solid" href="${b}pair.html?with=${pending}">Back to my friend's Pair Card</a>` : '';
+    return `<div class="flow-box" style="margin-top:18px"><div class="flow-kicker">Come back anytime</div>
+      <p class="flow-lead">Tap how you are each day and remember how you get back to steady. You can also pair with a friend and see how you work together.</p>
+      <div class="flow-btns">${back}<a class="btn" href="${b}glow.html">Daily Glow</a><a class="btn" href="${b}pair.html">Pair Card</a></div></div>`;
   }
 
   /* test intro: show which stage this is */

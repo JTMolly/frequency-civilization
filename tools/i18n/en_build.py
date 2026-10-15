@@ -11,10 +11,11 @@ HERE = os.path.dirname(__file__)
 EN_DIR = os.path.join(HERE, 'en')
 ROOTS = 'sakaran elariah thaleon aurikai rohendal zaerah valtara kuthari meihara xonteh naeltu orishan'.split()
 EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.html', 'grid.html',
-            'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html', 'notes.html'] + \
+            'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html', 'notes.html',
+            'glow.html', 'pair.html'] + \
            [f'roots/{r}.html' for r in ROOTS] + \
            sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html'))
-EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js']
+EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']
 CJK = re.compile(r'[㐀-鿿　-〿！-～]')
 ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',
                # 測驗結果的資料代號：刻意保留中文，畫面上另外顯示英文名稱

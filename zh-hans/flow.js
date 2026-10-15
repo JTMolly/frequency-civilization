@@ -33,7 +33,19 @@
         <div class="flow-btns"><a class="btn solid" href="${b}${s.url}">继续第 ${nx+1} 关</a></div>
         <p class="flow-note">想晚点再做也可以，用同一支手机回来，会从这一关接着开始。</p>`;
     }
-    el.innerHTML = html + '</div>';
+    el.innerHTML = html + '</div>' + games(b);
+  }
+
+  /* 做完语根测验之后：今日点灯、双人配对卡；朋友传来的配对连结，做完测验后可以回去看 */
+  function games(b){
+    if(!has('fc_result_root')) return '';
+    let pending = null;
+    try{ pending = localStorage.getItem('fc_pair_pending'); }catch(e){}
+    const back = pending && /^[A-Z]{2}-[A-Z]{2}$/.test(pending)
+      ? `<a class="btn solid" href="${b}pair.html?with=${pending}">回到朋友的配对卡</a>` : '';
+    return `<div class="flow-box" style="margin-top:18px"><div class="flow-kicker">之后可以常回来</div>
+      <p class="flow-lead">每天点一下今天的状态，想起你回到稳定的方法；也可以跟朋友配对，看看你们怎么一起运作。</p>
+      <div class="flow-btns">${back}<a class="btn" href="${b}glow.html">今日点灯</a><a class="btn" href="${b}pair.html">双人配对卡</a></div></div>`;
   }
 
   /* 测验开头：标出这是第几关 */

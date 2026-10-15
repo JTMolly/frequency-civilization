@@ -23,5 +23,11 @@
  "/* 測驗結果頁：這一關完成，接下一關 */": "/* result page: this stage is done, link to the next */",
  "/* 測驗開頭：標出這是第幾關 */": "/* test intro: show which stage this is */",
  "/* 首頁、三大測驗頁：一個入口；做到一半的人顯示「接著做」 */": "/* home and tests pages: one entry; people halfway through see \"continue\" */",
- "/* ============================================================\n   flow.js — 完整測驗：三關串在一起（語根 → 內在原型 → 內在動力）\n   進度存在瀏覽器裡，中途離開，同一支手機回來可以接著做。\n   ============================================================ */": "/* ============================================================\n   flow.js: the full test, three stages in a row (Root Code → Inner Archetype → Inner Drive).\n   Progress is stored in the browser, so people can leave and come back on the same device.\n   ============================================================ */"
+ "/* ============================================================\n   flow.js — 完整測驗：三關串在一起（語根 → 內在原型 → 內在動力）\n   進度存在瀏覽器裡，中途離開，同一支手機回來可以接著做。\n   ============================================================ */": "/* ============================================================\n   flow.js: the full test, three stages in a row (Root Code → Inner Archetype → Inner Drive).\n   Progress is stored in the browser, so people can leave and come back on the same device.\n   ============================================================ */",
+ "<div class=\"flow-kicker\">之後可以常回來</div>": "<div class=\"flow-kicker\">Come back anytime</div>",
+ "每天點一下今天的狀態，想起你回到穩定的方法；也可以跟朋友配對，看看你們怎麼一起運作。": "Tap how you are each day and remember how you get back to steady. You can also pair with a friend and see how you work together.",
+ ">回到朋友的配對卡<": ">Back to my friend's Pair Card<",
+ ">今日點燈<": ">Daily Glow<",
+ ">雙人配對卡<": ">Pair Card<",
+ "/* 做完語根測驗之後：今日點燈、雙人配對卡；朋友傳來的配對連結，做完測驗後可以回去看 */": "/* after the Root Code Test: Daily Glow and Pair Card; a friend's pairing link can be reopened after the test */"
 }
