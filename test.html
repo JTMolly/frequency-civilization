@@ -96,6 +96,7 @@ main{padding:120px 0 90px;min-height:100vh}
   .btn{padding:13px 28px}
   .mission{padding:22px 20px}
 }
+.rlink{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 </style>
 <link rel="stylesheet" href="flow.css?v=20261010f">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
@@ -390,7 +391,7 @@ function finish(){
   });
   const secBox = document.getElementById('rsecond');
   secBox.classList.remove('hidden');
-  secBox.innerHTML = `你的副語根是 <b>${esc(sec)}・${ROOTS[sec].name}</b>——${ROOTS[sec].desc.replace(/<[^>]+>/g,'')}主語根是你最自然的啟動方式，副語根是你的第二種運作模式，兩者的組合才是完整的你。`;
+  secBox.innerHTML = `你的副語根是 <a class="rlink" href="roots/${ROOT_SLUG[sec]}.html"><b>${esc(sec)}・${ROOTS[sec].name}</b></a>——${ROOTS[sec].desc.replace(/<[^>]+>/g,'')}主語根是你最自然的啟動方式，副語根是你的第二種運作模式，兩者的組合才是完整的你。`;
 
   document.getElementById('result').classList.remove('hidden');
   renderChain();

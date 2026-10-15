@@ -130,6 +130,7 @@
 <div class="night-stat">
 <span class="num" id="counter">3,906</span>
 <span class="lab">Root Code test results<br/>(as of July 2026)</span>
+<span class="lab" id="counterLive" style="display:none">Root Code test results<br/>(including the new test since October, live)</span>
 </div>
 <p class="night-note">All tests are educational and self-knowledge tools. They are not medical or psychological diagnoses.</p>
 </div>
@@ -328,24 +329,37 @@
 </div>
 </footer>
 <script>
-/* test counter */
+/* test counter: 3,906 results (as of July 2026) plus live counts from the new test */
 (function(){
   const el = document.getElementById('counter');
   if(!el) return;
-  const target = 3906;
-  let started = false;
-  function animate(){
-    if(started) return; started = true;
-    const dur = 1600, t0 = performance.now();
+  const BASE = 3906;
+  const live = document.getElementById('counterLive');
+  const lab = el.parentNode.querySelector('.lab');
+  let target = BASE, shown = 0, started = false, run = 0;
+  function animate(from){
+    const id = ++run, to = target, dur = from ? 900 : 1600, t0 = performance.now();
     (function tick(t){
+      if(id !== run) return;
       const p = Math.min((t - t0) / dur, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased).toLocaleString();
+      shown = Math.round(from + (to - from) * eased);
+      el.textContent = shown.toLocaleString();
       if(p < 1) requestAnimationFrame(tick);
     })(t0);
   }
-  const io = new IntersectionObserver(es=>{ if(es[0].isIntersecting){ animate(); io.disconnect(); } },{threshold:.4});
+  const io = new IntersectionObserver(es=>{ if(es[0].isIntersecting){ started = true; animate(0); io.disconnect(); } },{threshold:.4});
   io.observe(el);
+  window.addEventListener('load', ()=>{
+    if(!window.FC) return;
+    FC.rpc('grid_stats').then(s=>{
+      const n = s && s.people;
+      if(!(n > 0)) return;
+      target = BASE + n;
+      if(live && lab && lab !== live){ lab.style.display = 'none'; live.style.display = ''; }
+      if(started) animate(shown); else el.textContent = target.toLocaleString();
+    }).catch(()=>{});
+  });
 })();
 </script>
 <script src="fc.js"></script>

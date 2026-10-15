@@ -52,6 +52,8 @@ h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:10px}
 .sec .sub{color:var(--gold);font-size:13px;letter-spacing:.2em;margin-bottom:16px}
 .card{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:22px 26px;margin-bottom:14px}
 .card h3{font-size:16.5px;color:var(--gold-soft);margin-bottom:8px}
+.rlink{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.rlink:hover{color:var(--gold)}
 .card p{font-size:14.5px;color:var(--muted)}
 .card b{color:var(--text);font-weight:500}
 .oneliner{border-left:3px solid var(--gold);background:var(--bg2);padding:14px 22px;font-family:'Noto Serif TC',serif;font-size:16px;color:var(--gold-soft);margin-top:10px}
@@ -179,6 +181,10 @@ const DRIVE = {
  "共鳴":{sub:"連結 × 放大",motive:"讓人與人合拍、形成更大的協作",line:"我能帶動全場，但我不把自己交給全場。"}
 };
 
+/* 語根名稱連到該語根的介紹頁 */
+const ROOT_SLUG = {"Sa'karan":"sakaran","Elariah":"elariah","Thaleon":"thaleon","Auri'kai":"aurikai","Rohen'dal":"rohendal","Zae'rah":"zaerah","Valtara":"valtara","Kuthari":"kuthari","Mei'hara":"meihara","Xon'teh":"xonteh","Nael'tu":"naeltu","Ori'shan":"orishan"};
+function rootA(k, label){ const s = ROOT_SLUG[k], t = label || k; return s ? `<a class="rlink" href="roots/${s}.html">${t}</a>` : t; }
+
 function get(key){ try{ return JSON.parse(localStorage.getItem(key)); }catch(e){ return null; } }
 /* 預覽模式：report.html?demo=1 用範例資料展示完整報告長相 */
 const DEMO = new URLSearchParams(location.search).has('demo');
@@ -190,7 +196,7 @@ document.getElementById('dateLine').textContent = '產生日期：' + new Date()
 
 const status = document.getElementById('status');
 status.innerHTML = [
-  R ? `<div class="st"><span class="ok">✓ 語根測驗</span>　主語根：${R.top}</div>`
+  R ? `<div class="st"><span class="ok">✓ 語根測驗</span>　主語根：${rootA(R.top)}</div>`
     : `<div class="st"><span class="missing">○ 語根測驗未完成</span>　<a href="test.html">去測驗 →</a></div>`,
   A ? `<div class="st"><span class="ok">✓ 內在原型測驗</span>　原型：${A.top}${A.mix?` × ${A.sec}`:''}</div>`
     : `<div class="st"><span class="missing">○ 內在原型測驗未完成</span>　<a href="test-archetype.html">去測驗 →</a></div>`,
@@ -224,9 +230,9 @@ function phraseCard(r){
 if(R){
   document.getElementById('secRoot').innerHTML = `
     <h2>語根｜你怎麼運作</h2><div class="sub">ROOT CODE・HOW YOU OPERATE</div>
-    <div class="card"><h3>主語根：${R.top}・${ROOTS[R.top].name}</h3><p>${ROOTS[R.top].desc}</p></div>
+    <div class="card"><h3>主語根：${rootA(R.top, R.top + '・' + ROOTS[R.top].name)}</h3><p>${ROOTS[R.top].desc}</p></div>
     ${phraseCard(R)}
-    <div class="card"><h3>副語根：${R.sec}・${ROOTS[R.sec].name}</h3><p>${ROOTS[R.sec].desc}</p><p style="margin-top:8px">主語根是最自然的啟動方式，副語根是第二種運作模式，兩者組合構成完整的運作風格。</p></div>`;
+    <div class="card"><h3>副語根：${rootA(R.sec, R.sec + '・' + ROOTS[R.sec].name)}</h3><p>${ROOTS[R.sec].desc}</p><p style="margin-top:8px">主語根是最自然的啟動方式，副語根是第二種運作模式，兩者組合構成完整的運作風格。</p></div>`;
 } else document.getElementById('secRoot').classList.add('hidden');
 
 if(A){

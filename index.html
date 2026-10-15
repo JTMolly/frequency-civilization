@@ -168,6 +168,7 @@
     <div class="night-stat">
       <span class="num" id="counter">3,906</span>
       <span class="lab">筆語根測驗數據<br>（截至 2026 年 7 月）</span>
+      <span class="lab" id="counterLive" style="display:none">筆語根測驗數據<br>（含 10 月起的新版測驗，即時更新）</span>
     </div>
     <p class="night-note">所有測驗皆為教育與自我認知工具，不具醫療或心理診斷性質。</p>
   </div>
@@ -374,24 +375,37 @@
 </footer>
 
 <script>
-/* 測驗人數計數器 */
+/* 測驗人數計數器：3,906 筆（截至 2026/7）加上新版測驗的即時人數 */
 (function(){
   const el = document.getElementById('counter');
   if(!el) return;
-  const target = 3906;
-  let started = false;
-  function animate(){
-    if(started) return; started = true;
-    const dur = 1600, t0 = performance.now();
+  const BASE = 3906;
+  const live = document.getElementById('counterLive');
+  const lab = el.parentNode.querySelector('.lab');
+  let target = BASE, shown = 0, started = false, run = 0;
+  function animate(from){
+    const id = ++run, to = target, dur = from ? 900 : 1600, t0 = performance.now();
     (function tick(t){
+      if(id !== run) return;
       const p = Math.min((t - t0) / dur, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased).toLocaleString();
+      shown = Math.round(from + (to - from) * eased);
+      el.textContent = shown.toLocaleString();
       if(p < 1) requestAnimationFrame(tick);
     })(t0);
   }
-  const io = new IntersectionObserver(es=>{ if(es[0].isIntersecting){ animate(); io.disconnect(); } },{threshold:.4});
+  const io = new IntersectionObserver(es=>{ if(es[0].isIntersecting){ started = true; animate(0); io.disconnect(); } },{threshold:.4});
   io.observe(el);
+  window.addEventListener('load', ()=>{
+    if(!window.FC) return;
+    FC.rpc('grid_stats').then(s=>{
+      const n = s && s.people;
+      if(!(n > 0)) return;
+      target = BASE + n;
+      if(live && lab && lab !== live){ lab.style.display = 'none'; live.style.display = ''; }
+      if(started) animate(shown); else el.textContent = target.toLocaleString();
+    }).catch(()=>{});
+  });
 })();
 </script>
 <script src="fc.js"></script>

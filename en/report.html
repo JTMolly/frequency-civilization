@@ -53,6 +53,8 @@ h1{font-size:clamp(26px,4.6vw,38px);margin-bottom:10px}
 .sec .sub{color:var(--gold);font-size:13px;letter-spacing:.2em;margin-bottom:16px}
 .card{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:22px 26px;margin-bottom:14px}
 .card h3{font-size:16.5px;color:var(--gold-soft);margin-bottom:8px}
+.rlink{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.rlink:hover{color:var(--gold)}
 .card p{font-size:14.5px;color:var(--muted)}
 .card b{color:var(--text);font-weight:500}
 .oneliner{border-left:3px solid var(--gold);background:var(--bg2);padding:14px 22px;font-family:'Noto Serif TC',serif;font-size:16px;color:var(--gold-soft);margin-top:10px}
@@ -142,6 +144,10 @@ const DRIVE = {
  "共鳴":{sub:"Connection × Amplification",motive:"get people in sync and grow bigger collaboration",line:"I can lift the whole room, but I don't hand myself over to it."}
 };
 
+/* link each root name to its introduction page */
+const ROOT_SLUG = {"Sa'karan":"sakaran","Elariah":"elariah","Thaleon":"thaleon","Auri'kai":"aurikai","Rohen'dal":"rohendal","Zae'rah":"zaerah","Valtara":"valtara","Kuthari":"kuthari","Mei'hara":"meihara","Xon'teh":"xonteh","Nael'tu":"naeltu","Ori'shan":"orishan"};
+function rootA(k, label){ const s = ROOT_SLUG[k], t = label || k; return s ? `<a class="rlink" href="../roots/${s}.html">${t}</a>` : t; }
+
 function get(key){ try{ return JSON.parse(localStorage.getItem(key)); }catch(e){ return null; } }
 /* preview mode: report.html?demo=1 shows the full report with sample data */
 const DEMO = new URLSearchParams(location.search).has('demo');
@@ -153,7 +159,7 @@ document.getElementById('dateLine').textContent = 'Generated: ' + new Date().toL
 
 const status = document.getElementById('status');
 status.innerHTML = [
-  R ? `<div class="st"><span class="ok">✓ Root Code Test</span>　Primary Root: ${R.top}</div>`
+  R ? `<div class="st"><span class="ok">✓ Root Code Test</span>　Primary Root: ${rootA(R.top)}</div>`
     : `<div class="st"><span class="missing">○ Root Code Test not done</span>　<a href="test.html">Take it →</a></div>`,
   A ? `<div class="st"><span class="ok">✓ Inner Archetype Test</span>　Archetype: ${ARCH[A.top].en}</div>`
     : `<div class="st"><span class="missing">○ Inner Archetype Test not done</span>　<a href="test-archetype.html">Take it →</a></div>`,
@@ -187,9 +193,9 @@ function phraseCard(r){
 if(R){
   document.getElementById('secRoot').innerHTML = `
     <h2>Root Code | How you operate</h2><div class="sub">ROOT CODE · HOW YOU OPERATE</div>
-    <div class="card"><h3>Primary Root: ${R.top} · ${ROOTS[R.top].name}</h3><p>${ROOTS[R.top].desc}</p></div>
+    <div class="card"><h3>Primary Root: ${rootA(R.top, R.top + ' · ' + ROOTS[R.top].name)}</h3><p>${ROOTS[R.top].desc}</p></div>
     ${phraseCard(R)}
-    <div class="card"><h3>Secondary Root: ${R.sec} · ${ROOTS[R.sec].name}</h3><p>${ROOTS[R.sec].desc}</p><p style="margin-top:8px">Your Primary Root is your most natural way to start; your Secondary Root is your second way of operating. Together they make up your full style.</p></div>`;
+    <div class="card"><h3>Secondary Root: ${rootA(R.sec, R.sec + ' · ' + ROOTS[R.sec].name)}</h3><p>${ROOTS[R.sec].desc}</p><p style="margin-top:8px">Your Primary Root is your most natural way to start; your Secondary Root is your second way of operating. Together they make up your full style.</p></div>`;
 } else document.getElementById('secRoot').classList.add('hidden');
 
 if(A){
