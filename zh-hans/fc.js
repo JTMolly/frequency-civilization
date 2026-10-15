@@ -116,6 +116,19 @@
     return false;
   }
 
+  /* 标了 data-live-total 的文字：3,906 笔（截至 2026/7）加上新版测验的即时人数 */
+  function liveTotals(){
+    const els = document.querySelectorAll('[data-live-total]');
+    if(!els.length) return;
+    rpc('grid_stats').then(function(st){
+      const n = st && st.people;
+      if(!(n > 0)) return;
+      const total = (3906 + n).toLocaleString('en-US');
+      els.forEach(function(el){ el.innerHTML = el.innerHTML.replace('3,906', total); });
+    }).catch(function(){});
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', liveTotals); else liveTotals();
+
   window.FC = { sid, insert, rpc, trackResult, saveEmail, getEmail, setEmail, resultReady, _unlock };
 })();
 
