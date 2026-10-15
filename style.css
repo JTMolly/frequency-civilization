@@ -613,3 +613,18 @@ body.root-page .root-hero .motto{font-family:'Noto Serif TC',serif;font-style:it
   .nav-in{max-width:1320px;padding:16px 40px;gap:20px}
   .nav-links{gap:22px}
 }
+
+/* 三大測驗下拉（今日點燈、雙人配對卡）：桌機滑過或鍵盤移到時展開；選單可左右滑的寬度，直接排在三大測驗後面 */
+.nav-dd{position:relative;display:inline-flex;align-items:center}
+.nav-dd>a::after{content:'';display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin:0 0 4px 8px;opacity:.55}
+.nav-sub{display:none;position:absolute;top:100%;left:-18px;padding-top:12px;z-index:60;min-width:150px}
+.nav-sub::before{content:'';position:absolute;inset:12px 0 0 0;background:rgba(250,247,240,.98);border:1px solid var(--card-border);border-radius:6px;box-shadow:0 10px 30px rgba(43,38,32,.10)}
+.nav-sub a{position:relative;display:block;padding:8px 18px;white-space:nowrap;opacity:.85}
+.nav-sub a:first-child{padding-top:14px}.nav-sub a:last-child{padding-bottom:14px}
+.nav-dd:hover .nav-sub,.nav-dd:focus-within .nav-sub{display:block}
+@media (max-width:960px){
+  .nav-dd>a::after{display:none}
+  .nav-sub,.nav-dd:hover .nav-sub,.nav-dd:focus-within .nav-sub{display:inline-flex;position:static;padding:0;gap:18px;margin-left:18px;min-width:0}
+  .nav-sub::before{display:none}
+  .nav-sub a,.nav-sub a:first-child,.nav-sub a:last-child{display:inline;padding:0}
+}

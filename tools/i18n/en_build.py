@@ -26,7 +26,7 @@ EN_NAV = '''<div class="nav-links">
       <a href="{up}index.html">Home</a>
       <a href="{up}about.html">About</a>
       <a href="{up}roots.html">Root Codes</a>
-      <a href="{up}tests.html">Tests</a>
+      <span class="nav-dd"><a href="{up}tests.html">Tests</a><span class="nav-sub"><a href="{up}glow.html">Daily Glow</a><a href="{up}pair.html">Pair Card</a></span></span>
       <a href="{up}notes.html">Frequency Notes</a>
       <a href="{up}grid.html">Frequency Grid</a>
     </div>'''
