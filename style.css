@@ -628,3 +628,10 @@ body.root-page .root-hero .motto{font-family:'Noto Serif TC',serif;font-style:it
   .nav-sub::before{display:none}
   .nav-sub a,.nav-sub a:first-child,.nav-sub a:last-child{display:inline;padding:0}
 }
+
+/* 首頁「最近更新」：讀網站更新紀錄的最新一筆 */
+.h-latest{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:10px 20px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.7);color:var(--text);font-size:14px;letter-spacing:.06em;line-height:1.6;transition:.25s;max-width:100%}
+.h-latest:hover{border-color:var(--gold);color:var(--gold-soft)}
+.h-latest .lab{font-size:12px;letter-spacing:.2em;color:#fff;background:var(--gold);border-radius:99px;padding:2px 10px;white-space:nowrap}
+.h-latest .go{color:var(--gold)}
+@media(max-width:600px){.h-latest{font-size:13px;padding:9px 14px;gap:9px;text-align:left}}

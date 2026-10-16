@@ -19,7 +19,7 @@
 </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="../style.css?v=20261016b" rel="stylesheet"/>
+<link href="../style.css?v=20261016c" rel="stylesheet"/>
 <link href="../flow.css?v=20261010f" rel="stylesheet"/>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
@@ -31,7 +31,7 @@
 <a class="logo" href="index.html">FREQUENCY CIVILIZATION</a>
 <div class="nav-links">
 <a href="index.html">Home</a>
-<a href="about.html">About</a>
+<span class="nav-dd"><a href="about.html">About</a><span class="nav-sub"><a href="updates.html">Site updates</a></span></span>
 <a href="roots.html">Root Codes</a>
 <span class="nav-dd"><a href="tests.html">Tests</a><span class="nav-sub"><a href="glow.html">Daily Glow</a><a href="pair.html">Pair Card</a></span></span>
 <a href="notes.html">Frequency Notes</a>
@@ -281,6 +281,7 @@
 <a class="note-card" href="notes/n05.html"><img alt="" height="630" loading="lazy" src="../assets/notes/en/n05.jpg" width="1200"/><div class="nc"><div class="no">No.02</div><h3>Watching where the world is going</h3><p>I truly believe the world ahead will be the home stage for Virgos and highly sensitive people.</p></div></a>
 </div>
 <div class="center" style="margin-top:40px"><a class="btn" href="notes.html">See all Frequency Notes</a></div>
+<div class="center"><a class="h-latest" href="updates.html"><span class="lab">Latest update</span><span id="latestUpd">Site updates</span><span class="go">→</span></a></div>
 </div>
 </section>
 <!-- 9. 電子報（夜空轉金光色帶） -->
@@ -366,5 +367,6 @@
 <script src="flow.js?v=20261016a"></script>
 <script>if(window.FCFlow) FCFlow.entry('flowEntry');</script>
 <script src="../main.js?v=20261010d"></script>
+<script>(function(){var el=document.getElementById('latestUpd');if(!el||!window.fetch||!window.DOMParser)return;fetch('updates.html',{cache:'no-cache'}).then(function(r){return r.ok?r.text():null;}).then(function(h){if(!h)return;var it=new DOMParser().parseFromString(h,'text/html').querySelector('.up-item');if(!it)return;var t=it.querySelector('time'),h3=it.querySelector('h3');if(t&&h3)el.textContent=t.textContent.replace(/^\d{4}\//,'')+' \u00b7 '+h3.textContent.trim();}).catch(function(){});})();</script>
 </body>
 </html>
