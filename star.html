@@ -44,6 +44,13 @@ a{color:var(--ink)}
 .src{font-size:12px;color:var(--sub);margin-top:18px;text-align:left;line-height:1.6}
 .src a{color:var(--sub)}
 .note{font-size:12px;color:var(--sub);margin-top:28px;text-align:center}
+.fbrow{display:flex;flex-wrap:wrap;gap:0 0;margin:6px 0 2px}
+button.fbtn.done{background:#fbf5e8;color:var(--sub);border-color:var(--line);cursor:default}
+textarea{display:block;width:100%;font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:10px 0 6px;resize:vertical}
+textarea:focus{outline:none;border-color:var(--gold)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fbmsg{font-size:13px;color:var(--sub);margin-left:4px}
+.voice{font-size:14px;border-left:2px solid var(--gold);padding-left:10px;margin:10px 0;white-space:pre-wrap;word-break:break-word}
 </style>
 </head>
 <body>
@@ -198,6 +205,51 @@ function ending(st){
   return ['還在路上的人','你一邊摸索、一邊前進，這也是一種勇敢。'];
 }
 let S={};
+// 回饋與玩家說：匿名，只存按鈕選項與選填的留言；留言經審核（approved）才會顯示
+const SB_URL='https://ssqozzkhkqxdbqmqamee.supabase.co',SB_KEY='sb_publishable_3QsVK0QyO9SWOPTo84QZzQ_EDVaNagP';
+const FB_LOCAL=/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+const FB_CHOICES={more_stars:'想要更多星球',more_levels:'想要更多關卡',share_card:'想要分享卡',other:'其他'};
+function fbState(){try{return JSON.parse(localStorage.getItem('fc_star_fb')||'{}');}catch(e){return {};}}
+function fbSave(st){try{localStorage.setItem('fc_star_fb',JSON.stringify(st));}catch(e){}}
+function fbPost(row){
+  if(FB_LOCAL){console.info('[本機預覽] 不寫入 star_feedback',row);return Promise.resolve({ok:true,status:201});}
+  return fetch(SB_URL+'/rest/v1/star_feedback',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(row)});
+}
+function fbVote(c,btn){
+  const st=fbState(); st.votes=st.votes||{};
+  if(st.votes[c]){return;}
+  btn.disabled=true;
+  fbPost({choice:c}).then(r=>{
+    if(r.ok||r.status===409){st.votes[c]=Date.now();fbSave(st);btn.classList.add('done');btn.textContent='✓ '+FB_CHOICES[c];}
+    else{btn.disabled=false;document.getElementById('fbstatus').textContent='暫時送不出去，晚點再試一次。';}
+  }).catch(()=>{btn.disabled=false;document.getElementById('fbstatus').textContent='網路好像不太穩，晚點再試一次。';});
+}
+function fbSend(){
+  const box=document.getElementById('fbmsg'),out=document.getElementById('fbstatus'),btn=document.getElementById('fbsend');
+  if(document.getElementById('fbhp').value){out.textContent='謝謝你，我們收到了。';return;}
+  const msg=box.value.trim();
+  if(!msg){out.textContent='還沒有寫內容喔。';return;}
+  if([...msg].length>200){out.textContent='請控制在 200 字以內。';return;}
+  if(/[\w.+-]+@[\w-]+\.[\w.]+|https?:\/\/|www\.|\+?\d[\d\s-]{7,}/i.test(msg)){out.textContent='看起來有聯絡方式或網址，請拿掉再送出。';return;}
+  const st=fbState(); const now=Date.now(); st.msgs=(st.msgs||[]).filter(t=>now-t<864e5);
+  if(st.msgs.length>=3){out.textContent='今天已經收到你的留言了，明天再來寫吧。';return;}
+  if(st.msgs.length&&now-st.msgs[st.msgs.length-1]<20000){out.textContent='慢慢來，過一下再送出。';return;}
+  btn.disabled=true;out.textContent='送出中…';
+  fbPost({choice:'other',message:msg}).then(r=>{
+    if(r.ok||r.status===409){st.msgs.push(now);fbSave(st);box.value='';out.textContent='收到了，謝謝你。留言經審核後才會公開。';}
+    else{out.textContent='暫時送不出去，晚點再試一次。';}
+    btn.disabled=false;
+  }).catch(()=>{out.textContent='網路好像不太穩，晚點再試一次。';btn.disabled=false;});
+}
+function loadVoices(){
+  fetch(SB_URL+'/rest/v1/star_feedback?select=message&approved=eq.true&message=not.is.null&order=created_at.desc&limit=5',{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}})
+    .then(r=>r.ok?r.json():[]).then(rows=>{
+      const box=document.getElementById('voices'); if(!box||!rows||!rows.length)return;
+      const h=document.createElement('b'); h.textContent='玩家說'; box.appendChild(h);
+      rows.forEach(r=>{const d=document.createElement('div');d.className='voice';d.textContent=r.message;box.appendChild(d);});
+      box.className='card';
+    }).catch(()=>{});
+}
 function ev(name,params){try{if(window.gtag)gtag('event',name,Object.assign({transport_type:'beacon'},params||{}));}catch(e){}}
 function start(){
   const star=rnd(STARS); const home=rnd(HOMES);
@@ -250,7 +302,15 @@ function render(msg){
     <div class="card center"><p>所有訊息都可以是參考，<br>但你人生的決定權，在你自己身上。</p>
     <button onclick="S={};render()">再投生一次</button>
     <a href="tests.html" target="_blank" rel="noopener" onclick="ev('click_test')"><button class="main">想認識真正的你？做語根測驗</button></a></div>
+    <div class="card" id="fb"><b>你想在這個遊戲裡看到什麼？</b>
+      <div class="fbrow">${Object.entries(FB_CHOICES).map(([k,t])=>`<button class="fbtn${(fbState().votes||{})[k]?' done':''}" ${(fbState().votes||{})[k]?'disabled':''} onclick="fbVote('${k}',this)">${(fbState().votes||{})[k]?'✓ ':''}${t}</button>`).join('')}</div>
+      <textarea id="fbmsg" rows="3" maxlength="200" placeholder="想對我們說什麼？（選填，200 字內）"></textarea>
+      <input id="fbhp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="請勿填寫">
+      <div class="small">請不要留下姓名、電話等個人資料；留言經審核後才會公開。</div>
+      <button id="fbsend" onclick="fbSend()">送出留言</button><span id="fbstatus" class="fbmsg"></span></div>
+    <div id="voices"></div>
     <div class="src"><b>數據出處</b>${SOURCES.map(([t,u])=>`<div><a href="${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}</div>`;
+  loadVoices();
 }
 render();
 </script>
