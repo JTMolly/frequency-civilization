@@ -32,6 +32,11 @@ EN_NAV = '''<div class="nav-links">
     </div>'''
 
 
+def strip_zh_only(html):
+    """<!-- zh-only -->…<!-- /zh-only --> 之間的內容只留在繁中頁，簡體與英文版拿掉。"""
+    return re.sub(r'[ \t]*<!-- zh-only -->.*?<!-- /zh-only -->[ \t]*\n?', '', html, flags=re.S)
+
+
 def load(name):
     p = os.path.join(EN_DIR, name)
     return json.load(open(p)) if os.path.exists(p) else {}
@@ -124,7 +129,7 @@ def build(inject, url_of):
         key = page.replace('roots/', 'root_').replace('/', '_').replace('.html', '')
         if not has_translation(page):
             continue  # 這一頁還沒有翻譯檔，先不產生
-        src = open(page).read()
+        src = strip_zh_only(open(page).read())
         src = re.sub(r'<!-- i18n-head -->.*?<!-- /i18n-head -->', '', src, flags=re.S)
         src = re.sub(r'<!-- i18n-switch -->.*?<!-- /i18n-switch -->', '', src, flags=re.S)
         up = '../' * page.count('/')

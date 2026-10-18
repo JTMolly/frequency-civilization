@@ -170,6 +170,11 @@
       <span class="lab">筆語根測驗數據<br>（截至 2026 年 7 月）</span>
       <span class="lab" id="counterLive" style="display:none">筆語根測驗數據<br>（含 10 月起的新版測驗，即時更新）</span>
     </div>
+    <!-- zh-only -->
+    <div class="night-cards" style="grid-template-columns:1fr;max-width:560px;margin:60px auto 0">
+      <a class="night-card" id="homeGameCard" href="star.html"><div class="tag">MINI GAME</div><h3>2 分鐘小遊戲｜這一趟，從哪顆星出發</h3><p>想像每個人出發之前，都來自某一顆星。</p><span class="go">開始玩 →</span></a>
+    </div>
+    <!-- /zh-only -->
     <p class="night-note">所有測驗皆為教育與自我認知工具，不具醫療或心理診斷性質。</p>
   </div>
 </section>
@@ -412,6 +417,7 @@
 <script src="fc.js?v=20261016c"></script>
 <script src="flow.js?v=20261016a"></script>
 <script>if(window.FCFlow) FCFlow.entry('flowEntry');</script>
+<!-- zh-only --><script>(function(){var c=document.getElementById('homeGameCard');if(!c)return;c.addEventListener('click',function(){try{if(window.gtag)gtag('event','home_game_card',{transport_type:'beacon'});}catch(e){}});})();</script><!-- /zh-only -->
 <script src="main.js?v=20261010d"></script>
 <script>(function(){var el=document.getElementById('latestUpd');if(!el||!window.fetch||!window.DOMParser)return;fetch('updates.html',{cache:'no-cache'}).then(function(r){return r.ok?r.text():null;}).then(function(h){if(!h)return;var it=new DOMParser().parseFromString(h,'text/html').querySelector('.up-item');if(!it)return;var t=it.querySelector('time'),h3=it.querySelector('h3');if(t&&h3)el.textContent=t.textContent.replace(/^\d{4}\//,'')+' \u00b7 '+h3.textContent.trim();}).catch(function(){});})();</script>
 </body>

@@ -149,7 +149,7 @@ def main():
     for p in allp:
         out = os.path.join('zh-hans', p)
         os.makedirs(os.path.dirname(out) or '.', exist_ok=True)
-        open(out, 'w').write(to_hans(open(p).read(), p))
+        open(out, 'w').write(to_hans(en_build.strip_zh_only(open(p).read()), p))
     for js in JS_WITH_TEXT:
         out = os.path.join('zh-hans', js)
         os.makedirs(os.path.dirname(out) or '.', exist_ok=True)

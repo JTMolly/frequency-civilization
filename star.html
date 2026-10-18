@@ -198,10 +198,12 @@ function ending(st){
   return ['還在路上的人','你一邊摸索、一邊前進，這也是一種勇敢。'];
 }
 let S={};
+function ev(name,params){try{if(window.gtag)gtag('event',name,Object.assign({transport_type:'beacon'},params||{}));}catch(e){}}
 function start(){
   const star=rnd(STARS); const home=rnd(HOMES);
   S={star,home,i:0,stages:buildStages(star),stat:{body:60+Math.floor(Math.random()*15),calm:45+Math.floor(Math.random()*15),bond:45+Math.floor(Math.random()*15),gift:45+Math.floor(Math.random()*15)},log:[]};
   S.peers=[0,1,2,3].map(()=>({home:rnd(HOMES),stat:{...S.stat}}));
+  ev('game_start');
   render();
 }
 function choose(k){
@@ -210,7 +212,9 @@ function choose(k){
   S.log.push(`${st.t}：${o.l}。${o.m}`);
   // 同一秒出生的另外四個人，隨機做選擇
   S.peers.forEach(p=>{const q=rnd(st.o); for(const [a,v] of Object.entries(q.d)) p.stat[a]=clamp(p.stat[a]+v);});
-  S.i++; render(o.m);
+  S.i++;
+  if(S.i===S.stages.length) ev('game_end',{star:S.star.k,ending:ending(S.stat)[0]});
+  render(o.m);
 }
 function bars(stat){return '<div class="bars">'+Object.entries(STAT_NAMES).map(([k,n])=>`<span>${n}</span><span class="bar"><i style="width:${stat[k]}%"></i></span><span>${stat[k]}</span>`).join('')+'</div>';}
 function render(msg){
@@ -245,7 +249,7 @@ function render(msg){
     <div class="card"><b>你這一趟的選擇</b>${S.log.map(l=>`<div class="log">${l}</div>`).join('')}</div>
     <div class="card center"><p>所有訊息都可以是參考，<br>但你人生的決定權，在你自己身上。</p>
     <button onclick="S={};render()">再投生一次</button>
-    <a href="tests.html" target="_blank" rel="noopener"><button class="main">想認識真正的你？做語根測驗</button></a></div>
+    <a href="tests.html" target="_blank" rel="noopener" onclick="ev('click_test')"><button class="main">想認識真正的你？做語根測驗</button></a></div>
     <div class="src"><b>數據出處</b>${SOURCES.map(([t,u])=>`<div><a href="${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}</div>`;
 }
 render();
