@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>這一趟，從哪顆星出發｜頻率文明</title>
+<meta name="description" content="地球上有 80 億人。想像每個人出發之前，都來自某一顆星。你不能選擇起點，但每一步都由你自己選。">
+<link rel="canonical" href="https://frequency-civilization.com/star.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="這一趟，從哪顆星出發｜頻率文明">
+<meta property="og:description" content="想像每個人出發之前，都來自某一顆星。一個 2 分鐘的想像力小遊戲。">
+<meta property="og:image" content="https://frequency-civilization.com/assets/og-image.png">
+<meta property="og:url" content="https://frequency-civilization.com/star.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+<style>
+:root{--bg:#fffdf8;--ink:#4a3a2c;--sub:#8a7560;--gold:#c9a050;--line:#ead9b8;--card:#ffffff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Songti TC","Noto Serif TC",serif;line-height:1.7}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:28px;margin:8px 0 4px;letter-spacing:2px}
+.small{font-size:14px;color:var(--sub)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 6px 24px rgba(201,160,80,.10)}
+button{font:inherit;background:#fff;border:1px solid var(--gold);color:var(--ink);border-radius:999px;padding:10px 18px;margin:6px 6px 0 0;cursor:pointer}
+button.main{background:var(--gold);color:#fff;border-color:var(--gold)}
+button:hover{filter:brightness(.97)}
+.star{width:72px;height:72px;border-radius:50%;margin:6px auto 10px;box-shadow:0 0 40px 10px var(--glow)}
+.center{text-align:center}
+.bars{display:grid;grid-template-columns:72px 1fr 34px;gap:6px 10px;align-items:center;font-size:14px}
+.bar{height:8px;background:#f3ead8;border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold);transition:width .5s}
+.stage{font-size:13px;color:var(--gold);letter-spacing:3px}
+.event{font-size:18px;margin:6px 0 10px}
+.log{font-size:14px;color:var(--sub);border-left:2px solid var(--line);padding-left:10px;margin-top:10px}
+.peers div{font-size:14px;margin:6px 0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+a{color:var(--ink)}
+.note{font-size:12px;color:var(--sub);margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+// 「這一趟，從哪顆星出發」小遊戲。純前端，不收任何資料。
+// 12 顆星＝12 語根的比喻。名稱、顏色照官網（12語根_符號顏色關係_整合v1.md）。這是想像力遊戲，不是測驗。
+const STARS=[
+ {k:'SK',n:"Sa'karan",r:'建構者',c:'#b8892b',land:'一顆由岩層和光柱組成的星球，大家用一塊一塊的石頭，把想像蓋成真的。',gift:'把混亂變成結構'},
+ {k:'EL',n:"Elariah",r:'情緒引導者',c:'#e8806f',land:'一顆被溫暖海洋包住的星球，每一道漣漪都是一種心情。',gift:'讀懂別人沒說出口的感受'},
+ {k:'TH',n:"Thaleon",r:'洞察轉化者',c:'#5b3fa0',land:'一顆有火焰極光的星球，什麼東西進來，都會被燒成新的樣子。',gift:'把傷變成力量'},
+ {k:'AU',n:"Auri'kai",r:'直覺洞察者',c:'#5aa9c9',land:'一顆雲很低的星球，聲音會在拱橋之間來回，聽得到很遠的消息。',gift:'比別人早一步感覺到'},
+ {k:'RO',n:"Rohen'dal",r:'行動推動者',c:'#e2562b',land:'一顆風很大的星球，停下來就會被吹走，所以大家都在前進。',gift:'讓事情動起來'},
+ {k:'ZA',n:"Zae'rah",r:'穩定支持者',c:'#3fa98f',land:'一顆安靜的湖星，水面很平，連星星都看得清楚。',gift:'讓身邊的人安心'},
+ {k:'VA',n:"Valtara",r:'集體整合者',c:'#2a46b8',land:'一顆由六角形城市連成網的星球，每個節點都彼此接得上。',gift:'把大家連在一起'},
+ {k:'KU',n:"Kuthari",r:'系統記錄者',c:'#7d8aa6',land:'一顆像圖書館的星球，每一陣風都會翻一頁書。',gift:'記住重要的事，看見規律'},
+ {k:'ME',n:"Mei'hara",r:'關係共振者',c:'#c98a7a',land:'一顆有兩個月亮的星球，月亮總是互相照著對方。',gift:'讓關係變得溫柔'},
+ {k:'XO',n:"Xon'teh",r:'技術對接者',c:'#1f5fbf',land:'一顆滿是工坊的星球，任何兩樣東西都找得到接口。',gift:'把想法做成工具'},
+ {k:'NA',n:"Nael'tu",r:'領航創造者',c:'#6a62c4',land:'一顆最靠近北極星的星球，大家習慣抬頭找方向。',gift:'看見還不存在的路'},
+ {k:'OR',n:"Ori'shan",r:'節奏帶動者',c:'#b5357f',land:'一顆會唱歌的星球，心跳、潮汐和腳步都在同一個節拍裡。',gift:'帶動大家的節奏'},
+];
+const HOMES=['一個雙薪的小家庭','一個熱鬧的大家族','一個常常搬家的家庭','一個開小店的家庭','一個單親但很愛你的家','一個很重視成績的家庭'];
+const STAT_NAMES={body:'身體',calm:'穩定',bond:'連結',gift:'天賦'};
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+const clamp=v=>Math.max(0,Math.min(100,v));
+// 人生階段：每個選擇改變四個數值。主題：肉身是執行者夥伴、累了接收器會亂、尊重地球遊戲規則、識讀與主權。
+const STAGES=[
+ {t:'童年',e:s=>`你小時候就常常${s.k==='AU'?'比大人早一步感覺到氣氛不對':s.k==='SK'?'把積木蓋成整座城':'一個人想很多事'}。大人說：「不要想那麼多。」`,
+  o:[{l:'把感覺藏起來，當個乖小孩',d:{calm:-5,gift:-10,bond:+5},m:'你學會了安靜，也學會了把自己收起來。'},
+     {l:'偷偷寫在日記裡',d:{calm:+8,gift:+6},m:'沒說出口的話，有了一個地方住。'},
+     {l:'跟一個信任的人說',d:{bond:+10,gift:+5},m:'有人聽懂的感覺，原來這麼好。'}]},
+ {t:'求學',e:s=>`考試、排名、別人期待的科系。你的天賦是「${s.gift}」，但它不在成績單上。`,
+  o:[{l:'先照大家期待的走',d:{calm:+5,gift:-8,body:-3},m:'很穩，但心裡有一塊空空的。'},
+     {l:'選一條自己有感覺的路',d:{gift:+12,calm:-6},m:'有點怕，但每天醒來比較有力氣。'},
+     {l:'兩邊都顧，一邊讀一邊做自己的事',d:{gift:+8,body:-10},m:'很充實，也很累。'}]},
+ {t:'第一份工作',e:()=>'地球的遊戲規則來了：房租、帳單、考績。這裡的一切都要用錢交換。',
+  o:[{l:'先把生活顧穩，再慢慢找方向',d:{calm:+10,body:+3},m:'你尊重了地球的規則，它也開始給你空間。'},
+     {l:'不管了，全力投入自己的夢想',d:{gift:+12,calm:-10,body:-6},m:'夢想很亮，帳單也很真實。'},
+     {l:'拚命加班證明自己',d:{body:-14,bond:-5,gift:+4},m:'大家都說你很厲害，只有身體知道不是。'}]},
+ {t:'關係',e:()=>'你遇到一個很懂你的人，也遇到一個很需要你的人。',
+  o:[{l:'先照顧需要你的人',d:{bond:+8,body:-8,calm:-4},m:'你很會照顧別人，只是常常忘了自己。'},
+     {l:'選懂你的人，一起走',d:{bond:+10,calm:+8},m:'被懂的時候，天賦也比較敢出來。'},
+     {l:'先一個人，把自己顧好',d:{calm:+10,bond:-4,body:+6},m:'一個人的時間，讓你聽見自己的聲音。'}]},
+ {t:'累到極限',e:()=>'連續好幾個月沒有好好睡。你發現一累，腦袋就會亂，接收到的東西也跟著亂，開始懷疑自己。',
+  o:[{l:'停下來，睡飽、吃好、動一動',d:{body:+16,calm:+12},m:'肉身是很重要的執行者夥伴。顧好它，訊號才清楚。'},
+     {l:'撐過去，等忙完再說',d:{body:-16,calm:-10,gift:+3},m:'事情做完了，但你也空了。'},
+     {l:'找一個說「只有我知道答案」的人',d:{calm:-14,bond:-6},m:'他說得很篤定。後來你發現，篤定不等於正確。'}]},
+ {t:'醒來的那一刻',e:s=>`某一天，你忽然想起那顆星：${s.land}`,
+  o:[{l:'先尊重，再選擇要不要相信',d:{calm:+12,gift:+8},m:'所有訊息都可以是參考，決定權在你自己身上。'},
+     {l:'覺得自己比別人特別',d:{bond:-12,calm:-6,gift:+4},m:'有感知，不代表有權替別人決定人生。'},
+     {l:'笑一笑，回來好好過日子',d:{body:+6,calm:+8,bond:+4},m:'喔，好有趣。然後繼續回來好好生活。'}]},
+ {t:'選擇的路',e:s=>`你的天賦「${s.gift}」，現在可以放進生活裡了。要怎麼用？`,
+  o:[{l:'做成一份工作，幫助別人',d:{gift:+14,bond:+8,body:-4},m:'聽到那一聲謝謝，你就真的好開心。'},
+     {l:'慢慢來，先從身邊的人開始',d:{gift:+8,calm:+10,bond:+6},m:'低調做，慢慢來，一個一個。'},
+     {l:'先放著，等更準備好',d:{calm:+4,gift:-8},m:'準備好的那一天，好像一直沒有來。'}]},
+];
+function ending(st){
+  const {body,calm,bond,gift}=st;
+  if(gift>=70&&body>=55&&calm>=55) return ['穩穩發光的人','你把天賦活出來，也沒有把自己燒掉。'];
+  if(gift>=70&&body<45) return ['燒得太快的人','你的光很亮，但肉身一直在替你付帳。'];
+  if(bond>=70&&gift<55) return ['照亮別人的人','你照顧了很多人，下一趟，記得也照顧自己。'];
+  if(calm>=70) return ['安靜扎根的人','你很穩，身邊的人都因為你而安心。'];
+  if(gift<40) return ['把天賦藏起來的人','那顆星的光還在，只是一直沒被拿出來用。'];
+  return ['還在路上的人','你一邊摸索、一邊前進，這也是一種勇敢。'];
+}
+let S={};
+function start(){
+  const star=rnd(STARS); const home=rnd(HOMES);
+  S={star,home,i:0,stat:{body:60+Math.floor(Math.random()*15),calm:45+Math.floor(Math.random()*15),bond:45+Math.floor(Math.random()*15),gift:45+Math.floor(Math.random()*15)},log:[]};
+  S.peers=[0,1,2,3].map(()=>({home:rnd(HOMES),stat:{...S.stat}}));
+  render();
+}
+function choose(k){
+  const st=STAGES[S.i]; const o=st.o[k];
+  for(const [a,v] of Object.entries(o.d)) S.stat[a]=clamp(S.stat[a]+v);
+  S.log.push(`${st.t}：${o.l}。${o.m}`);
+  // 同一秒出生的另外四個人，隨機做選擇
+  S.peers.forEach(p=>{const q=rnd(st.o); for(const [a,v] of Object.entries(q.d)) p.stat[a]=clamp(p.stat[a]+v);});
+  S.i++; render(o.m);
+}
+function bars(stat){return '<div class="bars">'+Object.entries(STAT_NAMES).map(([k,n])=>`<span>${n}</span><span class="bar"><i style="width:${stat[k]}%"></i></span><span>${stat[k]}</span>`).join('')+'</div>';}
+function render(msg){
+  const app=document.getElementById('app');
+  if(!S.star){
+    app.innerHTML=`<div class="center"><div class="small">頻率文明｜小遊戲</div><h1>這一趟，從哪顆星出發</h1>
+    <p>地球上有 80 億人。<br>想像每個人出發之前，都來自某一顆星。</p>
+    <p class="small">你不能選擇從哪顆星出發，也不能選擇出生在什麼家庭。<br>但到了地球之後，每一步，都由你自己選。</p>
+    <button class="main" onclick="start()">出發</button></div>
+    <p class="note">這是想像力遊戲，12 顆星是 12 種天賦的比喻，不是測驗，也不是預言。</p>`;
+    return;
+  }
+  const s=S.star;
+  if(S.i<STAGES.length){
+    const st=STAGES[S.i];
+    app.innerHTML=`<div class="card center" style="--glow:${s.c}55"><div class="star" style="background:radial-gradient(circle at 35% 35%,#fff,${s.c})"></div>
+      <div><b>${s.n}</b>　${s.r}</div><div class="small">${S.i===0?s.land+'<br>你在地球的起點：'+S.home+'。':'天賦：'+s.gift}</div></div>
+      <div class="card"><div class="stage">${st.t}｜${S.i+1}／${STAGES.length}</div><div class="event">${st.e(s)}</div>
+      ${st.o.map((o,k)=>`<button onclick="choose(${k})">${o.l}</button>`).join('')}
+      ${msg?`<div class="log">${msg}</div>`:''}</div>
+      <div class="card">${bars(S.stat)}</div>`;
+    return;
+  }
+  const [title,line]=ending(S.stat);
+  app.innerHTML=`<div class="card center" style="--glow:${s.c}66"><div class="small">這一趟走完了</div>
+    <div class="star" style="background:radial-gradient(circle at 35% 35%,#fff,${s.c})"></div>
+    <h1>${title}</h1><p>你從 <b>${s.n}</b>（${s.r}）出發。<br>${line}</p>${bars(S.stat)}</div>
+    <div class="card"><b>同一秒，從同一顆星出發的另外四個人</b><div class="peers">
+    ${S.peers.map((p,i)=>{const [t]=ending(p.stat);return `<div><span class="dot" style="background:${s.c}"></span>第 ${i+1} 位，出生在${p.home}：${t}</div>`}).join('')}
+    </div><p class="small">一樣的星，一樣的天賦，不一樣的選擇。</p></div>
+    <div class="card"><b>你這一趟的選擇</b>${S.log.map(l=>`<div class="log">${l}</div>`).join('')}</div>
+    <div class="card center"><p>所有訊息都可以是參考，<br>但你人生的決定權，在你自己身上。</p>
+    <button onclick="S={};render()">再投生一次</button>
+    <a href="tests.html" target="_blank" rel="noopener"><button class="main">想認識真正的你？做語根測驗</button></a></div>`;
+}
+render();
+</script>
+</body>
+</html>

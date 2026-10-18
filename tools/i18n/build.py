@@ -31,7 +31,7 @@ def pages():
     extra = [p for p in ('voices.html', 'notes.html') if os.path.exists(p)]
     extra += sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html')) if os.path.isdir('notes') else []
     allp = sorted(set(out + extra))
-    return [p for p in allp if not p.startswith(('zh-hans/', 'en/', '_old_site/', 'tools/')) and p != 'builders.html']
+    return [p for p in allp if not p.startswith(('zh-hans/', 'en/', '_old_site/', 'tools/')) and p not in ('builders.html', 'star.html')]  # star.html：獨立小遊戲頁，暫不做多語、不進 sitemap
 
 
 def en_exists(p):
