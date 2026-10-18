@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>这一趟，从哪颗星出发｜频率文明</title>
-<meta name="description" content="地球上有 80 亿人。想像每个人出发之前，都来自某一颗星。你不能选择起点，但每一步都由你自己选。">
+<meta name="description" content="地球上有 80 亿人。想象每个人出发之前，都来自某一颗星。你不能选择起点，但每一步都由你自己选。">
 <link rel="canonical" href="https://frequency-civilization.com/zh-hans/star.html">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="这一趟，从哪颗星出发｜频率文明">
-<meta property="og:description" content="想像每个人出发之前，都来自某一颗星。一个 2 分钟的想像力小游戏。">
+<meta property="og:description" content="想象每个人出发之前，都来自某一颗星。一个 2 分钟的想象力小游戏。">
 <meta property="og:image" content="https://frequency-civilization.com/assets/og-image.png">
 <meta property="og:url" content="https://frequency-civilization.com/zh-hans/star.html">
 <meta property="og:type" content="website">
@@ -64,7 +64,7 @@ textarea:focus{outline:none;border-color:var(--gold)}
 // Front-end only mini game.
 // The 12 stars are metaphors for the 12 Root Codes. This is an imagination game, not a test.
 const STARS=[
- {k:'SK',n:"Sa'karan",r:'建构者',c:'#b8892b',land:'一颗由岩层和光柱组成的星球，大家用一块一块的石头，把想像盖成真的。',gift:'把混乱变成结构',
+ {k:'SK',n:"Sa'karan",r:'建构者',c:'#b8892b',land:'一颗由岩层和光柱组成的星球，大家用一块一块的石头，把想象盖成真的。',gift:'把混乱变成结构',
   kid:'你小时候就喜欢把积木、玩具分门别类排好。大人说你很有条理，也说你很固执。',
   trial:{e:'一个你规划得好好的计划，突然全部被打乱。',o:[
    {l:'把所有变数重新抓回手上，熬夜重排',d:{body:-10,calm:-8,gift:+3},m:'结构越抓越紧，创造力也跟着被卡住。'},
@@ -125,11 +125,11 @@ const STARS=[
    {l:'回去问用的人，让工具为人服务',d:{gift:+10,bond:+10},m:'从「控制」转为「协作」，效率也可以有温度。'},
    {l:'再加十个功能',d:{body:-10,gift:-2},m:'越做越复杂，你也越来越累。'}]},key:'工具是为人服务的，效率也可以有温度。'},
  {k:'NA',n:"Nael'tu",r:'领航创造者',c:'#6a62c4',land:'一颗最靠近北极星的星球，大家习惯擡头找方向。',gift:'看见还不存在的路',
-  kid:'你小时候就常常想像未来的世界，还会带着大家玩自己发明的游戏。',
+  kid:'你小时候就常常想象未来的世界，还会带着大家玩自己发明的游戏。',
   trial:{e:'你看得到很远的地方，但身边的人还跟不上。你决定什么都自己扛。',o:[
    {l:'全部自己扛',d:{body:-12,bond:-8,gift:+4},m:'你看见的未来很亮，但越领导越孤单。'},
    {l:'把方向说清楚，让每个人记得自己的路',d:{bond:+10,gift:+8,calm:+6},m:'从「带领」转为「启动」，大家开始自己走。'},
-   {l:'干脆放弃这个方向',d:{gift:-12},m:'那条还不存在的路，又回到了想像里。'}]},key:'最好的领导，是让每个人记得自己的方向。'},
+   {l:'干脆放弃这个方向',d:{gift:-12},m:'那条还不存在的路，又回到了想象里。'}]},key:'最好的领导，是让每个人记得自己的方向。'},
  {k:'OR',n:"Ori'shan",r:'节奏带动者',c:'#b5357f',land:'一颗会唱歌的星球，心跳、潮汐和脚步都在同一个节拍里。',gift:'带动大家的节奏',
   kid:'你小时候坐不住，一听到音乐就会跟着动起来。',
   trial:{e:'你连续坐了好几周，身体很僵，心情也跟着闷住了。',o:[
@@ -155,9 +155,9 @@ const POOL=[
    {l:'先把考试顾好，喜欢的事放假再做',d:{calm:+6,gift:-4},m:'成绩很好看，喜欢的事也没有丢。'},
    {l:'把时间都给喜欢的事',d:{gift:+12,calm:-8},m:'你越来越会，也越来越被说不务正业。'},
    {l:'找一个能把两件事接起来的科系',d:{gift:+8,calm:+4,body:-4},m:'花了一点力气，找到了接点。'}]}],
- [{t:'第一份工作',e:()=>'地球的游戏规则来了：房租、帐单、考绩。这里的一切都要用钱交换。',o:[
+ [{t:'第一份工作',e:()=>'地球的游戏规则来了：房租、账单、考绩。这里的一切都要用钱交换。',o:[
    {l:'先把生活顾稳，再慢慢找方向',d:{calm:+10,body:+3},m:'你尊重了地球的规则，它也开始给你空间。'},
-   {l:'不管了，全力投入自己的梦想',d:{gift:+12,calm:-10,body:-6},m:'梦想很亮，帐单也很真实。'},
+   {l:'不管了，全力投入自己的梦想',d:{gift:+12,calm:-10,body:-6},m:'梦想很亮，账单也很真实。'},
    {l:'拚命加班证明自己',d:{body:-14,bond:-5,gift:+4},m:'大家都说你很厉害，只有身体知道不是。'}]},
   {t:'第一份工作',e:()=>'第一个老板很严格，薪水不高，但学得到真本事。',o:[
    {l:'先学起来，三年后再说',d:{gift:+8,calm:+6,body:-4},m:'苦是苦，但每一天都算数。'},
@@ -280,11 +280,11 @@ function render(msg){
   const app=document.getElementById('app');
   if(!S.star){
     app.innerHTML=`<div class="center"><div class="small">频率文明｜小游戏</div><h1>这一趟，从哪颗星出发</h1>
-    <p>地球上有 80 亿人。<br>想像每个人出发之前，都来自某一颗星。</p>
+    <p>地球上有 80 亿人。<br>想象每个人出发之前，都来自某一颗星。</p>
     <p class="small">全世界平均每一秒，大约有 4 个宝宝出生。⁰<br>所以这一趟，你会看到和你同一秒出发的另外 4 个人。</p>
     <p class="small">你不能选择从哪颗星出发，也不能选择出生在什么家庭。<br>但到了地球之后，每一步，都由你自己选。</p>
     <button class="main" onclick="start()">出发</button></div>
-    <p class="note">这是想像力游戏，12 颗星是 12 种天赋的比喻，不是测验，也不是预言。</p>`;
+    <p class="note">这是想象力游戏，12 颗星是 12 种天赋的比喻，不是测验，也不是预言。</p>`;
     return;
   }
   const s=S.star;

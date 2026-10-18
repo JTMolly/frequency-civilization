@@ -68,8 +68,8 @@ const STARS=[
   kid:'As a kid you loved sorting your blocks and toys into neat categories. Adults said you were very organized, and also very stubborn.',
   trial:{e:'A plan you had laid out perfectly suddenly falls apart.',o:[
    {l:'Grab every variable back and stay up all night re-planning',d:{body:-10,calm:-8,gift:+3},m:'The tighter you held the structure, the more your creativity got stuck.'},
-   {l:'Confirm the goal, let the plan serve the goal, and let the unimportant parts go',d:{calm:+12,gift:+10},m:'From “controlling” to “carrying”: the structure became your support.'},
-   {l:'Just give up on all of it',d:{gift:-10,calm:-4},m:'You let go of more than the plan. You let go of a little of yourself too.'}]},key:'Let structure serve the goal: from controlling to carrying.'},
+   {l:'Confirm the goal, let the plan serve the goal, and let the unimportant parts go',d:{calm:+12,gift:+10},m:'From “controlling” to “holding”: the structure became your support.'},
+   {l:'Just give up on all of it',d:{gift:-10,calm:-4},m:'You let go of more than the plan. You let go of a little of yourself too.'}]},key:'Let structure serve the goal: from controlling to holding.'},
  {k:'EL',n:"Elariah",r:'The Empath',c:'#e8806f',land:'A planet wrapped in a warm ocean, where every ripple is a feeling.',gift:'Sensing what others leave unsaid',
   kid:'As a kid you could walk into the living room and know right away whether your parents had just been arguing.',
   trial:{e:'Friends, coworkers and family all come to you with what’s on their hearts. You start losing track of which feelings are yours and which you took on.',o:[
@@ -84,7 +84,7 @@ const STARS=[
    {l:'Blame it all on others',d:{bond:-10,calm:-4},m:'Blaming others was quick, but the problem was still right where it had been.'}]},key:'A setback isn’t a punishment. It’s material.'},
  {k:'AU',n:"Auri'kai",r:'The Intuitive',c:'#5aa9c9',land:'A planet of low clouds, where sounds echo between stone arches and news from far away reaches you.',gift:'Feeling things a step ahead of others',
   kid:'As a kid you often sensed the mood going wrong before the adults did, and often needed to hide away by yourself for some quiet.',
-  trial:{e:'Lately your head is full of voices and feelings, and you can’t tell which are intuition and which are anxiety.',o:[
+  trial:{e:'Lately your mind is crowded with thoughts and feelings, and you can’t tell which are intuition and which are anxiety.',o:[
    {l:'Follow every feeling',d:{calm:-12,body:-4},m:'When there’s too much information, feelings can mislead you too.'},
    {l:'Write it down, sleep on it, and look again tomorrow',d:{calm:+12,gift:+8},m:'From “passively receiving” to “actively filtering”: what remains is what’s real.'},
    {l:'Switch every feeling off and trust only logic',d:{gift:-10,calm:+2},m:'Very safe, but you couldn’t hear yourself anymore either.'}]},key:'From passively receiving to actively filtering.'},
@@ -103,7 +103,7 @@ const STARS=[
  {k:'VA',n:"Valtara",r:'The Integrator',c:'#2a46b8',land:'A planet of hexagonal cities woven into a network, where every node connects to every other.',gift:'Connecting everyone together',
   kid:'As a kid you were always the one who got everybody to play together.',
   trial:{e:'Everyone wants you on their side, and you badly want everyone to be happy.',o:[
-   {l:'Say yes to everyone',d:{body:-8,calm:-10},m:'Everyone was satisfied, except you, who knew less and less what you wanted.'},
+   {l:'Say yes to everyone',d:{body:-8,calm:-10},m:'Everyone was happy except you. You knew less and less what you wanted.'},
    {l:'Return to the shared goal and say where you stand',d:{bond:+10,gift:+10},m:'From “pleasing everyone” to “aligning on a shared goal”: the net actually grew stronger.'},
    {l:'Leave every group chat',d:{bond:-14},m:'It got quiet, but the net lost a node.'}]},key:'You don’t have to please everyone. Align on the shared goal.'},
  {k:'KU',n:"Kuthari",r:'The Recorder',c:'#7d8aa6',land:'A planet like a library, where every gust of wind turns a page.',gift:'Remembering what matters and seeing the patterns',
@@ -173,9 +173,9 @@ const POOL=[
    {l:'Run back and forth, letting nothing go',d:{body:-12,bond:+4,gift:+2},m:'Everyone was taken care of, except you.'}]}],
  'TRIAL',
  [{t:'Running on Empty',e:()=>'You haven’t slept properly for months. You notice that when you’re worn out your head gets muddled, and what you pick up gets muddled too, and you begin to doubt yourself.',o:[
-   {l:'Stop, sleep well, eat well, and move your body',d:{body:+16,calm:+12},m:'Your body is a very important partner that carries out the work. Take care of it and the signals come through clear.'},
+   {l:'Stop, sleep well, eat well, and move your body',d:{body:+16,calm:+12},m:'Your body is the partner that carries out everything you do. Take care of it, and the signals come through clearly.'},
    {l:'Push through and rest when it’s over',d:{body:-16,calm:-10,gift:+3},m:'The work got done, but you were empty too.'},
-   {l:'Find someone who says “only I know the answer”',d:{calm:-14,bond:-6},m:'He sounded very sure. Later you realized that sure doesn’t mean right.'}]}],
+   {l:'Find someone who says “only I know the answer”',d:{calm:-14,bond:-6},m:'They sounded very sure. Later you realized that sure doesn’t mean right.'}]}],
  [{t:'Waking Up',e:s=>`One day, you suddenly remember where you came from.<br>${s.land}`,o:[
    {l:'Respect it first, then decide whether to believe it',d:{calm:+12,gift:+8},m:'Any message can be a reference, but the decision is yours alone.'},
    {l:'Feel that you’re more special than everyone else',d:{bond:-12,calm:-6,gift:+4},m:'Sensing something doesn’t give you the right to decide other people’s lives.'},

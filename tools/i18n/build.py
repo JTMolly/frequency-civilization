@@ -112,9 +112,20 @@ def canon_script():
             '})();</script>')
 
 
+# OpenCC 轉出來和中國大陸慣用寫法不同的詞（改錯字用，所有簡體頁一起套用）
+HANS_FIX = [('想像', '想象'), ('帐单', '账单'), ('帐号', '账号'), ('帐户', '账户'), ('帐目', '账目')]
+
+
+def hans(s):
+    s = CC.convert(s)
+    for a, b in HANS_FIX:
+        s = s.replace(a, b)
+    return s
+
+
 def to_hans(s, p):
     depth = p.count('/') + 1
-    s = CC.convert(s)
+    s = hans(s)
     s = s.replace('<html lang="zh-Hant">', '<html lang="zh-Hans">', 1)
     # 頁面連結維持同一層（zh-hans 內也有同名頁）；其他資源（css、圖片、沒有中文的 js）回到上一層
     def fix(m):
@@ -155,7 +166,7 @@ def main():
     for js in JS_WITH_TEXT:
         out = os.path.join('zh-hans', js)
         os.makedirs(os.path.dirname(out) or '.', exist_ok=True)
-        open(out, 'w').write(CC.convert(open(js).read()))
+        open(out, 'w').write(hans(open(js).read()))
     sitemap(allp)
     print(f'zh-Hant pages: {len(allp)}, zh-hans written: {len(allp)}')
 
