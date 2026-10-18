@@ -316,7 +316,7 @@ function render(msg){
       <div class="small">Please don’t leave your name, phone number or other personal details. Messages are shown publicly only after review.</div>
       <button id="fbsend" onclick="fbSend()">Send message</button><span id="fbstatus" class="fbmsg"></span></div>
     <div id="voices"></div>
-    <div class="src"><b>Data sources</b>${SOURCES.map(([t,u])=>`<div><a href="../${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}</div>`;
+    <div class="src"><b>Data sources</b>${SOURCES.map(([t,u])=>`<div><a href='${u}' target="_blank" rel="noopener">${t}</a></div>`).join('')}</div>`;
   loadVoices();
 }
 render();

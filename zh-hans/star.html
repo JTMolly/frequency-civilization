@@ -316,7 +316,7 @@ function render(msg){
       <div class="small">请不要留下姓名、电话等个人资料；留言经审核后才会公开。</div>
       <button id="fbsend" onclick="fbSend()">送出留言</button><span id="fbstatus" class="fbmsg"></span></div>
     <div id="voices"></div>
-    <div class="src"><b>数据出处</b>${SOURCES.map(([t,u])=>`<div><a href="../${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}</div>`;
+    <div class="src"><b>数据出处</b>${SOURCES.map(([t,u])=>`<div><a href='${u}' target="_blank" rel="noopener">${t}</a></div>`).join('')}</div>`;
   loadVoices();
 }
 render();
