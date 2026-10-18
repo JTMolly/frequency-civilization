@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>这一趟，从哪颗星出发｜频率文明</title>
+<meta name="description" content="地球上有 80 亿人。想像每个人出发之前，都来自某一颗星。你不能选择起点，但每一步都由你自己选。">
+<link rel="canonical" href="https://frequency-civilization.com/zh-hans/star.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="这一趟，从哪颗星出发｜频率文明">
+<meta property="og:description" content="想像每个人出发之前，都来自某一颗星。一个 2 分钟的想像力小游戏。">
+<meta property="og:image" content="https://frequency-civilization.com/assets/og-image.png">
+<meta property="og:url" content="https://frequency-civilization.com/zh-hans/star.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+<style>
+:root{--bg:#fffdf8;--ink:#4a3a2c;--sub:#8a7560;--gold:#c9a050;--line:#ead9b8;--card:#ffffff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Songti TC","Noto Serif TC",serif;line-height:1.7}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:28px;margin:8px 0 4px;letter-spacing:2px}
+.small{font-size:14px;color:var(--sub)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 6px 24px rgba(201,160,80,.10)}
+button{font:inherit;background:#fff;border:1px solid var(--gold);color:var(--ink);border-radius:999px;padding:10px 18px;margin:6px 6px 0 0;cursor:pointer}
+button.main{background:var(--gold);color:#fff;border-color:var(--gold)}
+button:hover{filter:brightness(.97)}
+.star{width:72px;height:72px;border-radius:50%;margin:6px auto 10px;box-shadow:0 0 40px 10px var(--glow)}
+.center{text-align:center}
+.bars{display:grid;grid-template-columns:72px 1fr 34px;gap:6px 10px;align-items:center;font-size:14px}
+.bar{height:8px;background:#f3ead8;border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold);transition:width .5s}
+.stage{font-size:13px;color:var(--gold);letter-spacing:3px}
+.event{font-size:18px;margin:6px 0 10px}
+.log{font-size:14px;color:var(--sub);border-left:2px solid var(--line);padding-left:10px;margin-top:10px}
+.peers div{font-size:14px;margin:6px 0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+a{color:var(--ink)}
+.fact{font-size:14px;color:#8a6d3b;background:#fbf5e8;border-radius:12px;padding:10px 12px;margin:8px 0 6px}
+.src{font-size:12px;color:var(--sub);margin-top:18px;text-align:left;line-height:1.6}
+.src a{color:var(--sub)}
+.note{font-size:12px;color:var(--sub);margin-top:28px;text-align:center}
+.langbar{max-width:560px;margin:0 auto;padding:14px 18px 0;display:flex;justify-content:flex-end}
+.langbar .lang-switch a{font-family:system-ui,sans-serif}
+.fbrow{display:flex;flex-wrap:wrap;gap:0 0;margin:6px 0 2px}
+button.fbtn.done{background:#fbf5e8;color:var(--sub);border-color:var(--line);cursor:default}
+textarea{display:block;width:100%;font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:10px 0 6px;resize:vertical}
+textarea:focus{outline:none;border-color:var(--gold)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fbmsg{font-size:13px;color:var(--sub);margin-left:4px}
+.voice{font-size:14px;border-left:2px solid var(--gold);padding-left:10px;margin:10px 0;white-space:pre-wrap;word-break:break-word}
+</style>
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/star.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/star.html"><link rel="alternate" hreflang="en" href="https://frequency-civilization.com/en/star.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/star.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}</style><!-- /i18n-head -->
+<script>(function(){var P=[["\u884c\u52a8\u8005", "\u884c\u52d5\u8005"], ["\u7597\u6108\u8005", "\u7642\u7652\u8005"], ["\u6559\u5bfc\u8005", "\u6559\u5c0e\u8005"], ["\u611f\u5e94\u8005", "\u611f\u61c9\u8005"], ["\u6d1e\u89c1\u8005", "\u6d1e\u898b\u8005"], ["\u955c\u9762\u8005", "\u93e1\u9762\u8005"], ["\u7597\u6108", "\u7642\u7652"], ["\u63a2\u7d22", "\u63a2\u7d22"], ["\u670d\u52a1", "\u670d\u52d9"], ["\u5b88\u62a4", "\u5b88\u8b77"], ["\u7a81\u7834", "\u7a81\u7834"], ["\u521b\u9020", "\u5275\u9020"], ["\u4f20\u9012", "\u50b3\u905e"], ["\u5171\u9e23", "\u5171\u9cf4"]];function s2t(v){P.forEach(function(p){v=v.split(p[0]).join(p[1]);});return v;}function t2s(v){P.forEach(function(p){v=v.split(p[1]).join(p[0]);});return v;}window.FC_CANON=function(o){return JSON.parse(s2t(JSON.stringify(o)));};window.FC_T2S=function(o){return JSON.parse(t2s(JSON.stringify(o)));};var S=Storage.prototype,g=S.getItem,st=S.setItem;S.getItem=function(k){var v=g.call(this,k);return (v&&/^fc_result_/.test(k))?t2s(v):v;};S.setItem=function(k,v){return st.call(this,k,/^fc_result_/.test(k)?s2t(String(v)):v);};})();</script>
+</head>
+<body>
+<div class="langbar"><!-- i18n-slot --><!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../star.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/star.html" hreflang="zh-Hans" lang="zh-Hans" class="on">简中</a><a href="../en/star.html" hreflang="en" lang="en">EN</a></div><!-- /i18n-switch --></div>
+<div class="wrap" id="app"></div>
+<script>
+// Front-end only mini game.
+// The 12 stars are metaphors for the 12 Root Codes. This is an imagination game, not a test.
+const STARS=[
+ {k:'SK',n:"Sa'karan",r:'建构者',c:'#b8892b',land:'一颗由岩层和光柱组成的星球，大家用一块一块的石头，把想像盖成真的。',gift:'把混乱变成结构',
+  kid:'你小时候就喜欢把积木、玩具分门别类排好。大人说你很有条理，也说你很固执。',
+  trial:{e:'一个你规划得好好的计划，突然全部被打乱。',o:[
+   {l:'把所有变数重新抓回手上，熬夜重排',d:{body:-10,calm:-8,gift:+3},m:'结构越抓越紧，创造力也跟着被卡住。'},
+   {l:'先确认目标，让计划为目标服务，不重要的放掉',d:{calm:+12,gift:+10},m:'从「控制」转为「承载」，结构变成了支撑。'},
+   {l:'干脆整个放弃',d:{gift:-10,calm:-4},m:'放掉的不只是计划，还有一点点自己。'}]},key:'让结构服务目标，从控制转为承载。'},
+ {k:'EL',n:"Elariah",r:'情绪引导者',c:'#e8806f',land:'一颗被温暖海洋包住的星球，每一道涟漪都是一种心情。',gift:'读懂别人没说出口的感受',
+  kid:'你小时候一走进客厅，就知道爸妈刚刚是不是吵过架。',
+  trial:{e:'朋友、同事、家人都来找你说心事。你开始分不清，哪些感觉是你的，哪些是你接住的。',o:[
+   {l:'全部接住，大家需要你',d:{body:-10,calm:-10,bond:+4},m:'你成了大家的避风港，自己却没有地方躲雨。'},
+   {l:'让感受经过你，但不留在你身上',d:{calm:+12,bond:+8},m:'从「吸收」转为「流动」，你还是懂大家，只是不再被淹没。'},
+   {l:'把门关起来，谁都不见',d:{bond:-12,calm:+2},m:'安静了，也孤单了。'}]},key:'感受可以经过你，不必留在你身上。'},
+ {k:'TH',n:"Thaleon",r:'洞察转化者',c:'#5b3fa0',land:'一颗有火焰极光的星球，什么东西进来，都会被烧成新的样子。',gift:'把伤变成力量',
+  kid:'你小时候就很爱问「为什么」。大人答不出来的时候，你会自己去找答案。',
+  trial:{e:'人生又来一次大转折。你开始想：「是不是都是我不好？」',o:[
+   {l:'一遍一遍回想，越想越难过',d:{calm:-12,body:-6},m:'痛苦变成了剧本，一直重播。'},
+   {l:'把这次的挫折当材料，写下学到了什么',d:{gift:+12,calm:+8},m:'挫折不是惩罚，是材料。这本来就是你最擅长的事。'},
+   {l:'都是别人害的',d:{bond:-10,calm:-4},m:'怪别人很快，但问题还在原地。'}]},key:'挫折不是惩罚，是材料。'},
+ {k:'AU',n:"Auri'kai",r:'直觉洞察者',c:'#5aa9c9',land:'一颗云很低的星球，声音会在拱桥之间来回，听得到很远的消息。',gift:'比别人早一步感觉到',
+  kid:'你小时候常常比大人早一步感觉到气氛不对，也常常需要一个人躲起来安静一下。',
+  trial:{e:'最近脑中的声音和感觉特别多，你分不清哪些是直觉，哪些是焦虑。',o:[
+   {l:'全部照着感觉走',d:{calm:-12,body:-4},m:'讯息太多的时候，感觉也会骗人。'},
+   {l:'先记下来，睡一觉，隔天再看',d:{calm:+12,gift:+8},m:'从「被动接收」转为「主动筛选」，留下来的才是真的。'},
+   {l:'把感觉全部关掉，只相信道理',d:{gift:-10,calm:+2},m:'很安全，但你也听不到自己了。'}]},key:'从被动接收，转为主动筛选。'},
+ {k:'RO',n:"Rohen'dal",r:'行动推动者',c:'#e2562b',land:'一颗风很大的星球，停下来就会被吹走，所以大家都在前进。',gift:'让事情动起来',
+  kid:'你小时候想到就做，常常第一个举手，也常常被说太冲。',
+  trial:{e:'团队卡住了，大家还在讨论。你很想一个人冲出去，把事情做完。',o:[
+   {l:'不等了，自己冲',d:{gift:+6,bond:-10,body:-6},m:'事情动了，但回头一看，大家都没跟上。'},
+   {l:'先确认方向，再全速前进',d:{gift:+10,bond:+8},m:'从「反应」转为「回应」，你的速度带着大家一起走。'},
+   {l:'生闷气，什么都不做',d:{calm:-10,gift:-4},m:'火没有熄，只是闷在里面。'}]},key:'先确认方向，再全速前进。'},
+ {k:'ZA',n:"Zae'rah",r:'稳定支持者',c:'#3fa98f',land:'一颗安静的湖星，水面很平，连星星都看得清楚。',gift:'让身边的人安心',
+  kid:'你小时候是家里最安静、最让大人放心的那一个。',
+  trial:{e:'有一件事让你很不舒服，但你习惯说「没关系」。',o:[
+   {l:'继续说没关系',d:{body:-10,calm:-6},m:'表面很平静，身体却越来越僵。'},
+   {l:'平静地，把感觉说出来',d:{calm:+10,bond:+10},m:'稳定不是没有感觉，是有感觉，仍然站得稳。'},
+   {l:'忍到有一天突然爆发',d:{bond:-12,calm:-6},m:'湖面终于起了浪，大家都吓了一跳。'}]},key:'稳定不是没有感觉，是有感觉仍然站得稳。'},
+ {k:'VA',n:"Valtara",r:'集体整合者',c:'#2a46b8',land:'一颗由六角形城市连成网的星球，每个节点都彼此接得上。',gift:'把大家连在一起',
+  kid:'你小时候总是那个把大家揪在一起玩的人。',
+  trial:{e:'每个人都希望你站在他那边，你好想让所有人都满意。',o:[
+   {l:'每个人都答应',d:{body:-8,calm:-10},m:'大家都满意了，只有你越来越不知道自己要什么。'},
+   {l:'回到大家共同的目标，说出你的立场',d:{bond:+10,gift:+10},m:'从「取悦每个人」转为「对齐共同目标」，网子反而更牢。'},
+   {l:'退出所有群组',d:{bond:-14},m:'清静了，网子却少了一个节点。'}]},key:'不必取悦每个人，对齐共同的目标。'},
+ {k:'KU',n:"Kuthari",r:'系统记录者',c:'#7d8aa6',land:'一颗像图书馆的星球，每一阵风都会翻一页书。',gift:'记住重要的事，看见规律',
+  kid:'你小时候就有写日记、收集东西的习惯，记得每个人的生日。',
+  trial:{e:'你已经研究了三个月，笔记写满好几本，但还没开始做。',o:[
+   {l:'再研究一下，等更确定',d:{gift:-10,calm:-4},m:'知识一直堆，迟迟派不上用场。'},
+   {l:'先把真实发生的记下来，做一个小小的版本',d:{gift:+12,calm:+6},m:'从「分析」转为「见证」，纪录开始长出行动。'},
+   {l:'全部丢掉，重新开始',d:{calm:-8,gift:-4},m:'书丢了，规律也跟着不见了。'}]},key:'从分析，转为见证。'},
+ {k:'ME',n:"Mei'hara",r:'关系共振者',c:'#c98a7a',land:'一颗有两个月亮的星球，月亮总是互相照着对方。',gift:'让关系变得温柔',
+  kid:'你小时候就是朋友们倾诉心事的对象。',
+  trial:{e:'一段很深的关系里，你给得越来越多，却越来越不像自己。',o:[
+   {l:'再多给一点，他需要我',d:{body:-8,calm:-10,bond:+2},m:'爱得很深，自己却越来越淡。'},
+   {l:'理解对方，也保有自己',d:{bond:+10,calm:+10},m:'从「情绪同步」转为「理解对方、保有自己」，爱里也有界线。'},
+   {l:'直接切断',d:{bond:-12,calm:-2},m:'伤口不见了，渴望连结的心也藏起来了。'}]},key:'理解对方，也保有自己。'},
+ {k:'XO',n:"Xon'teh",r:'技术对接者',c:'#1f5fbf',land:'一颗满是工坊的星球，任何两样东西都找得到接口。',gift:'把想法做成工具',
+  kid:'你小时候喜欢把东西拆开，想知道它怎么运作，再把它装回去。',
+  trial:{e:'你做出一个很精准的工具，但大家都说不好用。',o:[
+   {l:'是他们不会用',d:{bond:-10,gift:-2},m:'工具很完美，只是没有人想用。'},
+   {l:'回去问用的人，让工具为人服务',d:{gift:+10,bond:+10},m:'从「控制」转为「协作」，效率也可以有温度。'},
+   {l:'再加十个功能',d:{body:-10,gift:-2},m:'越做越复杂，你也越来越累。'}]},key:'工具是为人服务的，效率也可以有温度。'},
+ {k:'NA',n:"Nael'tu",r:'领航创造者',c:'#6a62c4',land:'一颗最靠近北极星的星球，大家习惯擡头找方向。',gift:'看见还不存在的路',
+  kid:'你小时候就常常想像未来的世界，还会带着大家玩自己发明的游戏。',
+  trial:{e:'你看得到很远的地方，但身边的人还跟不上。你决定什么都自己扛。',o:[
+   {l:'全部自己扛',d:{body:-12,bond:-8,gift:+4},m:'你看见的未来很亮，但越领导越孤单。'},
+   {l:'把方向说清楚，让每个人记得自己的路',d:{bond:+10,gift:+8,calm:+6},m:'从「带领」转为「启动」，大家开始自己走。'},
+   {l:'干脆放弃这个方向',d:{gift:-12},m:'那条还不存在的路，又回到了想像里。'}]},key:'最好的领导，是让每个人记得自己的方向。'},
+ {k:'OR',n:"Ori'shan",r:'节奏带动者',c:'#b5357f',land:'一颗会唱歌的星球，心跳、潮汐和脚步都在同一个节拍里。',gift:'带动大家的节奏',
+  kid:'你小时候坐不住，一听到音乐就会跟着动起来。',
+  trial:{e:'你连续坐了好几周，身体很僵，心情也跟着闷住了。',o:[
+   {l:'再撑一下，忙完再说',d:{body:-10,calm:-8},m:'节奏卡在身体里，越撑越闷。'},
+   {l:'去跳舞、去走路，让身体动起来',d:{body:+12,calm:+8,gift:+4},m:'从「控制身体」转为「倾听身体」，节奏回来了，状态也回来了。'},
+   {l:'用吃东西把情绪压下去',d:{body:-8,calm:-4},m:'暂时安静了，节奏还是没回来。'}]},key:'倾听身体，节奏回来了，状态就回来了。'},
+];
+const HOMES=['一个双薪的小家庭','一个热闹的大家族','一个常常搬家的家庭','一个开小店的家庭','一个单亲但很爱你的家','一个很重视成绩的家庭'];
+const STAT_NAMES={body:'身体',calm:'稳定',bond:'连结',gift:'天赋'};
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+const clamp=v=>Math.max(0,Math.min(100,v));
+// Each stage has one or two versions, picked at random; the planet trial differs per star.
+const POOL=[
+ [{t:'童年',e:s=>`${s.kid}有大人说这样很好，也有大人说这样不好。`,o:[
+   {l:'照大人说的，把这一面收起来',d:{calm:-5,gift:-10,bond:+5},m:'你学会了安静，也学会了把自己收起来。'},
+   {l:'偷偷继续当自己喜欢的样子',d:{calm:+8,gift:+6},m:'没人看见的地方，你一直没有放掉自己。'},
+   {l:'跟一个懂你的人分享',d:{bond:+10,gift:+5},m:'有人听懂的感觉，原来这么好。'}]}],
+ [{t:'求学',e:s=>`考试、排名、别人期待的科系。你的天赋是「${s.gift}」，但它不在成绩单上。`,o:[
+   {l:'先照大家期待的走',d:{calm:+5,gift:-8,body:-3},m:'很稳，但心里有一块空空的。'},
+   {l:'选一条自己有感觉的路',d:{gift:+12,calm:-6},m:'有点怕，但每天醒来比较有力气。'},
+   {l:'两边都顾，一边读一边做自己的事',d:{gift:+8,body:-10},m:'很充实，也很累。'}]},
+  {t:'求学',e:()=>'你喜欢的事，跟考试要考的事，完全不一样。',o:[
+   {l:'先把考试顾好，喜欢的事放假再做',d:{calm:+6,gift:-4},m:'成绩很好看，喜欢的事也没有丢。'},
+   {l:'把时间都给喜欢的事',d:{gift:+12,calm:-8},m:'你越来越会，也越来越被说不务正业。'},
+   {l:'找一个能把两件事接起来的科系',d:{gift:+8,calm:+4,body:-4},m:'花了一点力气，找到了接点。'}]}],
+ [{t:'第一份工作',e:()=>'地球的游戏规则来了：房租、帐单、考绩。这里的一切都要用钱交换。',o:[
+   {l:'先把生活顾稳，再慢慢找方向',d:{calm:+10,body:+3},m:'你尊重了地球的规则，它也开始给你空间。'},
+   {l:'不管了，全力投入自己的梦想',d:{gift:+12,calm:-10,body:-6},m:'梦想很亮，帐单也很真实。'},
+   {l:'拚命加班证明自己',d:{body:-14,bond:-5,gift:+4},m:'大家都说你很厉害，只有身体知道不是。'}]},
+  {t:'第一份工作',e:()=>'第一个老板很严格，薪水不高，但学得到真本事。',o:[
+   {l:'先学起来，三年后再说',d:{gift:+8,calm:+6,body:-4},m:'苦是苦，但每一天都算数。'},
+   {l:'换一个轻松一点的地方',d:{body:+6,gift:-6},m:'身体比较好过，心里偶尔会想：如果当初留下来呢？'},
+   {l:'一边做，一边存钱准备自己的事',d:{gift:+10,body:-8,calm:+2},m:'白天是员工，晚上是自己的老板。'}]}],
+ [{t:'关系',e:()=>'你遇到一个很懂你的人，也遇到一个很需要你的人。',o:[
+   {l:'先照顾需要你的人',d:{bond:+8,body:-8,calm:-4},m:'你很会照顾别人，只是常常忘了自己。'},
+   {l:'选懂你的人，一起走',d:{bond:+10,calm:+8},m:'被懂的时候，天赋也比较敢出来。'},
+   {l:'先一个人，把自己顾好',d:{calm:+10,bond:-4,body:+6},m:'一个人的时间，让你听见自己的声音。'}]},
+  {t:'关系',e:()=>'家人希望你回去帮忙，你心里有一个很想去的地方。',o:[
+   {l:'先回家帮忙',d:{bond:+10,gift:-6},m:'家人安心了，那个地方先放在心里。'},
+   {l:'好好跟家人说，去你想去的地方',d:{gift:+10,bond:+4,calm:+4},m:'说清楚，比偷偷走更需要勇气。'},
+   {l:'两边跑，什么都不放',d:{body:-12,bond:+4,gift:+2},m:'每个人都顾到了，除了你自己。'}]}],
+ 'TRIAL',
+ [{t:'累到极限',e:()=>'连续好几个月没有好好睡。你发现一累，脑袋就会乱，接收到的东西也跟着乱，开始怀疑自己。',o:[
+   {l:'停下来，睡饱、吃好、动一动',d:{body:+16,calm:+12},m:'肉身是很重要的执行者伙伴。顾好它，讯号才清楚。'},
+   {l:'撑过去，等忙完再说',d:{body:-16,calm:-10,gift:+3},m:'事情做完了，但你也空了。'},
+   {l:'找一个说「只有我知道答案」的人',d:{calm:-14,bond:-6},m:'他说得很笃定。后来你发现，笃定不等于正确。'}]}],
+ [{t:'醒来的那一刻',e:s=>`某一天，你忽然想起了，自己是从哪里来的。<br>那是${s.land}`,o:[
+   {l:'先尊重，再选择要不要相信',d:{calm:+12,gift:+8},m:'所有讯息都可以是参考，决定权在你自己身上。'},
+   {l:'觉得自己比别人特别',d:{bond:-12,calm:-6,gift:+4},m:'有感知，不代表有权替别人决定人生。'},
+   {l:'笑一笑，回来好好过日子',d:{body:+6,calm:+8,bond:+4},m:'喔，好有趣。然后继续回来好好生活。'}]}],
+ [{t:'选择的路',e:s=>`你的天赋「${s.gift}」，现在可以放进生活里了。要怎么用？`,o:[
+   {l:'做成一份工作，帮助别人',d:{gift:+14,bond:+8,body:-4},m:'听到那一声谢谢，你就真的好开心。'},
+   {l:'慢慢来，先从身边的人开始',d:{gift:+8,calm:+10,bond:+6},m:'低调做，慢慢来，一个一个。'},
+   {l:'先放着，等更准备好',d:{calm:+4,gift:-8},m:'准备好的那一天，好像一直没有来。'}]}],
+];
+// Public data points; sources are listed on the ending page.
+const FACTS={
+ '童年':'研究估计，大约 15–20% 的人是高敏感的人。敏感不是弱点，是还没被读懂的精准度。¹',
+ '第一份工作':'台湾受雇劳工一年平均工作约 2,020 小时，在 39 个主要国家里排第 5。²',
+ '关系':'台湾有伴侣的女性，每天花在家务和照顾家人的时间，平均约 4.41 小时。³',
+ '累到极限':'台湾大约每 10 个人，就有 1 个长期失眠。⁴',
+};
+const SOURCES=[
+ ['⁰ 每秒约 4 个新生儿：依联合国《世界人口展望 2024》换算（2024 年 470 万个宝宝的母亲未满 18 岁，占全球约 3.5%，全年约 1.3 亿个新生儿）','https://desapublications.un.org/publications/world-population-prospects-2024-summary-results'],
+ ['¹ 高敏感约占 15–20%：Aron & Aron（1997）高敏感量表研究，维基百科整理','https://en.wikipedia.org/wiki/Sensory_processing_sensitivity'],
+ ['² 年总工时 2,020 小时、39 国第 5：劳动部国际比较（2023 年资料）','https://blog.104.com.tw/taiwan-2023-total-working-hours-2020-hours/'],
+ ['³ 每天无酬照顾 4.41 小时：卫福部 113 年女性生活状况调查','https://www.thenewslens.com/article/263200'],
+ ['⁴ 慢性失眠盛行率约 11.3%（约每 10 人 1 人）：台湾睡眠医学会国人睡眠调查，康健杂志 2017/3/24 报导','https://www.commonhealth.com.tw/article/74559'],
+];
+function buildStages(s){return POOL.map(p=>p==='TRIAL'?{t:'星球试炼',e:()=>s.trial.e,o:s.trial.o}:rnd(p));}
+function ending(st){
+  const {body,calm,bond,gift}=st;
+  if(gift>=70&&body>=55&&calm>=55) return ['稳稳发光的人','你把天赋活出来，也没有把自己烧掉。','glow'];
+  if(gift>=70&&body<45) return ['烧得太快的人','你的光很亮，但肉身一直在替你付帐。','burn'];
+  if(bond>=70&&gift<55) return ['照亮别人的人','你照顾了很多人，下一趟，记得也照顾自己。','light'];
+  if(calm>=70) return ['安静扎根的人','你很稳，身边的人都因为你而安心。','root'];
+  if(gift<40) return ['把天赋藏起来的人','那颗星的光还在，只是一直没被拿出来用。','hide'];
+  return ['还在路上的人','你一边摸索、一边前进，这也是一种勇敢。','road'];
+}
+let S={};
+// Feedback and player voices: anonymous; only a button choice and an optional message are stored; messages show only after approval.
+const SB_URL='https://ssqozzkhkqxdbqmqamee.supabase.co',SB_KEY='sb_publishable_3QsVK0QyO9SWOPTo84QZzQ_EDVaNagP';
+const FB_LOCAL=/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+const FB_CHOICES={more_stars:'想要更多星球',more_levels:'想要更多关卡',share_card:'想要分享卡',other:'其他'};
+function fbState(){try{return JSON.parse(localStorage.getItem('fc_star_fb')||'{}');}catch(e){return {};}}
+function fbSave(st){try{localStorage.setItem('fc_star_fb',JSON.stringify(st));}catch(e){}}
+function fbPost(row){
+  if(FB_LOCAL){console.info('[本机预览] 不写入 star_feedback',row);return Promise.resolve({ok:true,status:201});}
+  return fetch(SB_URL+'/rest/v1/star_feedback',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(row)});
+}
+function fbVote(c,btn){
+  const st=fbState(); st.votes=st.votes||{};
+  if(st.votes[c]){return;}
+  btn.disabled=true;
+  fbPost({choice:c}).then(r=>{
+    if(r.ok||r.status===409){st.votes[c]=Date.now();fbSave(st);btn.classList.add('done');btn.textContent='✓ '+FB_CHOICES[c];}
+    else{btn.disabled=false;document.getElementById('fbstatus').textContent='暂时送不出去，晚点再试一次。';}
+  }).catch(()=>{btn.disabled=false;document.getElementById('fbstatus').textContent='网路好像不太稳，晚点再试一次。';});
+}
+function fbSend(){
+  const box=document.getElementById('fbmsg'),out=document.getElementById('fbstatus'),btn=document.getElementById('fbsend');
+  if(document.getElementById('fbhp').value){out.textContent='谢谢你，我们收到了。';return;}
+  const msg=box.value.trim();
+  if(!msg){out.textContent='还没有写内容喔。';return;}
+  if([...msg].length>200){out.textContent='请控制在 200 字以内。';return;}
+  if(/[\w.+-]+@[\w-]+\.[\w.]+|https?:\/\/|www\.|\+?\d[\d\s-]{7,}/i.test(msg)){out.textContent='看起来有联络方式或网址，请拿掉再送出。';return;}
+  const st=fbState(); const now=Date.now(); st.msgs=(st.msgs||[]).filter(t=>now-t<864e5);
+  if(st.msgs.length>=3){out.textContent='今天已经收到你的留言了，明天再来写吧。';return;}
+  if(st.msgs.length&&now-st.msgs[st.msgs.length-1]<20000){out.textContent='慢慢来，过一下再送出。';return;}
+  btn.disabled=true;out.textContent='送出中…';
+  fbPost({choice:'other',message:msg}).then(r=>{
+    if(r.ok||r.status===409){st.msgs.push(now);fbSave(st);box.value='';out.textContent='收到了，谢谢你。留言经审核后才会公开。';}
+    else{out.textContent='暂时送不出去，晚点再试一次。';}
+    btn.disabled=false;
+  }).catch(()=>{out.textContent='网路好像不太稳，晚点再试一次。';btn.disabled=false;});
+}
+function loadVoices(){
+  fetch(SB_URL+'/rest/v1/star_feedback?select=message&approved=eq.true&message=not.is.null&order=created_at.desc&limit=5',{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}})
+    .then(r=>r.ok?r.json():[]).then(rows=>{
+      const isEn=PAGE_LANG==='en';rows=(rows||[]).filter(r=>/[\u3400-\u9fff]/.test(r.message)!==isEn);
+      const box=document.getElementById('voices'); if(!box||!rows||!rows.length)return;
+      const h=document.createElement('b'); h.textContent='玩家说'; box.appendChild(h);
+      rows.forEach(r=>{const d=document.createElement('div');d.className='voice';d.textContent=r.message;box.appendChild(d);});
+      box.className='card';
+    }).catch(()=>{});
+}
+const PAGE_LANG=document.documentElement.lang||'zh-Hant';
+function ev(name,params){try{if(window.gtag)gtag('event',name,Object.assign({transport_type:'beacon',lang:PAGE_LANG},params||{}));}catch(e){}}
+function start(){
+  const star=rnd(STARS); const home=rnd(HOMES);
+  S={star,home,i:0,stages:buildStages(star),stat:{body:60+Math.floor(Math.random()*15),calm:45+Math.floor(Math.random()*15),bond:45+Math.floor(Math.random()*15),gift:45+Math.floor(Math.random()*15)},log:[]};
+  S.peers=[0,1,2,3].map(()=>({home:rnd(HOMES),stat:{...S.stat}}));
+  ev('game_start');
+  render();
+}
+function choose(k){
+  const st=S.stages[S.i]; const o=st.o[k];
+  for(const [a,v] of Object.entries(o.d)) S.stat[a]=clamp(S.stat[a]+v);
+  S.log.push(`${st.t}：${o.l}。${o.m}`);
+  // The four others born in the same second choose at random.
+  S.peers.forEach(p=>{const q=rnd(st.o); for(const [a,v] of Object.entries(q.d)) p.stat[a]=clamp(p.stat[a]+v);});
+  S.i++;
+  if(S.i===S.stages.length) ev('game_end',{star:S.star.k,ending:ending(S.stat)[2]});
+  render(o.m);
+}
+function bars(stat){return '<div class="bars">'+Object.entries(STAT_NAMES).map(([k,n])=>`<span>${n}</span><span class="bar"><i style="width:${stat[k]}%"></i></span><span>${stat[k]}</span>`).join('')+'</div>';}
+function render(msg){
+  const app=document.getElementById('app');
+  if(!S.star){
+    app.innerHTML=`<div class="center"><div class="small">频率文明｜小游戏</div><h1>这一趟，从哪颗星出发</h1>
+    <p>地球上有 80 亿人。<br>想像每个人出发之前，都来自某一颗星。</p>
+    <p class="small">全世界平均每一秒，大约有 4 个宝宝出生。⁰<br>所以这一趟，你会看到和你同一秒出发的另外 4 个人。</p>
+    <p class="small">你不能选择从哪颗星出发，也不能选择出生在什么家庭。<br>但到了地球之后，每一步，都由你自己选。</p>
+    <button class="main" onclick="start()">出发</button></div>
+    <p class="note">这是想像力游戏，12 颗星是 12 种天赋的比喻，不是测验，也不是预言。</p>`;
+    return;
+  }
+  const s=S.star;
+  if(S.i<S.stages.length){
+    const st=S.stages[S.i];
+    app.innerHTML=`<div class="card center" style="--glow:${s.c}55"><div class="star" style="background:radial-gradient(circle at 35% 35%,#fff,${s.c})"></div>
+      <div><b>${s.n}</b>　${s.r}</div><div class="small">${S.i===0?s.land+'<br>你在地球的起点：'+S.home+'。':'天赋：'+s.gift}</div></div>
+      <div class="card"><div class="stage">${st.t}｜${S.i+1}／${S.stages.length}</div><div class="event">${st.e(s)}</div>${FACTS[st.t]?`<div class="fact">你知道吗？${FACTS[st.t]}</div>`:''}
+      ${st.o.map((o,k)=>`<button onclick="choose(${k})">${o.l}</button>`).join('')}
+      ${msg?`<div class="log">${msg}</div>`:''}</div>
+      <div class="card">${bars(S.stat)}</div>`;
+    return;
+  }
+  const [title,line]=ending(S.stat);
+  app.innerHTML=`<div class="card center" style="--glow:${s.c}66"><div class="small">这一趟走完了</div>
+    <div class="star" style="background:radial-gradient(circle at 35% 35%,#fff,${s.c})"></div>
+    <h1>${title}</h1><p>你从 <b>${s.n}</b>（${s.r}）出发。<br>${line}</p>${bars(S.stat)}<p class="small">${s.n} 的提醒：${s.key}</p></div>
+    <div class="card"><b>同一秒，从同一颗星出发的另外四个人</b><div class="peers">
+    ${S.peers.map((p,i)=>{const [t]=ending(p.stat);return `<div><span class="dot" style="background:${s.c}"></span>第 ${i+1} 位，出生在${p.home}：${t}</div>`}).join('')}
+    </div><p class="small">一样的星，一样的天赋，不一样的选择。</p></div>
+    <div class="card"><b>你这一趟的选择</b>${S.log.map(l=>`<div class="log">${l}</div>`).join('')}</div>
+    <div class="card center"><p>所有讯息都可以是参考，<br>但你人生的决定权，在你自己身上。</p>
+    <button onclick="S={};render()">再投生一次</button>
+    <a href="tests.html" target="_blank" rel="noopener" onclick="ev('click_test')"><button class="main">想认识真正的你？做语根测验</button></a></div>
+    <div class="card" id="fb"><b>你想在这个游戏里看到什么？</b>
+      <div class="fbrow">${Object.entries(FB_CHOICES).map(([k,t])=>`<button class="fbtn${(fbState().votes||{})[k]?' done':''}" ${(fbState().votes||{})[k]?'disabled':''} onclick="fbVote('${k}',this)">${(fbState().votes||{})[k]?'✓ ':''}${t}</button>`).join('')}</div>
+      <textarea id="fbmsg" rows="3" maxlength="200" placeholder="想对我们说什么？（选填，200 字内）"></textarea>
+      <input id="fbhp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="请勿填写">
+      <div class="small">请不要留下姓名、电话等个人资料；留言经审核后才会公开。</div>
+      <button id="fbsend" onclick="fbSend()">送出留言</button><span id="fbstatus" class="fbmsg"></span></div>
+    <div id="voices"></div>
+    <div class="src"><b>数据出处</b>${SOURCES.map(([t,u])=>`<div><a href="../${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}</div>`;
+  loadVoices();
+}
+render();
+</script>
+</body>
+</html>

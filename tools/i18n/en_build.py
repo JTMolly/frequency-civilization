@@ -12,7 +12,7 @@ EN_DIR = os.path.join(HERE, 'en')
 ROOTS = 'sakaran elariah thaleon aurikai rohendal zaerah valtara kuthari meihara xonteh naeltu orishan'.split()
 EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.html', 'grid.html',
             'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html', 'notes.html',
-            'glow.html', 'pair.html', 'updates.html'] + \
+            'glow.html', 'pair.html', 'updates.html', 'star.html'] + \
            [f'roots/{r}.html' for r in ROOTS] + \
            sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html'))
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']

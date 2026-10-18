@@ -171,6 +171,10 @@
       <span class="lab">笔语根测验数据<br>（截至 2026 年 7 月）</span>
       <span class="lab" id="counterLive" style="display:none">笔语根测验数据<br>（含 10 月起的新版测验，即时更新）</span>
     </div>
+    <div class="night-cards" style="grid-template-columns:1fr;max-width:560px;margin:60px auto 0">
+      <a class="night-card" id="homeGameCard" href="star.html"><div class="tag">MINI GAME</div><h3>2 分钟小游戏｜这一趟，从哪颗星出发</h3><p>想像每个人出发之前，都来自某一颗星。</p><span class="go">开始玩 →</span></a>
+    </div>
+    
     <p class="night-note">所有测验皆为教育与自我认知工具，不具医疗或心理诊断性质。</p>
   </div>
 </section>
@@ -413,6 +417,7 @@
 <script src="fc.js?v=20261016c"></script><script>if(window.FC&&window.FC_T2S){var _rpc=FC.rpc;FC.rpc=function(n,a){return _rpc(n,a).then(function(d){return FC_T2S(d);});};}</script>
 <script src="flow.js?v=20261016a"></script>
 <script>if(window.FCFlow) FCFlow.entry('flowEntry');</script>
+<script>(function(){var c=document.getElementById('homeGameCard');if(!c)return;c.addEventListener('click',function(){try{if(window.gtag)gtag('event','home_game_card',{transport_type:'beacon',lang:document.documentElement.lang});}catch(e){}});})();</script>
 <script src="../main.js?v=20261010d"></script>
 <script>(function(){var el=document.getElementById('latestUpd');if(!el||!window.fetch||!window.DOMParser)return;fetch('updates.html',{cache:'no-cache'}).then(function(r){return r.ok?r.text():null;}).then(function(h){if(!h)return;var it=new DOMParser().parseFromString(h,'text/html').querySelector('.up-item');if(!it)return;var t=it.querySelector('time'),h3=it.querySelector('h3');if(t&&h3)el.textContent=t.textContent.replace(/^\d{4}\//,'')+' \u00b7 '+h3.textContent.trim();}).catch(function(){});})();</script>
 </body>

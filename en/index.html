@@ -132,6 +132,9 @@
 <span class="lab">Root Code test results<br/>(as of July 2026)</span>
 <span class="lab" id="counterLive" style="display:none">Root Code test results<br/>(including the new test since October, live)</span>
 </div>
+<div class="night-cards" style="grid-template-columns:1fr;max-width:560px;margin:60px auto 0">
+<a class="night-card" href="star.html" id="homeGameCard"><div class="tag">MINI GAME</div><h3>2-minute game | Which star do you set out from?</h3><p>Imagine that before each of us set out, we all came from a star.</p><span class="go">Play →</span></a>
+</div>
 <p class="night-note">All tests are educational and self-knowledge tools. They are not medical or psychological diagnoses.</p>
 </div>
 </section>
@@ -366,6 +369,7 @@
 <script src="fc.js?v=20261016c"></script>
 <script src="flow.js?v=20261016a"></script>
 <script>if(window.FCFlow) FCFlow.entry('flowEntry');</script>
+<script>(function(){var c=document.getElementById('homeGameCard');if(!c)return;c.addEventListener('click',function(){try{if(window.gtag)gtag('event','home_game_card',{transport_type:'beacon',lang:document.documentElement.lang});}catch(e){}});})();</script>
 <script src="../main.js?v=20261010d"></script>
 <script>(function(){var el=document.getElementById('latestUpd');if(!el||!window.fetch||!window.DOMParser)return;fetch('updates.html',{cache:'no-cache'}).then(function(r){return r.ok?r.text():null;}).then(function(h){if(!h)return;var it=new DOMParser().parseFromString(h,'text/html').querySelector('.up-item');if(!it)return;var t=it.querySelector('time'),h3=it.querySelector('h3');if(t&&h3)el.textContent=t.textContent.replace(/^\d{4}\//,'')+' \u00b7 '+h3.textContent.trim();}).catch(function(){});})();</script>
 </body>
