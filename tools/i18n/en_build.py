@@ -18,6 +18,8 @@ EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.htm
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']
 CJK = re.compile(r'[㐀-鿿　-〿！-～]')
 ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',
+               # 商標標示：公司名稱刻意保留中文
+               '頻率文明 Frequency Civilization® and 語根® are registered trademarks, operated by 頻率文明有限公司.',
                # 測驗結果的資料代號：刻意保留中文，畫面上另外顯示英文名稱
                '行動者', '療癒者', '教導者', '感應者', '洞見者', '鏡面者', '療癒', '探索', '服務', '守護', '突破', '創造', '傳遞', '共鳴',
                "const ARCH = ['行動者','療癒者','教導者','感應者','洞見者','鏡面者'];", "const DRIVE = ['療癒','探索','服務','守護','突破','創造','傳遞','共鳴'];"}
