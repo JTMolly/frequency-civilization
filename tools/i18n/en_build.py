@@ -12,7 +12,7 @@ EN_DIR = os.path.join(HERE, 'en')
 ROOTS = 'sakaran elariah thaleon aurikai rohendal zaerah valtara kuthari meihara xonteh naeltu orishan'.split()
 EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.html', 'grid.html',
             'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html', 'notes.html',
-            'glow.html', 'pair.html', 'updates.html', 'star.html'] + \
+            'glow.html', 'pair.html', 'updates.html', 'star.html', 'worldview.html'] + \
            [f'roots/{r}.html' for r in ROOTS] + \
            sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html'))
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']
@@ -26,7 +26,7 @@ ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',
 
 EN_NAV = '''<div class="nav-links">
       <a href="{up}index.html">Home</a>
-      <span class="nav-dd"><a href="{up}about.html">About</a><span class="nav-sub"><a href="{up}updates.html">Site updates</a></span></span>
+      <span class="nav-dd"><a href="{up}about.html">About</a><span class="nav-sub"><a href="{up}worldview.html">Worldview</a><a href="{up}updates.html">Site updates</a></span></span>
       <a href="{up}roots.html">Root Codes</a>
       <span class="nav-dd"><a href="{up}tests.html">Tests</a><span class="nav-sub"><a href="{up}glow.html">Daily Glow</a><a href="{up}pair.html">Pair Card</a></span></span>
       <a href="{up}notes.html">Frequency Notes</a>
