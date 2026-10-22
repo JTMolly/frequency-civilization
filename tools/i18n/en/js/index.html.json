@@ -1,1 +1,1 @@
-{"/* 測驗人數計數器：3,906 筆（截至 2026/7）加上新版測驗的即時人數 */": "/* test counter: 3,906 results (as of July 2026) plus live counts from the new test */"}
+{"/* 測驗人數計數器：3,906 筆（截至 2026/7）直接加上新版測驗的即時人數；讀不到即時人數時，顯示 4,039（2026/10/22 的合計） */": "/* test counter: 3,906 results (as of July 2026) plus the live count from the new test, added directly; if the live count cannot be read, show 4,039 (the total as of Oct 22, 2026) */"}

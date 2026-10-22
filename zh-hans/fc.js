@@ -116,7 +116,7 @@
     return false;
   }
 
-  /* 标了 data-live-total 的文字：3,906 笔（截至 2026/7）加上新版测验的即时人数 */
+  /* 标了 data-live-total 的文字：写的是 4,039（2026/10/22 的合计）；读得到即时人数时，换成 3,906（截至 2026/7）直接加上新版测验的即时人数 */
   function liveTotals(){
     const els = document.querySelectorAll('[data-live-total]');
     if(!els.length) return;
@@ -124,7 +124,7 @@
       const n = st && st.people;
       if(!(n > 0)) return;
       const total = (3906 + n).toLocaleString('en-US');
-      els.forEach(function(el){ el.innerHTML = el.innerHTML.replace('3,906', total); });
+      els.forEach(function(el){ el.innerHTML = el.innerHTML.replace(/\d{1,3}(?:,\d{3})+/, total); });
     }).catch(function(){});
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', liveTotals); else liveTotals();

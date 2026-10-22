@@ -135,7 +135,7 @@
     </div>
     <div class="rows">
       <div class="h-row"><h3>免費測驗</h3><p>三大測驗永遠免費。測完立刻拿到你的主語根與角色卡，可以分享，也可以往下深入。</p></div>
-      <div class="h-row"><h3>持續驗證</h3><p data-live-total>已累積 3,906 筆測驗數據，系統持續朝量化驗證的路線前進——我們把它當工具開發，不當教條供奉。</p></div>
+      <div class="h-row"><h3>持續驗證</h3><p data-live-total>已累積 4,039 筆測驗數據（含 10 月起的新版測驗，即時更新），系統持續朝量化驗證的路線前進——我們把它當工具開發，不當教條供奉。</p></div>
       <div class="h-row"><h3>應用工具</h3><p>覺察表、深度解讀、實體聚會與社群——讓這套語言進到你的日常，而不是停在測驗結果頁。</p></div>
     </div>
   </div>
@@ -166,9 +166,8 @@
       <p class="combo-more"><a href="grid.html">看頻率網格：現在亮了多少 →</a></p>
     </div>
     <div class="night-stat">
-      <span class="num" id="counter">3,906</span>
-      <span class="lab">筆語根測驗數據<br>（截至 2026 年 7 月）</span>
-      <span class="lab" id="counterLive" style="display:none">筆語根測驗數據<br>（含 10 月起的新版測驗，即時更新）</span>
+      <span class="num" id="counter">4,039</span>
+      <span class="lab">筆語根測驗數據<br>（含 10 月起的新版測驗，即時更新）</span>
     </div>
     <div class="night-cards" style="grid-template-columns:1fr;max-width:560px;margin:60px auto 0">
       <a class="night-card" id="homeGameCard" href="star.html"><div class="tag">MINI GAME</div><h3>2 分鐘小遊戲｜這一趟，從哪顆星出發</h3><p>想像每個人出發之前，都來自某一顆星。</p><span class="go">開始玩 →</span></a>
@@ -381,14 +380,12 @@
 </footer>
 
 <script>
-/* 測驗人數計數器：3,906 筆（截至 2026/7）加上新版測驗的即時人數 */
+/* 測驗人數計數器：3,906 筆（截至 2026/7）直接加上新版測驗的即時人數；讀不到即時人數時，顯示 4,039（2026/10/22 的合計） */
 (function(){
   const el = document.getElementById('counter');
   if(!el) return;
-  const BASE = 3906;
-  const live = document.getElementById('counterLive');
-  const lab = el.parentNode.querySelector('.lab');
-  let target = BASE, shown = 0, started = false, run = 0;
+  const BASE = 3906, SNAPSHOT = 4039;
+  let target = SNAPSHOT, shown = 0, started = false, run = 0;
   function animate(from){
     const id = ++run, to = target, dur = from ? 900 : 1600, t0 = performance.now();
     (function tick(t){
@@ -408,13 +405,12 @@
       const n = s && s.people;
       if(!(n > 0)) return;
       target = BASE + n;
-      if(live && lab && lab !== live){ lab.style.display = 'none'; live.style.display = ''; }
       if(started) animate(shown); else el.textContent = target.toLocaleString();
     }).catch(()=>{});
   });
 })();
 </script>
-<script src="fc.js?v=20261016c"></script>
+<script src="fc.js?v=20261022a"></script>
 <script src="flow.js?v=20261016a"></script>
 <script>if(window.FCFlow) FCFlow.entry('flowEntry');</script>
 <script>(function(){var c=document.getElementById('homeGameCard');if(!c)return;c.addEventListener('click',function(){try{if(window.gtag)gtag('event','home_game_card',{transport_type:'beacon',lang:document.documentElement.lang});}catch(e){}});})();</script>
