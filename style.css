@@ -713,3 +713,101 @@ html[lang=en] .tf-svg .tf-rep2{font-size:11px}
   .rc-th{padding:16px 18px 4px}.rc-cell{padding:2px 18px 18px}
   .rc-wide{flex-direction:column;gap:4px;padding:14px 18px}
 }
+
+/* 語根系統頁：12 語根一覽（名稱、一句話、代表顏色；全部是各語根頁和首頁本來就有的文字） */
+.rt-table{margin-top:48px;border:1px solid var(--card-border);border-radius:10px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.rt-row{display:grid;grid-template-columns:minmax(190px,1.1fr) 2.4fr minmax(190px,1.2fr);gap:8px 26px;align-items:center;padding:16px 24px;border-top:1px solid var(--card-border);color:var(--text);border-left:4px solid var(--c,var(--gold));transition:.25s}
+.rt-row:first-child{border-top:0}
+.rt-row:hover{background:rgba(160,124,62,.05)}
+.rt-name{display:flex;align-items:center;gap:14px}
+.rt-name .ring{position:relative;flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--c)}
+.rt-name .ring i{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+.rt-t b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:17px;letter-spacing:.06em;color:var(--text)}
+.rt-t span{font-size:13px;color:var(--muted);letter-spacing:.14em}
+.rt-one{font-size:14.5px;line-height:1.85;color:var(--muted)}
+.rt-sws{display:flex;flex-wrap:wrap;gap:6px 16px}
+.rt-sw{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--text);letter-spacing:.06em}
+.rt-sw i{display:block;width:30px;height:18px;border-radius:5px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
+@media (max-width:820px){
+  .rt-row{grid-template-columns:1fr;gap:6px;padding:16px 18px}
+  .rt-one{padding-left:48px}
+  .rt-sws{padding-left:48px}
+}
+
+/* 頻率筆記列表：日期與分類（日期、分類都取自各篇筆記頁本來就有的標示） */
+.note-card .nm{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:4px 0 2px;font-size:12.5px;letter-spacing:.1em;color:var(--muted)}
+.note-card .nm time{font-variant-numeric:tabular-nums}
+.note-card .nt{padding:0 10px;border:1px solid var(--gold-dim);border-radius:99px;color:var(--gold-soft);font-size:11.5px;letter-spacing:.12em;line-height:1.8}
+
+/* ============ 首頁圖文化（2026/10/22 預覽）：一張圖、標籤、圖示卡片、流程、點一下看一句話 ============ */
+.hm-map{padding:40px 0 20px;text-align:center}
+.hm-map .sec-kicker{display:flex;justify-content:center;align-items:center;gap:14px;font-size:11.5px;letter-spacing:.42em}
+.hm-map .sec-kicker::before,.hm-map .sec-kicker::after{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+.hm-map h2{margin-bottom:4px}
+.hm-svg{display:block;width:100%;height:auto;max-width:1040px;margin:30px auto 0}
+.hm-narrow{display:none;max-width:380px}
+.hm-svg text{font-family:'Noto Sans TC',sans-serif;fill:#2b2620;letter-spacing:.04em}
+.hm-svg .hm-card{fill:#fff;stroke:rgba(160,124,62,.42);transition:.25s}
+.hm-svg .hm-n{cursor:pointer}
+.hm-svg .hm-n:hover .hm-card,.hm-svg .hm-n:focus .hm-card{fill:#fffaf0;stroke:#a07c3e}
+.hm-svg .hm-num{font-size:12.5px;font-weight:500;fill:#fff;letter-spacing:0}
+.hm-svg .hm-t{font-family:'Noto Serif TC',serif;font-weight:500;font-size:19px;letter-spacing:.08em;fill:#17120a}
+.hm-svg .hm-s{font-size:13px;fill:#6f685c}
+.hm-narrow .hm-t{font-size:18px}
+.hm-narrow .hm-s{font-size:12.5px}
+html[lang=en] .hm-svg text{letter-spacing:.01em}
+html[lang=en] .hm-wide .hm-t{font-size:13px}
+html[lang=en] .hm-narrow .hm-t{font-size:15px}
+html[lang=en] .hm-svg .hm-s{font-size:12px}
+@media (max-width:760px){.hm-wide{display:none}.hm-narrow{display:block}.hm-map{padding:32px 0 8px}}
+.hm-lead{margin:0 0 10px!important;color:var(--muted)}
+.hm-chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0 0 20px;padding:0}
+.hm-chips li{padding:8px 16px;border:1px solid var(--gold-dim);border-radius:99px;background:#fff;font-size:15px;color:var(--gold-soft);letter-spacing:.08em;line-height:1.5}
+.hm-more{margin-top:12px}
+.hm-more summary{cursor:pointer;display:inline-block;font-size:13.5px;letter-spacing:.14em;color:var(--gold);list-style:none}
+.hm-more summary::-webkit-details-marker{display:none}
+.hm-more summary::after{content:"＋";margin-left:8px}
+.hm-more[open] summary::after{content:"－"}
+.hm-more p{margin-top:10px;font-size:15px;color:var(--muted)}
+.hm-layers{display:flex;align-items:stretch;gap:14px;margin-top:8px}
+.hm-layer{flex:1;border:1px solid var(--card-border);border-radius:12px;background:#fff;box-shadow:var(--shadow);padding:26px 18px;text-align:center}
+.hm-ico{width:34px;height:34px;color:var(--gold);stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;display:block}
+.hm-layer .hm-ico{width:46px;height:46px;margin:0 auto 12px}
+.hm-layer h3{font-size:18px;font-weight:500;letter-spacing:.1em;line-height:1.6;color:var(--text)}
+.hm-x{align-self:center;font-family:'Noto Serif TC',serif;font-size:26px;color:var(--gold)}
+.hm-layers-more{margin-top:22px}
+.hm-layers-more h4{font-family:'Noto Serif TC',serif;font-weight:500;font-size:16px;letter-spacing:.1em;margin:16px 0 2px;color:var(--text)}
+.hm-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.hm-card2{border:1px solid var(--card-border);border-radius:12px;background:#fff;box-shadow:var(--shadow);padding:26px 24px}
+.hm-card2 .hm-ico{margin-bottom:12px}
+.hm-card2 h3{font-size:18px;font-weight:500;letter-spacing:.12em;color:var(--text)}
+.hm-card2 p{font-size:14.5px;color:var(--muted);line-height:1.9;margin-top:6px}
+.hm-pills{display:flex;flex-wrap:wrap;gap:8px 12px;justify-content:center;align-items:center;margin:6px auto 18px}
+.hm-pills span{padding:8px 18px;border:1px solid var(--night-line);border-radius:99px;color:var(--night-gold-soft);font-size:15px;letter-spacing:.1em;background:rgba(255,255,255,.03)}
+.hm-pills i{font-style:normal;color:var(--night-gold)}
+.hm-rootpanel{max-width:640px;margin:36px auto 0;min-height:116px;display:flex;align-items:center;justify-content:center;text-align:center}
+.hm-hint{font-size:14px;color:var(--muted);letter-spacing:.18em;margin:0}
+.hm-rp{display:flex;gap:20px;align-items:center;text-align:left;padding:20px 26px;border:1px solid var(--card-border);border-left:4px solid var(--c);border-radius:10px;background:#fff;box-shadow:var(--shadow);width:100%}
+.hm-close{position:absolute;right:8px;top:6px;width:34px;height:34px;border:0;background:none;font-size:24px;line-height:1;color:var(--muted);cursor:pointer;display:none}
+.hm-rp{position:relative}
+.hm-rp .ring{position:relative;flex:none;width:54px;height:54px;border-radius:50%;border:1px solid var(--c)}
+.hm-rp .ring i{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--c);box-shadow:0 0 14px var(--c)}
+.hm-rp b{display:block;font-family:'Noto Serif TC',serif;font-size:19px;font-weight:500;letter-spacing:.06em}
+.hm-rp div>span{font-size:13px;color:var(--muted);letter-spacing:.14em}
+.hm-rp p{margin:6px 0 4px;font-size:15px;line-height:1.9;color:var(--text)}
+.hm-rp a{font-size:13.5px;letter-spacing:.12em}
+.emblem.on .ring{transform:scale(1.07);box-shadow:0 0 34px color-mix(in srgb,var(--c) 45%,transparent)}
+@media (max-width:760px){
+  .hm-layers{gap:6px}
+  .hm-layer{padding:18px 6px}
+  .hm-layer .hm-ico{width:36px;height:36px;margin-bottom:8px}
+  .hm-layer h3{font-size:14px;letter-spacing:.04em}
+  .hm-x{font-size:18px}
+  .hm-cards{grid-template-columns:1fr}
+  .hm-rootpanel.has{position:fixed;left:12px;right:12px;bottom:12px;z-index:45;margin:0;max-width:none;min-height:0}
+  .hm-rootpanel.has .hm-rp{padding-right:44px}
+  .hm-close{display:block}
+  .hm-pills{flex-direction:column}
+  .hm-pills i{transform:rotate(90deg)}
+  .hm-rp{padding:16px 18px;gap:14px}
+}
