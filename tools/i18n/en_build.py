@@ -26,7 +26,7 @@ ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',
 
 EN_NAV_ITEMS = [  # (href, label, key)
     ('worldview.html', 'Worldview', 'worldview'), ('roots.html', 'Root Codes', 'roots'),
-    ('tests.html', 'Tests', 'tests'), ('notes.html', 'Frequency Notes', 'notes')]
+    ('tests.html', 'Tests', 'tests'), ('notes.html', '<span class="nav-pre">Frequency </span>Notes', 'notes')]
 EN_MORE = [('about.html', 'About', 'about'), ('blog.html', 'Blog', 'blog'), ('resources.html', 'Free Resources', 'resources'),
            ('glow.html', 'Daily Glow', 'glow'), ('pair.html', 'Pair Card', 'pair'), ('updates.html', 'Site updates', 'updates')]
 
@@ -36,7 +36,7 @@ def en_nav(up, on):
     def a(h, l, k):
         return f'<a href="{up}{h}"' + (' class="on"' if k in on else '') + f'>{l}</a>'
     more_on = any(k in on for _, _, k in EN_MORE)
-    sub = ''.join(a(h, l, k) for h, l, k in EN_MORE)
+    sub = ''.join(a(h, l, k) for h, l, k in EN_MORE) + f'<a class="nav-sub-join{" on" if "join" in on else ""}" href="{up}join.html">Join us</a>'
     items = '\n      '.join(a(h, l, k) for h, l, k in EN_NAV_ITEMS)
     cta = 'nav-cta on' if 'join' in on else 'nav-cta'
     return ('<div class="nav-links">\n      ' + items +
