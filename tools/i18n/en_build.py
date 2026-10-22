@@ -26,7 +26,7 @@ ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',
 
 EN_NAV_ITEMS = [  # (href, label, key)
     ('worldview.html', 'Worldview', 'worldview'), ('roots.html', 'Root Codes', 'roots'),
-    ('tests.html', 'Tests', 'tests'), ('notes.html', '<span class="nav-pre">Frequency </span>Notes', 'notes')]
+    ('tests.html', 'Root Code Test', 'tests'), ('notes.html', '<span class="nav-pre">Frequency </span>Notes', 'notes')]
 EN_MORE = [('about.html', 'About', 'about'), ('blog.html', 'Blog', 'blog'), ('resources.html', 'Free Resources', 'resources'),
            ('glow.html', 'Daily Glow', 'glow'), ('pair.html', 'Pair Card', 'pair'), ('updates.html', 'Site updates', 'updates')]
 

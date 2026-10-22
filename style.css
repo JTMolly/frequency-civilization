@@ -661,8 +661,9 @@ nav .nav-links .nav-more.open .nav-sub{display:block}
   nav .nav-links .nav-more .nav-sub a:last-child{padding-bottom:15px}
   nav .nav-links .nav-more .nav-sub .nav-sub-join{border-top:1px solid var(--card-border);color:var(--gold-soft);opacity:1}
   html[lang=en] .nav-pre{display:none}
+  html[lang=en] nav .nav-in .nav-links{font-size:12.5px;letter-spacing:.01em;gap:4px}
 }
-@media (max-width:360px){nav .nav-in .nav-links{font-size:12px;letter-spacing:.03em}}
+@media (max-width:360px){nav .nav-in .nav-links{font-size:12px;letter-spacing:.03em}html[lang=en] nav .nav-in .nav-links{font-size:11px;letter-spacing:0;gap:3px}}
 
 /* 測驗入口：三關流程圖（tests.html） */
 .tf-sec{padding:56px 0 8px;text-align:center}
