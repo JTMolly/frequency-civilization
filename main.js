@@ -19,3 +19,15 @@ document.addEventListener('click', function(e){
   f.allowFullscreen = true;
   b.replaceWith(f);
 });
+
+/* 上方選單：「更多」點一下展開、點旁邊或按 Esc 收起；漢堡選單點了連結就收起 */
+(function(){
+  var more = document.querySelector('.nav-more');
+  if(!more) return;
+  var btn = more.querySelector('.nav-more-btn');
+  btn.addEventListener('click', function(e){ e.stopPropagation(); more.classList.toggle('open'); btn.setAttribute('aria-expanded', more.classList.contains('open')); });
+  document.addEventListener('click', function(e){ if(!more.contains(e.target)){ more.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ more.classList.remove('open'); btn.setAttribute('aria-expanded','false'); var c=document.getElementById('nav-chk'); if(c) c.checked=false; } });
+  var chk = document.getElementById('nav-chk');
+  if(chk) document.querySelectorAll('.nav-links a').forEach(function(a){ a.addEventListener('click', function(){ chk.checked=false; }); });
+})();

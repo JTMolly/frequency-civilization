@@ -43,6 +43,29 @@ main{padding:120px 0 90px;min-height:100vh}
 .intro p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
 .intro .box{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:24px 28px;margin:30px 0;font-size:15.5px}
 .intro .box li{margin-left:1.3em;margin-bottom:6px;color:var(--muted)}
+/* how to answer */
+.howto{margin:30px 0 8px}
+.howto-kicker{color:var(--gold);font-size:12px;letter-spacing:.34em;margin-bottom:6px}
+.howto h2{font-size:clamp(20px,3vw,24px);margin-bottom:16px}
+.howto-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ht{border:1px solid var(--line);background:var(--bg2);border-radius:8px;padding:18px 14px;text-align:center}
+.ht .ico,.hf .ico{stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ht .ico{width:34px;height:34px;margin-bottom:10px}
+.ht b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:17px;letter-spacing:.1em;color:var(--text)}
+.ht span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+.howto-facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:12px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.hf{padding:14px 8px;text-align:center;border-left:1px solid var(--line);font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.hf:first-child{border-left:0}
+.hf b{font-family:'Noto Serif TC',serif;font-size:22px;color:var(--gold-soft);font-weight:500;line-height:1.2;letter-spacing:.04em}
+.hf .ico{width:26px;height:26px;margin-bottom:2px}
+@media (max-width:560px){
+  .howto-3{grid-template-columns:1fr;gap:10px}
+  .ht{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px}
+  .ht .ico{margin:0;flex:none}
+  .howto-facts{grid-template-columns:repeat(2,1fr)}
+  .hf:nth-child(3){border-left:0;border-top:1px solid var(--line)}
+  .hf:nth-child(4){border-top:1px solid var(--line)}
+}
 /* quiz */
 .progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
 .progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
@@ -149,12 +172,24 @@ main{padding:120px 0 90px;min-height:100vh}
     <h1>語根測驗</h1>
     <p>這份測驗會透過 24 個生活情境，找出你在感知、決策、互動與創造上最自然的運作模式——你的主語根。</p>
     <p>做完之後，再從 12 句話裡憑直覺選一句最像你的。同一個主語根的人，想用力的方向也不一樣。</p>
-    <div class="box">
+<section class="howto" aria-labelledby="howtoT">
+      <div class="howto-kicker">HOW TO ANSWER</div>
+      <h2 id="howtoT">怎麼作答</h2>
+      <div class="howto-3">
+        <div class="ht"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1-6 5-9 10-9s9 3 10 9"/></svg><div class="tt"><b>選平常的你</b><span>不是理想中的你</span></div></div>
+        <div class="ht"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3v9M16 20v9M3 16h9M20 16h9"/><circle cx="16" cy="16" r="2.4"/></svg><div class="tt"><b>憑第一直覺</b></div></div>
+        <div class="ht"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5v21M8 26h16M7 9h18"/><path d="M7 9l-4 8a4 4 0 0 0 8 0zM25 9l-4 8a4 4 0 0 0 8 0z"/></svg><div class="tt"><b>沒有對錯</b></div></div>
+      </div>
+      <div class="howto-facts" aria-label="這份測驗">
+        <div class="hf"><b>24</b><span>題</span></div>
+        <div class="hf"><b>約 5</b><span>分鐘</span></div>
+        <div class="hf"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="5" width="20" height="22" rx="3"/><path d="M11 12h10M11 17h10M11 22h6"/></svg><span>做完立刻看結果</span></div>
+        <div class="hf"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 13a9 9 0 0 1 16-3M25 19a9 9 0 0 1-16 3"/><path d="M23 4v6h-6M9 28v-6h6"/></svg><span>三關可以分次做</span></div>
+      </div>
+    </section>
+        <div class="box">
       <ul>
-        <li>共 24 題，約 5 分鐘。</li>
         <li>每題都有「這幾個都不像我」，真的不像就選它，不用勉強。</li>
-        <li>沒有對錯，也沒有好壞。選「最像你」的反應，而不是「你希望自己是」的樣子。</li>
-        <li>憑第一直覺作答，不要想太久。</li>
         <li>結果會匿名計入<a href="grid.html">頻率網格</a>的統計，只算人數，不含任何個人資料。</li>
       </ul>
     </div>

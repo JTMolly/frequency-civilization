@@ -43,6 +43,29 @@ main{padding:120px 0 90px;min-height:100vh}
 .intro p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
 .intro .box{border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:24px 28px;margin:30px 0;font-size:15.5px}
 .intro .box li{margin-left:1.3em;margin-bottom:6px;color:var(--muted)}
+/* how to answer */
+.howto{margin:30px 0 8px}
+.howto-kicker{color:var(--gold);font-size:12px;letter-spacing:.34em;margin-bottom:6px}
+.howto h2{font-size:clamp(20px,3vw,24px);margin-bottom:16px}
+.howto-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ht{border:1px solid var(--line);background:var(--bg2);border-radius:8px;padding:18px 14px;text-align:center}
+.ht .ico,.hf .ico{stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ht .ico{width:34px;height:34px;margin-bottom:10px}
+.ht b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:17px;letter-spacing:.1em;color:var(--text)}
+.ht span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+.howto-facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:12px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.hf{padding:14px 8px;text-align:center;border-left:1px solid var(--line);font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.hf:first-child{border-left:0}
+.hf b{font-family:'Noto Serif TC',serif;font-size:22px;color:var(--gold-soft);font-weight:500;line-height:1.2;letter-spacing:.04em}
+.hf .ico{width:26px;height:26px;margin-bottom:2px}
+@media (max-width:560px){
+  .howto-3{grid-template-columns:1fr;gap:10px}
+  .ht{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px}
+  .ht .ico{margin:0;flex:none}
+  .howto-facts{grid-template-columns:repeat(2,1fr)}
+  .hf:nth-child(3){border-left:0;border-top:1px solid var(--line)}
+  .hf:nth-child(4){border-top:1px solid var(--line)}
+}
 .progress{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-bottom:36px;overflow:hidden}
 .progress i{display:block;height:100%;background:var(--gold);transition:width .3s}
 .qnum{color:var(--gold);font-size:13.5px;letter-spacing:.25em;margin-bottom:14px}
@@ -100,10 +123,24 @@ main{padding:120px 0 90px;min-height:100vh}
 <h1>Inner Archetype Test</h1>
 <p>Ten questions to see the role you naturally take in a group: the place you walk into without having to try.</p>
 <p>Your Root Code describes how you operate; your Inner Archetype describes the role you naturally take in a group.</p>
+<section aria-labelledby="howtoT" class="howto">
+<div class="howto-kicker">HOW TO ANSWER</div>
+<h2 id="howtoT">How to answer</h2>
+<div class="howto-3">
+<div class="ht"><svg aria-hidden="true" class="ico" viewbox="0 0 32 32"><circle cx="16" cy="11" r="5"></circle><path d="M6 27c1-6 5-9 10-9s9 3 10 9"></path></svg><div class="tt"><b>Answer as you usually are</b><span>not as you wish to be</span></div></div>
+<div class="ht"><svg aria-hidden="true" class="ico" viewbox="0 0 32 32"><path d="M16 3v9M16 20v9M3 16h9M20 16h9"></path><circle cx="16" cy="16" r="2.4"></circle></svg><div class="tt"><b>Go with your first instinct</b></div></div>
+<div class="ht"><svg aria-hidden="true" class="ico" viewbox="0 0 32 32"><path d="M16 5v21M8 26h16M7 9h18"></path><path d="M7 9l-4 8a4 4 0 0 0 8 0zM25 9l-4 8a4 4 0 0 0 8 0z"></path></svg><div class="tt"><b>No right or wrong</b></div></div>
+</div>
+<div aria-label="About this test" class="howto-facts">
+<div class="hf"><b>10</b><span>questions</span></div>
+<div class="hf"><b>about 3</b><span>min</span></div>
+<div class="hf"><svg aria-hidden="true" class="ico" viewbox="0 0 32 32"><rect height="22" rx="3" width="20" x="6" y="5"></rect><path d="M11 12h10M11 17h10M11 22h6"></path></svg><span>See your result right away</span></div>
+<div class="hf"><svg aria-hidden="true" class="ico" viewbox="0 0 32 32"><path d="M7 13a9 9 0 0 1 16-3M25 19a9 9 0 0 1-16 3"></path><path d="M23 4v6h-6M9 28v-6h6"></path></svg><span>Do the three stages in parts</span></div>
+</div>
+</section>
 <div class="box">
 <ul>
-<li>10 questions, six options each, about 3 minutes.</li>
-<li>Choose the option most like your reaction in the moment, not the person you wish you were.</li>
+<li>Six options per question.</li>
 <li>If two archetypes tie for the top score, one extra question lets you choose.</li>
 </ul>
 </div>

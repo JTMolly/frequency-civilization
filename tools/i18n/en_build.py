@@ -24,14 +24,36 @@ ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',
                '行動者', '療癒者', '教導者', '感應者', '洞見者', '鏡面者', '療癒', '探索', '服務', '守護', '突破', '創造', '傳遞', '共鳴',
                "const ARCH = ['行動者','療癒者','教導者','感應者','洞見者','鏡面者'];", "const DRIVE = ['療癒','探索','服務','守護','突破','創造','傳遞','共鳴'];"}
 
-EN_NAV = '''<div class="nav-links">
-      <a href="{up}index.html">Home</a>
-      <span class="nav-dd"><a href="{up}about.html">About</a><span class="nav-sub"><a href="{up}worldview.html">Worldview</a><a href="{up}updates.html">Site updates</a></span></span>
-      <a href="{up}roots.html">Root Codes</a>
-      <span class="nav-dd"><a href="{up}tests.html">Tests</a><span class="nav-sub"><a href="{up}glow.html">Daily Glow</a><a href="{up}pair.html">Pair Card</a></span></span>
-      <a href="{up}notes.html">Frequency Notes</a>
-      <a href="{up}grid.html">Frequency Grid</a>
-    </div>'''
+EN_NAV_ITEMS = [  # (href, label, key)
+    ('worldview.html', 'Worldview', 'worldview'), ('roots.html', 'Root Codes', 'roots'),
+    ('tests.html', 'Tests', 'tests'), ('notes.html', 'Frequency Notes', 'notes')]
+EN_MORE = [('about.html', 'About', 'about'), ('blog.html', 'Blog', 'blog'), ('resources.html', 'Free Resources', 'resources'),
+           ('glow.html', 'Daily Glow', 'glow'), ('pair.html', 'Pair Card', 'pair'), ('updates.html', 'Site updates', 'updates')]
+
+
+def en_nav(up, on):
+    """英文版選單：結構和繁中版相同；目前所在的項目從繁中選單的 class="on" 帶過來。"""
+    def a(h, l, k):
+        return f'<a href="{up}{h}"' + (' class="on"' if k in on else '') + f'>{l}</a>'
+    more_on = any(k in on for _, _, k in EN_MORE)
+    sub = ''.join(a(h, l, k) for h, l, k in EN_MORE)
+    items = '\n      '.join(a(h, l, k) for h, l, k in EN_NAV_ITEMS)
+    cta = 'nav-cta on' if 'join' in on else 'nav-cta'
+    return ('<div class="nav-links">\n      ' + items +
+            f'\n      <span class="nav-dd nav-more"><button type="button" class="nav-more-btn{" on" if more_on else ""}" aria-haspopup="true">More</button><span class="nav-sub">{sub}</span></span>'
+            f'\n      <a class="{cta}" href="{up}join.html">Join us</a>\n    </div>')
+
+
+NAV_KEYS = {'worldview.html': 'worldview', 'roots.html': 'roots', 'tests.html': 'tests', 'notes.html': 'notes', 'about.html': 'about', 'blog.html': 'blog',
+            'resources.html': 'resources', 'glow.html': 'glow', 'pair.html': 'pair', 'updates.html': 'updates', 'join.html': 'join'}
+
+
+def nav_on(src):
+    m = re.search(r'<div class="nav-links">(.*?)</div>', src, re.S)
+    if not m:
+        return set()
+    return {NAV_KEYS[h] for h in re.findall(r'<a [^>]*href="(?:\.\./)*([^"]+)"[^>]*class="on"', m.group(1)) if h in NAV_KEYS} | \
+           {NAV_KEYS[h] for h in re.findall(r'<a href="(?:\.\./)*([^"]+)" class="on"', m.group(1)) if h in NAV_KEYS}
 
 
 def strip_zh_only(html):
@@ -135,7 +157,7 @@ def build(inject, url_of):
         src = re.sub(r'<!-- i18n-head -->.*?<!-- /i18n-head -->', '', src, flags=re.S)
         src = re.sub(r'<!-- i18n-switch -->.*?<!-- /i18n-switch -->', '', src, flags=re.S)
         up = '../' * page.count('/')
-        src = re.sub(r'<div class="nav-links">.*?</div>', EN_NAV.format(up=up), src, count=1, flags=re.S)
+        src = re.sub(r'<div class="nav-links">.*?</div>', lambda m: en_nav(up, nav_on(src)), src, count=1, flags=re.S)
         out = translate_html(src, page, table_for(page), js_table(page))
         out = out.replace('<html lang="zh-Hant">', '<html lang="en">', 1)
         out = fix_paths(out, page)

@@ -19,7 +19,7 @@
 </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="../style.css?v=20261016c" rel="stylesheet"/>
+<link href="../style.css?v=20261022a" rel="stylesheet"/>
 <link href="../flow.css?v=20261010f" rel="stylesheet"/>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
@@ -29,13 +29,15 @@
 <nav>
 <div class="nav-in">
 <a class="logo" href="index.html">FREQUENCY CIVILIZATION</a>
+<input aria-label="Menu" class="nav-chk" id="nav-chk" type="checkbox"/>
+<label aria-hidden="true" class="nav-burger" for="nav-chk"><i></i><i></i><i></i></label>
 <div class="nav-links">
-<a href="index.html">Home</a>
-<span class="nav-dd"><a href="about.html">About</a><span class="nav-sub"><a href="worldview.html">Worldview</a><a href="updates.html">Site updates</a></span></span>
+<a href="worldview.html">Worldview</a>
 <a href="roots.html">Root Codes</a>
-<span class="nav-dd"><a href="tests.html">Tests</a><span class="nav-sub"><a href="glow.html">Daily Glow</a><a href="pair.html">Pair Card</a></span></span>
+<a href="tests.html">Tests</a>
 <a href="notes.html">Frequency Notes</a>
-<a href="grid.html">Frequency Grid</a>
+<span class="nav-dd nav-more"><button aria-haspopup="true" class="nav-more-btn" type="button">More</button><span class="nav-sub"><a href="about.html">About</a><a href="../blog.html">Blog</a><a href="../resources.html">Free Resources</a><a href="glow.html">Daily Glow</a><a href="pair.html">Pair Card</a><a href="updates.html">Site updates</a></span></span>
+<a class="nav-cta" href="../join.html">Join us</a>
 </div>
     <!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../index.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/index.html" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="../en/index.html" hreflang="en" lang="en" class="on">EN</a></div><!-- /i18n-switch -->
 </div>
@@ -371,7 +373,7 @@
 <script src="flow.js?v=20261016a"></script>
 <script>if(window.FCFlow) FCFlow.entry('flowEntry');</script>
 <script>(function(){var c=document.getElementById('homeGameCard');if(!c)return;c.addEventListener('click',function(){try{if(window.gtag)gtag('event','home_game_card',{transport_type:'beacon',lang:document.documentElement.lang});}catch(e){}});})();</script>
-<script src="../main.js?v=20261010d"></script>
+<script src="../main.js?v=20261022a"></script>
 <script>(function(){var el=document.getElementById('latestUpd');if(!el||!window.fetch||!window.DOMParser)return;fetch('updates.html',{cache:'no-cache'}).then(function(r){return r.ok?r.text():null;}).then(function(h){if(!h)return;var it=new DOMParser().parseFromString(h,'text/html').querySelector('.up-item');if(!it)return;var t=it.querySelector('time'),h3=it.querySelector('h3');if(t&&h3)el.textContent=t.textContent.replace(/^\d{4}\//,'')+' \u00b7 '+h3.textContent.trim();}).catch(function(){});})();</script>
 </body>
 </html>
