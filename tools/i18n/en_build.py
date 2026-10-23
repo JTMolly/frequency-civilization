@@ -145,6 +145,13 @@ def fix_paths(s, page):
     return re.sub(r'((?:href|src)=")([^"]+)"', fix, s)
 
 
+def set_attr(html, tag_re, attr, value):
+    """把符合 tag_re 的標籤裡的 attr 換成 value；不管屬性順序（翻譯後的標籤屬性會被重排）。"""
+    def fix_tag(m):
+        return re.sub(r'(\b%s=")[^"]*' % attr, lambda a: a.group(1) + value, m.group(0), count=1)
+    return re.sub(tag_re, fix_tag, html)
+
+
 def build(inject, url_of):
     missing = {}
     for page in EN_PAGES:
@@ -162,8 +169,8 @@ def build(inject, url_of):
         out = out.replace('<html lang="zh-Hant">', '<html lang="en">', 1)
         out = fix_paths(out, page)
         out = out.replace('assets/notes/n', 'assets/notes/en/n')  # 頻率筆記用英文封面
-        out = re.sub(r'(<link rel="canonical" href=")[^"]*', lambda m: m.group(1) + url_of('en', page), out)
-        out = re.sub(r'(<meta property="og:url" content=")[^"]*', lambda m: m.group(1) + url_of('en', page), out)
+        out = set_attr(out, r'<link[^>]*rel="canonical"[^>]*>', 'href', url_of('en', page))
+        out = set_attr(out, r'<meta[^>]*property="og:url"[^>]*>', 'content', url_of('en', page))
         dest = os.path.join('en', page)
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         open(dest, 'w').write(out)
