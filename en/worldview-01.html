@@ -50,46 +50,6 @@
 .wv-one p{position:relative;display:inline-block;max-width:760px;padding:30px 12px;font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(20px,2.6vw,28px);line-height:1.9;letter-spacing:.1em;color:var(--text)}
 .wv-one p::before,.wv-one p::after{content:"";position:absolute;left:50%;width:120px;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .wv-one p::before{top:0}.wv-one p::after{bottom:0}
-.wv-tg{display:inline-block;margin-left:10px;padding:0 9px;border:1px solid var(--gold-dim);border-radius:99px;font-size:11px;letter-spacing:.1em;line-height:1.8;color:var(--gold-soft);vertical-align:1px}
-.wv-quote figcaption .wv-tg{margin-left:12px}
-.wv-quote + .wv-quote{margin-top:14px}
-.wv-quote + .wv-p,.wv-quote + .wv-note,.wv-quote + h3.wv-sub{margin-top:16px}
-.wv-sub{margin:30px 0 4px;padding-top:16px;border-top:1px solid var(--line);font-family:'Noto Serif TC',serif;font-weight:500;font-size:16.5px;letter-spacing:.18em;line-height:1.7;color:var(--gold-soft)}
-.wv-math{margin-top:10px;font-size:13.5px;color:var(--text)}
-.wv-txt .hm-more{margin-top:16px}
-.wv-txt .hm-more summary{font-size:13px}
-.wv-txt .hm-more .wv-quote{margin-top:12px}
-.wv-chain{margin:12px 0 14px}
-.wv-chain .row{margin:0 0 12px}
-.wv-chain .row>.wv-tg{margin:0 0 6px}
-.wv-chain ol{list-style:none;display:flex;margin:0;padding:0}
-.wv-chain li{position:relative;flex:1 1 0;min-width:0;padding:9px 5px;border:1px solid var(--card-border);border-radius:6px;background:#fff;text-align:center;font-size:11.5px;line-height:1.55;color:var(--muted)}
-.wv-chain li+li{margin-left:15px}
-.wv-chain li+li::before{content:"›";position:absolute;left:-13px;top:50%;transform:translateY(-52%);font-size:17px;line-height:1;color:var(--gold)}
-.wv-chain li b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:13.5px;letter-spacing:.06em;color:var(--text)}
-.wv-chain li small{display:block;font-size:10.5px;letter-spacing:0}
-.wv-gov{margin:14px 0 14px;text-align:center}
-.wv-gov .g-src{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.wv-gov .g-src span{padding:9px 6px;border:1px solid var(--card-border);border-radius:6px;background:#fff;font-size:11.5px;line-height:1.6;color:var(--muted)}
-.wv-gov .g-src b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:13px;letter-spacing:.04em;color:var(--gold-soft)}
-.wv-gov .g-ar{margin:2px 0;font-size:17px;line-height:1.3;color:var(--gold)}
-.wv-gov .g-core{padding:14px 16px;border-radius:999px;border:1px solid rgba(160,124,62,.45);background:radial-gradient(ellipse at 50% 30%,#fdebb8 0%,#e8cd8a 70%,#dcb264 100%)}
-.wv-gov .g-core b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:15px;letter-spacing:.1em;color:#3d2d10}
-.wv-gov .g-core span{display:block;margin-top:2px;font-size:12px;line-height:1.7;color:#3d2d10}
-.wv-gov .g-loop{display:inline-block;padding:6px 18px;border:1px dashed var(--gold);border-radius:999px;background:#fffdf8;font-size:13px;letter-spacing:.1em;color:var(--text)}
-html[lang=en] .wv-sub{letter-spacing:.04em}
-html[lang=en] .wv-chain li{font-size:11px}
-@media (max-width:560px){
-  html[lang=en] .wv-chain ol{flex-direction:column}
-  html[lang=en] .wv-chain li{padding:7px 10px}
-  html[lang=en] .wv-chain li+li{margin:14px 0 0}
-  html[lang=en] .wv-chain li+li::before{content:"↓";left:50%;top:-15px;transform:translateX(-50%);font-size:15px}
-}
-html[lang=en] .wv-chain li b{font-size:12.5px;letter-spacing:0}
-html[lang=en] .wv-gov .g-src span{font-size:11px}
-html[lang=en] .wv-gov .g-src b{font-size:12px;letter-spacing:0}
-html[lang=en] .wv-gov .g-core b{letter-spacing:.01em}
-html[lang=en] .wv-gov .g-loop{letter-spacing:.02em}
 .wv-sec{padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
 .wv-sec:nth-of-type(even){background:var(--bg2)}
 .wv-in{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
@@ -285,14 +245,13 @@ html[lang=en] .wv-two li{letter-spacing:.01em}
 <p class="wv-p">We believe everyone is whole to begin with. In living, we forget some of it; then, through experience, trying and feeling, we remember it bit by bit.</p>
 <p class="wv-p">“Remembering” simply means coming, slowly, to understand who we were all along. In our way of speaking, this is a stretch of road the “soul” walks. By soul we mean the most central part of a person, the part that carries their own direction and intuition. This is our belief.</p>
 <p class="wv-p">Each of us takes our own time to understand ourselves. Slow does not mean behind.</p>
-<figure class="wv-quote"><blockquote>“Life is a game that each person's soul has designed, from forgetting to remembering. … Some people are fast, some are slow, but for each person the timing is just right.”</blockquote><figcaption>Molly, personal notes, 2025-08-30 · translated from Chinese</figcaption></figure>
+<figure class="wv-quote"><blockquote>“Some people are fast, some are slow / but for each person the timing is just right”</blockquote><figcaption>Molly, personal notes, 2025-08-30</figcaption></figure>
 <ul class="wv-mini"><li class="t-b" title="How we see the world; it does not need to be, and cannot be, proven by science">Belief</li></ul></div></div></div></section>
 <section class="wv-sec rev" id="s2"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img alt="An empty old theatre, the curtain in front of the stage lit by warm golden light" height="1050" loading="lazy" src="../assets/worldview/wv01-s2.jpg" width="1400"/><a class="cr" href="https://unsplash.com/photos/4txHVae2MJ0" rel="noopener" target="_blank">Photo: Liam McGarry / Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">02　The script gives the lessons; the playing is yours</div>
 <h2>Lessons come,<br/>how you play them is yours.</h2>
 <p class="wv-p">We use the word “script” to name a belief: along the way, a person meets certain circumstances and lessons. A lesson is something that keeps coming back and asks you to learn to face it.</p>
 <p class="wv-p">This does not mean everything is already arranged and effort is pointless; nor that everything is up to you and enough effort changes it all. We believe in a third way: the lessons will come, but how you respond decides what the experience finally becomes.</p>
-<figure class="wv-quote"><blockquote>“The script decides which lessons you will meet / but how you play it / decides the texture of the story in the end.”</blockquote><figcaption>Molly, personal Threads account, 2026-06-07 · translated from Chinese</figcaption></figure>
-<figure class="wv-quote"><blockquote>“I am both the player and the director, and I am also writing the script”</blockquote><figcaption>Molly, Facebook post “Integration Notes”, 2026-04-29 · translated from Chinese</figcaption></figure>
+<figure class="wv-quote"><blockquote>“The script decides which lessons you will meet / but how you play it / decides the texture of the story in the end.”</blockquote><figcaption>Molly, personal Threads account, 2026-06-07</figcaption></figure>
 <p class="wv-aside">The “script” is only for looking at the road you have walked yourself. We do not use it to explain other people's pain or loss.</p>
 <ul class="wv-mini"><li class="t-b" title="How we see the world; it does not need to be, and cannot be, proven by science">Belief</li></ul></div></div></div></section>
 <section class="wv-sec" id="s3"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img alt="A pair of clay-covered hands steadying a pot as it turns on a potter's wheel" height="1050" loading="lazy" src="../assets/worldview/wv01-s3.jpg" width="1400"/><a class="cr" href="https://unsplash.com/photos/y3W0CzO063w" rel="noopener" target="_blank">Photo: Earl Wilcox / Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">03　How we respond can be practiced</div>
