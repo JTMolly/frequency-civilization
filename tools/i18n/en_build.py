@@ -17,7 +17,7 @@ EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.htm
            sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html'))
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']
 CJK = re.compile(r'[㐀-鿿　-〿！-～]')
-ALLOWED_CJK = {'繁中', '简中', '/* email 解鎖門（深色版） */',
+ALLOWED_CJK = {'陳槿唐', '繁中', '简中', '/* email 解鎖門（深色版） */',
                # 商標標示：公司名稱刻意保留中文
                '頻率文明 Frequency Civilization® and 語根® are registered trademarks, operated by 頻率文明有限公司.',
                # 測驗結果的資料代號：刻意保留中文，畫面上另外顯示英文名稱
