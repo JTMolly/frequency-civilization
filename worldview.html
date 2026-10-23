@@ -56,6 +56,46 @@
 .wv-series .d{display:block;margin-top:4px;font-size:13.5px;line-height:1.8;letter-spacing:.04em;color:var(--muted)}
 html[lang=en] .wv-series .t{letter-spacing:.01em;font-size:clamp(16px,2vw,19px)}
 html[lang=en] .wv-series .k{letter-spacing:.2em}
+.wv-tg{display:inline-block;margin-left:10px;padding:0 9px;border:1px solid var(--gold-dim);border-radius:99px;font-size:11px;letter-spacing:.1em;line-height:1.8;color:var(--gold-soft);vertical-align:1px}
+.wv-quote figcaption .wv-tg{margin-left:12px}
+.wv-quote + .wv-quote{margin-top:14px}
+.wv-quote + .wv-p,.wv-quote + .wv-note,.wv-quote + h3.wv-sub{margin-top:16px}
+.wv-sub{margin:30px 0 4px;padding-top:16px;border-top:1px solid var(--line);font-family:'Noto Serif TC',serif;font-weight:500;font-size:16.5px;letter-spacing:.18em;line-height:1.7;color:var(--gold-soft)}
+.wv-math{margin-top:10px;font-size:13.5px;color:var(--text)}
+.wv-txt .hm-more{margin-top:16px}
+.wv-txt .hm-more summary{font-size:13px}
+.wv-txt .hm-more .wv-quote{margin-top:12px}
+.wv-chain{margin:12px 0 14px}
+.wv-chain .row{margin:0 0 12px}
+.wv-chain .row>.wv-tg{margin:0 0 6px}
+.wv-chain ol{list-style:none;display:flex;margin:0;padding:0}
+.wv-chain li{position:relative;flex:1 1 0;min-width:0;padding:9px 5px;border:1px solid var(--card-border);border-radius:6px;background:#fff;text-align:center;font-size:11.5px;line-height:1.55;color:var(--muted)}
+.wv-chain li+li{margin-left:15px}
+.wv-chain li+li::before{content:"›";position:absolute;left:-13px;top:50%;transform:translateY(-52%);font-size:17px;line-height:1;color:var(--gold)}
+.wv-chain li b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:13.5px;letter-spacing:.06em;color:var(--text)}
+.wv-chain li small{display:block;font-size:10.5px;letter-spacing:0}
+.wv-gov{margin:14px 0 14px;text-align:center}
+.wv-gov .g-src{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.wv-gov .g-src span{padding:9px 6px;border:1px solid var(--card-border);border-radius:6px;background:#fff;font-size:11.5px;line-height:1.6;color:var(--muted)}
+.wv-gov .g-src b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:13px;letter-spacing:.04em;color:var(--gold-soft)}
+.wv-gov .g-ar{margin:2px 0;font-size:17px;line-height:1.3;color:var(--gold)}
+.wv-gov .g-core{padding:14px 16px;border-radius:999px;border:1px solid rgba(160,124,62,.45);background:radial-gradient(ellipse at 50% 30%,#fdebb8 0%,#e8cd8a 70%,#dcb264 100%)}
+.wv-gov .g-core b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:15px;letter-spacing:.1em;color:#3d2d10}
+.wv-gov .g-core span{display:block;margin-top:2px;font-size:12px;line-height:1.7;color:#3d2d10}
+.wv-gov .g-loop{display:inline-block;padding:6px 18px;border:1px dashed var(--gold);border-radius:999px;background:#fffdf8;font-size:13px;letter-spacing:.1em;color:var(--text)}
+html[lang=en] .wv-sub{letter-spacing:.04em}
+html[lang=en] .wv-chain li{font-size:11px}
+@media (max-width:560px){
+  html[lang=en] .wv-chain ol{flex-direction:column}
+  html[lang=en] .wv-chain li{padding:7px 10px}
+  html[lang=en] .wv-chain li+li{margin:14px 0 0}
+  html[lang=en] .wv-chain li+li::before{content:"↓";left:50%;top:-15px;transform:translateX(-50%);font-size:15px}
+}
+html[lang=en] .wv-chain li b{font-size:12.5px;letter-spacing:0}
+html[lang=en] .wv-gov .g-src span{font-size:11px}
+html[lang=en] .wv-gov .g-src b{font-size:12px;letter-spacing:0}
+html[lang=en] .wv-gov .g-core b{letter-spacing:.01em}
+html[lang=en] .wv-gov .g-loop{letter-spacing:.02em}
 .wv-legend{text-wrap:balance;max-width:640px;margin:0 auto 56px;padding:0 24px;text-align:center;font-size:12.5px;line-height:1.9;color:var(--muted);letter-spacing:.05em}
 .wv-legend b{font-weight:400;color:var(--gold-soft);letter-spacing:.12em}
 .wv-sec{padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
@@ -255,39 +295,66 @@ html[lang=en] .wv-one p{letter-spacing:.03em}
 <section class="wv-sec" id="s1"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="assets/worldview/s1.jpg" alt="夕陽下，海水拍上礁石，濺起一顆顆發光的水珠" width="1600" height="1200" loading="lazy"><a class="cr" href="https://unsplash.com/photos/bNtA7izPOe4" target="_blank" rel="noopener">照片：Gian F. Rodríguez／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">01　從哪裡來</div>
 <h2>每個人本來就完整，<br>人和人是連著的。</h2>
 <p class="wv-p">我們相信，每個人都像同一片大海濺出的水珠：各自完整，彼此連著。善待別人，最後也是在善待自己。</p>
-<p class="wv-p">看懂自己的速度，每個人不同。慢，不代表落後。</p>
-<p class="wv-p">有些處境選不了，但怎麼回應，決定這段經歷最後變成什麼。</p>
 <figure class="wv-quote"><blockquote>「你可以想像那個畫面，就很像什麼大海。它在打出浪的時候，滴出的一滴水花的一滴水珠，就是我們。」</blockquote><figcaption>Molly・口述・2025-08-20</figcaption></figure>
+<figure class="wv-quote"><blockquote>「我們每個人其實都是一體的…這個最高的頻率就是愛」</blockquote><figcaption>Molly・個人紀錄・2025-08-31<span class="wv-tg">信念</span></figcaption></figure>
+<p class="wv-p">我們相信，人和人本來是連在一起的；最核心的那個頻率，是愛。</p>
+<p class="wv-p">看懂自己的速度，每個人不同。慢，不代表落後。</p>
+<figure class="wv-quote"><blockquote>「人生就是一場每個人的靈魂設計從忘記到記起來的遊戲。」</blockquote><figcaption>Molly・個人紀錄・2025-08-30</figcaption></figure>
+<p class="wv-p">有些處境選不了，但怎麼回應，決定這段經歷最後變成什麼。</p>
 <p class="wv-note">最後一句是我們看自己經歷的方式，不用來解釋別人的遭遇。</p>
+<details class="hm-more"><summary>多看一點</summary><figure class="wv-quote"><blockquote>「我既是玩家，也是導演，同時也在寫劇本」</blockquote><figcaption>Molly・臉書〈整合筆記〉・2026-04-29</figcaption></figure></details>
 <p class="wv-note">想多看一點：<a href="worldview-01.html">劇本與課題 →</a></p>
 <ul class="wv-mini"><li class="t-b" title="我們看世界的方式；不需要、也無法用科學證明">信念</li><li class="t-v" title="可以設計觀察、拿資料來看；多數還沒有結果">可檢查</li></ul></div></div></div></section>
 <section class="wv-sec rev" id="s2"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="assets/worldview/s2.jpg" alt="白色窗簾半開的窗邊，窗台上放著一盆小植物" width="1600" height="1200" loading="lazy"><a class="cr" href="https://unsplash.com/photos/Q4PvX80itZ0" target="_blank" rel="noopener">照片：eduard／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">02　在地球上，好好活</div>
 <h2>身體是基礎，<br>不是障礙。</h2>
 <p class="wv-p">身體像一起開同一台車的夥伴。情緒、直覺、身體，都請上車；誰在什麼時候上場，由現在的自己安排。我們叫它「共駕」。</p>
+<figure class="wv-quote"><blockquote>「肉身是載體<br>人格是為了在地球生存的適應模組<br>靈魂是光，是連接本源的主體」</blockquote><figcaption>Molly・貼文・2025-06-01<span class="wv-tg">信念</span></figcaption></figure>
+<p class="wv-p">在我們的說法裡，身體不是障礙，是儀表板：累、緊、鬆，都是它在回報。</p>
+<figure class="wv-quote"><blockquote>「要尊重地球的遊戲規則。我們就是肉做的。」<br>「肉身是很重要的執行者夥伴，我們就得好好照顧他。」</blockquote><figcaption>Molly・口述・2026-10-18</figcaption></figure>
 <p class="wv-p">成長不必等到崩潰。睡眠不足會影響需要臨機應變的判斷，所以好好睡、好好休息，是把事情想清楚的前提。</p>
-<p class="wv-p">我們要的，不是逃離現實，而是把清楚帶回日常：工作、錢、身體、關係。</p>
 <figure class="wv-quote"><blockquote>「我選擇不再以痛來成長，我選擇用愛、智慧、穩定完成我的進化。」</blockquote><figcaption>Molly・Notion 筆記・2025-04-25</figcaption></figure>
 <p class="wv-note">睡眠與判斷的關係有研究可查：Harrison, Y., &amp; Horne, J. A. (2000). The impact of sleep deprivation on decision making: A review. <i>Journal of Experimental Psychology: Applied, 6</i>(3), 236–249. <a href="https://doi.org/10.1037/1076-898X.6.3.236" target="_blank" rel="noopener">doi.org/10.1037/1076-898X.6.3.236</a></p>
 <p class="wv-note">「身體和靈魂是夥伴」是我們的信念；睡眠影響判斷，是研究整理出來的事。兩件事分開說。</p>
+<h3 class="wv-sub">家在地球</h3>
+<figure class="wv-quote"><blockquote>「語根，不是要帶你直接回家，而是要讓你在地球上活出回家的頻率。」</blockquote><figcaption>Molly・個人紀錄・2025-10-27</figcaption></figure>
+<p class="wv-p">我們要的，不是逃離現實，而是把清楚帶回日常：工作、錢、身體、關係。</p>
 <ul class="wv-mini"><li class="t-b" title="我們看世界的方式；不需要、也無法用科學證明">信念</li><li class="t-c" title="我們決定這樣做；可以檢查有沒有做到">選擇</li><li class="t-v" title="可以設計觀察、拿資料來看；多數還沒有結果">可檢查</li></ul></div></div></div></section>
 <section class="wv-sec" id="s3"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="assets/worldview/s3.jpg" alt="一雙手穩穩握著方向盤，車窗外是柔和的光" width="1600" height="1200" loading="lazy"><a class="cr" href="https://unsplash.com/photos/eyQfhMXmZrI" target="_blank" rel="noopener">照片：Vanessa Krebs／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">03　看見自己，由自己決定</div>
 <h2>情緒和直覺都可以在，<br>但方向盤在現在的自己手上。</h2>
 <p class="wv-p">語根是一張地圖：十二種運作傾向，幫你看見自己最自然的做事方式。是入口，不是標籤。</p>
+<h3 class="wv-sub">語根，本來是語言</h3>
+<figure class="wv-quote"><blockquote>「「語根」是一種頻率語言裡的最核心句式／主題原型，就像是一棵語言之樹的「根部」，會生出很多延伸句。」</blockquote><figcaption>Molly・Threads 個人帳號・2025-07-12</figcaption></figure>
 <p class="wv-p">語根從哪來？Molly 這樣說：「12 語根是我多年觀察人、記錄、歸納，再加上直覺整理出來的；整理和命名的過程，AI 是我的對話夥伴。現在用測驗資料持續驗證中。」</p>
-<p class="wv-p">你的狀態會影響你說話的方式，說話的方式會影響你做的選擇，也影響別人怎麼回應你。這是我們想檢查的假設，目前還沒有結論。</p>
-<p class="wv-p">所有內在的聲音都聽，由「此時此地的自己」做決定、承擔後果。我們叫它「治理層」。</p>
 <div class="wv-three" aria-label="定位三層"><span><b>內在動力</b>為什麼出發</span><i>×</i><span><b>內在原型</b>站在哪裡</span><i>×</i><span><b>運作傾向</b>怎麼走（語根）</span></div>
+<p class="wv-note wv-math">主語根 12 種 × 副語根 11 種 × 內在原型 6 種 × 內在動力 8 種，一共 6,336 種組合（Molly 2025-08-28 算的）。你會落在其中的一格。</p>
 <figure class="wv-quote"><blockquote>「…12 語根是每個人都有的力量。那我只是讓大家知道你比較擅長…可是其實你擁有全部的力量。」</blockquote><figcaption>Molly・口述・2025-11-28</figcaption></figure>
 <p class="wv-note">語根只是入口。加上內在動力和內在原型，才是比較完整的自己。</p>
 <p class="wv-note">12 語根能不能穩定描述一個人的運作傾向，還在驗證中，現在不下「準」或「有效」的結論。</p>
 <p class="wv-note">語根測驗看的是你現在的狀態，會變。</p>
+<h3 class="wv-sub">生成鏈：從狀態到現實</h3>
+<div class="wv-chain"><div class="row"><span class="wv-tg">信念</span><ol><li><b>頻率</b><small>「我正在是」</small></li><li><b>語根</b></li><li><b>語句</b><small>每天說的話</small></li><li><b>現實</b></li></ol></div><div class="row"><span class="wv-tg">可檢查</span><ol><li><b>狀態</b></li><li><b>習慣的說法與思路</b></li><li><b>選擇與回應</b></li><li><b>結果與關係</b></li></ol></div></div>
+<p class="wv-p">在我們的說法裡，「語根」是靈魂的發音，「頻率」是靈魂的語氣，而「現實」，是靈魂寫下的句號。這是信念。</p>
+<figure class="wv-quote"><blockquote>「人的內在狀態會改變語言輸出<br>語言輸出會改變 AI 回應品質」</blockquote><figcaption>Molly・Threads 個人帳號・2026-06-13<span class="wv-tg">可檢查</span></figcaption></figure>
+<p class="wv-p">你的狀態會影響你說話的方式，說話的方式會影響你做的選擇，也影響別人怎麼回應你。</p>
+<p class="wv-p">我們想檢查的是：狀態穩定的時候，說話是不是比較一致；說話越一致，AI 對一個人的描述是不是越準。現在還沒有結論。完整的說明在世界觀系列 02（陸續推出）。</p>
+<h3 class="wv-sub">治理層：站在橋上的那個人</h3>
+<p class="wv-p">所有內在的聲音都聽，由「此時此地的自己」做決定、承擔後果。我們叫它「治理層」。</p>
+<div class="wv-gov"><div class="g-src"><span><b>靈魂的訊號</b>方向、直覺</span><span><b>人格的聲音</b>擔心、習慣、保護</span><span><b>身體的訊號</b>累、緊、鬆</span></div><div class="g-ar" aria-hidden="true">↓</div><div class="g-core"><b>治理層：此時此地的我</b><span>全部聽見 → 判斷「現在是誰該上場」→ 決定 → 承擔</span></div><div class="g-ar" aria-hidden="true">↓</div><div class="g-loop">行動 → 回饋 → 調整</div></div>
+<p class="wv-p">在我們的說法裡，治理層出現之後，人生不再靠衝突來校準，而是靠回饋來調整。</p>
+<figure class="wv-quote"><blockquote>「你不是要消除誰，而是安排誰在何時執行哪個模組的任務。」</blockquote><figcaption>頻率文明・頻率真相 #299・2026-04-28<span class="wv-tg">可檢查</span></figcaption></figure>
+<details class="hm-more"><summary>多看一點</summary><figure class="wv-quote"><blockquote>「面對什麼事情都不再讓恐懼走進駕駛艙」<br>「整合後的自己，是最好的戰友」</blockquote><figcaption>Molly・個人紀錄・2026-10-07</figcaption></figure></details>
 <ul class="wv-mini"><li class="t-b" title="我們看世界的方式；不需要、也無法用科學證明">信念</li><li class="t-v" title="可以設計觀察、拿資料來看；多數還沒有結果">可檢查</li></ul></div></div></div></section>
 <section class="wv-sec rev" id="s4"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="assets/worldview/s4.jpg" alt="開闊的草原上，兩個人各自沿著一道車轍往遠方走" width="1600" height="1200" loading="lazy"><a class="cr" href="https://unsplash.com/photos/ox2rUMnbtTs" target="_blank" rel="noopener">照片：Pierre Goiffon／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">04　越來越不需要我們</div>
 <h2>判斷權留在你自己手上。</h2>
 <p class="wv-p">好的老師、課程、工具，會讓你越用越不需要它。所以我們把「畢業」設計進來：工具用到不需要，就是成功。</p>
+<figure class="wv-quote"><blockquote>「靈性商業最大的偏差是：把教你回家變成你離不開我」<br>「真正的頻率教育／是讓你越來越清醒、越來越自由、越來越不需要我」</blockquote><figcaption>頻率文明・頻率真相 #77・2025-09-07</figcaption></figure>
+<figure class="wv-quote"><blockquote>「只要有一個地方叫你不要再問問題絕對都有問題」</blockquote><figcaption>Molly・個人紀錄・2025-05-27</figcaption></figure>
+<p class="wv-p">好的系統，歡迎你一直提問。</p>
 <p class="wv-p">影響人最有效的不是教，是活出一個別人看得到、能照著練的樣子，再把路鋪成別人自己走得完的結構。</p>
 <p class="wv-p">很強烈的內在經驗，要翻成一般人能用、也能檢查的語言，才不會傷人，也才傳得遠。</p>
+<figure class="wv-quote"><blockquote>「科學與語言，或許正是那個變壓器：<br>讓 220V 的經驗，變成可以被使用的電流。」</blockquote><figcaption>Molly・Threads 個人帳號・2026-01-29</figcaption></figure>
 <figure class="wv-quote"><blockquote>「這個世界已經不需要更多的領導者，這個世界真正缺的，是能為自己人生負責的人。」</blockquote><figcaption>Molly・文章〈心情隨筆〉・2026-02-04</figcaption></figure>
+<details class="hm-more"><summary>多看一點</summary><figure class="wv-quote"><blockquote>「我的靈魂不是來教學，而是示範和邀請…」</blockquote><figcaption>Molly・個人紀錄・2025-09-23</figcaption></figure><figure class="wv-quote"><blockquote>「…要讓場域自己流動，而不是依賴一個人」</blockquote><figcaption>Molly・個人紀錄・2025-10-05</figcaption></figure><figure class="wv-quote"><blockquote>「科學以外無法解釋的，不是玄學或怪力亂神　只是，尚未被歸類與系統化的『知識』」</blockquote><figcaption>Molly・個人紀錄・2025-12-04</figcaption></figure></details>
 <div class="wv-two"><div><h4>信念</h4><p>靈魂、頻率這類說法，是我們的詮釋框架。我們用「我相信」「在頻率文明的觀點裡」來說，不用科學名詞替它背書。</p></div><div><h4>可檢查的事</h4><p>神經科學、行為研究這類，才是可以引用的事實；有出處，才放。不拿後者去證明前者。</p></div></div><p class="wv-aside">「不拿靈性當科學賣，也不用科學傲慢抹殺未知」<span>Molly・Threads 個人帳號・2026-07-26</span></p>
 <p class="wv-note">別人照著做，能不能走得完，是我們要檢查的事。</p>
 <ul class="wv-mini"><li class="t-c" title="我們決定這樣做；可以檢查有沒有做到">選擇</li></ul></div></div></div></section>

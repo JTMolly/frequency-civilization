@@ -49,6 +49,46 @@
 .wv-one p{position:relative;display:inline-block;max-width:760px;padding:30px 12px;font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(20px,2.6vw,28px);line-height:1.9;letter-spacing:.1em;color:var(--text)}
 .wv-one p::before,.wv-one p::after{content:"";position:absolute;left:50%;width:120px;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .wv-one p::before{top:0}.wv-one p::after{bottom:0}
+.wv-tg{display:inline-block;margin-left:10px;padding:0 9px;border:1px solid var(--gold-dim);border-radius:99px;font-size:11px;letter-spacing:.1em;line-height:1.8;color:var(--gold-soft);vertical-align:1px}
+.wv-quote figcaption .wv-tg{margin-left:12px}
+.wv-quote + .wv-quote{margin-top:14px}
+.wv-quote + .wv-p,.wv-quote + .wv-note,.wv-quote + h3.wv-sub{margin-top:16px}
+.wv-sub{margin:30px 0 4px;padding-top:16px;border-top:1px solid var(--line);font-family:'Noto Serif TC',serif;font-weight:500;font-size:16.5px;letter-spacing:.18em;line-height:1.7;color:var(--gold-soft)}
+.wv-math{margin-top:10px;font-size:13.5px;color:var(--text)}
+.wv-txt .hm-more{margin-top:16px}
+.wv-txt .hm-more summary{font-size:13px}
+.wv-txt .hm-more .wv-quote{margin-top:12px}
+.wv-chain{margin:12px 0 14px}
+.wv-chain .row{margin:0 0 12px}
+.wv-chain .row>.wv-tg{margin:0 0 6px}
+.wv-chain ol{list-style:none;display:flex;margin:0;padding:0}
+.wv-chain li{position:relative;flex:1 1 0;min-width:0;padding:9px 5px;border:1px solid var(--card-border);border-radius:6px;background:#fff;text-align:center;font-size:11.5px;line-height:1.55;color:var(--muted)}
+.wv-chain li+li{margin-left:15px}
+.wv-chain li+li::before{content:"›";position:absolute;left:-13px;top:50%;transform:translateY(-52%);font-size:17px;line-height:1;color:var(--gold)}
+.wv-chain li b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:13.5px;letter-spacing:.06em;color:var(--text)}
+.wv-chain li small{display:block;font-size:10.5px;letter-spacing:0}
+.wv-gov{margin:14px 0 14px;text-align:center}
+.wv-gov .g-src{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.wv-gov .g-src span{padding:9px 6px;border:1px solid var(--card-border);border-radius:6px;background:#fff;font-size:11.5px;line-height:1.6;color:var(--muted)}
+.wv-gov .g-src b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:13px;letter-spacing:.04em;color:var(--gold-soft)}
+.wv-gov .g-ar{margin:2px 0;font-size:17px;line-height:1.3;color:var(--gold)}
+.wv-gov .g-core{padding:14px 16px;border-radius:999px;border:1px solid rgba(160,124,62,.45);background:radial-gradient(ellipse at 50% 30%,#fdebb8 0%,#e8cd8a 70%,#dcb264 100%)}
+.wv-gov .g-core b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:15px;letter-spacing:.1em;color:#3d2d10}
+.wv-gov .g-core span{display:block;margin-top:2px;font-size:12px;line-height:1.7;color:#3d2d10}
+.wv-gov .g-loop{display:inline-block;padding:6px 18px;border:1px dashed var(--gold);border-radius:999px;background:#fffdf8;font-size:13px;letter-spacing:.1em;color:var(--text)}
+html[lang=en] .wv-sub{letter-spacing:.04em}
+html[lang=en] .wv-chain li{font-size:11px}
+@media (max-width:560px){
+  html[lang=en] .wv-chain ol{flex-direction:column}
+  html[lang=en] .wv-chain li{padding:7px 10px}
+  html[lang=en] .wv-chain li+li{margin:14px 0 0}
+  html[lang=en] .wv-chain li+li::before{content:"↓";left:50%;top:-15px;transform:translateX(-50%);font-size:15px}
+}
+html[lang=en] .wv-chain li b{font-size:12.5px;letter-spacing:0}
+html[lang=en] .wv-gov .g-src span{font-size:11px}
+html[lang=en] .wv-gov .g-src b{font-size:12px;letter-spacing:0}
+html[lang=en] .wv-gov .g-core b{letter-spacing:.01em}
+html[lang=en] .wv-gov .g-loop{letter-spacing:.02em}
 .wv-sec{padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
 .wv-sec:nth-of-type(even){background:var(--bg2)}
 .wv-in{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
@@ -248,13 +288,14 @@ html[lang=en] .wv-two li{letter-spacing:.01em}
 <p class="wv-p">我们相信，每个人本来就是完整的。只是活着活着，会忘了一些；再透过经历、尝试、体会，一点一点记起来。</p>
 <p class="wv-p">「记起」说白了，就是慢慢看懂自己本来的样子。在我们的说法里，这是「灵魂」走的一段路。灵魂，指的是一个人最核心、带着自己方向与直觉的那个部分。这是我们的信念。</p>
 <p class="wv-p">每个人看懂自己的速度不一样。慢，不代表落后。</p>
-<figure class="wv-quote"><blockquote>「有些人快 有些人慢／但对每个人的时程 都是刚刚好」</blockquote><figcaption>Molly・个人纪录・2025-08-30</figcaption></figure>
+<figure class="wv-quote"><blockquote>「人生就是一场每个人的灵魂设计从忘记到记起来的游戏。…有些人快 有些人慢，但对每个人的时程 都是刚刚好。」</blockquote><figcaption>Molly・个人纪录・2025-08-30</figcaption></figure>
 <ul class="wv-mini"><li class="t-b" title="我们看世界的方式；不需要、也无法用科学证明">信念</li></ul></div></div></div></section>
 <section class="wv-sec rev" id="s2"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="../assets/worldview/wv01-s2.jpg" alt="空无一人的老剧院，舞台前的布幕被暖金色的光照亮" width="1400" height="1050" loading="lazy"><a class="cr" href="https://unsplash.com/photos/4txHVae2MJ0" target="_blank" rel="noopener">照片：Liam McGarry／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">02　剧本给课题，演法是自己的</div>
 <h2>课题会来，<br>演法是自己的。</h2>
 <p class="wv-p">我们用「剧本」这个词，说一个信念：一个人一路上，会遇见某些处境和课题。课题，就是反复出现、要你学着面对的事。</p>
 <p class="wv-p">这不是说一切都安排好了、努力也没用；也不是说一切都由你决定、够努力就能改变。我们相信是第三种：课题会来，但你怎么回应，会决定这段经历最后变成什么。</p>
 <figure class="wv-quote"><blockquote>「剧本决定你会遇见哪些课题／但你怎么演／决定这个故事最后的质地。」</blockquote><figcaption>Molly・Threads 个人账号・2026-06-07</figcaption></figure>
+<figure class="wv-quote"><blockquote>「我既是玩家，也是导演，同时也在写剧本」</blockquote><figcaption>Molly・脸书〈整合笔记〉・2026-04-29</figcaption></figure>
 <p class="wv-aside">「剧本」只用来看自己走过的路。别人的痛和失去，我们不拿它来解释。</p>
 <ul class="wv-mini"><li class="t-b" title="我们看世界的方式；不需要、也无法用科学证明">信念</li></ul></div></div></div></section>
 <section class="wv-sec" id="s3"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="../assets/worldview/wv01-s3.jpg" alt="一双沾着陶土的手，扶着拉坯机上转动的陶罐" width="1400" height="1050" loading="lazy"><a class="cr" href="https://unsplash.com/photos/y3W0CzO063w" target="_blank" rel="noopener">照片：Earl Wilcox／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">03　怎么回应，可以练习</div>

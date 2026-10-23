@@ -56,6 +56,46 @@
 .wv-series .d{display:block;margin-top:4px;font-size:13.5px;line-height:1.8;letter-spacing:.04em;color:var(--muted)}
 html[lang=en] .wv-series .t{letter-spacing:.01em;font-size:clamp(16px,2vw,19px)}
 html[lang=en] .wv-series .k{letter-spacing:.2em}
+.wv-tg{display:inline-block;margin-left:10px;padding:0 9px;border:1px solid var(--gold-dim);border-radius:99px;font-size:11px;letter-spacing:.1em;line-height:1.8;color:var(--gold-soft);vertical-align:1px}
+.wv-quote figcaption .wv-tg{margin-left:12px}
+.wv-quote + .wv-quote{margin-top:14px}
+.wv-quote + .wv-p,.wv-quote + .wv-note,.wv-quote + h3.wv-sub{margin-top:16px}
+.wv-sub{margin:30px 0 4px;padding-top:16px;border-top:1px solid var(--line);font-family:'Noto Serif TC',serif;font-weight:500;font-size:16.5px;letter-spacing:.18em;line-height:1.7;color:var(--gold-soft)}
+.wv-math{margin-top:10px;font-size:13.5px;color:var(--text)}
+.wv-txt .hm-more{margin-top:16px}
+.wv-txt .hm-more summary{font-size:13px}
+.wv-txt .hm-more .wv-quote{margin-top:12px}
+.wv-chain{margin:12px 0 14px}
+.wv-chain .row{margin:0 0 12px}
+.wv-chain .row>.wv-tg{margin:0 0 6px}
+.wv-chain ol{list-style:none;display:flex;margin:0;padding:0}
+.wv-chain li{position:relative;flex:1 1 0;min-width:0;padding:9px 5px;border:1px solid var(--card-border);border-radius:6px;background:#fff;text-align:center;font-size:11.5px;line-height:1.55;color:var(--muted)}
+.wv-chain li+li{margin-left:15px}
+.wv-chain li+li::before{content:"›";position:absolute;left:-13px;top:50%;transform:translateY(-52%);font-size:17px;line-height:1;color:var(--gold)}
+.wv-chain li b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:13.5px;letter-spacing:.06em;color:var(--text)}
+.wv-chain li small{display:block;font-size:10.5px;letter-spacing:0}
+.wv-gov{margin:14px 0 14px;text-align:center}
+.wv-gov .g-src{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.wv-gov .g-src span{padding:9px 6px;border:1px solid var(--card-border);border-radius:6px;background:#fff;font-size:11.5px;line-height:1.6;color:var(--muted)}
+.wv-gov .g-src b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:13px;letter-spacing:.04em;color:var(--gold-soft)}
+.wv-gov .g-ar{margin:2px 0;font-size:17px;line-height:1.3;color:var(--gold)}
+.wv-gov .g-core{padding:14px 16px;border-radius:999px;border:1px solid rgba(160,124,62,.45);background:radial-gradient(ellipse at 50% 30%,#fdebb8 0%,#e8cd8a 70%,#dcb264 100%)}
+.wv-gov .g-core b{display:block;font-family:'Noto Serif TC',serif;font-weight:500;font-size:15px;letter-spacing:.1em;color:#3d2d10}
+.wv-gov .g-core span{display:block;margin-top:2px;font-size:12px;line-height:1.7;color:#3d2d10}
+.wv-gov .g-loop{display:inline-block;padding:6px 18px;border:1px dashed var(--gold);border-radius:999px;background:#fffdf8;font-size:13px;letter-spacing:.1em;color:var(--text)}
+html[lang=en] .wv-sub{letter-spacing:.04em}
+html[lang=en] .wv-chain li{font-size:11px}
+@media (max-width:560px){
+  html[lang=en] .wv-chain ol{flex-direction:column}
+  html[lang=en] .wv-chain li{padding:7px 10px}
+  html[lang=en] .wv-chain li+li{margin:14px 0 0}
+  html[lang=en] .wv-chain li+li::before{content:"↓";left:50%;top:-15px;transform:translateX(-50%);font-size:15px}
+}
+html[lang=en] .wv-chain li b{font-size:12.5px;letter-spacing:0}
+html[lang=en] .wv-gov .g-src span{font-size:11px}
+html[lang=en] .wv-gov .g-src b{font-size:12px;letter-spacing:0}
+html[lang=en] .wv-gov .g-core b{letter-spacing:.01em}
+html[lang=en] .wv-gov .g-loop{letter-spacing:.02em}
 .wv-legend{text-wrap:balance;max-width:640px;margin:0 auto 56px;padding:0 24px;text-align:center;font-size:12.5px;line-height:1.9;color:var(--muted);letter-spacing:.05em}
 .wv-legend b{font-weight:400;color:var(--gold-soft);letter-spacing:.12em}
 .wv-sec{padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
@@ -256,39 +296,66 @@ html[lang=en] .wv-one p{letter-spacing:.03em}
 <section class="wv-sec" id="s1"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="../assets/worldview/s1.jpg" alt="夕阳下，海水拍上礁石，溅起一颗颗发光的水珠" width="1600" height="1200" loading="lazy"><a class="cr" href="https://unsplash.com/photos/bNtA7izPOe4" target="_blank" rel="noopener">照片：Gian F. Rodríguez／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">01　从哪里来</div>
 <h2>每个人本来就完整，<br>人和人是连着的。</h2>
 <p class="wv-p">我们相信，每个人都像同一片大海溅出的水珠：各自完整，彼此连着。善待别人，最后也是在善待自己。</p>
-<p class="wv-p">看懂自己的速度，每个人不同。慢，不代表落后。</p>
-<p class="wv-p">有些处境选不了，但怎么回应，决定这段经历最后变成什么。</p>
 <figure class="wv-quote"><blockquote>「你可以想象那个画面，就很像什么大海。它在打出浪的时候，滴出的一滴水花的一滴水珠，就是我们。」</blockquote><figcaption>Molly・口述・2025-08-20</figcaption></figure>
+<figure class="wv-quote"><blockquote>「我们每个人其实都是一体的…这个最高的频率就是爱」</blockquote><figcaption>Molly・个人纪录・2025-08-31<span class="wv-tg">信念</span></figcaption></figure>
+<p class="wv-p">我们相信，人和人本来是连在一起的；最核心的那个频率，是爱。</p>
+<p class="wv-p">看懂自己的速度，每个人不同。慢，不代表落后。</p>
+<figure class="wv-quote"><blockquote>「人生就是一场每个人的灵魂设计从忘记到记起来的游戏。」</blockquote><figcaption>Molly・个人纪录・2025-08-30</figcaption></figure>
+<p class="wv-p">有些处境选不了，但怎么回应，决定这段经历最后变成什么。</p>
 <p class="wv-note">最后一句是我们看自己经历的方式，不用来解释别人的遭遇。</p>
+<details class="hm-more"><summary>多看一点</summary><figure class="wv-quote"><blockquote>「我既是玩家，也是导演，同时也在写剧本」</blockquote><figcaption>Molly・脸书〈整合笔记〉・2026-04-29</figcaption></figure></details>
 <p class="wv-note">想多看一点：<a href="worldview-01.html">剧本与课题 →</a></p>
 <ul class="wv-mini"><li class="t-b" title="我们看世界的方式；不需要、也无法用科学证明">信念</li><li class="t-v" title="可以设计观察、拿资料来看；多数还没有结果">可检查</li></ul></div></div></div></section>
 <section class="wv-sec rev" id="s2"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="../assets/worldview/s2.jpg" alt="白色窗帘半开的窗边，窗台上放着一盆小植物" width="1600" height="1200" loading="lazy"><a class="cr" href="https://unsplash.com/photos/Q4PvX80itZ0" target="_blank" rel="noopener">照片：eduard／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">02　在地球上，好好活</div>
 <h2>身体是基础，<br>不是障碍。</h2>
 <p class="wv-p">身体像一起开同一台车的伙伴。情绪、直觉、身体，都请上车；谁在什么时候上场，由现在的自己安排。我们叫它「共驾」。</p>
+<figure class="wv-quote"><blockquote>「肉身是载体<br>人格是为了在地球生存的适应模组<br>灵魂是光，是连接本源的主体」</blockquote><figcaption>Molly・贴文・2025-06-01<span class="wv-tg">信念</span></figcaption></figure>
+<p class="wv-p">在我们的说法里，身体不是障碍，是仪表板：累、紧、松，都是它在回报。</p>
+<figure class="wv-quote"><blockquote>「要尊重地球的游戏规则。我们就是肉做的。」<br>「肉身是很重要的执行者伙伴，我们就得好好照顾他。」</blockquote><figcaption>Molly・口述・2026-10-18</figcaption></figure>
 <p class="wv-p">成长不必等到崩溃。睡眠不足会影响需要临机应变的判断，所以好好睡、好好休息，是把事情想清楚的前提。</p>
-<p class="wv-p">我们要的，不是逃离现实，而是把清楚带回日常：工作、钱、身体、关系。</p>
 <figure class="wv-quote"><blockquote>「我选择不再以痛来成长，我选择用爱、智慧、稳定完成我的进化。」</blockquote><figcaption>Molly・Notion 笔记・2025-04-25</figcaption></figure>
 <p class="wv-note">睡眠与判断的关系有研究可查：Harrison, Y., &amp; Horne, J. A. (2000). The impact of sleep deprivation on decision making: A review. <i>Journal of Experimental Psychology: Applied, 6</i>(3), 236–249. <a href="https://doi.org/10.1037/1076-898X.6.3.236" target="_blank" rel="noopener">doi.org/10.1037/1076-898X.6.3.236</a></p>
 <p class="wv-note">「身体和灵魂是伙伴」是我们的信念；睡眠影响判断，是研究整理出来的事。两件事分开说。</p>
+<h3 class="wv-sub">家在地球</h3>
+<figure class="wv-quote"><blockquote>「语根，不是要带你直接回家，而是要让你在地球上活出回家的频率。」</blockquote><figcaption>Molly・个人纪录・2025-10-27</figcaption></figure>
+<p class="wv-p">我们要的，不是逃离现实，而是把清楚带回日常：工作、钱、身体、关系。</p>
 <ul class="wv-mini"><li class="t-b" title="我们看世界的方式；不需要、也无法用科学证明">信念</li><li class="t-c" title="我们决定这样做；可以检查有没有做到">选择</li><li class="t-v" title="可以设计观察、拿资料来看；多数还没有结果">可检查</li></ul></div></div></div></section>
 <section class="wv-sec" id="s3"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="../assets/worldview/s3.jpg" alt="一双手稳稳握着方向盘，车窗外是柔和的光" width="1600" height="1200" loading="lazy"><a class="cr" href="https://unsplash.com/photos/eyQfhMXmZrI" target="_blank" rel="noopener">照片：Vanessa Krebs／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">03　看见自己，由自己决定</div>
 <h2>情绪和直觉都可以在，<br>但方向盘在现在的自己手上。</h2>
 <p class="wv-p">语根是一张地图：十二种运作倾向，帮你看见自己最自然的做事方式。是入口，不是标签。</p>
+<h3 class="wv-sub">语根，本来是语言</h3>
+<figure class="wv-quote"><blockquote>「「语根」是一种频率语言里的最核心句式／主题原型，就像是一棵语言之树的「根部」，会生出很多延伸句。」</blockquote><figcaption>Molly・Threads 个人账号・2025-07-12</figcaption></figure>
 <p class="wv-p">语根从哪来？Molly 这样说：「12 语根是我多年观察人、记录、归纳，再加上直觉整理出来的；整理和命名的过程，AI 是我的对话伙伴。现在用测验资料持续验证中。」</p>
-<p class="wv-p">你的状态会影响你说话的方式，说话的方式会影响你做的选择，也影响别人怎么回应你。这是我们想检查的假设，目前还没有结论。</p>
-<p class="wv-p">所有内在的声音都听，由「此时此地的自己」做决定、承担后果。我们叫它「治理层」。</p>
 <div class="wv-three" aria-label="定位三层"><span><b>内在动力</b>为什么出发</span><i>×</i><span><b>内在原型</b>站在哪里</span><i>×</i><span><b>运作倾向</b>怎么走（语根）</span></div>
+<p class="wv-note wv-math">主语根 12 种 × 副语根 11 种 × 内在原型 6 种 × 内在动力 8 种，一共 6,336 种组合（Molly 2025-08-28 算的）。你会落在其中的一格。</p>
 <figure class="wv-quote"><blockquote>「…12 语根是每个人都有的力量。那我只是让大家知道你比较擅长…可是其实你拥有全部的力量。」</blockquote><figcaption>Molly・口述・2025-11-28</figcaption></figure>
 <p class="wv-note">语根只是入口。加上内在动力和内在原型，才是比较完整的自己。</p>
 <p class="wv-note">12 语根能不能稳定描述一个人的运作倾向，还在验证中，现在不下「准」或「有效」的结论。</p>
 <p class="wv-note">语根测验看的是你现在的状态，会变。</p>
+<h3 class="wv-sub">生成链：从状态到现实</h3>
+<div class="wv-chain"><div class="row"><span class="wv-tg">信念</span><ol><li><b>频率</b><small>「我正在是」</small></li><li><b>语根</b></li><li><b>语句</b><small>每天说的话</small></li><li><b>现实</b></li></ol></div><div class="row"><span class="wv-tg">可检查</span><ol><li><b>状态</b></li><li><b>习惯的说法与思路</b></li><li><b>选择与回应</b></li><li><b>结果与关系</b></li></ol></div></div>
+<p class="wv-p">在我们的说法里，「语根」是灵魂的发音，「频率」是灵魂的语气，而「现实」，是灵魂写下的句号。这是信念。</p>
+<figure class="wv-quote"><blockquote>「人的内在状态会改变语言输出<br>语言输出会改变 AI 回应品质」</blockquote><figcaption>Molly・Threads 个人账号・2026-06-13<span class="wv-tg">可检查</span></figcaption></figure>
+<p class="wv-p">你的状态会影响你说话的方式，说话的方式会影响你做的选择，也影响别人怎么回应你。</p>
+<p class="wv-p">我们想检查的是：状态稳定的时候，说话是不是比较一致；说话越一致，AI 对一个人的描述是不是越准。现在还没有结论。完整的说明在世界观系列 02（陆续推出）。</p>
+<h3 class="wv-sub">治理层：站在桥上的那个人</h3>
+<p class="wv-p">所有内在的声音都听，由「此时此地的自己」做决定、承担后果。我们叫它「治理层」。</p>
+<div class="wv-gov"><div class="g-src"><span><b>灵魂的讯号</b>方向、直觉</span><span><b>人格的声音</b>担心、习惯、保护</span><span><b>身体的讯号</b>累、紧、松</span></div><div class="g-ar" aria-hidden="true">↓</div><div class="g-core"><b>治理层：此时此地的我</b><span>全部听见 → 判断「现在是谁该上场」→ 决定 → 承担</span></div><div class="g-ar" aria-hidden="true">↓</div><div class="g-loop">行动 → 回馈 → 调整</div></div>
+<p class="wv-p">在我们的说法里，治理层出现之后，人生不再靠冲突来校准，而是靠回馈来调整。</p>
+<figure class="wv-quote"><blockquote>「你不是要消除谁，而是安排谁在何时执行哪个模组的任务。」</blockquote><figcaption>频率文明・频率真相 #299・2026-04-28<span class="wv-tg">可检查</span></figcaption></figure>
+<details class="hm-more"><summary>多看一点</summary><figure class="wv-quote"><blockquote>「面对什么事情都不再让恐惧走进驾驶舱」<br>「整合后的自己，是最好的战友」</blockquote><figcaption>Molly・个人纪录・2026-10-07</figcaption></figure></details>
 <ul class="wv-mini"><li class="t-b" title="我们看世界的方式；不需要、也无法用科学证明">信念</li><li class="t-v" title="可以设计观察、拿资料来看；多数还没有结果">可检查</li></ul></div></div></div></section>
 <section class="wv-sec rev" id="s4"><div class="wrap"><div class="wv-in"><figure class="wv-pic"><img src="../assets/worldview/s4.jpg" alt="开阔的草原上，两个人各自沿着一道车辙往远方走" width="1600" height="1200" loading="lazy"><a class="cr" href="https://unsplash.com/photos/ox2rUMnbtTs" target="_blank" rel="noopener">照片：Pierre Goiffon／Unsplash</a></figure><div class="wv-txt"><div class="wv-kick">04　越来越不需要我们</div>
 <h2>判断权留在你自己手上。</h2>
 <p class="wv-p">好的老师、课程、工具，会让你越用越不需要它。所以我们把「毕业」设计进来：工具用到不需要，就是成功。</p>
+<figure class="wv-quote"><blockquote>「灵性商业最大的偏差是：把教你回家变成你离不开我」<br>「真正的频率教育／是让你越来越清醒、越来越自由、越来越不需要我」</blockquote><figcaption>频率文明・频率真相 #77・2025-09-07</figcaption></figure>
+<figure class="wv-quote"><blockquote>「只要有一个地方叫你不要再问问题绝对都有问题」</blockquote><figcaption>Molly・个人纪录・2025-05-27</figcaption></figure>
+<p class="wv-p">好的系统，欢迎你一直提问。</p>
 <p class="wv-p">影响人最有效的不是教，是活出一个别人看得到、能照着练的样子，再把路铺成别人自己走得完的结构。</p>
 <p class="wv-p">很强烈的内在经验，要翻成一般人能用、也能检查的语言，才不会伤人，也才传得远。</p>
+<figure class="wv-quote"><blockquote>「科学与语言，或许正是那个变压器：<br>让 220V 的经验，变成可以被使用的电流。」</blockquote><figcaption>Molly・Threads 个人账号・2026-01-29</figcaption></figure>
 <figure class="wv-quote"><blockquote>「这个世界已经不需要更多的领导者，这个世界真正缺的，是能为自己人生负责的人。」</blockquote><figcaption>Molly・文章〈心情随笔〉・2026-02-04</figcaption></figure>
+<details class="hm-more"><summary>多看一点</summary><figure class="wv-quote"><blockquote>「我的灵魂不是来教学，而是示范和邀请…」</blockquote><figcaption>Molly・个人纪录・2025-09-23</figcaption></figure><figure class="wv-quote"><blockquote>「…要让场域自己流动，而不是依赖一个人」</blockquote><figcaption>Molly・个人纪录・2025-10-05</figcaption></figure><figure class="wv-quote"><blockquote>「科学以外无法解释的，不是玄学或怪力乱神　只是，尚未被归类与系统化的『知识』」</blockquote><figcaption>Molly・个人纪录・2025-12-04</figcaption></figure></details>
 <div class="wv-two"><div><h4>信念</h4><p>灵魂、频率这类说法，是我们的诠释框架。我们用「我相信」「在频率文明的观点里」来说，不用科学名词替它背书。</p></div><div><h4>可检查的事</h4><p>神经科学、行为研究这类，才是可以引用的事实；有出处，才放。不拿后者去证明前者。</p></div></div><p class="wv-aside">「不拿灵性当科学卖，也不用科学傲慢抹杀未知」<span>Molly・Threads 个人账号・2026-07-26</span></p>
 <p class="wv-note">别人照着做，能不能走得完，是我们要检查的事。</p>
 <ul class="wv-mini"><li class="t-c" title="我们决定这样做；可以检查有没有做到">选择</li></ul></div></div></div></section>
