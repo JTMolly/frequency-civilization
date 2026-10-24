@@ -31,7 +31,7 @@ const ROOTS = {
     hi:"Calm and accepting, you steady rough moments. You are the team's anchor.",
     lo:"You suppress feelings, avoid conflict and fake calm. You shut yourself in, your body tenses, and relationships drift.",
     key:"Tell numbness apart from steadiness: being steady doesn't mean feeling nothing; it means feeling and still standing."},
-  "Valtara":{code:"VA",name:"The Integrator",color:"#2a46b8",slug:"valtara",
+  "Valtara":{code:"VA",name:"The Integrator",color:"#f8cb63",slug:"valtara",
     hi:"You foster collaboration, listen well and bring different views together, so teamwork runs smoothly and results multiply.",
     lo:"You people-please, fear conflict and get lost in other people's needs, until you're exhausted and less and less sure what you want.",
     key:"Move from pleasing everyone to aligning on a shared goal: collaboration isn't sacrifice; it's getting stronger together."},
