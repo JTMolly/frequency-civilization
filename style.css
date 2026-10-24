@@ -833,3 +833,7 @@ html[lang=en] .hm-svg .hm-s{font-size:12px}
   .hm-pills i{transform:rotate(90deg)}
   .hm-rp{padding:16px 18px;gap:14px}
 }
+
+/* 手機換行：避免最後一行只剩一個字 */
+p,li,blockquote,figcaption{text-wrap:pretty}
+h1,h2,h3,h4{text-wrap:balance}
