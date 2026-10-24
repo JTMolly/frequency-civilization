@@ -20,12 +20,43 @@ document.addEventListener('click', function(e){
   b.replaceWith(f);
 });
 
-/* 上方選單：「更多」點一下展開、再點一下、點旁邊或按 Esc 收起 */
+/* 上方選單的下拉（世界觀、更多）：點箭頭或按鈕展開、再點一下收起，點旁邊或按 Esc 收起。
+   桌機滑過或鍵盤移入時 CSS 會直接展開；Esc 或再點一下會暫時壓住（class esc），滑出或離開焦點後恢復。
+   鍵盤：在「世界觀」連結或箭頭上按 ↓ 展開並移到第一項，選單裡 ↑↓ 移動。 */
 (function(){
-  var more = document.querySelector('.nav-more');
-  if(!more) return;
-  var btn = more.querySelector('.nav-more-btn');
-  btn.addEventListener('click', function(e){ e.stopPropagation(); more.classList.toggle('open'); btn.setAttribute('aria-expanded', more.classList.contains('open')); });
-  document.addEventListener('click', function(e){ if(!more.contains(e.target)){ more.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ more.classList.remove('open'); btn.setAttribute('aria-expanded','false');} });
+  var dds = [].slice.call(document.querySelectorAll('.nav-dd'));
+  if(!dds.length) return;
+  function setOpen(dd, on){
+    var b = dd.querySelector('button');
+    dd.classList.toggle('open', on);
+    dd.classList.toggle('esc', !on);
+    if(b) b.setAttribute('aria-expanded', on ? 'true' : 'false');
+  }
+  function closeAll(except){ dds.forEach(function(d){ if(d !== except && (d.classList.contains('open'))) setOpen(d, false); }); }
+  dds.forEach(function(dd){
+    var btn = dd.querySelector('button'), sub = dd.querySelector('.nav-sub');
+    if(!btn || !sub) return;
+    var links = function(){ return [].slice.call(sub.querySelectorAll('a')); };
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var on = !dd.classList.contains('open');
+      closeAll(dd);
+      setOpen(dd, on);
+    });
+    dd.addEventListener('mouseleave', function(){ if(!dd.contains(document.activeElement)) dd.classList.remove('esc'); });
+    dd.addEventListener('focusout', function(e){ if(!dd.contains(e.relatedTarget)) dd.classList.remove('esc'); });
+    dd.addEventListener('keydown', function(e){
+      var k = e.key, inSub = sub.contains(document.activeElement);
+      if(k === 'ArrowDown' || k === 'ArrowUp'){
+        var list = links(), i = list.indexOf(document.activeElement);
+        if(!inSub && k === 'ArrowDown'){ e.preventDefault(); closeAll(dd); dd.classList.remove('esc'); dd.classList.add('open'); btn.setAttribute('aria-expanded','true'); list[0].focus(); }
+        else if(inSub){ e.preventDefault(); list[(i + (k === 'ArrowDown' ? 1 : list.length - 1)) % list.length].focus(); }
+      }else if(k === 'Escape' && (dd.classList.contains('open') || dd.contains(document.activeElement) || dd.matches(':hover'))){
+        setOpen(dd, false);
+        if(inSub) btn.focus();
+      }
+    });
+  });
+  document.addEventListener('click', function(e){ closeAll(null); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(null); });
 })();

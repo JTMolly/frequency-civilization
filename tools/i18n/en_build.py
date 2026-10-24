@@ -6,6 +6,7 @@
 """
 import json, os, re
 from bs4 import BeautifulSoup, Comment, NavigableString
+import nav  # 選單的單一來源（tools/i18n/nav.py）
 
 HERE = os.path.dirname(__file__)
 EN_DIR = os.path.join(HERE, 'en')
@@ -23,38 +24,6 @@ ALLOWED_CJK = {'陳槿唐', '繁中', '简中', '/* email 解鎖門（深色版�
                # 測驗結果的資料代號：刻意保留中文，畫面上另外顯示英文名稱
                '行動者', '療癒者', '教導者', '感應者', '洞見者', '鏡面者', '療癒', '探索', '服務', '守護', '突破', '創造', '傳遞', '共鳴',
                "const ARCH = ['行動者','療癒者','教導者','感應者','洞見者','鏡面者'];", "const DRIVE = ['療癒','探索','服務','守護','突破','創造','傳遞','共鳴'];"}
-
-EN_NAV_ITEMS = [  # (href, label, key)
-    ('about.html', 'About', 'about'), ('worldview.html', 'Worldview', 'worldview'),
-    ('roots.html', 'Root Codes', 'roots'), ('tests.html', 'Root Code Test', 'tests')]
-EN_MORE = [('resources.html', 'Free Resources', 'resources'),
-           ('glow.html', 'Daily Glow', 'glow'), ('pair.html', 'Pair Card', 'pair'), ('updates.html', 'Site updates', 'updates')]
-
-
-def en_nav(up, on):
-    """英文版選單：結構和繁中版相同；目前所在的項目從繁中選單的 class="on" 帶過來。"""
-    def a(h, l, k):
-        return f'<a href="{up}{h}"' + (' class="on"' if k in on else '') + f'>{l}</a>'
-    more_on = any(k in on for _, _, k in EN_MORE)
-    sub = ''.join(a(h, l, k) for h, l, k in EN_MORE) + f'<a class="nav-sub-join{" on" if "join" in on else ""}" href="{up}join.html">Join us</a>'
-    items = '\n      '.join(a(h, l, k) for h, l, k in EN_NAV_ITEMS)
-    cta = 'nav-cta on' if 'join' in on else 'nav-cta'
-    return ('<div class="nav-links">\n      ' + items +
-            f'\n      <span class="nav-dd nav-more"><button type="button" class="nav-more-btn{" on" if more_on else ""}" aria-haspopup="true">More</button><span class="nav-sub">{sub}</span></span>'
-            f'\n      <a class="{cta}" href="{up}join.html">Join us</a>\n    </div>')
-
-
-NAV_KEYS = {'worldview.html': 'worldview', 'roots.html': 'roots', 'tests.html': 'tests', 'notes.html': 'notes', 'about.html': 'about', 'blog.html': 'blog',
-            'resources.html': 'resources', 'glow.html': 'glow', 'pair.html': 'pair', 'updates.html': 'updates', 'join.html': 'join'}
-
-
-def nav_on(src):
-    m = re.search(r'<div class="nav-links">(.*?)</div>', src, re.S)
-    if not m:
-        return set()
-    return {NAV_KEYS[h] for h in re.findall(r'<a [^>]*href="(?:\.\./)*([^"]+)"[^>]*class="on"', m.group(1)) if h in NAV_KEYS} | \
-           {NAV_KEYS[h] for h in re.findall(r'<a href="(?:\.\./)*([^"]+)" class="on"', m.group(1)) if h in NAV_KEYS}
-
 
 def strip_zh_only(html):
     """<!-- zh-only -->…<!-- /zh-only --> 之間的內容只留在繁中頁，簡體與英文版拿掉。"""
@@ -164,7 +133,7 @@ def build(inject, url_of):
         src = re.sub(r'<!-- i18n-head -->.*?<!-- /i18n-head -->', '', src, flags=re.S)
         src = re.sub(r'<!-- i18n-switch -->.*?<!-- /i18n-switch -->', '', src, flags=re.S)
         up = '../' * page.count('/')
-        src = re.sub(r'<div class="nav-links">.*?</div>', lambda m: en_nav(up, nav_on(src)), src, count=1, flags=re.S)
+        src = re.sub(r'<div class="nav-links">.*?</div>', lambda m: nav.render('en', up, nav.parse_on(m.group(0)), os.path.basename(page)), src, count=1, flags=re.S)
         out = translate_html(src, page, table_for(page), js_table(page))
         out = out.replace('<html lang="zh-Hant">', '<html lang="en">', 1)
         out = fix_paths(out, page)

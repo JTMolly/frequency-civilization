@@ -618,7 +618,7 @@ body.root-page .root-hero .motto{font-family:'Noto Serif TC',serif;font-style:it
 .nav-dd{position:relative;display:inline-flex;align-items:center}
 .nav-dd>a::after{content:'';display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin:0 0 4px 8px;opacity:.55}
 .nav-sub{display:none;position:absolute;top:100%;left:-18px;padding-top:12px;z-index:60;min-width:150px}
-.nav-sub::before{content:'';position:absolute;inset:12px 0 0 0;background:rgba(250,247,240,.98);border:1px solid var(--card-border);border-radius:6px;box-shadow:0 10px 30px rgba(43,38,32,.10)}
+.nav-sub::before{content:'';position:absolute;inset:12px 0 0 0;background:#faf7f0;border:1px solid var(--card-border);border-radius:6px;box-shadow:0 10px 30px rgba(43,38,32,.10)}
 .nav-sub a{position:relative;display:block;padding:8px 18px;white-space:nowrap;opacity:.85}
 .nav-sub a:first-child{padding-top:14px}.nav-sub a:last-child{padding-bottom:14px}
 .nav-dd:hover .nav-sub,.nav-dd:focus-within .nav-sub{display:block}
@@ -663,6 +663,28 @@ nav .nav-links .nav-more.open .nav-sub{display:block}
   html[lang=en] nav .nav-in .nav-links{font-size:12.5px;letter-spacing:.01em;gap:4px}
 }
 @media (max-width:360px){nav .nav-in .nav-links{font-size:12px;letter-spacing:.03em}html[lang=en] nav .nav-in .nav-links{font-size:11px;letter-spacing:0;gap:3px}}
+
+/* ============ 世界觀下拉（2026/10/24）：「世界觀」本身連到總覽，旁邊的小箭頭展開各篇；選單內容在 tools/i18n/nav.py ============
+   桌機：滑過或鍵盤移入就展開，Esc 收起；手機（沒有漢堡選單）：點小箭頭展開，點旁邊或 Esc 收起 */
+.nav-dd>a.nav-wv-link::after{display:none}
+.nav-wv-btn{font:inherit;color:var(--text);opacity:.75;background:none;border:0;padding:12px 10px 12px 6px;margin:-12px -4px -12px 0;cursor:pointer;transition:.25s;display:inline-flex;align-items:center}
+.nav-wv-btn::after{content:'';display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin:0 0 4px 0;opacity:.55}
+.nav-wv:hover .nav-wv-btn,.nav-wv:focus-within .nav-wv-btn,.nav-wv.open .nav-wv-btn,.nav-wv-btn.on{color:var(--gold-soft);opacity:1}
+.nav-wv:hover .nav-wv-link,.nav-wv:focus-within .nav-wv-link,.nav-wv.open .nav-wv-link{color:var(--gold-soft);opacity:1}
+nav .nav-links .nav-wv.open .nav-sub{display:block}
+.nav-sub a i{display:inline-block;min-width:22px;margin-right:8px;font-style:normal;letter-spacing:.06em;color:var(--gold);opacity:.85}
+.nav-dd.esc .nav-sub,.nav-dd.esc:hover .nav-sub,.nav-dd.esc:focus-within .nav-sub{display:none!important}
+@media (max-width:960px){
+  nav .nav-links{position:relative}
+  nav .nav-links .nav-wv{position:static}
+  nav .nav-links .nav-wv .nav-sub,nav .nav-links .nav-wv:hover .nav-sub,nav .nav-links .nav-wv:focus-within .nav-sub{display:none;position:absolute;top:100%;left:0;right:auto;padding:10px 0 0;gap:0;margin-left:0;min-width:200px;max-width:100%}
+  nav .nav-links .nav-wv.open .nav-sub{display:block}
+  nav .nav-links .nav-wv .nav-sub::before{display:block;inset:10px 0 0 0}
+  nav .nav-links .nav-wv .nav-sub a,nav .nav-links .nav-wv .nav-sub a:first-child,nav .nav-links .nav-wv .nav-sub a:last-child{display:block;padding:11px 18px;white-space:normal;opacity:.9;font-size:13.5px;line-height:1.55}
+  nav .nav-links .nav-wv .nav-sub a:first-child{padding-top:15px}
+  nav .nav-links .nav-wv .nav-sub a:last-child{padding-bottom:15px}
+  .nav-wv-btn{padding:12px 8px 12px 5px;margin:-12px -3px -12px 0}
+}
 
 /* 測驗入口：三關流程圖（tests.html） */
 .tf-sec{padding:56px 0 8px;text-align:center}

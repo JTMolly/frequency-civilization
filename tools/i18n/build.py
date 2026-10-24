@@ -152,7 +152,8 @@ def main():
     allp = pages()
     # 英文先產生，繁中與簡中的 hreflang 才知道哪些頁有英文版
     sys.path.insert(0, os.path.dirname(__file__))
-    import en_build
+    import nav, en_build
+    nav.sync(allp)  # 先把全站繁中頁的選單對齊 nav.py，簡體與英文才會跟著
     en_build.build(inject, url_of)
     for p in allp:
         src = open(p).read()
