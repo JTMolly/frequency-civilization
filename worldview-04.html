@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界地圖｜世界觀 04｜頻率文明 Frequency Civilization</title>
+<meta name="description" content="世界觀系列 04：一片海、一艘船、一個羅盤、一座燈塔。把我們怎麼看人和世界，畫在同一張地圖上。">
+<link rel="canonical" href="https://frequency-civilization.com/worldview-04.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="世界地圖｜頻率文明">
+<meta property="og:description" content="一片海、一艘船、一個羅盤、一座燈塔。把我們怎麼看人和世界，畫在同一張地圖上。">
+<meta property="og:image" content="https://frequency-civilization.com/assets/og-worldview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://frequency-civilization.com/assets/og-worldview.jpg">
+<meta property="og:url" content="https://frequency-civilization.com/worldview-04.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261025a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+<style>
+.wv-hero{position:relative;overflow:hidden;padding:116px 0 20px;background:radial-gradient(ellipse 60% 42% at 50% 38%,#fdf0d2 0%,rgba(253,240,210,0) 72%),linear-gradient(180deg,#fffdf8,var(--bg));text-align:center}
+.wv-hero .sec-kicker{display:flex;justify-content:center;align-items:center;gap:14px;font-size:11.5px;letter-spacing:.42em}
+.wv-hero .sec-kicker::before,.wv-hero .sec-kicker::after{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+.wv-hero h1{font-weight:300;font-size:clamp(28px,4.4vw,44px);line-height:1.6;letter-spacing:.1em;color:var(--text);margin:6px 0 30px}
+.wv-hero h1 em{font-style:normal;color:var(--gold-soft);font-weight:500}
+.wv-map{display:block;width:100%;height:auto;max-width:480px;margin:0 auto;filter:drop-shadow(0 18px 40px rgba(150,110,40,.10))}
+.wv-map text{font-family:'Noto Sans TC',sans-serif;fill:#2b2620;letter-spacing:.04em}
+.wv-map .serif{font-family:'Noto Serif TC',serif;font-weight:500;letter-spacing:.08em}
+.wv-map .muted{fill:#6f685c}
+.wv-map .gold{fill:#7c5f2c}
+.wv-map .dark{fill:#3d2d10}
+.wv-map .lab{font-size:12px;letter-spacing:.3em;fill:#a07c3e}
+.wv-map .chip{font-size:11.5px;letter-spacing:.12em;fill:#7c5f2c}
+.wv-map .num{font-size:12px;font-weight:500;fill:#fff;letter-spacing:0}
+.wv-map .sub{font-size:12.5px}
+.wv-map .sub2{font-size:11.5px}
+.wv-map .sub3{font-size:10.5px;letter-spacing:0}
+.wv-map .mul{font-size:15px;fill:#a07c3e}
+.wv-map .t12{font-size:12.5px}.wv-map .t13{font-size:13px}.wv-map .t14{font-size:14.5px}.wv-map .t15{font-size:15px}.wv-map .t17{font-size:17px}.wv-map .t18{font-size:18px}.wv-map .t20{font-size:20px}
+.wv-map a{cursor:pointer}
+.wv-map a:hover circle{fill:#7c5f2c}
+.wv-one{padding:30px 0 24px;text-align:center}
+.wv-one p{position:relative;display:inline-block;max-width:760px;padding:30px 12px;font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(20px,2.6vw,28px);line-height:1.9;letter-spacing:.1em;color:var(--text)}
+.wv-one p::before,.wv-one p::after{content:"";position:absolute;left:50%;width:120px;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.wv-one p::before{top:0}.wv-one p::after{bottom:0}
+.wv-sec{padding:72px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
+.wv-sec:nth-of-type(even){background:var(--bg2)}
+.wv-in{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
+.wv-sec.rev .wv-in{grid-template-columns:6fr 5fr}
+.wv-sec.rev .wv-pic{order:2}
+.wv-in.solo{display:block;max-width:760px;margin:0 auto}
+.wv-pic{position:relative;margin:0;border-radius:6px;overflow:hidden;box-shadow:var(--shadow);background:#f6ecd2;aspect-ratio:4/3}
+.wv-pic .cr{position:absolute;right:8px;bottom:6px;font-size:10.5px;letter-spacing:.02em;color:rgba(255,255,255,.88);text-shadow:0 1px 3px rgba(0,0,0,.55);text-decoration:none}
+.wv-pic img{display:block;width:100%;height:100%;object-fit:cover}
+.wv-kick{font-size:12.5px;letter-spacing:.34em;color:var(--gold);margin-bottom:12px}
+body.v3 .wv-txt h2{font-weight:400;font-size:clamp(22px,2.5vw,30px);line-height:1.75;letter-spacing:.08em;margin-bottom:22px;color:var(--text)}
+.wv-p{margin:0 0 12px;font-size:16.5px;line-height:2.05;color:var(--text);letter-spacing:.05em}
+.wv-quote{margin:24px 0 0;padding:16px 22px 14px;border-left:3px solid var(--gold);background:rgba(160,124,62,.08);border-radius:0 6px 6px 0}
+.wv-quote blockquote{font-family:'Noto Serif TC',serif;font-weight:300;font-size:16.5px;line-height:2.05;letter-spacing:.08em;color:var(--text)}
+.wv-quote figcaption{margin-top:6px;font-size:12.5px;letter-spacing:.12em;color:var(--muted)}
+.wv-note{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.95}
+.wv-note a{word-break:break-all}
+.wv-mini{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin-top:18px}
+.wv-mini li{padding:0 10px;border-radius:99px;font-size:11.5px;letter-spacing:.1em;line-height:1.9;border:1px solid var(--gold-dim);color:var(--gold-soft);opacity:.85}
+.wv-mini .t-c{border-color:rgba(43,38,32,.3);color:var(--muted)}
+.wv-mini .t-v{border-color:transparent;background:rgba(160,124,62,.12)}
+.wv-two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.wv-two>div{padding:16px 18px;border:1px solid var(--card-border);border-radius:6px;background:#fff;box-shadow:var(--shadow)}
+.wv-two h4{font-family:'Noto Serif TC',serif;font-weight:500;font-size:14.5px;letter-spacing:.2em;color:var(--gold-soft);margin-bottom:6px}
+.wv-two p{font-size:13.5px;color:var(--muted);line-height:1.9}
+.wv-aside{margin-top:16px;font-family:'Noto Serif TC',serif;font-size:15.5px;line-height:1.95;letter-spacing:.08em;color:var(--text)}
+.wv-aside span{display:block;font-family:'Noto Sans TC',sans-serif;font-size:12.5px;letter-spacing:.12em;color:var(--muted)}
+.wv-end{padding:72px 0 92px}
+.wv-end .box{max-width:760px;margin:0 auto;text-align:center}
+.wv-end .big{font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(19px,2.2vw,24px);line-height:2;letter-spacing:.1em;color:var(--text)}
+.wv-end .small{margin-top:24px;font-size:13.5px;color:var(--muted);line-height:2.05}
+.wv-end .btns{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+html[lang=en] .wv-map text{letter-spacing:.01em}
+html[lang=en] .wv-map .serif{letter-spacing:.01em}
+html[lang=en] .wv-map .lab{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+html[lang=en] .wv-map .chip{font-size:10.5px;letter-spacing:.02em}
+html[lang=en] .wv-map .sub{font-size:12px}
+html[lang=en] .wv-map .sub2{font-size:11px}
+html[lang=en] .wv-map .sub3{font-size:10px}
+html[lang=en] .wv-map .t12{font-size:10.8px}
+html[lang=en] .wv-map .t13{font-size:12px}
+html[lang=en] .wv-map .t14{font-size:13.5px}
+html[lang=en] .wv-map .t15{font-size:14px}
+html[lang=en] .wv-map .t17{font-size:16px}
+html[lang=en] .wv-map .t18{font-size:17px}
+html[lang=en] .wv-map .t20{font-size:14px}
+html[lang=en] .wv-p,html[lang=en] .wv-quote blockquote{letter-spacing:.01em}
+html[lang=en] body.v3 .wv-txt h2{letter-spacing:.01em;line-height:1.5;font-size:clamp(20px,2.1vw,26px)}
+html[lang=en] .wv-one p{letter-spacing:.03em}
+@media (max-width:860px){
+  .wv-hero{padding:132px 0 12px}
+  .wv-in,.wv-sec.rev .wv-in{grid-template-columns:1fr;gap:26px}
+  .wv-sec.rev .wv-pic{order:0}
+  .wv-sec{padding:52px 0}
+  .wv-two{grid-template-columns:1fr}
+}
+
+.wv-next{margin:30px 0 0;font-size:14px;letter-spacing:.1em}
+.wv-next a{color:var(--gold-soft);border-bottom:1px solid rgba(160,124,62,.4);padding-bottom:2px}
+.wv-next a:hover{color:var(--gold)}
+.wv-legend{text-wrap:balance;max-width:640px;margin:0 auto 56px;padding:0 24px;text-align:center;font-size:12.5px;line-height:1.9;color:var(--muted);letter-spacing:.05em}
+.wv-legend b{font-weight:400;color:var(--gold-soft);letter-spacing:.12em}
+.wv-hero h1 .g{color:var(--gold-soft);font-weight:500}
+.wv-back{display:inline-block;margin-bottom:14px;font-size:13px;letter-spacing:.14em;color:var(--gold-soft)}
+.wv-back:hover{color:var(--gold)}
+.wv-sub{margin:-12px 0 28px;font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(16px,2vw,19px);letter-spacing:.12em;color:var(--muted)}
+.wv-aside{font-size:17px;line-height:2.05;margin-top:22px;padding-left:2px}
+.wv-map .rem{font-size:18px}
+.wv-map .cw{font-size:17px}
+.wv-h3{margin:30px 0 8px;padding-top:16px;border-top:1px solid var(--line);font-family:'Noto Serif TC',serif;font-weight:500;font-size:16.5px;letter-spacing:.14em;line-height:1.7;color:var(--gold-soft)}
+.wv-tg{display:inline-block;margin-left:10px;padding:0 9px;border:1px solid var(--gold-dim);border-radius:99px;font-size:11px;letter-spacing:.1em;line-height:1.8;color:var(--gold-soft);vertical-align:1px}
+.wv-roots{margin-bottom:26px}
+.wv-rcards{list-style:none;margin:14px 0 16px;padding:0}
+.wv-rcards li{margin:0 0 10px;padding:10px 14px;border:1px solid var(--card-border);border-left:3px solid var(--c);border-radius:0 6px 6px 0;background:#fff}
+.wv-rcards .rn{font-family:'Noto Serif TC',serif;font-size:15px;letter-spacing:.04em;color:var(--text)}
+.wv-rcards .rn::before{content:"";display:inline-block;width:8px;height:8px;margin-right:8px;border-radius:50%;background:var(--c);vertical-align:1px}
+.wv-rcards .rn b{font-weight:500}
+.wv-rcards p{margin:0;font-size:14px;line-height:1.85;letter-spacing:.03em;color:var(--text)}
+.wv-rcards .back{margin-top:6px;font-size:13px;color:var(--muted)}
+.wv-rcards .back span{margin-right:8px;font-size:11.5px;letter-spacing:.16em;color:var(--gold-soft)}
+html[lang=en] .wv-sub{letter-spacing:.04em}
+html[lang=en] .wv-h3{letter-spacing:.04em}
+html[lang=en] .wv-rcards p{letter-spacing:.01em}
+html[lang=en] .wv-rcards .back span{letter-spacing:.06em}
+.wv-turn{margin:28px 0 6px;font-family:'Noto Serif TC',serif;font-size:15px;letter-spacing:.14em;color:var(--gold-soft)}
+html[lang=en] .wv-turn{letter-spacing:.04em}
+.wv-practice{margin:20px 0 16px;padding:14px 20px 8px;border-left:3px solid var(--gold-dim);background:rgba(160,124,62,.05);border-radius:0 6px 6px 0}
+.wv-practice .lead{margin:0 0 10px;font-size:14.5px;line-height:1.9;letter-spacing:.06em;color:var(--text)}
+.wv-steps{list-style:none;margin:0;padding:0}
+.wv-steps li{margin:0 0 14px;font-size:14.5px;line-height:1.95;letter-spacing:.04em;color:var(--text)}
+.wv-steps b{font-weight:500;letter-spacing:.08em;color:var(--gold-soft)}
+.wv-steps .rf{display:block;margin-top:3px;font-size:12px;line-height:1.85;letter-spacing:.02em;color:var(--muted)}
+.wv-steps .rf a{word-break:break-all}
+.wv-practice .fin{margin:2px 0 8px;font-size:14px;line-height:1.9;letter-spacing:.05em;color:var(--muted)}
+html[lang=en] .wv-practice .lead,html[lang=en] .wv-steps li,html[lang=en] .wv-practice .fin{letter-spacing:.01em}
+.wv-bc{padding:72px 0 64px;border-top:1px solid var(--line)}
+.wv-bc .wv-kick{text-align:center}
+.wv-bc h2{text-align:center;font-weight:400;font-size:clamp(20px,2.4vw,26px);line-height:1.8;letter-spacing:.08em;margin-bottom:6px;color:var(--text)}
+.wv-two ul{margin:6px 0 0;padding-left:1.15em}
+.wv-two li{font-size:14.5px;color:var(--muted);line-height:1.95;margin-bottom:4px}
+.wv-two .b h4{color:var(--gold-soft)}
+.wv-two .c h4{color:var(--text)}
+.wv-bc .wv-aside{text-align:center;margin-top:26px}
+html[lang=en] .wv-map .rem{font-size:14px}
+html[lang=en] .wv-map .cw{font-size:14px}
+html[lang=en] .wv-sub{letter-spacing:.04em}
+html[lang=en] .wv-back{letter-spacing:.06em}
+html[lang=en] .wv-two li{letter-spacing:.01em}
+
+.wv-txt .hm-more{margin:12px 0 22px}
+.wv-txt .wv-quote{margin-bottom:22px}
+.wv-txt .hm-more .wv-quote{margin-bottom:0}
+.wv-kick,.wv-aside,.wv-note{text-wrap:balance}
+.wv-practice .rf a[href^="https://doi.org"]{white-space:nowrap}
+.wv-txt .hm-more summary{font-size:13px}
+.wv-txt .hm-more .wv-quote{margin-top:12px}
+.wv-rf-link{display:inline-block;font-size:12px;letter-spacing:.04em}
+.wv-pic::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(to top,rgba(30,22,10,.42),rgba(30,22,10,0));pointer-events:none}
+.wv-pic .cr{z-index:1}
+.wv-txt .wv-p{text-wrap:pretty}
+.wv-hero .wv-sub{margin-bottom:4px}
+.wv-one{padding-top:6px}
+.wv-gov{margin:4px 0 26px;text-align:left}
+.wv-gov .nb{white-space:nowrap}
+.wv-gov b,.wv-gov i{word-break:keep-all}
+.wv-gov ul,.wv-gov ol{list-style:none;margin:0;padding:0}
+.wv-gov b{display:block;font-family:'Noto Serif TC',serif;font-weight:400;font-size:16px;line-height:1.5;letter-spacing:.06em;color:var(--text);text-wrap:balance}
+.wv-gov i{display:block;font-style:normal;margin-top:5px;font-size:12.5px;line-height:1.6;letter-spacing:.03em;color:var(--muted);text-wrap:balance}
+.gv-src{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gv-src li{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 10px;min-height:96px;border:1.2px solid #b08a48;border-radius:14px;background:#fff}
+.gv-join{position:relative;height:54px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gv-join span{justify-self:center;height:50%;border-left:1.2px dashed rgba(160,124,62,.7)}
+.gv-join::before{content:"";position:absolute;left:calc((100% - 24px)/6);right:calc((100% - 24px)/6);top:50%;border-top:1.2px dashed rgba(160,124,62,.7)}
+.gv-join::after{content:"";position:absolute;left:50%;top:50%;bottom:0;border-left:1.2px dashed rgba(160,124,62,.7)}
+.gv-join em,.gv-down em{position:absolute;left:50%;bottom:-1px;width:8px;height:8px;border-right:1.6px solid #a07c3e;border-bottom:1.6px solid #a07c3e;transform:translateX(-50%) rotate(45deg)}
+.gv-core{padding:16px 16px 18px;border:1.8px solid #b08a48;border-radius:18px;background:linear-gradient(180deg,#fbf0d4,#fffdf8);text-align:center}
+.gv-core .nm{font-family:'Noto Serif TC',serif;font-size:19px;letter-spacing:.14em;color:var(--text)}
+.gv-steps{display:grid;gap:18px;justify-items:center;margin-top:16px}
+.gv-steps li{position:relative;min-width:150px;max-width:100%;padding:7px 16px;border:1px solid rgba(160,124,62,.55);border-radius:99px;background:#fff;font-size:14px;line-height:1.55;letter-spacing:.06em;color:var(--text);text-wrap:balance}
+.gv-steps li + li::before{content:"";position:absolute;left:50%;top:-13px;width:6px;height:6px;border-right:1.5px solid #a07c3e;border-bottom:1.5px solid #a07c3e;transform:translateX(-50%) rotate(45deg)}
+.gv-down{position:relative;height:38px}
+.gv-down::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1.2px dashed rgba(160,124,62,.7)}
+.gv-act{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gv-act li{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 8px;min-height:54px;border:1.2px solid #b08a48;border-radius:14px;background:#fbf4e3}
+.gv-act li b{font-size:15px}
+.gv-act li + li::before{content:"";position:absolute;left:-12.5px;top:50%;width:7px;height:7px;border-top:1.6px solid #a07c3e;border-right:1.6px solid #a07c3e;transform:translateY(-50%) rotate(45deg)}
+.gv-act li:last-child{border-width:1.7px}
+html[lang=en] .wv-gov b{letter-spacing:.01em}
+@media (max-width:560px){
+  .gv-src{grid-template-columns:1fr;gap:10px}
+  .gv-src li{min-height:0;padding:11px 12px}
+  .gv-join{height:34px}
+  .gv-join span,.gv-join::before{display:none}
+  .gv-join::after{top:0}
+  .gv-act{gap:14px}
+  .gv-act li + li::before{left:-11px}
+}
+.wv-ask{counter-reset:q;list-style:none;margin:14px 0 20px;padding:0;display:grid;gap:10px}
+.wv-ask li{counter-increment:q;display:flex;gap:14px;align-items:baseline;padding:12px 16px;border:1px solid var(--card-border);border-radius:8px;background:#fff;font-size:15.5px;line-height:1.85;letter-spacing:.05em;color:var(--text)}
+.wv-ask li::before{content:counter(q);flex:none;width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:var(--gold);color:#fff;font-size:12px;letter-spacing:0;transform:translateY(-1px)}
+.wv-aside .nb{display:inline-block;font:inherit;letter-spacing:inherit;color:inherit}
+html[lang="en"] .wv-aside .nb{display:inline}html[lang="en"] .wv-aside .nb+.nb{margin-left:.28em}
+</style>
+<style>
+/* 世界地圖：互動星圖 */
+.wm{--c-bg:#fbf8f1;--c-bg2:#f3eee3;--c-text:#2b2620;--c-muted:#6f685c;--c-gold:#9c6b1e;--c-gold2:#7c5f2c;--c-line:rgba(160,124,62,.3);--c-card:#fff;--c-halo:#fbf8f1;padding:8px 0 64px}
+.wm .wrap{max-width:1040px}
+.wm .map{position:relative;margin:8px auto 0;max-width:980px}
+.wm .map.star{aspect-ratio:1200/780;border-radius:6px;overflow:hidden;background:radial-gradient(ellipse 70% 70% at 60% 55%,var(--c-bg2),var(--c-bg) 75%);box-shadow:0 0 0 1px var(--c-line)}
+.wm .map.star.portrait{aspect-ratio:600/920}
+.wm .map.star canvas,.wm .map.star svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.wm .lbl{font-family:'Noto Serif TC',serif;font-weight:500;font-size:26px;letter-spacing:.2em;fill:var(--c-text);paint-order:stroke;stroke:var(--c-halo);stroke-opacity:.7;stroke-width:6px;stroke-linejoin:round;transition:fill .3s}
+.wm .sub{font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:14.5px;letter-spacing:.12em;fill:var(--c-gold);paint-order:stroke;stroke:var(--c-halo);stroke-opacity:.7;stroke-width:5px}
+.wm .cap{font-family:'Noto Serif TC',serif;font-weight:400;font-size:19px;letter-spacing:.24em;fill:var(--c-gold2);paint-order:stroke;stroke:var(--c-halo);stroke-opacity:.7;stroke-width:6px}
+.wm .rname{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;letter-spacing:.04em;fill:var(--c-text);opacity:.82;paint-order:stroke;stroke:var(--c-halo);stroke-opacity:.7;stroke-width:4px}
+.wm .portrait .lbl{font-size:30px}.wm .portrait .sub{font-size:17px}.wm .portrait .cap{font-size:22px}
+.wm .gl{fill:none;stroke:var(--c-gold);stroke-linecap:round;stroke-linejoin:round}
+.wm .node{fill:var(--c-gold2)}
+.wm .hot{cursor:pointer;outline:none}
+.wm .hot .hit{fill:transparent}
+.wm .hot:focus-visible .selring{opacity:.9}
+.wm .selring{fill:none;stroke:var(--c-gold);stroke-width:1.2;stroke-dasharray:2 7;opacity:0;transition:opacity .4s}
+.wm .hot.on .selring{opacity:.9}
+.wm .hot:hover .lbl,.wm .hot.on .lbl{fill:#9c6b1e}
+@keyframes wm-breathe{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes wm-twinkle{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes wm-spin{to{transform:rotate(360deg)}}
+.wm .breathe{animation:wm-breathe 5.5s ease-in-out infinite}
+.wm .tw{animation:wm-twinkle 4.6s ease-in-out infinite}
+.wm .spin{animation:wm-spin 160s linear infinite;transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:reduce){.wm .breathe,.wm .tw,.wm .spin{animation:none}}
+.wm .hint{margin:0 0 14px;text-align:center;font-size:13px;color:var(--muted);letter-spacing:.08em}
+.wm .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:22px auto 0;max-width:720px}
+.wm .chips button{font-family:'Noto Serif TC',serif;font-size:14.5px;letter-spacing:.14em;color:var(--c-gold2);background:rgba(255,255,255,.8);border:1px solid var(--c-line);border-radius:99px;padding:7px 16px;min-height:40px;cursor:pointer;transition:.25s}
+.wm .chips button small{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;letter-spacing:.04em;color:var(--c-muted);margin-left:6px}
+.wm .chips button:hover{border-color:var(--c-gold)}
+.wm .chips button.on{background:var(--c-gold);border-color:var(--c-gold);color:#fff}
+.wm .chips button.on small{color:rgba(255,255,255,.85)}
+.wm .info{max-width:640px;margin:22px auto 0;min-height:150px;padding:24px 28px;background:var(--c-card);border:1px solid var(--card-border);border-radius:8px;box-shadow:var(--shadow);position:relative}
+.wm .info::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:2px;background:linear-gradient(180deg,transparent,var(--c-gold),transparent)}
+.wm .info h2{font-family:'Noto Serif TC',serif;font-size:20px;color:var(--c-gold2);letter-spacing:.2em;margin-bottom:6px;font-weight:500}
+.wm .info h2 small{font-family:'Noto Sans TC',sans-serif;font-size:12.5px;color:var(--c-muted);letter-spacing:.1em;margin-left:10px;font-weight:300}
+.wm .info p{font-size:15.5px;line-height:2;color:var(--c-text)}
+.wm .info .empty{color:var(--c-muted);font-size:14.5px;text-align:center;padding-top:28px}
+.wm .info .note{margin-top:10px;font-size:12.5px;color:var(--c-muted)}
+.wm .roots-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px 10px;margin-top:14px}
+.wm .roots-list a{display:block;padding:6px 10px;border:1px solid var(--card-border);border-left:3px solid var(--rc);border-radius:6px;font-size:13px;line-height:1.6;color:var(--c-text);letter-spacing:.03em}
+.wm .roots-list a b{display:block;font-family:'Cormorant Garamond','Noto Serif TC',serif;font-style:italic;font-weight:500;color:var(--c-gold2);font-size:15.5px;letter-spacing:.04em}
+.wm .roots-list a:hover{background:color-mix(in srgb,var(--rc) 14%,transparent)}
+.wm .credit{max-width:640px;margin:18px auto 0;text-align:center;font-size:12.5px;line-height:1.9;color:var(--muted);text-wrap:balance}
+.wm-check{margin:22px 0 0;padding:14px 20px 12px;border-left:3px solid var(--gold-dim);background:rgba(160,124,62,.05);border-radius:0 6px 6px 0}
+.wm-check span{display:block;margin-bottom:4px;font-size:12px;letter-spacing:.3em;color:var(--gold-soft)}
+.wm-check p{margin:0;font-size:15px;line-height:1.95;letter-spacing:.05em;color:var(--text)}
+.wm-list{margin:8px 0 14px;padding-left:1.2em}
+.wm-list li{margin:0 0 10px;font-size:16px;line-height:2;letter-spacing:.05em;color:var(--text)}
+.wm-list .wv-quote{margin:12px 0 4px}
+.wm-k{margin:26px 0 6px;font-family:'Noto Serif TC',serif;font-weight:500;font-size:16.5px;letter-spacing:.14em;color:var(--gold-soft)}
+@media (max-width:600px){
+  .wm .map.star{margin-left:-16px;margin-right:-16px;border-radius:0;box-shadow:none}
+  .wm .info{padding:20px 18px}
+  .wm .chips{gap:6px}
+  .wm .chips button{padding:6px 12px;font-size:14px}
+  .wm .roots-list{grid-template-columns:1fr 1fr}
+}
+</style>
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/worldview-04.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/worldview-04.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/worldview-04.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}</style><!-- /i18n-head -->
+</head>
+<body class="v3">
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html">頻率文明 FREQUENCY CIVILIZATION</a>
+    <div class="nav-links">
+      <a href="about.html">關於我們</a>
+      <span class="nav-dd nav-wv"><a class="nav-wv-link on" href="worldview.html">世界觀</a><button type="button" class="nav-wv-btn on" aria-haspopup="true" aria-expanded="false" aria-label="展開世界觀選單"></button><span class="nav-sub"><a href="worldview.html"><i>00</i>世界觀總覽</a><a href="worldview-01.html"><i>01</i>劇本與課題</a><a href="worldview-02.html"><i>02</i>一句話，怎麼寫出現實</a><a href="worldview-03.html"><i>03</i>所有聲音都聽，方向盤在現在的你手上</a><a href="worldview-04.html" class="on"><i>04</i>世界地圖</a></span></span>
+      <a href="roots.html">語根系統</a>
+      <a href="tests.html">語根測驗</a>
+      <span class="nav-dd nav-more"><button type="button" class="nav-more-btn" aria-haspopup="true">更多</button><span class="nav-sub"><a href="resources.html">免費資源</a><a href="glow.html">今日點燈</a><a href="pair.html">雙人配對卡</a><a href="updates.html">網站更新紀錄</a><a class="nav-sub-join" href="join.html">加入我們</a></span></span>
+      <a class="nav-cta" href="join.html">加入我們</a>
+    </div>
+    <!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="worldview-04.html" hreflang="zh-Hant" lang="zh-Hant" class="on">繁中</a><a href="zh-hans/worldview-04.html" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="en/index.html" hreflang="en" lang="en">EN</a></div><!-- /i18n-switch -->
+  </div>
+</nav>
+
+<header class="wv-hero">
+  <div class="wrap">
+    <a class="wv-back" href="worldview.html">← 回到世界觀總覽</a>
+    <div class="sec-kicker">WORLDVIEW 04</div>
+    <h1>世界<span class="g">地圖</span></h1>
+    <p class="wv-sub">這是一張畫法，不是一個答案；<br>畫法也會隨著我們的理解慢慢改變。</p>
+  </div>
+</header>
+<section class="wm"><div class="wrap">
+  <p class="hint">點圖上的地方，或下面的名字，看說明。</p>
+  <figure class="map star" id="map">
+    <canvas id="cv" aria-hidden="true"></canvas>
+    <svg id="ov" aria-label="世界地圖：海、船、羅盤、港、燈塔、港邊的村"></svg>
+  </figure>
+  <div class="chips" aria-label="地圖上的六個地方"></div>
+  <section class="info" id="info" aria-live="polite"><p class="empty">點圖上的地方，或上面的名字。</p></section>
+  <p class="credit">羅盤是我們畫的圖示；海、船、港、燈塔的比喻，來自 Molly 的原話。</p>
+</div></section>
+<section class="wv-sec" id="s1"><div class="wrap"><div class="wv-in solo"><div class="wv-txt">
+<div class="wv-kick">01｜海</div>
+<h2>海</h2>
+<p class="wv-p">在這張地圖上，我們把源頭畫成一片海。</p>
+<p class="wv-p">每個人都是海裡的一滴水珠，原本就是完整的。</p>
+<p class="wv-p">有人很早就開始了解自己，有人需要走很長一段路。每個人都有自己的步調，不必急著跟誰比較。</p>
+<figure class="wv-quote"><blockquote>「一滴水花的一滴水珠就是我們」</blockquote><figcaption>Molly・口述・2025-08-20</figcaption></figure><div class="wm-check"><span>可以自己檢查</span><p>你上一次覺得「我是不是慢了」是什麼時候？那時候，你正在跟誰比較？</p></div></div></div></div></section>
+<section class="wv-sec" id="s2"><div class="wrap"><div class="wv-in solo"><div class="wv-txt">
+<div class="wv-kick">02｜船</div>
+<h2>船：一個人</h2>
+<p class="wv-p">如果把一個人想成一艘船，船上有方向、儀表板，也有掌舵的人。</p>
+<p class="wv-p">方向，是你心裡想去的地方。</p>
+<p class="wv-p">儀表板，是你的身體。油量、溫度、警示燈，都會提醒你現在的狀態。</p>
+<p class="wv-p">而掌舵的人，就是此時此地的你。</p>
+<p class="wv-p">擔心、直覺、身體傳來的訊號，都可以上船說說話。你可以聽聽它們想告訴你什麼，再決定接下來怎麼走。方向盤始終在你手上。</p>
+<figure class="wv-quote"><blockquote>「我們可以邀請肉身一起共創…而肉身也有選擇的權利兩個人的角色會成為夥伴成為共創者而不再是單純的頻率容器」</blockquote><figcaption>Molly・個人紀錄・2025-05-02</figcaption></figure><p class="wv-p">這艘船不需要一直硬撐著往前。</p>
+<p class="wv-p">油快沒了，就找個地方靠岸。警示燈亮了，也可以先停下來看看。</p>
+<figure class="wv-quote"><blockquote>「我看到好多人活得很耗損 我想建立一個不耗損的場域」</blockquote><figcaption>Molly・個人紀錄・2026-10</figcaption></figure><div class="wm-check"><span>可以自己檢查</span><p>今天儀表板上的電量還有幾成？有好好吃飯、喝水、睡覺嗎？</p></div><p class="wv-note"><a href="worldview-03.html">想多看一點：世界觀 03 →</a></p>
+</div></div></div></section>
+<section class="wv-sec" id="s3"><div class="wrap"><div class="wv-in solo"><div class="wv-txt">
+<div class="wv-kick">03｜羅盤</div>
+<h2>羅盤：十二個方向</h2>
+<p class="wv-p">船出海，需要知道方向。</p>
+<p class="wv-p">我們把十二個語根畫成羅盤上的十二個方位，而不是十二座各自獨立的島。</p>
+<p class="wv-p">因為每艘船都可以往不同的方向走，只是每個人比較習慣的方向不太一樣。</p>
+<figure class="wv-quote"><blockquote>「語根，不是要帶你直接回家，而是要讓你在地球上活出回家的頻率」</blockquote><figcaption>Molly・個人紀錄・2025-10-27</figcaption></figure><p class="wv-p">測驗想呈現的，是你此刻比較習慣的方向；它不是固定的標籤，會變。</p>
+<div class="wm-check"><span>可以自己檢查</span><p><a href="test.html">做一次測驗</a>（教育與自我覺察用，不是診斷）。看看結果和你自己的感覺，有哪些地方相同？又有哪些地方不一樣？</p></div></div></div></div></section>
+<section class="wv-sec" id="s4"><div class="wrap"><div class="wv-in solo"><div class="wv-txt">
+<div class="wv-kick">04｜港</div>
+<h2>港：家在地球</h2>
+<p class="wv-p">船要靠岸的地方，就在人類生活的海岸上。</p>
+<p class="wv-p">我們沒有打算另外蓋一個與世界隔絕的地方。</p>
+<p class="wv-p">我們想做的事，仍然發生在大家一起生活的世界裡，與日常、與身邊的人保持連結。</p>
+<figure class="wv-quote"><blockquote>「我們其實還是跟人類世界會有連結」</blockquote><figcaption>Molly・個人紀錄・2025-12-23</figcaption></figure><div class="wm-check"><span>可以自己檢查</span><p>你的生活裡，有沒有一個讓你覺得可以「靠岸」的地方？它帶給你什麼？</p></div></div></div></div></section>
+<section class="wv-sec" id="s5"><div class="wrap"><div class="wv-in solo"><div class="wv-txt">
+<div class="wv-kick">05｜燈塔與村</div>
+<h2>燈塔與港邊的村</h2>
+<p class="wv-p">海岸邊有一座燈塔，旁邊有個小村。</p>
+<p class="wv-p">燈塔做的事很簡單：持續亮著，讓海上的船能看見它。</p>
+<p class="wv-p">有船靠過來，村裡的人就陪它休息、補充需要的東西。等它準備好了，再由自己決定什麼時候出航、往哪裡去。</p>
+<figure class="wv-quote"><blockquote>「我們其實就是在港邊的光塔。我們持續做事持續發光，那海面上就會很多的船看到我們的光來我們這我們給它補給給它油給它燃料給它愛給它溫暖。等它成熟穩穩定了，它就可以自己出去帶光」</blockquote><figcaption>Molly・口述・2025-08-20</figcaption></figure><p class="wm-k">現在真的有的</p>
+<p class="wv-p">這個網站、<a href="tests.html">三個測驗</a>、<a href="worldview.html">世界觀 00–03</a>、<a href="roots.html">12 個語根頁</a>、十二語根之歌、小遊戲「這一趟，從哪顆星出發」，還有 Threads 上持續發生的對話。</p>
+<p class="wv-p">分享會也正在規劃，預計 12 月或 1 月舉辦第一場。</p>
+<p class="wm-k">想像中的樣子（還沒有，是我們想試的）</p>
+<ul class="wm-list">
+<li>一份貢獻紀錄：把每個人做過什麼、投入多少時間留下來。只做紀錄，不打分數、不發點數，也不換成錢。我們在 2025 年就曾經思考過，這樣的制度該由誰決定，又要如何避免權力集中。<figure class="wv-quote"><blockquote>「那是由誰來判斷？這個點數該發多少怎麼樣去量化這個貢獻值呢？假設如果這套系統又被權力把權那他只是另外一種國家的形式，不是嗎？」</blockquote><figcaption>Molly・個人紀錄・2025-07-06</figcaption></figure></li>
+<li>一個實體的地方：走進去，不一定會聽到「頻率文明」這四個字，但音樂、工具和人都在那裡。這個地方，我們還在尋找。</li>
+<li>港邊的村：讓人們可以來這裡補給，準備好之後再出航，而不是一定要留下來。</li>
+</ul>
+<p class="wv-p">這些目前都還在構想階段。光塔系統還沒有實際運行，貢獻紀錄也尚未開始。</p>
+<p class="wm-k">別人試過什麼</p>
+<p class="wv-p">其實，世界上已經有不少人嘗試過，讓人與人之間的付出被看見，例如時間銀行、地方互助網絡。有些持續運作了幾十年，也有些後來結束了。</p>
+<p class="wv-p">從目前讀到的資料來看，能長期運作的案例，往往有相對穩定的支持，也讓受到規則影響的人有機會參與修改，而不是所有事情都依賴某一個人。這是我們現階段的整理，還不能當成定論。</p>
+<p class="wv-p">維納斯計劃則留下了完整的願景，以及一座研究園區。不過，在我們查閱的公開資料中，還沒有找到足夠清楚的說明，讓我們理解決策由誰負責、資源又如何分配。這也是我們特別想繼續弄清楚的地方。</p>
+<p class="wv-p">所以，我們想先從很小的一步開始。能實際試試看，也保留隨時調整、退回來重新思考的空間。</p>
+<div class="wm-check"><span>可以自己檢查</span><p>你最近一次感覺被別人「補給」到，是什麼時候？對方做了什麼？</p></div></div></div></div></section>
+<section class="wv-sec" id="s6"><div class="wrap"><div class="wv-in solo"><div class="wv-txt">
+<div class="wv-kick">06｜出航</div>
+<h2>出航</h2>
+<p class="wv-p">這張地圖的終點，不是讓每艘船都留下來，而是讓它們能夠再次出航。</p>
+<p class="wv-p">燈塔一直亮著，是為了讓離開的船知道，如果有需要，還能找到回來的方向。</p>
+<p class="wv-p">也許有一天，那艘船也會成為另一個人的燈。</p>
+<p class="wv-p">我們一邊畫這張地圖，一邊也還在學習。有些地方已經比較清楚，有些地方仍然充滿未知。</p>
+<p class="wv-p">所以，這是一張畫法，不是一個答案。</p>
+<div class="wm-check"><span>可以自己檢查</span><p>如果你明天就要出航，最想從這張圖裡帶走哪一樣東西？</p></div></div></div></div></section>
+
+<section class="wv-end">
+  <div class="wrap">
+    <div class="box">
+      <p class="big">這是我們的觀察與信念，<br>不是研究結論。</p>
+      <div class="btns"><a class="btn solid" href="worldview.html">回到世界觀總覽</a><a class="btn" href="test.html">做語根測驗</a></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">頻率文明 FREQUENCY CIVILIZATION</div>
+        <p>一套幫助人看清自己運作模式的自我認知系統。<br>合作與聯繫：<a href="mailto:frequency.civilization@gmail.com">frequency.civilization@gmail.com</a></p>
+      </div>
+      <div>
+        <div class="sec-kicker" style="margin-bottom:12px">FOLLOW</div>
+        <div class="socials">
+          <a href="https://lin.ee/pKlS7Yv" target="_blank" rel="noopener" class="soc" style="--brand:#06C755" aria-label="LINE"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span>LINE</span></a>
+          <a href="https://www.instagram.com/freq_civilization" target="_blank" rel="noopener" class="soc" style="--brand:#E4405F" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span>Instagram</span></a>
+          <a href="https://www.threads.com/@freq_civilization" target="_blank" rel="noopener" class="soc" style="--brand:#000000" aria-label="Threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg><span>Threads</span></a>
+          <a href="https://youtube.com/@frequency0097" target="_blank" rel="noopener" class="soc" style="--brand:#FF0000" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span>YouTube</span></a>
+          <a href="https://www.facebook.com/share/14ca7uDx4bB/" target="_blank" rel="noopener" class="soc" style="--brand:#0866FF" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span>Facebook</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      本網站所有內容為教育與自我認知工具，不涉及醫療、心理治療或診斷服務。<br>
+      © 2026 頻率文明 Frequency Civilization. All rights reserved.・<a href="privacy.html">隱私權政策</a>・<a href="updates.html">網站更新紀錄</a><br>
+      頻率文明®、語根® 為註冊商標，由頻率文明有限公司營運。
+    </div>
+  </div>
+</footer>
+
+<script src="main.js?v=20261024a"></script>
+<script src="worldmap.js?v=20261030a"></script>
+</body>
+</html>

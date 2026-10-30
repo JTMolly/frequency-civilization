@@ -15,6 +15,7 @@ WORLDVIEW = [  # (檔名, 編號, 繁中名稱, 英文名稱)
     ('worldview-01.html', '01', '劇本與課題', 'Script and Lessons'),
     ('worldview-02.html', '02', '一句話，怎麼寫出現實', 'One Sentence, and How It Writes Reality'),
     ('worldview-03.html', '03', '所有聲音都聽，方向盤在現在的你手上', 'Hear Every Voice; the Wheel Is in Your Hands'),
+    ('worldview-04.html', '04', '世界地圖', 'World Map'),
 ]
 
 LABELS = {  # 檔名: (繁中, 英文)

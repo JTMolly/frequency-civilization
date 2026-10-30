@@ -19,7 +19,7 @@ BASE = 'https://frequency-civilization.com/'
 CC = OpenCC('tw2s')
 
 # 共用 JS 裡有中文顯示文字的，簡體版另外輸出一份
-JS_WITH_TEXT = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']
+JS_WITH_TEXT = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js', 'worldmap.js']
 
 # 測驗結果裡用中文當代號的值（原型、動力）：資料一律存繁體，簡體頁只在顯示時轉換
 CANON_TERMS = ['行動者', '療癒者', '教導者', '感應者', '洞見者', '鏡面者',
