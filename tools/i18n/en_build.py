@@ -11,11 +11,12 @@ import nav  # 選單的單一來源（tools/i18n/nav.py）
 HERE = os.path.dirname(__file__)
 EN_DIR = os.path.join(HERE, 'en')
 ROOTS = 'sakaran elariah thaleon aurikai rohendal zaerah valtara kuthari meihara xonteh naeltu orishan'.split()
+NOTES_HIDDEN = os.path.isdir('_hidden_notes')   # 頻率筆記隱藏中：不產生英文版（見 tools/notes_visibility.py）
 EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.html', 'grid.html',
-            'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html', 'notes.html',
+            'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html'] + ([] if NOTES_HIDDEN else ['notes.html']) + [
             'glow.html', 'pair.html', 'updates.html', 'star.html', 'worldview.html', 'worldview-01.html', 'worldview-02.html', 'worldview-03.html', 'blog.html', 'blog/disenchant.html'] + \
            [f'roots/{r}.html' for r in ROOTS] + \
-           sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html'))
+           ([] if NOTES_HIDDEN else sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html')))
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']
 CJK = re.compile(r'[㐀-鿿　-〿！-～]')
 ALLOWED_CJK = {'陳槿唐', '繁中', '简中', '/* email 解鎖門（深色版） */',

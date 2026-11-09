@@ -26,11 +26,18 @@ CANON_TERMS = ['行動者', '療癒者', '教導者', '感應者', '洞見者', 
                '療癒', '探索', '服務', '守護', '突破', '創造', '傳遞', '共鳴']
 
 
+# 頻率筆記隱藏中（有 _hidden_notes/ 資料夾）：notes.html 與 notes/ 底下是轉址頁，build 不碰，也不產生簡中與英文版。
+# 恢復方法見 tools/notes_visibility.py（restore）。
+NOTES_HIDDEN = os.path.isdir('_hidden_notes')
+
+
 def pages():
     out = subprocess.run(['git', 'ls-files', '*.html'], capture_output=True, text=True).stdout.split()
     extra = [p for p in ('voices.html', 'notes.html') if os.path.exists(p)]
     extra += sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html')) if os.path.isdir('notes') else []
     allp = sorted(set(out + extra))
+    if NOTES_HIDDEN:
+        allp = [p for p in allp if p != 'notes.html' and not p.startswith('notes/')]
     return [p for p in allp if not p.startswith(('zh-hans/', 'en/', '_old_site/', 'tools/')) and p != 'builders.html']
 
 

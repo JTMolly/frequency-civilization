@@ -1,0 +1,56 @@
+{
+ "notes": [
+  "n01.html",
+  "n02.html",
+  "n03.html",
+  "n04.html",
+  "n05.html",
+  "n06.html",
+  "n07.html",
+  "n08.html",
+  "n09.html",
+  "n10.html",
+  "n11.html",
+  "n12.html",
+  "n13.html",
+  "n14.html",
+  "n15.html",
+  "n16.html",
+  "n17.html",
+  "n18.html",
+  "n19.html"
+ ],
+ "blog_card": "      <a class=\"post\" href=\"notes.html\">\n        <div class=\"pdate\">專欄</div>\n        <h3>頻率筆記</h3>\n        <p>一篇只講一件事：情緒、直覺、敏感、關係、累。每篇附一個今天就能試的小練習。</p>\n      </a>\n",
+ "updates": [
+  {
+   "old": "          <div class=\"up-links\"><a href=\"notes.html\">頻率筆記 →</a><a href=\"en/notes.html\">English →</a></div>\n",
+   "new": "",
+   "before": "          <p>頻率筆記改放創辦人在 Threads 上的原文，一共 19 篇，每篇都附原文連結和新封面。頻率筆記和留言牆也都有了英文版。</p>\n"
+  },
+  {
+   "old": "<a href=\"voices.html\">大家寫給我們的話 →</a><a href=\"notes.html\">頻率筆記 →</a>",
+   "new": "<a href=\"voices.html\">大家寫給我們的話 →</a>",
+   "before": "          <p>新增留言牆，收錄大家在報名表和測驗回饋裡寫給我們的話，包括 2025 年 12 月音樂會參與者的回饋；同時開了頻率筆記專欄。</p>\n"
+  }
+ ],
+ "sitemap": [
+  "  <url><loc>https://frequency-civilization.com/notes.html</loc><lastmod>2026-10-11</lastmod><priority>0.8</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/notes/n01.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/notes/n05.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/notes/n15.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/notes/n18.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/notes/n19.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/zh-hans/notes.html</loc><lastmod>2026-10-11</lastmod><priority>0.8</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/zh-hans/notes/n01.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/zh-hans/notes/n05.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/en/notes.html</loc><lastmod>2026-10-11</lastmod><priority>0.8</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/en/notes/n01.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/en/notes/n05.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/zh-hans/notes/n15.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/zh-hans/notes/n18.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/zh-hans/notes/n19.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/en/notes/n15.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/en/notes/n18.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>",
+  "  <url><loc>https://frequency-civilization.com/en/notes/n19.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>"
+ ]
+}
