@@ -22,6 +22,7 @@ LABELS = {  # 檔名: (繁中, 英文)
     'worldview.html': ('世界觀', 'Worldview'),
     'roots.html': ('語根系統', 'Root Codes'),
     'tests.html': ('語根測驗', 'Root Code Test'),
+    'blog.html': ('部落格', 'Blog'),
     'resources.html': ('免費資源', 'Free Resources'),
     'glow.html': ('今日點燈', 'Daily Glow'),
     'pair.html': ('雙人配對卡', 'Pair Card'),
@@ -29,12 +30,17 @@ LABELS = {  # 檔名: (繁中, 英文)
     'join.html': ('加入我們', 'Join us'),
 }
 BEFORE = ['about.html']                       # 世界觀之前
-AFTER = ['roots.html', 'tests.html']          # 世界觀之後
+AFTER = ['roots.html', 'tests.html', 'blog.html']   # 世界觀之後
 MORE = ['resources.html', 'glow.html', 'pair.html', 'updates.html']
 MORE_LABEL = ('更多', 'More')
 WV_ARIA = ('展開世界觀選單', 'Open the Worldview menu')
 
 NAV_RE = re.compile(r'<div class="nav-links">.*?</div>', re.S)
+
+
+def cur_of(page):
+    """這一頁在選單裡亮哪一項：blog/ 底下的文章亮「部落格」，其他用檔名。"""
+    return 'blog.html' if page.startswith('blog/') else os.path.basename(page)
 
 
 def parse_on(block):
@@ -85,7 +91,7 @@ def sync(pages):
         if not m:
             continue
         up = '../' * p.count('/')
-        new = render('zh', up, parse_on(m.group(0)), os.path.basename(p))
+        new = render('zh', up, parse_on(m.group(0)), cur_of(p))
         if new != m.group(0):
             open(p, 'w', encoding='utf-8').write(src[:m.start()] + new + src[m.end():])
             n += 1

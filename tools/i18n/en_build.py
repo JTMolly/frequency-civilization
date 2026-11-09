@@ -13,7 +13,7 @@ EN_DIR = os.path.join(HERE, 'en')
 ROOTS = 'sakaran elariah thaleon aurikai rohendal zaerah valtara kuthari meihara xonteh naeltu orishan'.split()
 EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.html', 'grid.html',
             'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html', 'notes.html',
-            'glow.html', 'pair.html', 'updates.html', 'star.html', 'worldview.html', 'worldview-01.html', 'worldview-02.html', 'worldview-03.html', 'blog/disenchant.html'] + \
+            'glow.html', 'pair.html', 'updates.html', 'star.html', 'worldview.html', 'worldview-01.html', 'worldview-02.html', 'worldview-03.html', 'blog.html', 'blog/disenchant.html'] + \
            [f'roots/{r}.html' for r in ROOTS] + \
            sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html'))
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']
@@ -133,7 +133,7 @@ def build(inject, url_of):
         src = re.sub(r'<!-- i18n-head -->.*?<!-- /i18n-head -->', '', src, flags=re.S)
         src = re.sub(r'<!-- i18n-switch -->.*?<!-- /i18n-switch -->', '', src, flags=re.S)
         up = '../' * page.count('/')
-        src = re.sub(r'<div class="nav-links">.*?</div>', lambda m: nav.render('en', up, nav.parse_on(m.group(0)), os.path.basename(page)), src, count=1, flags=re.S)
+        src = re.sub(r'<div class="nav-links">.*?</div>', lambda m: nav.render('en', up, nav.parse_on(m.group(0)), nav.cur_of(page)), src, count=1, flags=re.S)
         out = translate_html(src, page, table_for(page), js_table(page))
         out = out.replace('<html lang="zh-Hant">', '<html lang="en">', 1)
         out = fix_paths(out, page)

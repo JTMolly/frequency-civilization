@@ -686,6 +686,17 @@ nav .nav-links .nav-wv.open .nav-sub{display:block}
   .nav-wv-btn{padding:12px 8px 12px 5px;margin:-12px -3px -12px 0}
 }
 
+/* 上方選單加「部落格」後共六項：窄手機一列放不下，改成三欄兩列（2026/11/09） */
+@media (max-width:460px){
+  nav .nav-in .nav-links{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;justify-items:start;gap:2px 8px}
+  nav .nav-in{padding-top:8px;padding-bottom:6px}
+  nav .logo{line-height:1.7;min-height:42px}   /* 語言切換浮在右上角，英文標誌只有一行時要留出它的高度，才不會壓到第一列選單 */
+}
+
+/* 部落格頁的標題區：固定選單底下留出空間（原本標題第一行被選單蓋住） */
+.wrap.page-head{padding-top:150px}
+@media(max-width:960px){.wrap.page-head{padding-top:140px}}
+
 /* 測驗入口：三關流程圖（tests.html） */
 .tf-sec{padding:56px 0 8px;text-align:center}
 .tf-sec .sec-kicker{display:flex;justify-content:center;align-items:center;gap:14px;font-size:11.5px;letter-spacing:.42em}
