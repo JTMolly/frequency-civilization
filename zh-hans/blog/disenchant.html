@@ -29,6 +29,16 @@
 .article h2{font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(20px,2.3vw,25px);line-height:1.75;letter-spacing:.06em;margin:68px 0 26px;color:var(--text)}
 .article ul{margin:0 0 28px;padding-left:1.35em;font-size:16.5px;line-height:2;color:#453f35}
 .article li{margin-bottom:10px}
+.article h2{scroll-margin-top:124px}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.article .toc{margin:36px 0 8px;padding:16px 22px 8px;border:1px solid var(--card-border);border-radius:8px;background:#fff;box-shadow:var(--shadow)}
+.article .toc-t{margin:0 0 6px;font-size:12.5px;line-height:1.8;letter-spacing:.14em;color:var(--muted)}
+.article .toc ul{list-style:none;margin:0;padding:0;font-size:inherit;line-height:inherit}
+.article .toc li{margin:0;border-top:1px solid var(--line)}
+.article .toc a{display:block;padding:10px 0;font-size:15px;line-height:1.75;letter-spacing:.04em;color:var(--text);text-decoration:none}
+.article .toc a:hover{color:var(--gold-soft)}
+html[lang=en] .article .toc a{letter-spacing:.01em}
+html[lang=en] .article .toc-t{letter-spacing:.05em}
 .article .step{font-family:'Noto Serif TC',serif;font-size:17.5px;line-height:1.9;margin:40px 0 14px;color:var(--text)}
 .article .step strong{font-weight:500}
 .article .said{font-family:'Noto Serif TC',serif;font-weight:300;font-size:18px;line-height:2.15;letter-spacing:.06em;margin:0 0 32px;padding-left:20px;border-left:2px solid var(--line);color:var(--muted)}
@@ -100,6 +110,7 @@ html[lang=en] .article .bl-pic figcaption{letter-spacing:.01em}
     <figure class="wv-quote"><blockquote>什么叫「大家都这样」？<br>什么叫「天性」？</blockquote><figcaption>Molly・个人纪录・2026-11-09</figcaption></figure>
     <p>我们想先说一件事：</p>
     <figure class="wv-quote"><blockquote>人有欲望并不可耻<br>可耻的是当你的选择伤害到其他人</blockquote><figcaption>Molly・个人纪录・2026-11-09</figcaption></figure>
+    <p>我们在这里谈的伤害，包括欺瞒、违反约定，以及忽视他人的意愿与界线。诚实拒绝或结束关系，也可能让人难过，我们仍然有权做这些决定。</p>
     <p>每个人都会有欲望，也可能被别人吸引。但有了感受，接下来怎么做，仍然是自己的选择。</p>
     <p>外遇的责任，应该由违反关系约定的人承担。</p>
     <p>一个人再独立、再有自信、再努力经营关系，都无法保证伴侣一定忠诚。</p>
@@ -107,7 +118,16 @@ html[lang=en] .article .bl-pic figcaption{letter-spacing:.01em}
     <p>这篇文章想分享的四个练习，适合每一个想更认识自己的人。</p>
     <p>无论男生、女生，或正在经历什么样的关系，我们都可以试着练习一件事：</p>
     <p>把自己的价值，慢慢放回自己手上。</p>
-    <h2>一、我欣赏的，到底是这个人的哪一部分？</h2>
+    <div class="toc" role="navigation" aria-label="可以直接跳到想读的段落">
+      <p class="toc-t">可以直接跳到想读的段落</p>
+      <ul>
+        <li><a href="#s1">一、我欣赏的，到底是这个人的哪一部分？</a></li>
+        <li><a href="#s2">二、没有人需要我、崇拜我的时候，我怎么看自己？</a></li>
+        <li><a href="#s3">三、有欲望的时候，我怎么保有选择？</a></li>
+        <li><a href="#s4">四、被背叛了，我怎么重新做决定？</a></li>
+      </ul>
+    </div>
+    <h2 id="s1">一、我欣赏的，到底是这个人的哪一部分？</h2>
     <p class="pull">你欣赏他的那份力量，也可以在你身上长出来。</p>
     <figure class="wv-quote"><blockquote>「把你本来很期待跟崇拜的力量拉到你自己身上」</blockquote><figcaption>Molly・口述・2026-11-09，语音原字</figcaption></figure>
     <p>我们把这个过程叫做「去魅」。</p>
@@ -132,7 +152,7 @@ html[lang=en] .article .bl-pic figcaption{letter-spacing:.01em}
     <p>即使没有他的成就，我们依然有资格提出疑问、拒绝要求、守住界线。</p>
     <p>也可以喜欢一个人，却不必因此失去自己。</p>
     <p>你欣赏他的那份力量，有没有可能，也在你自己的生活里慢慢长出来？</p>
-    <h2>二、没有人需要我、崇拜我的时候，我怎么看自己？</h2>
+    <h2 id="s2">二、没有人需要我、崇拜我的时候，我怎么看自己？</h2>
     <figure class="wv-quote"><blockquote>「当你没有这些能力的时候你为什么需要被需要你为什么需要被崇拜呢？」</blockquote><figcaption>Molly・口述・2026-11-09，语音原字</figcaption></figure>
     <p>这个问题，其实很值得每个人想一想。</p>
     <p>当我们没有钱、没有成绩、没有头衔，也暂时没办法帮别人解决问题的时候，还会觉得自己值得被爱吗？</p>
@@ -142,8 +162,8 @@ html[lang=en] .article .bl-pic figcaption{letter-spacing:.01em}
     <p>这些需要本身都可以被理解。</p>
     <p>谁不希望被欣赏、被肯定、被爱呢？</p>
     <p>但我们可以试着分辨：</p>
-    <p>我们是真的喜欢眼前这个人，还是很喜欢他崇拜我们的感觉？</p>
-    <p>我们是真的想照顾对方，还是需要透过「他离不开我」，来确认自己的重要？</p>
+    <p>我们喜欢眼前这个人，也可以问问自己：被他崇拜的感觉，在这份喜欢里占了多少？</p>
+    <p>我们想照顾对方时，有多少出于关心，又有多少是在确认自己很重要？</p>
     <p>当没有人称赞、没有人仰望，也没有人需要我们的时候，我们还能不能安稳地看待自己？</p>
     <p>这些问题，可能没有办法一下子回答。</p>
     <p>没关系，可以慢慢想。</p>
@@ -156,7 +176,7 @@ html[lang=en] .article .bl-pic figcaption{letter-spacing:.01em}
     <p>也试着建立一种生活：即使今天没有人称赞我们，我们仍然知道自己是谁。</p>
     <p>可以先写下：除了成就、头衔，以及能替别人做什么，我还重视自己哪些部分？</p>
     <p>是愿意诚实、能够倾听，还是做错之后愿意承认、修正？这些都可以透过每天的行动，慢慢累积。</p>
-    <h2>三、有欲望的时候，我怎么保有选择？</h2>
+    <h2 id="s3">三、有欲望的时候，我怎么保有选择？</h2>
     <p>欲望，包括性欲，男生女生都会有。有些男生性欲很低，有些女生性欲很高，每个人都不一样。性欲强，也不代表一个人就会外遇。</p>
     <p>我们可以先把三件事分开：性欲是一种感受；冲动是想马上行动的那股推力；行为，才是要自己负责的部分。</p>
     <p>身体有了反应，接下来还是有选择的空间。</p>
@@ -199,7 +219,7 @@ html[lang=en] .article .bl-pic figcaption{letter-spacing:.01em}
     <p>「当我很想要一件事，我还能不能同时看见自己、对方，以及接下来的后果？」</p>
     <p>所谓的「控制」，其实就是这四件很具体的事：</p>
     <p>能察觉、能暂停、能沟通、能守住约定。</p>
-    <h2>四、被背叛了，我怎么重新做决定？</h2>
+    <h2 id="s4">四、被背叛了，我怎么重新做决定？</h2>
     <p>这一段，我们想留给正在受伤的人。</p>
     <p>如果你曾经被背叛，可能会忍不住反复想：</p>
     <p>是不是自己不够漂亮？</p>
@@ -236,7 +256,7 @@ html[lang=en] .article .bl-pic figcaption{letter-spacing:.01em}
     <p>如果这段经历已经影响到吃饭、睡眠或日常生活，也可以找信任的人聊聊，或寻求专业协助。</p>
     <p>让自己有人陪伴，有资源可以依靠。</p>
     <p>接下来的生活，可以慢慢决定。</p>
-    <h2>最后</h2>
+    <h2 id="end">最后</h2>
     <p>我们做频率文明，希望把这些提问整理成每个人都能使用的练习。你可以检查它们是否符合自己的经验，也可以提出不同的看法。</p>
     <p>我们可以欣赏一个人，也保有自己的判断。</p>
     <p>可以渴望被爱，也学着照顾自己的需要。</p>
