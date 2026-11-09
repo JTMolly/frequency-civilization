@@ -1,0 +1,41 @@
+/* 部落格讀者回饋區（可重複使用）。搭配 blog-feedback.js；由 _build_feedback.py 產生。 */
+.fb{margin:76px 0 8px}
+.fb .fb-card{border:1px solid var(--card-border);border-radius:12px;background:#fff;box-shadow:var(--shadow);padding:30px 28px 26px}
+.fb .fb-h{font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(19px,2.3vw,23px);line-height:1.6;letter-spacing:.06em;color:var(--text);margin:0 0 20px}
+.fb .fb-h3{font-family:'Noto Serif TC',serif;font-weight:500;font-size:16px;line-height:1.7;letter-spacing:.08em;color:var(--gold-soft);margin:0 0 12px}
+.fb .fb-react{display:flex;flex-wrap:wrap;gap:12px}
+.fb .fb-btn{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:10px 20px;border:1px solid var(--gold-dim);border-radius:99px;background:var(--card);color:var(--text);font:inherit;font-size:15.5px;letter-spacing:.06em;cursor:pointer;transition:background .25s,border-color .25s,box-shadow .25s}
+.fb .fb-btn:hover{border-color:var(--gold);box-shadow:0 4px 18px rgba(160,124,62,.16)}
+.fb .fb-btn .fb-n{min-width:1.4em;padding:1px 9px;border-radius:99px;background:rgba(160,124,62,.12);color:var(--gold-soft);font-size:13.5px;letter-spacing:.02em;text-align:center}
+.fb .fb-btn.on{background:rgba(160,124,62,.14);border-color:var(--gold);cursor:default}
+.fb .fb-btn.on .fb-lab::before{content:"✓ ";color:var(--gold-soft)}
+.fb .fb-hint{margin:14px 0 0;font-size:13.5px;line-height:1.9;color:var(--muted)}
+.fb .fb-msg{min-height:1.6em;margin:8px 0 0;font-size:13.5px;line-height:1.8;color:var(--gold-soft)}
+.fb .fb-msg:empty{min-height:0;margin:0}
+.fb .fb-sep{height:1px;background:var(--line);margin:26px 0 24px}
+.fb .fb-share{display:flex;flex-wrap:wrap;gap:10px}
+.fb .fb-soc{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:8px 18px;border:1px solid var(--card-border);border-radius:99px;background:var(--card);color:var(--text);font:inherit;font-size:13.5px;letter-spacing:.1em;text-decoration:none;cursor:pointer;opacity:.9;transition:.25s}
+.fb .fb-soc:hover{border-color:var(--gold);color:var(--gold-soft);opacity:1;box-shadow:0 4px 18px rgba(160,124,62,.16)}
+.fb .fb-soc svg{width:17px;height:17px;flex:none;fill:var(--brand)}
+.fb .fb-soc svg.fb-stroke{fill:none;stroke:var(--brand);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fb .fb-note{margin:0 0 14px;padding:12px 16px;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;background:rgba(160,124,62,.08);font-size:14px;line-height:1.95;color:var(--text)}
+.fb .fb-ta{display:block;width:100%;min-height:130px;padding:14px 16px;border:1px solid var(--card-border);border-radius:8px;background:#fffdf8;color:var(--text);font:inherit;font-size:16px;line-height:1.85;resize:vertical;box-sizing:border-box}
+.fb .fb-ta:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(160,124,62,.15)}
+.fb .fb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fb .fb-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}
+.fb .fb-cnt{font-size:12.5px;letter-spacing:.06em;color:var(--muted)}
+.fb .fb-send{min-height:46px;min-width:96px;padding:9px 26px;border:1px solid var(--gold);border-radius:99px;background:var(--gold);color:#fff;font:inherit;font-size:15px;letter-spacing:.14em;cursor:pointer;transition:.25s}
+.fb .fb-send:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.fb .fb-send:disabled{opacity:.55;cursor:default}
+.fb .fb-ok{font-size:14.5px}
+.fb .fb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html[lang=en] .fb .fb-h,html[lang=en] .fb .fb-h3,html[lang=en] .fb .fb-btn,html[lang=en] .fb .fb-soc,html[lang=en] .fb .fb-send{letter-spacing:.02em}
+@media(max-width:600px){
+  .fb{margin-top:60px}
+.fb .fb-card{padding:24px 18px 22px;border-radius:10px}
+.fb .fb-btn{flex:1 1 100%;justify-content:space-between}
+.fb .fb-share{gap:8px}
+.fb .fb-soc{flex:1 1 calc(50% - 8px);justify-content:center;padding:8px 12px}
+.fb .fb-foot{flex-wrap:wrap}
+.fb .fb-send{flex:1 1 auto}
+}
