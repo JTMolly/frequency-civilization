@@ -38,7 +38,7 @@ def pages():
     allp = sorted(set(out + extra))
     if NOTES_HIDDEN:
         allp = [p for p in allp if p != 'notes.html' and not p.startswith('notes/')]
-    return [p for p in allp if not p.startswith(('zh-hans/', 'en/', '_old_site/', 'tools/')) and p != 'builders.html']
+    return [p for p in allp if not p.startswith(('zh-hans/', 'en/', '_old_site/', '_hidden_notes/', 'tools/')) and p != 'builders.html']
 
 
 def en_exists(p):
