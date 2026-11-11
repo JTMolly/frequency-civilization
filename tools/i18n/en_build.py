@@ -14,7 +14,7 @@ ROOTS = 'sakaran elariah thaleon aurikai rohendal zaerah valtara kuthari meihara
 NOTES_HIDDEN = os.path.isdir('_hidden_notes')   # 頻率筆記隱藏中：不產生英文版（見 tools/notes_visibility.py）
 EN_PAGES = ['index.html', 'about.html', 'roots.html', 'tests.html', 'privacy.html', 'grid.html',
             'test.html', 'test-archetype.html', 'test-drive.html', 'report.html', 'voices.html'] + ([] if NOTES_HIDDEN else ['notes.html']) + [
-            'glow.html', 'pair.html', 'updates.html', 'star.html', 'worldview.html', 'worldview-01.html', 'worldview-02.html', 'worldview-03.html', 'blog.html', 'blog/disenchant.html', 'blog/metacognition.html'] + \
+            'glow.html', 'pair.html', 'updates.html', 'star.html', 'worldview.html', 'worldview-01.html', 'worldview-02.html', 'worldview-03.html', 'blog.html', 'blog/disenchant.html', 'blog/metacognition.html', 'blog/governance-layer.html'] + \
            [f'roots/{r}.html' for r in ROOTS] + \
            ([] if NOTES_HIDDEN else sorted('notes/' + f for f in os.listdir('notes') if f.endswith('.html')))
 EN_JS = ['fc.js', 'flow.js', 'card.js', 'assets/phrases144.js', 'games.js']

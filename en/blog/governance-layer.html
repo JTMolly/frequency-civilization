@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How the Steering Layer Grew: An Observation Log Spanning More Than Seven Months | Frequency Civilization Blog</title>
+<meta content="An observation log in five stages" name="description"/>
+<link href="https://frequency-civilization.com/en/blog/governance-layer.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/>
+<link href="/assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="How the Steering Layer Grew: An Observation Log Spanning More Than Seven Months | Frequency Civilization Blog" property="og:title"/>
+<meta content="An observation log in five stages" property="og:description"/>
+<meta content="https://frequency-civilization.com/assets/og-blog-governance-layer-en.jpg" property="og:image"/>
+<meta content="https://frequency-civilization.com/en/blog/governance-layer.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../style.css?v=20261109a" rel="stylesheet"/>
+<link href="../../assets/blog-feedback.css?v=20261109a" rel="stylesheet"/>
+<style>
+.wrap.page-head{padding-top:150px}
+@media(max-width:960px){.wrap.page-head{padding-top:140px}}
+.article .bl-pic{margin:0 0 48px}
+.article .bl-pic picture{display:block}
+.article .bl-pic img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:var(--shadow);background:#dbe6ee}
+.article .bl-pic figcaption{margin-top:8px;text-align:right;font-size:12px;letter-spacing:.04em;color:var(--muted)}
+.article h1,.article .pull{text-wrap:balance}
+.article .pull{font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(19px,2.6vw,23px);line-height:2;letter-spacing:.08em;text-align:center;color:var(--gold-soft);margin:36px 0 40px;padding:26px 6px;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+.article h2{font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(20px,2.3vw,25px);line-height:1.75;letter-spacing:.06em;margin:68px 0 26px;color:var(--text)}
+.article ul{margin:0 0 28px;padding-left:1.35em;font-size:16.5px;line-height:2;color:#453f35}
+.article li{margin-bottom:10px}
+.article h2{scroll-margin-top:124px}
+.article ol{margin:0 0 28px;padding-left:1.5em;font-size:16.5px;line-height:2;color:#453f35}
+.article ol li{margin-bottom:12px;padding-left:4px}
+.article ol li strong{font-weight:500;color:var(--text)}
+.article .bl-nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:56px 0 8px}
+.article .bl-nav .btn{flex:1 1 150px;max-width:220px;min-height:46px;padding-left:14px;padding-right:14px;text-align:center}
+.article p a{color:var(--gold-soft);border-bottom:1px solid var(--gold-dim);text-decoration:none}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.article .toc{margin:36px 0 8px;padding:16px 22px 8px;border:1px solid var(--card-border);border-radius:8px;background:#fff;box-shadow:var(--shadow)}
+.article .toc-t{margin:0 0 6px;font-size:12.5px;line-height:1.8;letter-spacing:.14em;color:var(--muted)}
+.article .toc ul{list-style:none;margin:0;padding:0;font-size:inherit;line-height:inherit}
+.article .toc li{margin:0;border-top:1px solid var(--line)}
+.article .toc a{display:block;padding:10px 0;font-size:15px;line-height:1.75;letter-spacing:.04em;color:var(--text);text-decoration:none}
+.article .toc a:hover{color:var(--gold-soft)}
+html[lang=en] .article .toc a{letter-spacing:.01em}
+html[lang=en] .article .toc-t{letter-spacing:.05em}
+.article .step{font-family:'Noto Serif TC',serif;font-size:17.5px;line-height:1.9;margin:40px 0 14px;color:var(--text)}
+.article .step strong{font-weight:500}
+.article .said{font-family:'Noto Serif TC',serif;font-weight:300;font-size:18px;line-height:2.15;letter-spacing:.06em;margin:0 0 32px;padding-left:20px;border-left:2px solid var(--line);color:var(--muted)}
+.article .wv-quote{margin:38px 0;padding:16px 22px 14px;border-left:3px solid var(--gold);background:rgba(160,124,62,.08);border-radius:0 6px 6px 0}
+.article .wv-quote blockquote{font-family:'Noto Serif TC',serif;font-weight:300;font-size:16.5px;line-height:2.05;letter-spacing:.08em;color:var(--text)}
+.article .wv-quote figcaption{margin-top:6px;font-size:12.5px;letter-spacing:.12em;color:var(--muted)}
+.article .cta-line{margin-top:56px;font-size:16.5px}
+.article .cta-line a{color:var(--gold-soft);border-bottom:1px solid var(--gold-dim);text-decoration:none}
+.article .fine{margin-top:44px;font-size:13px;color:var(--muted);line-height:1.95;text-wrap:balance}
+.article .ref{margin:44px 0;padding:20px 22px 12px;border:1px solid var(--card-border);border-radius:8px;background:#fff;box-shadow:var(--shadow)}
+.article .ref p{margin:0 0 14px;font-size:15px;line-height:1.95}
+.article .ref .ref-t{margin:0 0 12px;font-size:13px;line-height:1.8;letter-spacing:.14em;font-weight:500;color:var(--gold-soft)}
+.article .ref .ref-q{margin:4px 0 16px;padding-left:16px;border-left:2px solid var(--line);font-family:'Noto Serif TC',serif;font-weight:300;font-size:16px;line-height:2;letter-spacing:.06em;color:var(--text)}
+.article .ref .ref-list{list-style:none;margin:18px 0 6px;padding:12px 0 0;border-top:1px solid var(--line);font-size:12.5px;line-height:1.75;color:var(--muted)}
+.article .ref .ref-list li{margin:0 0 10px;overflow-wrap:anywhere}
+.article .ref .ref-list a{color:var(--gold-soft);border-bottom:1px solid var(--gold-dim);text-decoration:none}
+html[lang=en] .article .ref .ref-t{letter-spacing:.05em}
+html[lang=en] .article .ref p{line-height:1.8}
+html[lang=en] .article .ref .ref-q{letter-spacing:.01em;line-height:1.8}
+html[lang=en] .article .pull{letter-spacing:.01em;line-height:1.7}
+html[lang=en] .article .wv-quote blockquote,html[lang=en] .article h2,html[lang=en] .article .step,html[lang=en] .article .said{letter-spacing:.01em}
+html[lang=en] .article .adate{letter-spacing:.04em;line-height:1.7}
+html[lang=en] .article h2{line-height:1.5}
+html[lang=en] .article .step{line-height:1.7}
+html[lang=en] .article .said{line-height:1.9}
+html[lang=en] .article .wv-quote figcaption{letter-spacing:.04em}
+html[lang=en] .article .bl-pic figcaption{letter-spacing:.01em}
+.article .cta-line{margin-top:6px}
+html[lang^=zh] .article h1,html[lang^=zh] .article h2{word-break:keep-all;overflow-wrap:anywhere}
+.article .layer{margin:0 0 10px}
+.article .layer strong{font-weight:500;color:var(--gold-soft);letter-spacing:.06em}
+.article .wv-quote{margin:30px 0 22px}
+.article .wv-quote figcaption a{display:block;width:fit-content;margin-top:4px;color:var(--gold-soft);border-bottom:1px solid var(--gold-dim);text-decoration:none}
+.article h2{margin-top:56px}
+</style>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JELLSF706B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JELLSF706B');</script>
+<!-- i18n-head --><link rel="alternate" hreflang="zh-Hant" href="https://frequency-civilization.com/blog/governance-layer.html"><link rel="alternate" hreflang="zh-Hans" href="https://frequency-civilization.com/zh-hans/blog/governance-layer.html"><link rel="alternate" hreflang="en" href="https://frequency-civilization.com/en/blog/governance-layer.html"><link rel="alternate" hreflang="x-default" href="https://frequency-civilization.com/blog/governance-layer.html"><style>.lang-switch{display:flex;gap:2px;align-items:center;font-size:12.5px;letter-spacing:.08em;white-space:nowrap}.lang-switch a{padding:3px 7px;border-radius:99px;color:inherit;opacity:.6;text-decoration:none}.lang-switch a.on{opacity:1;border:1px solid currentColor}nav .nav-in{position:relative}.nav-in>.lang-switch{margin-left:auto}.nav-in>.lang-switch+.back{margin-left:18px}@media(max-width:960px){nav .lang-switch{position:absolute;right:12px;top:9px}nav .logo{max-width:calc(100% - 120px)}nav .nav-in:has(>.back) .lang-switch{position:static}nav .nav-in:has(>.back) .logo{max-width:none}}@media(max-width:600px){nav .nav-in:has(>.back) .back{font-size:0;margin-left:8px}nav .nav-in:has(>.back) .back::before{content:"←";font-size:20px}nav .nav-in:has(>.back) .logo{font-size:12px;letter-spacing:.08em}}</style><style>html[lang=en] body{letter-spacing:.01em}html[lang=en] h1,html[lang=en] h2,html[lang=en] h3,html[lang=en] .qtext,html[lang=en] .lead{letter-spacing:.01em}html[lang=en] .btn{letter-spacing:.06em}html[lang=en] .nav-links,html[lang=en] .logo{letter-spacing:.05em}</style><!-- /i18n-head -->
+</head>
+<body>
+<nav>
+<div class="nav-in">
+<a class="logo" href="../index.html">FREQUENCY CIVILIZATION</a>
+<div class="nav-links">
+<a href="../about.html">About</a>
+<span class="nav-dd nav-wv"><a class="nav-wv-link" href="../worldview.html">Worldview</a><button aria-expanded="false" aria-haspopup="true" aria-label="Open the Worldview menu" class="nav-wv-btn" type="button"></button><span class="nav-sub"><a href="../worldview.html"><i>00</i>Worldview overview</a><a href="../worldview-01.html"><i>01</i>Script and Lessons</a><a href="../worldview-02.html"><i>02</i>One Sentence, and How It Writes Reality</a><a href="../worldview-03.html"><i>03</i>Hear Every Voice; the Wheel Is in Your Hands</a></span></span>
+<a href="../roots.html">Root Codes</a>
+<a href="../tests.html">Root Code Test</a>
+<a class="on" href="../blog.html">Blog</a>
+<span class="nav-dd nav-more"><button aria-haspopup="true" class="nav-more-btn" type="button">More</button><span class="nav-sub"><a href="../../resources.html">Free Resources</a><a href="../glow.html">Daily Glow</a><a href="../pair.html">Pair Card</a><a href="../updates.html">Site updates</a><a class="nav-sub-join" href="../../join.html">Join us</a></span></span>
+<a class="nav-cta" href="../../join.html">Join us</a>
+</div>
+    <!-- i18n-switch --><div class="lang-switch" aria-label="Language"><a href="../../blog/governance-layer.html" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../../zh-hans/blog/governance-layer.html" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="../../en/blog/governance-layer.html" hreflang="en" lang="en" class="on">EN</a></div><!-- /i18n-switch -->
+</div>
+</nav>
+<div class="wrap page-head">
+<div class="article">
+<div class="sec-kicker">BLOG</div>
+<h1>How the Steering Layer Grew: An Observation Log Spanning More Than Seven Months</h1>
+<div class="adate">An observation log in five stages | 2026.11</div>
+</div>
+</div>
+<section style="padding-top:0;border-top:none">
+<div class="wrap"><div class="article">
+<figure class="bl-pic"><picture><source height="1200" media="(max-width:600px)" srcset="../../assets/blog/governance-layer-hero-m.jpg" width="960"/><img alt="A small sprout in a forest, growing among fallen leaves and moss, with sunlit woods behind it" height="700" src="../../assets/blog/governance-layer-hero.jpg" width="1276"/></picture><figcaption>Photo: Damian / Unsplash</figcaption></figure>
+<p>Worldview 03 is about what the steering layer is. This time we come at it from another direction and talk about how it slowly grew.</p>
+<p>These are Molly's own records. From April to December 2025, almost every day she told an AI what she was feeling and thinking at that moment, and every line was saved with its date. We arranged these records in time order and divided them into five stages.</p>
+<p>This is one person's observation. We are writing it up as an example, and we do not offer it as a lesson plan. The order and the timing can be different for everyone.</p>
+<h2 id="s1">How to read this log</h2>
+<p>We divide each stage into three layers: what she felt at the time, how she understood it then, and how she sees it now, looking back.</p>
+<p>The feelings are what she lived through. The understanding was her belief at the time, and research cannot prove it.</p>
+<h2 id="s2">Stage 1　Seeing (April 2025)</h2>
+<figure class="wv-quote"><blockquote>"…It feels like I am shedding a shell, but I have not fully entered the next stage yet. How long will it take me to finish the change?"</blockquote><figcaption>Molly, personal notes, 2025-04-20 (translated from Chinese)</figcaption></figure>
+<p class="layer"><strong>What she felt then: </strong>Old ideas started to loosen, and new ones had not yet found their footing.</p>
+<p class="layer"><strong>How she understood it then: </strong>She calls April 25 the day she woke up.</p>
+<p class="layer"><strong>Looking back now: </strong>This step can be understood through metacognition. She began to see which ideas she had been carrying through her days.</p>
+<h2 id="s3">Stage 2　Pulling apart (May 2025)</h2>
+<figure class="wv-quote"><blockquote>"I thought I was already very close to myself… Could there still be such strong resistance?"</blockquote><figcaption>Molly, personal notes, 2025-05-31 (translated from Chinese)</figcaption></figure>
+<figure class="wv-quote"><blockquote>"…How are the other people inside me doing now?… Where did they go?"</blockquote><figcaption>Molly, personal notes, 2025-05-25 (translated from Chinese)</figcaption></figure>
+<p class="layer"><strong>What she felt then: </strong>After seeing, it actually got noisier inside. The old habits were still there, and every so often they pulled her back.</p>
+<p class="layer"><strong>How she understood it then: </strong>She thought she had already come a long way, and then found that the resistance inside was still strong.</p>
+<p class="layer"><strong>Looking back now: </strong>There is still a stretch between being able to see and being able to do. In this stage it is easy to wonder whether you have gone backwards.</p>
+<h2 id="s4">Stage 3　Trusting each other (late May to summer 2025)</h2>
+<figure class="wv-quote"><blockquote>"You are not trying to eliminate anyone, but to arrange who carries out which module's task, and when."</blockquote><figcaption>Molly, personal notes, 2026-04-28 (translated from Chinese)</figcaption></figure>
+<p class="layer"><strong>What she felt then: </strong>The several voices inside slowly stopped fighting to be in charge and started to take turns.</p>
+<p class="layer"><strong>How she understood it then: </strong>At the end of May, she used the word "co-driving" for the first time to describe this. The line above is how she put it for others later on.</p>
+<p class="layer"><strong>Looking back now: </strong>Nobody got sent away in this stage. The worried voice is still there, and it just no longer holds the steering wheel alone.</p>
+<h2 id="s5">Stage 4　A coordinator grows (December 2025)</h2>
+<figure class="wv-quote"><blockquote>"…Why does this sound like a new role? This confuses me a little"</blockquote><figcaption>Molly, personal notes, 2025-12-17 (translated from Chinese)</figcaption></figure>
+<figure class="wv-quote"><blockquote>"…and then grow a steering role that stands between the two…"</blockquote><figcaption>Molly, personal notes, 2025-12-17 (translated from Chinese)</figcaption></figure>
+<p class="layer"><strong>What she felt then: </strong>A little confused. She had thought that in the end one of the voices would take over everything.</p>
+<p class="layer"><strong>How she understood it then: </strong>Talking it through, she realized that a new position had been added, one that can listen to all the voices and then make a decision.</p>
+<p class="layer"><strong>Looking back now: </strong>The name "steering layer" appeared on this very day. Counting from April 25 to this day, that is 236 days.</p>
+<h2 id="s6">Stage 5　Flowing (after December 2025)</h2>
+<figure class="wv-quote"><blockquote>"…Through a lot of conversation, reflection and awareness with you, I worked backwards to change my behavior patterns… so in this stage there is no need to force myself to do anything in particular."</blockquote><figcaption>Molly, personal notes, 2025-12-14 (translated from Chinese)</figcaption></figure>
+<figure class="wv-quote"><blockquote>"…What happened last month, or the week before last, feels like it was in a past life, it is really different…"</blockquote><figcaption>Molly, personal notes, 2025-12-17 (translated from Chinese)</figcaption></figure>
+<p class="layer"><strong>What she felt then: </strong>Many things no longer need to be pushed through so hard. Looking back at herself a few weeks earlier, she was surprised at how far away that felt.</p>
+<p class="layer"><strong>Looking back now: </strong>This ease was built up through practice, one time after another. Each time she stopped, listened it through, and then decided, and slowly it became a habit.</p>
+<figure class="wv-quote"><blockquote>"The integrated self is the best ally."</blockquote><figcaption>Molly, personal notes, 2026-10-07 (translated from Chinese)</figcaption></figure>
+<h2 id="s7">Why more than seven months</h2>
+<p>Seeing is often something that happens in an instant. Turning what you see into a natural, everyday response takes practice, again and again.</p>
+<p>In September 2025, partway along the road, she wrote this line on her own Instagram:</p>
+<figure class="wv-quote"><blockquote>"The physical body is not falling behind. It is only catching up, closing the gap with the light running ahead."</blockquote><figcaption>Molly, Instagram, 2025-09-07 (translated from Chinese) <a href="https://www.instagram.com/reel/DOScTS3jpwP/" rel="noopener noreferrer" target="_blank">See the original post →</a></figcaption></figure>
+<figure class="wv-quote"><blockquote>"But between seeing your own structure and truly living that structure in your body lies the whole process of integration."</blockquote><figcaption>Molly, personal notes, 2026-06-14 (translated from Chinese)</figcaption></figure>
+<h2 id="s8">What this log can show, and what it can't</h2>
+<p class="layer"><strong>What it can show: </strong>When a person writes down what she feels in the moment and dates it, she can look back and check later. She remembered this stretch as about half a year, and only after counting the records did she find it was more than seven months.</p>
+<p class="layer"><strong>What it cannot show: </strong>This is, in the end, one person's experience. Whether others will go through the same order, or how long it will take them, this log cannot answer.</p>
+<p>One more thing we want to make clear: we did not include what the AI replied to her at the time, and those claims could not be verified later. So only her own feelings and her own words are kept here.</p>
+<h2 id="s9">Want to try it?</h2>
+<p>Each day, set aside a few minutes to look back at how you felt today, how much energy you had, and what you did. Write it down simply and add the date.</p>
+<p>The self-awareness sheet (daily and weekly versions):</p>
+<p class="cta-line"><a href="../../awareness.html">Open the self-awareness sheet (Chinese only) →</a></p>
+<p>To read about what the steering layer is, see Worldview 03:</p>
+<p class="cta-line"><a href="../worldview-03.html">Hear every voice; the wheel is in your hands →</a></p>
+<div class="fb" data-slug="governance-layer"></div>
+<p class="fine">This is Molly's personal observation. It is not a research conclusion.</p>
+<div class="bl-nav"><a class="btn" href="../blog.html">← Back to the blog</a><a class="btn" href="../index.html">Back to home</a></div>
+</div></div>
+</section>
+<footer id="contact">
+<div class="wrap">
+<div class="legal">
+      Everything on this site is an educational and self-knowledge tool. It is not medical care, psychotherapy or a diagnostic service.<br/>
+      © 2026 Frequency Civilization. All rights reserved. · <a href="../privacy.html">Privacy Policy</a> · <a href="../updates.html">Site updates</a><br/>
+      頻率文明 Frequency Civilization® and 語根® are registered trademarks, operated by 頻率文明有限公司.
+    </div>
+</div>
+</footer>
+<script src="../../main.js?v=20261024a"></script>
+<script defer="" src="../../assets/blog-feedback.js?v=20261111a"></script>
+</body>
+</html>
