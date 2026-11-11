@@ -135,16 +135,26 @@ def to_hans(s, p):
     s = hans(s)
     s = s.replace('<html lang="zh-Hant">', '<html lang="zh-Hans">', 1)
     # 頁面連結維持同一層（zh-hans 內也有同名頁）；其他資源（css、圖片、沒有中文的 js）回到上一層
-    def fix(m):
-        attr, path = m.group(1), m.group(2)
+    def fix_url(path):
         if re.match(r'(https?:|/|#|mailto:|data:|javascript:)', path):
-            return m.group(0)
+            return path
         clean = path.split('?')[0].split('#')[0]
         target = os.path.normpath(os.path.join(os.path.dirname(p), clean))
         if clean.endswith('.html') or target in JS_WITH_TEXT:
-            return m.group(0)
-        return f'{attr}../{path}"'
-    s = re.sub(r'((?:href|src)=")([^"]+)"', fix, s)
+            return path
+        return '../' + path
+
+    def fix(m):
+        attr, val = m.group(1), m.group(2)
+        if attr == 'srcset="':   # 「網址 1x, 網址 2x」：每個候選各自處理
+            cands = []
+            for c in val.split(','):
+                t = c.strip().split(None, 1)
+                if t:
+                    cands.append(' '.join([fix_url(t[0])] + t[1:]))
+            return f'{attr}{", ".join(cands)}"'
+        return f'{attr}{fix_url(val)}"'
+    s = re.sub(r'((?:href|src|srcset)=")([^"]+)"', fix, s)
     s = re.sub(r'(<link rel="canonical" href=")[^"]*', lambda m: m.group(1) + url_of('zh-Hans', p), s)
     s = re.sub(r'(<meta property="og:url" content=")[^"]*', lambda m: m.group(1) + url_of('zh-Hans', p), s)
     s = inject(s, 'zh-Hans', p)

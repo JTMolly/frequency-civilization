@@ -103,16 +103,27 @@ def will_exist(target):
 
 
 def fix_paths(s, page):
-    def fix(m):
-        attr, path = m.group(1), m.group(2)
+    """href、src、srcset 裡的相對路徑：目標沒有英文版就回到上一層。"""
+    def fix_url(path):
         if re.match(r'(https?:|/|#|mailto:|data:|javascript:)', path):
-            return m.group(0)
+            return path
         clean = path.split('?')[0].split('#')[0]
         target = os.path.normpath(os.path.join(os.path.dirname(page), clean))
         if will_exist(target):
-            return m.group(0)
-        return f'{attr}../{path}"'
-    return re.sub(r'((?:href|src)=")([^"]+)"', fix, s)
+            return path
+        return '../' + path
+
+    def fix(m):
+        attr, val = m.group(1), m.group(2)
+        if attr == 'srcset="':   # 「網址 1x, 網址 2x」：每個候選各自處理
+            cands = []
+            for c in val.split(','):
+                t = c.strip().split(None, 1)
+                if t:
+                    cands.append(' '.join([fix_url(t[0])] + t[1:]))
+            return f'{attr}{", ".join(cands)}"'
+        return f'{attr}{fix_url(val)}"'
+    return re.sub(r'((?:href|src|srcset)=")([^"]+)"', fix, s)
 
 
 def set_attr(html, tag_re, attr, value):
