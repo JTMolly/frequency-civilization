@@ -192,6 +192,8 @@ const DEMO = new URLSearchParams(location.search).has('demo');
 const R = DEMO ? {top:"Auri'kai", sec:"Mei'hara"} : get('fc_result_root');
 const A = DEMO ? {top:"感应者", sec:"镜面者", mix:false} : get('fc_result_archetype');
 const D = DEMO ? {top:"创造", sec:"传递", low:"守护"} : get('fc_result_drive');
+/* 舊結果的副動力、最低動力是同分時隨機排的：有分數就照固定順序重排一次，跟測驗頁一致 */
+if(D && !DEMO && D.scores && D.top){ const ORD = Object.keys(DRIVE); const s = Object.entries(D.scores).sort((a,b)=>b[1]-a[1] || ORD.indexOf(a[0])-ORD.indexOf(b[0])); s.unshift(s.splice(s.findIndex(x=>x[0]===D.top),1)[0]); if(s.length>2){ D.sec = s[1][0]; D.low = s[s.length-1][0]; } }
 
 document.getElementById('dateLine').textContent = '产生日期：' + new Date().toLocaleDateString('zh-TW') + '・频率文明 12 语根系统';
 

@@ -391,7 +391,8 @@ function finish(){
 }
 function finalize(top){
   const scores = scoresG;
-  const sorted = shuffle(Object.entries(scores)).sort((a,b)=>b[1]-a[1]);
+  const ORD = Object.keys(TYPES); /* 同分時照固定順序排，同樣的答案每次結果都一樣 */
+  const sorted = Object.entries(scores).sort((a,b)=>b[1]-a[1] || ORD.indexOf(a[0])-ORD.indexOf(b[0]));
   sorted.unshift(sorted.splice(sorted.findIndex(x=>x[0]===top),1)[0]);
   const [sec] = sorted[1], [low] = sorted[sorted.length-1];
   myTop = top;
